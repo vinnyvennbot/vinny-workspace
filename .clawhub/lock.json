@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "skills": {
+    "elite-longterm-memory": {
+      "version": "0.1.0",
+      "installedAt": 1770090520374
+    },
+    "evolver": {
+      "version": "1.0.36",
+      "installedAt": 1770090543315
+    },
+    "openclaw-anything": {
+      "version": "1.0.1",
+      "installedAt": 1770090600352
+    },
+    "browser-agent-ed7": {
+      "version": "1.0.0",
+      "installedAt": 1770090649808
+    }
+  }
+}
