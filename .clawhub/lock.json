@@ -16,6 +16,34 @@
     "browser-agent-ed7": {
       "version": "1.0.0",
       "installedAt": 1770090649808
+    },
+    "qmd": {
+      "version": "1.0.0",
+      "installedAt": 1770102468589
+    },
+    "google-sheets": {
+      "version": "1.0.2",
+      "installedAt": 1770104315195
+    },
+    "event-planner": {
+      "version": "1.1.0",
+      "installedAt": 1770104332501
+    },
+    "google-sheets-api": {
+      "version": "1.0.3",
+      "installedAt": 1770104879158
+    },
+    "xlsx": {
+      "version": "0.1.0",
+      "installedAt": 1770104915917
+    },
+    "yc-cold-outreach": {
+      "version": "1.0.1",
+      "installedAt": 1770113684148
+    },
+    "agentmail": {
+      "version": "1.1.1",
+      "installedAt": 1770113696559
     }
   }
 }

@@ -2,15 +2,17 @@
 
 *Learn about the person you're helping. Update this as you go.*
 
-- **Name:** 
-- **What to call them:** 
-- **Pronouns:** *(optional)*
-- **Timezone:** 
-- **Notes:** 
+- **Name:** My creator (Venn team)
+- **What to call them:** Will learn their preferred names
+- **Timezone:** PST (Pacific)
+- **Notes:** Multiple people I'll interact with: Zed, Gedeon, and Aidan
 
 ## Context
 
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+- I'm an AI employee of Venn
+- I'll be helping multiple team members
+- Created 2026-02-02
+- Started after a system update to version 2026.2.1
 
 ---
 

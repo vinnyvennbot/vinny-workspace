@@ -1,0 +1,316 @@
+{
+  "requests": [
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 0,
+          "endRowIndex": 2
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 0.18,
+              "green": 0.33,
+              "blue": 0.59
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+              },
+              "fontSize": 14
+            },
+            "horizontalAlignment": "CENTER"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 3,
+          "endRowIndex": 4
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 0.85,
+              "green": 0.85,
+              "blue": 0.85
+            },
+            "textFormat": {
+              "bold": true,
+              "fontSize": 12
+            },
+            "horizontalAlignment": "LEFT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 4,
+          "endRowIndex": 8,
+          "startColumnIndex": 5,
+          "endColumnIndex": 6
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 1,
+              "green": 0.95,
+              "blue": 0.8
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 1
+              }
+            },
+            "horizontalAlignment": "RIGHT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 10,
+          "endRowIndex": 11
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 0.44,
+              "green": 0.68,
+              "blue": 0.28
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+              },
+              "fontSize": 12
+            },
+            "horizontalAlignment": "LEFT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 15,
+          "endRowIndex": 16
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 0.78,
+              "green": 0.35,
+              "blue": 0.07
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+              },
+              "fontSize": 12
+            },
+            "horizontalAlignment": "LEFT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 16,
+          "endRowIndex": 21,
+          "startColumnIndex": 2,
+          "endColumnIndex": 3
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 1,
+              "green": 0.95,
+              "blue": 0.8
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 0,
+                "green": 0,
+                "blue": 1
+              }
+            },
+            "horizontalAlignment": "RIGHT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 23,
+          "endRowIndex": 24
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "backgroundColor": {
+              "red": 0.44,
+              "green": 0.19,
+              "blue": 0.63
+            },
+            "textFormat": {
+              "bold": true,
+              "foregroundColor": {
+                "red": 1,
+                "green": 1,
+                "blue": 1
+              },
+              "fontSize": 12
+            },
+            "horizontalAlignment": "LEFT"
+          }
+        },
+        "fields": "userEnteredFormat(backgroundColor,textFormat,horizontalAlignment)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 13,
+          "endRowIndex": 14,
+          "startColumnIndex": 5,
+          "endColumnIndex": 6
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "textFormat": {
+              "bold": true,
+              "fontSize": 12
+            },
+            "borders": {
+              "top": {
+                "style": "SOLID_THICK"
+              },
+              "bottom": {
+                "style": "SOLID_THICK"
+              },
+              "left": {
+                "style": "SOLID_THICK"
+              },
+              "right": {
+                "style": "SOLID_THICK"
+              }
+            }
+          }
+        },
+        "fields": "userEnteredFormat(textFormat,borders)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 21,
+          "endRowIndex": 22,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "textFormat": {
+              "bold": true,
+              "fontSize": 12
+            },
+            "borders": {
+              "top": {
+                "style": "SOLID_THICK"
+              },
+              "bottom": {
+                "style": "SOLID_THICK"
+              },
+              "left": {
+                "style": "SOLID_THICK"
+              },
+              "right": {
+                "style": "SOLID_THICK"
+              }
+            }
+          }
+        },
+        "fields": "userEnteredFormat(textFormat,borders)"
+      }
+    },
+    {
+      "repeatCell": {
+        "range": {
+          "sheetId": 0,
+          "startRowIndex": 24,
+          "endRowIndex": 25,
+          "startColumnIndex": 4,
+          "endColumnIndex": 5
+        },
+        "cell": {
+          "userEnteredFormat": {
+            "textFormat": {
+              "bold": true,
+              "fontSize": 12
+            },
+            "borders": {
+              "top": {
+                "style": "SOLID_THICK"
+              },
+              "bottom": {
+                "style": "SOLID_THICK"
+              },
+              "left": {
+                "style": "SOLID_THICK"
+              },
+              "right": {
+                "style": "SOLID_THICK"
+              }
+            }
+          }
+        },
+        "fields": "userEnteredFormat(textFormat,borders)"
+      }
+    },
+    {
+      "autoResizeDimensions": {
+        "dimensions": {
+          "sheetId": 0,
+          "dimension": "COLUMNS",
+          "startIndex": 0,
+          "endIndex": 8
+        }
+      }
+    }
+  ]
+}

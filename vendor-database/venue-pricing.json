@@ -1,0 +1,157 @@
+{
+  "venues": {
+    "Log Cabin at the Presidio": {
+      "name": "Log Cabin at the Presidio",
+      "contact": {
+        "phone": "415-555-0123",
+        "email": "events@logcabin.com"
+      },
+      "pricing": {
+        "base_rental": 45.0,
+        "per_person": 45.0,
+        "minimum_spend": 12000.0,
+        "deposit_required": 1750.0,
+        "date_quoted": "2026-02-03"
+      },
+      "booking_status": "quoted",
+      "notes": "Email from events@logcabin.com"
+    }
+  },
+  "vendors": {
+    "Best Mechanical Bull Rental": {
+      "name": "Best Mechanical Bull Rental",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "phone": "(408)-478-8755",
+        "email": "info@bestmechanicalbullrental.com",
+        "website": "https://bestmechanicalbullrental.com/san-francisco-oakland-san-jose"
+      },
+      "service_area": "SF Bay Area, Oakland, San Jose",
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-03",
+      "notes": "Email sent 2026-02-03 11:16 PST - Line dancing event inquiry"
+    },
+    "Prime Time Interactive": {
+      "name": "Prime Time Interactive", 
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "phone": "1-800-916-4110",
+        "email": "info@primetimeinteractive.com",
+        "website": "https://www.primetimeinteractive.com/products-mechanical-bull-rentals-locations-bay-area/"
+      },
+      "service_area": "SF Bay Area, Northern California", 
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-03",
+      "notes": "Email sent 2026-02-03 11:16 PST - 200+ guest event quote request"
+    },
+    "Dancing Cowboy": {
+      "name": "Dancing Cowboy",
+      "category": "entertainment", 
+      "service_type": "dj_instruction",
+      "contact": {
+        "phone": "408-890-7940",
+        "email": "info@dancingcowboy.com",
+        "website": "http://www.dancingcowboy.com/"
+      },
+      "services": ["country_dj", "line_dance_instruction", "couples_dance_lessons"],
+      "service_area": "San Jose, San Francisco",
+      "booking_status": "inquired", 
+      "last_contacted": "2026-02-03",
+      "notes": "Email sent 2026-02-03 11:17 PST - Country DJ + line dance instruction combo"
+    },
+    "Stage Lights and Sound": {
+      "name": "Stage Lights and Sound",
+      "category": "audio_visual",
+      "service_type": "sound_equipment",
+      "contact": {
+        "email": "info@stagelightsandsound.com",
+        "website": "https://stagelightsandsound.com/audio_rental_sf_bay_area"
+      },
+      "services": ["pa_systems", "audio_mixers", "microphones", "speakers", "stage_lighting"],
+      "service_area": "SF, Oakland, San Jose, Mt View, Sunnyvale, Sausalito, Napa, Walnut Creek",
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-03", 
+      "notes": "Email sent 2026-02-03 11:18 PST - 200+ guest PA system rental"
+    },
+    "Epic Steak": {
+      "name": "Epic Steak",
+      "category": "venue",
+      "service_type": "private_dining",
+      "contact": {
+        "email": "events@epicsteak.com",
+        "website": "https://www.epicsteak.com/private-events/"
+      },
+      "location": "San Francisco Waterfront", 
+      "private_spaces": {
+        "Quiver Lounge": {
+          "capacity_seated": "10-30",
+          "capacity_standing": "60",
+          "features": ["contemporary_design", "waterfront_views", "cocktail_balcony", "state_of_art_bar"]
+        }
+      },
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-03",
+      "notes": "Email sent 2026-02-03 11:18 PST - Feb 28 Quiver Lounge inquiry, 30 guests"
+    },
+    "Atelier Crenn": {
+      "name": "Atelier Crenn", 
+      "category": "venue",
+      "service_type": "private_dining",
+      "contact": {
+        "email": "info@ateliercrenn.com",
+        "website": "https://www.ateliercrenn.com/",
+        "events_contact": "Charlotte (reception), Events team (follow-up)"
+      },
+      "location": "San Francisco",
+      "accolades": ["3_michelin_stars", "chef_dominique_crenn"],
+      "cuisine_type": "poetic_culinaria",
+      "booking_status": "responded",
+      "last_contacted": "2026-02-03",
+      "response_date": "2026-02-03", 
+      "notes": "✅ FIRST RESPONSE! Charlotte confirmed receipt 13:25 PST, forwarded to Events team who will reach out directly. Original inquiry: Feb 28 ultra-premium private dining, 30 guests"
+    }
+  },
+  "last_updated": "2026-02-03",
+  "structure": {
+    "venue_entry": {
+      "name": "string",
+      "address": "string",
+      "contact": {
+        "phone": "string",
+        "email": "string",
+        "website": "string",
+        "contact_person": "string"
+      },
+      "capacity": {
+        "max_seated": "number",
+        "max_standing": "number",
+        "outdoor_capacity": "number"
+      },
+      "pricing": {
+        "base_rental": "number",
+        "per_person": "number",
+        "minimum_spend": "number",
+        "deposit_required": "number",
+        "cancellation_policy": "string",
+        "included_services": [
+          "array"
+        ],
+        "additional_fees": {},
+        "pricing_notes": "string",
+        "date_quoted": "YYYY-MM-DD"
+      },
+      "amenities": [
+        "array"
+      ],
+      "restrictions": [
+        "array"
+      ],
+      "notes": "string",
+      "venn_rating": "1-5",
+      "last_contacted": "YYYY-MM-DD",
+      "booking_status": "inquired|quoted|booked|declined"
+    }
+  }
+}
