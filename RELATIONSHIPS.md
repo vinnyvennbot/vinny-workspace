@@ -216,6 +216,18 @@
 - **Next Action**: Provide event date for quote
 - **Notes**: More editorial/commercial approach vs traditional event photography, studio-based team
 
+**SF Photo Agency** ⭐⭐⭐⭐
+- **Contact**: Dario Leventini + David Kim (Owners), 415-323-0089, dario@sfphotoagency.com
+- **Website**: sfphotoagency.com, IG @sfphotoagency
+- **Quote**: $400/hour (photo-only coverage)
+- **Included**: 1 photographer, candid/group/detail/atmosphere coverage, color correction, 24-48hr gallery delivery, full usage rights
+- **Optional**: Videography quote available for recap/highlight coverage
+- **Status**: Responded Feb 6, 10:38 PST - Interested, requesting date/times
+- **Response Time**: 10.5 hours (good)
+- **Questions Asked**: Event date, start/end times of full cruise
+- **Next Action**: Provide event date/timeline for confirmation
+- **Notes**: Fast delivery (24-48hrs vs 3-5 days), full usage rights included, video option available
+
 ### **AV/Technical Production Vendors**
 
 **Verducci Event Productions** ⭐⭐⭐⭐⭐
