@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-004",
+  "name": "Murder Mystery Yacht Party",
+  "date": "TBD",
+  "status": "outreach_phase",
+  "capacity": 400,
+  "budget_per_person": 280,
+  "theme": "Immersive murder mystery theatrical experience on San Francisco Bay",
+  "venue": "City Experiences - San Francisco Spirit (400 capacity yacht)",
+  "created": "2026-02-05",
+  "last_updated": "2026-02-05",
+  "priority": "medium",
+  "notes": "Venn successfully executed similar 400-person yacht event 'Boots on Deck' in Summer 2025. Feasibility score 9/10. Budget range $85K-$140K total. Ticket price target $250/person. Lead time: 4-6 months minimum."
+}

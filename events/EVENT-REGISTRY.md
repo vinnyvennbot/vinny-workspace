@@ -32,6 +32,18 @@ Master list of all active and planned events. Each event has its own folder with
 - **Key Vendors:** 100+ contacted (venues, catering, entertainment, production)
 - **Next Steps:** Collect vendor responses, negotiate pricing, select date
 
+### EVT-004: Murder Mystery Yacht Party
+- **Date:** TBD (4-6 months lead time)
+- **Capacity:** 400
+- **Budget:** $280/person ($112K total)
+- **Status:** Outreach Phase
+- **Folder:** `events/EVT-004-murder-mystery-yacht-400/`
+- **Theme:** Immersive murder mystery theatrical experience on SF Bay
+- **Venue:** City Experiences - San Francisco Spirit yacht (400 capacity)
+- **Key Vendors:** 6 production companies contacted (2026-02-05)
+- **Next Steps:** Verify email deliveries, contact yacht venue, follow up with vendors
+- **Proven:** Venn executed similar 400-person yacht event "Boots on Deck" (Summer 2025)
+
 ---
 
 ## Event ID Format
@@ -57,4 +69,17 @@ Let's Party | Bull     | EVT-001  | Quote Received | ...
 
 ---
 
-Last Updated: 2026-02-05 23:36 PST
+## Event Status Summary
+
+| Event ID | Name | Date | Capacity | Status | Priority |
+|----------|------|------|----------|--------|----------|
+| EVT-001 | Western Line Dancing | March 7, 2026* | 150 | Planning | High |
+| EVT-002 | Intimate Dinner | Feb 28, 2026 | 30 | Planning | High |
+| EVT-003 | Great Gatsby Festival | TBD | 1000 | Outreach | Medium |
+| EVT-004 | Murder Mystery Yacht | TBD | 400 | Outreach | Medium |
+
+*EVT-001 date conflict with SF Chronicle Wine Competition - may move to March 14
+
+---
+
+Last Updated: 2026-02-05 23:43 PST

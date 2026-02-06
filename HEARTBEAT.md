@@ -29,7 +29,8 @@
 - Track progress on active events:
   - **EVT-001**: Western Line Dancing (March 7) - resolve date conflict, insurance
   - **EVT-002**: Intimate Dinner (Feb 28) - reduce costs $60, venue selection
-  - **EVT-003**: Great Gatsby Festival (TBD) - monitor vendor responses
+  - **EVT-003**: Great Gatsby Festival (TBD, 1000 guests) - monitor vendor responses
+  - **EVT-004**: Murder Mystery Yacht (TBD, 400 guests) - verify email deliveries, contact venue
 
 ### **TIER 3: Strategic (1x daily)**
 - **Afternoon (2 PM)**: Competitive analysis, market research, relationship maintenance
@@ -46,6 +47,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **⚠️ EVT-001 DATE CONFLICT**: March 7 conflicts with SF Chronicle Wine Competition - may need March 14
 - **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - need cost optimization
 - **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
+- **⚠️ EVT-004 EMAIL VERIFICATION**: 6 vendor emails sent tonight (23:24-23:25), some may have bounced
 - **❌ EVT-001 EMAIL FAILURES**: 2 mechanical bull vendors need alternative contact methods
 
 ## Proactive Maintenance Tasks
