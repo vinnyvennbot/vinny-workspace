@@ -172,6 +172,20 @@
 
 ### **Event Design & Production**
 
+**Event Solutions SF (Sheila Dizon-Burns)** ⭐⭐⭐⭐⭐
+- **Contact:** Sheila Dizon-Burns (Founder & Executive Planner), 415-816-5555, sheila@eventsolutions-sf.com
+- **Website:** www.eventsolutions-sf.com
+- **Experience:** 20+ years Bay Area, events up to 5,000 guests
+- **Portfolio Highlights:**
+  - Fort Mason large-scale client appreciation event (homepage video)
+  - Multi-day Las Vegas events for 1,000 attendees
+  - Extensive Bay Area and Las Vegas portfolio
+- **Services:** Full-service design/production, vintage furniture, Art Deco decor, lighting, staging, setup/breakdown
+- **Status:** Responded Feb 6, 07:46 PST - Very interested, requesting discovery call
+- **Response Time:** 9 hours (good)
+- **Next Action:** Schedule discovery call (calendar link provided: https://calendar.app.google/GpmKjC2XQh7orJse9)
+- **Notes:** High-caliber planner with proven 1,000+ guest event experience at SF venues
+
 **Rocket Science Events (Gretchen Culver)** ⭐⭐⭐⭐
 - **Contact:** Gretchen Culver, gretchen@rocketscience.events
 - **Experience:** 10+ years Gatsby/Roaring 20s themed events (corporate + weddings)
