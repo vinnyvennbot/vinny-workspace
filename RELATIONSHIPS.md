@@ -130,6 +130,16 @@
 - **Next Action:** Awaiting capabilities/pricing details response
 - **Notes:** First AV vendor with confirmed yacht/boat experience (critical for EVT-004)
 
+**Geoevent LLC** ⭐⭐⭐⭐
+- **Contact:** David C., 818-478-2009, info@geoevent.net
+- **Website:** www.geoevent.net
+- **Location:** LA-based, serves SF Bay Area
+- **Services:** Full AV services (sound, lighting, video/projection, marine-rated equipment)
+- **Status:** Responded Feb 6, 08:00 PST - Happy to assist, wants discovery call
+- **Response Time:** 7.5 hours (good)
+- **Next Action:** Schedule discovery call to discuss details and receive accurate quote
+- **Notes:** Second interested AV vendor, professional response, LA-based serving SF market
+
 ### **Venue/Entertainment Vendors**
 
 **Palace Theater / Boxcar Theatre** ⭐⭐⭐
