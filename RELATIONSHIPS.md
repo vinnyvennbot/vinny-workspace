@@ -157,6 +157,20 @@
 - **Next Action:** Review quote PDF, fill questionnaire once EVT-004 details locked
 - **Notes:** Professional, immediate quote turnaround, established yacht experience
 
+**Fraiche Catering** ⭐⭐⭐⭐⭐
+- **Contact:** Laura Schoolcraft (CFO/Director of Operations), 925-389-0348, laura@fraichecater.com
+- **Team:** Chi Luong (Senior Event Specialist), Mia Navellier (Operations)
+- **Yacht Experience:** 
+  - Executive Chef: Former Navy, fed 250 daily for all meals
+  - USS Hornet events (200-250 guests)
+  - "We do not think there are any issues of execution"
+- **Status:** Responded Feb 6, 11:21 PST - Very interested in yacht event
+- **Response Time:** 11 hours (good)
+- **Materials:** Corporate + Formal lookbooks sent
+- **Questions Asked:** Vessel name to identify specifics
+- **Next Action:** Schedule call early next week with Chi (events) + Mia (operations)
+- **Notes:** CAN HANDLE BOTH GATSBY + YACHT EVENTS - Navy/USS Hornet experience, relationship continuity opportunity
+
 **49 Square Catering** ⭐⭐⭐⭐
 - **Contact:** Anthony Barr, anthony@49sqcatering.com
 - **Status:** Responded Feb 6, 09:08 PST - Wants discovery call
@@ -304,6 +318,17 @@
 - **Response Time:** 9.5 hours (excellent)
 - **Next Action:** Provide venue details once yacht charter confirmed
 - **Notes:** Turnkey murder mystery solution, professional theatrical experience throughout event, integrates with catering timeline
+
+**Bay Area Strings** ⭐⭐⭐⭐
+- **Contact:** Jen Mathers (Cellist/Manager), 415-562-8465, info@bayareastrings.com
+- **Website:** BayAreaStrings.com
+- **Ensembles:** String quartet, trio, or duo configurations available
+- **Repertoire:** Classical, contemporary, jazz (versatile for Gatsby theme)
+- **Status:** Responded Feb 6, 11:18 PST - Interested, checking availability
+- **Response Time:** 11 hours (good)
+- **Questions Asked:** Event date for availability check before quoting
+- **Next Action:** Provide event date once confirmed
+- **Notes:** Sophisticated ambient music option, versatile repertoire suitable for yacht atmosphere
 
 ### **Venue/Entertainment Vendors**
 
