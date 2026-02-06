@@ -111,6 +111,15 @@
 - **Next Action**: Wait for full response
 - **Notes**: Professional acknowledgment, appropriate follow-up timeline
 
+### **Declined/Not Suitable**
+
+**Impact SF (Dan Kervick)** ⚠️
+- **Contact**: dank@impactsf.com, 510-965-4664 (office), 650-222-2476 (cell)
+- **Status**: Declined Feb 6, 06:03 PST - "Outside our expertise"
+- **Reason**: Yacht/marine events not in their wheelhouse
+- **Response Time**: 6 hours (professional decline)
+- **Notes**: Confirms yacht AV is specialized market, Impact SF focuses on land-based events
+
 ### **Failed Email Contacts**
 
 **Gatsby Events Studios** ❌
