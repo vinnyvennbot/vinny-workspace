@@ -107,6 +107,25 @@
 - **Next Action:** Review catering menu, select package level, confirm date
 - **Notes:** FIRST COMPLETE YACHT CHARTER QUOTE - fully actionable pricing, perfect capacity for 400 guests
 
+**LUXE Cruises** ⭐⭐⭐⭐⭐
+- **Contact:** Toby Proescher, 510-263-9790 x1, toby@luxecruises.com
+- **Website:** www.luxecruises.com/fleet (360 video walkthrough available)
+- **Vessel:** Cabernet Sauvignon mega yacht (340 guest maximum)
+- **🎯 ALL-INCLUSIVE QUOTE:**
+  - Basic Tier 1 Dinner: $116.10/person (taxes, production/port fees included)
+  - Most Popular Package: $178.02/person (Tier 1 dinner + hosted bar + Tier 2 dessert)
+  - 3-hour cruise, $16K-24K food/beverage minimum
+  - Menus: LUXE_Cruises_Menu_2025.pdf, LUXE_Bar_Menu.pdf (saved)
+- **Status:** Full quote received Feb 6, 10:00 PST
+- **Response Time:** 10 hours (excellent)
+- **Trade-offs:**
+  - ✅ Premium all-inclusive pricing (simpler)
+  - ✅ Mega yacht experience
+  - ❌ 340 guest max (60 short of 400 target)
+  - ❌ Higher per-person cost vs Red & White
+- **Next Action:** Decide if 340 capacity acceptable, or proceed with Red & White (400 capacity)
+- **Notes:** Premium yacht option with true all-inclusive pricing, but capacity constraint for 400-guest event
+
 **City Experiences (Hornblower)** ⭐⭐⭐⭐⭐
 - **Referrals:** 3 sources confirm as major 400+ capacity operator:
   1. Berkeley Marina (Sean Crothers, 510-981-6744) - "ONLY Berkeley Marina charter with this capacity"
@@ -238,6 +257,19 @@
 - **Notes:** Second interested AV vendor, professional response, LA-based serving SF market
 
 ### **Entertainment Vendors**
+
+**Cosmo Alleycats** ⭐⭐⭐⭐⭐
+- **Contact:** Emily Day (Band Leader), 415-688-0123, emily@cosmoalleycats.com
+- **Website:** www.cosmoalleycats.com
+- **Yacht-Specific Pricing:**
+  - Quartet: $3,250 for 3 hours, $700/hr beyond (8ft x 10ft footprint - yacht-optimized)
+  - 6-piece band: $4,250 for 3 hours, $900/hr beyond (12ft x 18ft footprint)
+- **Cruise Pricing:** Dock-to-dock timing
+- **Availability:** April+ (unavailable entire March)
+- **Sound:** Can run own sound for 400-guest yacht (on brink of comfort level)
+- **Status:** Responded Feb 6, 10:07 PST - Very interested in yacht event
+- **Response Time:** 10 hours (excellent)
+- **Notes:** ALSO available for Gatsby festival - can do both events, quartet perfect for intimate yacht speakeasy vibe alongside murder mystery
 
 **The Dinner Detective** ⭐⭐⭐⭐⭐
 - **Contact:** Natalie Sasso (Executive Producer), natalie@thedinnerdetective.com
