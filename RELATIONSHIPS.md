@@ -86,6 +86,18 @@
 
 ## **Murder Mystery Yacht Vendor Relationships (EVT-004, 400 Guests)**
 
+### **🚢 Yacht Charter Vendors**
+
+**City Experiences** ⭐⭐⭐⭐⭐
+- **Referral:** Sean Crothers, Waterfront Supervisor, Berkeley Marina, 510-981-6744
+- **Website:** https://www.cityexperiences.com/berkeley/city-cruises/social-events/
+- **Capacity:** 400-guest capability (confirmed as ONLY Berkeley Marina charter with this capacity)
+- **Company:** Major SF Bay charter operator (formerly Hornblower)
+- **Services:** Social events, corporate events, large-scale SF Bay charters
+- **Status:** Referred Feb 6, 09:04 PST by Berkeley Marina
+- **Next Action:** Contact City Experiences for 400-guest yacht options, murder mystery packages, pricing, date availability
+- **Notes:** FIRST ACTUAL YACHT CHARTER COMPANY for EVT-004 - moves event from concept to actionable
+
 ### **Catering Vendors**
 
 **SF Catering Company** ⭐⭐⭐⭐⭐
@@ -104,6 +116,14 @@
 - **Questions Asked:** Event details (address, times, kitchen onsite, water, sternos, etc.)
 - **Next Action:** Review quote PDF, fill questionnaire once EVT-004 details locked
 - **Notes:** Professional, immediate quote turnaround, established yacht experience
+
+**49 Square Catering** ⭐⭐⭐⭐
+- **Contact:** Anthony Barr, anthony@49sqcatering.com
+- **Status:** Responded Feb 6, 09:08 PST - Wants discovery call
+- **Response Time:** 9 hours (good)
+- **Approach:** "Exceptional food, thoughtful planning, seamless guest experience"
+- **Next Action:** Schedule discovery call for accurate proposal (calendar link provided)
+- **Notes:** Professional catering company, wants detailed discussion before quote
 
 ### **Photography Vendors**
 
@@ -278,6 +298,19 @@
   - Experience with large-scale events
   - Immediate internal team coordination (CC'd full team)
 - **Notes:** High-quality lead, genuine excitement about Gatsby theme, professional multi-person response
+
+**Global Gourmet Catering** ⭐⭐⭐⭐⭐
+- **Contact:** Tricia Harris (Director of Sales), 925-785-8515, tricia@ggcatering.com
+- **Location:** 1030 Illinois Street, San Francisco, CA 94107
+- **Experience:** 25 years creating immersive food experiences, custom creative offerings
+- **Status:** Responded Feb 6, 09:09 PST - Very enthusiastic: "We would love to be a part of your upcoming Gatsby festival!"
+- **Response Time:** 10.5 hours (good)
+- **Questions Asked:**
+  - Event timeframe (helps estimate staffing needs)
+  - Target budget range (to recommend best options)
+- **Next Action:** Provide timeframe + budget for ballpark estimate
+- **Services:** Customized proposals, immersive food experiences, 1920s themed presentations
+- **Notes:** Bay Area leader in catering, strong enthusiasm, ready to customize for Gatsby theme
 
 ---
 
