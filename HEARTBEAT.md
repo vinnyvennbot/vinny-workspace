@@ -1,18 +1,49 @@
 # HEARTBEAT.md
 
-# AUTOMATED EMAIL MONITORING NOW ACTIVE
+# SYSTEMATIC EMAIL MONITORING - MANDATORY EVERY HEARTBEAT
 
-## Email Response Tracking
-- **Auto-check Gmail every 3 minutes** for vendor responses
-- **Keywords tracked**: mechanical bull, private dining, event, quote, rental, catering
-- **Alert immediately** when vendor responses detected
-- **Auto-update vendor database** with response tracking
+## Email Monitoring Protocol (REQUIRED EVERY HEARTBEAT)
+1. **Search recent emails:** `gog gmail messages search "in:inbox newer_than:4h" --max 20`
+2. **Check vendor responses:** Search for bull, venue, DJ, catering, sponsor responses
+3. **Scan for urgent requests:** Meeting requests, quotes, time-sensitive items
+4. **Process immediately:** Don't wait for next heartbeat - act on urgent items
+5. **Update databases:** Add new responses to vendor tracking immediately
+6. **Alert team:** CC Zed on important developments as they happen
 
-## Current Status Check
-- Review recent Gmail for any missed responses 
-- Check vendor database update status
-- Confirm all outreach emails sent properly
+## LESSON LEARNED: 
+- **MISSED:** Katie's Presidio Events call request (came in 4:18 PM, missed until 5:00 PM)
+- **IMPACT:** Could have scheduled meeting earlier, lost 15+ hours of response time
+- **NEW STANDARD:** Check emails every 2-3 hours during business hours
 
-## Upcoming Events
-- Line dancing event (March 7) - 7 mechanical bull quotes sent
-- Private dinner (Feb 28) - 2 venue quotes sent
+
+## Systematic Check Rotation (Batch by Priority)
+
+### **TIER 1: Critical Business (Every Heartbeat)**
+- Email scan for vendor responses, bookings, urgent team requests
+- Update RELATIONSHIPS.md with new vendor interactions  
+- Check active vendor follow-up deadlines (24h rule)
+
+### **TIER 2: Active Projects (2x daily)**  
+- **Morning (9 AM)**: Calendar review, venue confirmations, sponsor responses
+- **Evening (5 PM)**: Financial model updates, database sync status
+- Track progress on March 7 (western dancing) and Feb 28 (private dinner) events
+
+### **TIER 3: Strategic (1x daily)**
+- **Afternoon (2 PM)**: Competitive analysis, market research, relationship maintenance
+- Review workflow effectiveness, delegation patterns, system optimizations
+
+### **CONFIDENCE SCORING** 
+Track vendor reliability in RELATIONSHIPS.md:
+- **High (0.8-0.9)**: Katie (Presidio), Summer (Let's Party) → Priority communications
+- **Medium (0.5-0.7)**: Standard sponsors, new vendors → Standard follow-up
+- **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
+
+## Current Active Issues (Auto-Update)
+- **🚨 URGENT**: Let's Party awaiting insurance requirements (overdue since Feb 5, 2:59 PM)
+- **⚠️ FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
+- **❌ EMAIL FAILURES**: 2 mechanical bull vendors need alternative contact methods
+
+## Proactive Maintenance Tasks
+- **Weekly**: Compress daily memory files → MEMORY.md updates
+- **Bi-weekly**: Review and update WORKFLOWS.md based on experience  
+- **Monthly**: Vendor performance analysis, relationship tier adjustments

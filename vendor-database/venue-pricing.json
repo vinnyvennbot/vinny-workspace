@@ -42,9 +42,15 @@
         "website": "https://www.primetimeinteractive.com/products-mechanical-bull-rentals-locations-bay-area/"
       },
       "service_area": "SF Bay Area, Northern California", 
-      "booking_status": "inquired",
+      "booking_status": "email_delivery_failed",
       "last_contacted": "2026-02-03",
-      "notes": "Email sent 2026-02-03 11:16 PST - 200+ guest event quote request"
+      "delivery_failure": {
+        "date": "2026-02-05 13:00 PST",
+        "error": "550 5.5.1 Recipient rejected - OXSUS001_403",
+        "issue": "email_address_invalid_or_blocked"
+      },
+      "contact_research_needed": true,
+      "notes": "❌ EMAIL DELIVERY FAILED (Feb 5 13:00 PST) - info@primetimeinteractive.com rejected by recipient server (550 error). Need to research correct contact information. Original inquiry sent 2026-02-03 11:16 PST."
     },
     "Dancing Cowboy": {
       "name": "Dancing Cowboy",
@@ -110,10 +116,516 @@
       "booking_status": "responded",
       "last_contacted": "2026-02-03",
       "response_date": "2026-02-03", 
-      "notes": "✅ FIRST RESPONSE! Charlotte confirmed receipt 13:25 PST, forwarded to Events team who will reach out directly. Original inquiry: Feb 28 ultra-premium private dining, 30 guests"
+      "notes": "✅ Charlotte confirmed receipt 13:25 PST, forwarded to Events team. Follow-up reply sent 14:46 PST. Awaiting Events team contact. Original inquiry: Feb 28 ultra-premium private dining, 30 guests"
+    },
+    "Palio Restaurant": {
+      "name": "Palio Restaurant",
+      "category": "venue", 
+      "service_type": "private_dining",
+      "contact": {
+        "email": "partyatpalio--valeria-digrande-@discussions.tripleseat.com",
+        "contact_person": "Valeria DiGrande"
+      },
+      "location": "San Francisco",
+      "cuisine_type": "fine_italian",
+      "booking_status": "responded",
+      "last_contacted": "2026-02-03",
+      "response_date": "2026-02-03",
+      "notes": "✅ Valeria responded about Feb 21 event availability. Reply sent 14:46 PST thanking for information. Need internal team discussion."
+    },
+    "Angler SF": {
+      "name": "Angler SF",
+      "category": "venue",
+      "service_type": "private_dining", 
+      "contact": {
+        "email": "info@anglersf.com"
+      },
+      "location": "San Francisco",
+      "booking_status": "responded",
+      "last_contacted": "2026-02-03", 
+      "response_date": "2026-02-03",
+      "notes": "✅ Responded directing groups 7+ to events team. Reply sent 14:46 PST. Need to contact events team if proceeding."
+    },
+    "Over 21 Party Rentals": {
+      "name": "Over 21 Party Rentals",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "phone": "(888) 650-4386",
+        "email": "events@over21partyrentals.com",
+        "alternate_email": "over21partyrentals@gmail.com",
+        "website": "https://over21partyrentals.com/product/bull-ride-rental/",
+        "contact_person": "Bleu Schultz"
+      },
+      "service_area": "Monterey Bay, San Jose, SF Bay Area, Northern California",
+      "features": ["LED_timer", "soft_head", "foam_horns", "inflatable_mat"],
+      "booking_status": "responded",
+      "scheduled_call": {
+        "date": "2026-02-05",
+        "time": "10-11 AM PST",
+        "contact_phone": "831-258-7946"
+      },
+      "last_contacted": "2026-02-04",
+      "response_date": "2026-02-04",
+      "notes": "✅ RESPONDED 17:11 PST - Bleu Schultz wants phone call tomorrow 9+ AM to discuss quote. Call scheduled for 10-11 AM PST. Follow-up sent 17:01 PST."
+    },
+    "Toro Show Mechanical Bull Rentals": {
+      "name": "Toro Show Mechanical Bull Rentals", 
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "email": "Toroshow@yahoo.com",
+        "phone": "(650) 400-2052",
+        "website": "https://toroshowmbr.com/",
+        "contact_person": "Alberto Rodriguez"
+      },
+      "location": "Redwood City, CA",
+      "service_area": "SF Bay Area and surrounding areas",
+      "experience": "15+ years operating mechanical bulls",
+      "pricing": {
+        "sf_minimum": 1400,
+        "duration": "6+ hours",
+        "pricing_factors": ["distance", "setup_time", "parking", "floor_protection", "generator_needs"]
+      },
+      "availability": {
+        "march_7_2026": "available_confirmed_interested"
+      },
+      "insurance": {
+        "status": "not_currently_carried",
+        "notes": "Dropped insurance last year due to premium increases. Open to getting insurance for contract partnerships."
+      },
+      "scheduled_call": {
+        "date": "2026-02-06",
+        "time": "12:00 PM PST",
+        "purpose": "mechanical_bull_rental_discussion_march_7",
+        "status": "confirmed_requested_by_vendor",
+        "alternative_times": "flexible except 10 AM and 12 PM",
+        "contact_method": "call (650) 400-2052"
+      },
+      "booking_status": "call_scheduled_ready_to_discuss",
+      "last_contacted": "2026-02-05",
+      "response_date": "2026-02-05 12:41 PST",
+      "urgency": "HIGH - Call scheduled for tomorrow",
+      "competitive_advantage": "second_bull_vendor_creates_negotiation_leverage",
+      "notes": "✅ LATEST RESPONSE Feb 5 12:41 PST - Alberto confirmed interest and requested call for TOMORROW (Feb 6) 12:00 PM. Ready to discuss mechanical bull rental details. Creates competitive leverage with Reventals. Contact: (650) 400-2052."
+    },
+    "Let's Party Salinas": {
+      "name": "Let's Party Salinas",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "phone": "888-630-3866",
+        "phone_direct": "831-757-4781",
+        "phone_text": "831-320-6559",
+        "phone_contact": "831-258-7946",
+        "email": "party@letspartysalinas.com",
+        "website": "https://letspartysalinas.com/",
+        "contact_person": "Summer Elam"
+      },
+      "service_area": "Bay Area, serving since 1996",
+      "features": ["LED_timer", "26_years_experience", "comprehensive_package"],
+      "experience": "26 years Bay Area service",
+      "pricing": {
+        "total_quote": 4171.58,
+        "mechanical_bull": 2495.00,
+        "additional_games": {
+          "get_hooked_party_game": 699.00,
+          "old_west_cork_gun_shootout": 169.00
+        },
+        "setup_fee": 250.00,
+        "delivery_fee": 435.77,
+        "fees": 108.81,
+        "includes": ["blue_round_inflatable_base", "staff_monitor", "LED_timer_control", "sandbags", "mats", "toy_gun", "8ft_table"],
+        "deposit_required": "50%",
+        "quote_expires": "2026-02-06"
+      },
+      "insurance": {
+        "status": "requesting_requirements",
+        "notes": "Additional costs may apply based on insurance requirements"
+      },
+      "booking_status": "comprehensive_quote_provided_insurance_pending",
+      "availability": {
+        "march_7_2026": "available_quoted"
+      },
+      "last_contacted": "2026-02-05",
+      "response_date": "2026-02-05 13:41 PST",
+      "quote_date": "2026-02-05",
+      "invoice_number": "57421513",
+      "urgency": "HIGH - Quote expires tomorrow (Feb 6)",
+      "competitive_advantage": "premium_comprehensive_package_with_western_games",
+      "strategic_value": "high_end_option_creates_negotiation_leverage",
+      "budget_impact": "significantly_exceeds_budget_3x_competitors",
+      "notes": "✅ COMPREHENSIVE QUOTE (Feb 5 13:41 PST) - Summer Elam provided detailed $4,171.58 quote including mechanical bull + western games + full setup. Quote expires TOMORROW (Feb 6). Requesting insurance requirements for final pricing. Premium package 3x cost of competitors but creates strong negotiation leverage."
+    },
+    "All Ears DJ": {
+      "name": "All Ears DJ",
+      "category": "entertainment",
+      "service_type": "dj",
+      "contact": {
+        "phone": "785-766-2596",
+        "email": "allearsdj@gmail.com",
+        "website": "https://www.allearsdj.com/",
+        "contact_person": "Richard Gintowt"
+      },
+      "service_area": "SF Bay Area, Chicago",
+      "specialties": ["club_dj", "wedding_dj", "corporate_events", "country_music", "vinyl", "live_saxophone", "photobooth"],
+      "experience": "1000+ weddings, premier club DJ",
+      "pricing": {
+        "revised_quote": 1500,
+        "original_quote": 1400,
+        "price_increase": 100,
+        "duration": "4 hours",
+        "includes": ["dual_sound_systems_inside_outside", "12_wireless_uplights"],
+        "addons": {
+          "photobooth": {
+            "cost": 500,
+            "features": ["social_media_integration", "instant_text_sharing", "sample_gallery"]
+          }
+        },
+        "total_with_photobooth": 2000,
+        "payment_options": ["50_percent_deposit", "full_payment"]
+      },
+      "booking_status": "PRICING_REVISED_AWAITING_APPROVAL",
+      "availability": {
+        "march_7_2026": "confirmed_available_ready_for_call"
+      },
+      "last_contacted": "2026-02-05",
+      "response_date": "2026-02-05 13:30 PST",
+      "pricing_revision_date": "2026-02-05 13:30 PST",
+      "urgency": "CRITICAL - Price increased +$100, decision needed",
+      "budget_impact": "exceeds_original_budget_by_100",
+      "enhanced_package": "dual sound systems provide better coverage for venue",
+      "call_availability": "this afternoon for proposal discussion",
+      "notes": "⚠️ PRICING REVISED (Feb 5 13:30 PST) - Richard increased from $1400 to $1500 (+$100) but now includes dual sound systems (inside/outside) + 12 uplights. Added photobooth option for $500 with social media features. Available for call this afternoon. DECISION NEEDED: Approve $100 increase for enhanced package?"
+    },
+    "DJ Jeremy Productions": {
+      "name": "DJ Jeremy Productions",
+      "category": "entertainment",
+      "service_type": "dj",
+      "contact": {
+        "phone": "(415) 964-1060",
+        "email": "info@djjeremyproductions.com",
+        "website": "https://www.djjeremyproductions.com/",
+        "contact_person": "Jeremy & Jeannine Downing"
+      },
+      "service_area": "SF Bay Area",
+      "specialties": ["wedding_dj", "corporate_events", "photobooth", "uplighting"],
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-04",
+      "notes": "Email sent 2026-02-04 14:47 PST - Country/line dancing DJ inquiry for March 7"
+    },
+    "California Disc Jockey": {
+      "name": "California Disc Jockey",
+      "category": "entertainment",
+      "service_type": "dj",
+      "contact": {
+        "phone": "(415) 350-5474",
+        "website": "https://californiadiscjockey.com/"
+      },
+      "service_area": "SF Bay Area",
+      "specialties": ["weddings", "events", "birthdays", "corporate"],
+      "booking_status": "not_contacted",
+      "notes": "Phone only contact - no email found"
+    },
+    "SF Bay Adventures": {
+      "name": "SF Bay Adventures",
+      "category": "venue",
+      "service_type": "yacht_charter",
+      "contact": {
+        "phone": "(415) 331-0444",
+        "email": "info@sfbayadventures.com",
+        "website": "https://sfbayadventures.com/"
+      },
+      "location": "Sausalito",
+      "service_area": "San Francisco Bay",
+      "features": ["Coast_Guard_licensed_captains", "luxury_motor_yachts", "floating_banquet_rooms", "custom_catamarans"],
+      "experience": "Operating since 1988",
+      "specialties": ["corporate_events", "weddings", "sunset_cruises", "team_building"],
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-04",
+      "notes": "Email sent 2026-02-04 18:54 PST - March 7 country line dancing yacht inquiry"
+    },
+    "City Cruises San Francisco": {
+      "name": "City Cruises San Francisco (Hornblower)",
+      "category": "venue", 
+      "service_type": "yacht_charter",
+      "contact": {
+        "phone": "(415) 438-8300",
+        "website": "https://www.cityexperiences.com/san-francisco/",
+        "location": "Pier 3, Hornblower Landing"
+      },
+      "capacity": "100-200+ people",
+      "pricing": {
+        "starting_price": 65,
+        "per_person": true
+      },
+      "features": ["private_charters", "full_vessel_charters", "catering", "multiple_deck_options"],
+      "booking_status": "scheduled_call",
+      "scheduled_call": {
+        "date": "2026-02-05",
+        "time": "9:00 AM PST"
+      },
+      "last_contacted": "2026-02-04",
+      "notes": "Call scheduled for Feb 5, 9 AM PST - March 7 line dancing yacht charter inquiry. $65/person starting price fits budget!"
+    },
+    "Boot Barn": {
+      "name": "Boot Barn",
+      "category": "sponsor",
+      "service_type": "brand_partnership",
+      "contact": {
+        "email": "BootBarnIRMedia@bootbarn.com",
+        "website": "https://www.bootbarn.com/",
+        "key_contacts": {
+          "jayce_baclawski": "Sponsorship and Events Coordinator",
+          "vince_milam": "VP, Marketing",
+          "stephen_loscko": "VP, Marketing and Media"
+        }
+      },
+      "sponsorship_profile": {
+        "annual_events": "500+ rodeos and western events",
+        "requests_managed": "700+ sponsorship requests annually",
+        "official_partnerships": ["PRCA", "NFR", "PBR", "Houston Livestock Show and Rodeo"]
+      },
+      "brand_alignment": ["western_lifestyle", "country_music", "authentic_experiences"],
+      "booking_status": "inquired",
+      "last_contacted": "2026-02-04",
+      "notes": "Partnership proposal sent 2026-02-04 18:55 PST - Country line dancing yacht event sponsorship. Perfect brand alignment for western-themed SF Bay event."
+    },
+    "PartyJump": {
+      "name": "PartyJump",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "website": "https://www.partyjump.com/mechanical-bull-rental"
+      },
+      "service_area": "San Francisco Bay Area",
+      "features": ["professionally_operated", "insured"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP VENDOR - Professionally operated & insured mechanical bull for SF Bay Area events"
+    },
+    "National Event Pros": {
+      "name": "National Event Pros",
+      "category": "entertainment", 
+      "service_type": "mechanical_bull",
+      "contact": {
+        "website": "https://nationaleventpros.com/san-francisco/event-rentals/mechanical-bull/"
+      },
+      "service_area": "San Francisco Bay Area",
+      "features": ["full_service", "corporate_events", "delivery_and_setup"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP VENDOR - Full service corporate mechanical bull rental with complete setup/supervision"
+    },
+    "Astro Jump North Bay": {
+      "name": "Astro Jump North Bay",
+      "category": "entertainment",
+      "service_type": "mechanical_bull", 
+      "contact": {
+        "website": "https://astrojump.com/northbay/mechanical-bull"
+      },
+      "service_area": "North Bay, Marin County, Sonoma County",
+      "features": ["high_energy", "unforgettable_excitement"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05", 
+      "notes": "BACKUP VENDOR - High-energy mechanical bull rentals for North Bay area events"
+    },
+    "Diamond Bull Rental": {
+      "name": "Diamond Bull Rental",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "website": "https://www.diamondbullrental.com/mechanical-bull-rental/"
+      },
+      "service_area": "Bay Area", 
+      "positioning": "number one choice for mechanical bulls in Bay area",
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP VENDOR - Claims to be #1 choice for mechanical bulls in Bay Area"
+    },
+    "Empress Events": {
+      "name": "Empress Events",
+      "category": "venue",
+      "service_type": "yacht_charter",
+      "contact": {
+        "website": "https://www.empressevents.com/"
+      },
+      "capacity": "up to 150 guests",
+      "service_area": "San Francisco Bay",
+      "boarding_locations": ["SF Pier 40", "Berkeley Marina", "Richmond", "Jack London Square"],
+      "features": ["seamless_planning", "exclusive_Bay_Area_vendors", "luxury_service"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP YACHT - Up to 150 guests, multiple boarding locations, exclusive vendor network"
+    },
+    "Yacht Connections International": {
+      "name": "Yacht Connections International", 
+      "category": "venue",
+      "service_type": "yacht_charter",
+      "contact": {
+        "website": "https://www.ycicharters.com/"
+      },
+      "service_area": "San Francisco",
+      "features": ["luxury_motor_yachts", "team_building_activities"],
+      "positioning": "most luxurious motor yachts",
+      "booking_status": "potential_backup", 
+      "discovered": "2026-02-05",
+      "notes": "BACKUP YACHT - Luxury motor yacht specialist for private group rentals"
+    },
+    "Luxe Cruises": {
+      "name": "Luxe Cruises",
+      "category": "venue",
+      "service_type": "yacht_charter",
+      "contact": {
+        "website": "https://luxecruises.com/"
+      }, 
+      "service_area": "San Francisco Bay",
+      "features": ["private_charter", "in_house_chef", "custom_menus", "luxury_fleet"],
+      "specialties": ["onboard_dining_experiences", "custom_event_creation"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05", 
+      "notes": "BACKUP YACHT - Luxury fleet with in-house chef and custom dining experiences. Unique backdrop for special events."
+    },
+    "San Francisco Party Charters": {
+      "name": "San Francisco Party Charters",
+      "category": "venue",
+      "service_type": "yacht_charter",
+      "contact": {
+        "website": "https://www.sanfranciscopartycharters.com/"
+      },
+      "service_area": "San Francisco Bay Area",
+      "fleet_types": ["pleasure_boats", "sport_fishing_charters", "deluxe_yachts", "sail_boats", "cruise_ships"],
+      "positioning": "LATE SHIFT for SF Bay Area fleet",
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP YACHT - Diverse fleet specialist for Bay Area boating adventures, late shift availability"
+    },
+    "Reventals": {
+      "name": "Reventals",
+      "category": "entertainment",
+      "service_type": "mechanical_bull",
+      "contact": {
+        "email": "info@reventals.com",
+        "phone_mobile": "(469) 629-5183",
+        "phone_office": "(888) 857-0071",
+        "contact_person": "Juan Navas",
+        "title": "Customer Success Team"
+      },
+      "pricing": {
+        "base_rate": 300,
+        "per_hour": 300,
+        "minimum_duration": 4,
+        "pricing_notes": "Open to budget negotiation"
+      },
+      "features": ["first_come_first_served_booking", "customer_success_support", "long_term_partnership_focus"],
+      "availability": {
+        "march_7_2026": "available_interested"
+      },
+      "booking_status": "CALL_CONFIRMED_TODAY",
+      "last_contacted": "2026-02-05",
+      "response_date": "2026-02-05 14:01 PST",
+      "confirmed_call": {
+        "date": "2026-02-05",
+        "time": "3:00 PM PST (6:00 PM EST)",
+        "status": "CONFIRMED_TODAY_IMMINENT",
+        "initiated_by": "vendor"
+      },
+      "partnership_interest": "HIGH - explicitly mentioned long-term partnership building",
+      "competitive_position": "budget_flexible_partnership_focused_vs_competitors",
+      "urgency": "CRITICAL - Call confirmed for TODAY 3:00 PM PST",
+      "call_prep_status": "ready_venue_details_partnership_talking_points_prepared",
+      "notes": "🚨 CALL CONFIRMED (Feb 5 14:01 PST) - Juan Navas confirmed call for TODAY 3:00 PM PST! Ready for March 7 partnership discussion with budget flexibility. Competitive advantage: 3 vendors competing (Toro $1,400+, Let's Party $4,171). Call prep complete with venue details and long-term partnership value prop."
+    },
+    "Blue Skies Yacht": {
+      "name": "Blue Skies Yacht",
+      "category": "venue", 
+      "service_type": "yacht_charter",
+      "contact": {
+        "booking_platform": "Tagvenue USA"
+      },
+      "capacity": "up to 330 guests",
+      "service_area": "San Francisco Bay",
+      "features": ["expansive_top_deck", "elegant_cocktail_soirées", "sumptuous_dining"],
+      "booking_status": "potential_backup",
+      "discovered": "2026-02-05",
+      "notes": "BACKUP YACHT - Large capacity (330 guests), expansive deck space, versatile event capabilities"
+    },
+    "Japanese Tea Garden - Pagoda Plaza": {
+      "name": "Japanese Tea Garden - Pagoda Plaza",
+      "category": "venue",
+      "service_type": "private_events",
+      "contact": {
+        "organization": "Gardens of Golden Gate Park",
+        "website": "https://gggp.org/japanese-tea-garden-event-rentals/",
+        "address": "75 Hagiwara Tea Garden Dr, San Francisco, CA 94118",
+        "phone": "(415) 661-1316"
+      },
+      "capacity": {
+        "max_standing": 50,
+        "event_type": "intimate_ceremonies_cocktail_parties"
+      },
+      "location": "Golden Gate Park, San Francisco",
+      "features": ["after_hours_access", "beautifully_renovated", "oldest_public_japanese_garden_north_america", "iconic_sf_venue"],
+      "event_concept": "Japanese Spring Garden Party - April 2026",
+      "strategic_timing": "Post Cherry Blossom Festival (April 25-26)",
+      "target_demographics": "intimate_groups_cultural_experiences",
+      "booking_status": "april_2026_pipeline",
+      "discovered": "2026-02-05",
+      "priority": "HIGH - Perfect for intimate Japanese spring theme",
+      "notes": "🌸 APRIL 2026 STRATEGIC VENUE - Pagoda Plaza perfect for 30-50 person Japanese spring garden party. After-hours private access. Capitalize on Cherry Blossom Festival energy (200K attendees). Ideal for $70/person intimate cultural experience."
+    },
+    "Shuggie's Restaurant": {
+      "name": "Shuggie's Restaurant",
+      "category": "venue",
+      "service_type": "restaurant_private_dining",
+      "contact": {
+        "email": "shuggie-s-eb3f0a7fc0b4@reply.perfectvenue.com",
+        "contact_person": "Addison Lott",
+        "title": "Event Sales Manager"
+      },
+      "availability": {
+        "february_21_2026": "available_confirmed"
+      },
+      "features": ["flexible_venue", "budget_accommodating", "restaurant_partner_network"],
+      "positioning": "lots of options to fit many budgets",
+      "partner_network": "number of other restaurants we work with",
+      "booking_status": "responded_available",
+      "last_contacted": "never_contacted_by_us",
+      "response_date": "2026-02-05 11:32 PST",
+      "inbound_inquiry": true,
+      "urgency": "MEDIUM - Feb 21 intimate dinner alternative",
+      "strategic_value": "backup_option_for_feb_28_intimate_dinner",
+      "target_event": "30-person intimate dinner (<$70/person)",
+      "notes": "✅ INBOUND RESPONSE (Feb 5 11:32 PST) - Addison Lott reached out about Feb 21, 2026 availability. Emphasizes budget flexibility and restaurant partner network. Perfect timing for intimate dinner alternative to Feb 28. Ready for follow-up call/site visit."
+    },
+    "Beretta Restaurant": {
+      "name": "Beretta Restaurant",
+      "category": "venue",
+      "service_type": "restaurant_private_dining",
+      "contact": {
+        "email": "backofthehouse--michael-aldridge-@discussions.tripleseat.com",
+        "contact_person": "Michael Aldridge",
+        "title": "Director of Events",
+        "direct_email": "michaelaldridge@backofthehouseinc.com"
+      },
+      "availability": {
+        "february_21_2026": "following_up_on_inquiry"
+      },
+      "platform": "TripSeat portal system",
+      "inquiry_type": "large group reservation",
+      "booking_status": "following_up_information_sent",
+      "last_contacted": "previously_inquired",
+      "response_date": "2026-02-05 13:25 PST",
+      "inbound_follow_up": true,
+      "portal_access": "https://portal.tripleseat.com/public_profile/requests/49703814",
+      "attachment_provided": true,
+      "urgency": "MEDIUM - Director of Events following up",
+      "strategic_value": "professional_venue_with_dedicated_events_team",
+      "target_event": "Feb 21 intimate dinner - large group reservation",
+      "notes": "✅ FOLLOW-UP RECEIVED (Feb 5 13:25 PST) - Michael Aldridge (Director of Events) following up on Feb 21, 2026 'large group reservation' inquiry. Information already sent via TripSeat portal with attachment. Professional venue with dedicated events team. Ready for response/portal review."
     }
   },
-  "last_updated": "2026-02-03",
+  "last_updated": "2026-02-05 14:30 PST",
   "structure": {
     "venue_entry": {
       "name": "string",

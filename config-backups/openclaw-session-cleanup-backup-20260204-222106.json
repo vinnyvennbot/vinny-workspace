@@ -1,0 +1,207 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.1",
+    "lastTouchedAt": "2026-02-05T06:05:24.262Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-02-04T06:12:59.998Z",
+    "lastRunVersion": "2026.2.1",
+    "lastRunCommand": "doctor",
+    "lastRunMode": "local"
+  },
+  "logging": {
+    "redactSensitive": "tools"
+  },
+  "auth": {
+    "profiles": {
+      "google:default": {
+        "provider": "google",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434/v1",
+        "apiKey": "ollama-local",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "qwen3-coder:latest",
+            "name": "qwen3-coder:latest",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 16384
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-20250514"
+      },
+      "models": {
+        "anthropic/claude-sonnet-4-20250514": {
+          "alias": "claude",
+          "params": {
+            "cacheRetention": "short"
+          }
+        }
+      },
+      "workspace": "/Users/vinnyvenn/.openclaw/workspace",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "thinkingDefault": "low",
+      "timeoutSeconds": 1200,
+      "heartbeat": {
+        "every": "30m"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 3,
+        "archiveAfterMinutes": 60,
+        "model": "anthropic/claude-sonnet-4-20250514"
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    }
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "enabled": true
+      },
+      "fetch": {
+        "enabled": true
+      }
+    },
+    "subagents": {
+      "tools": {
+        "deny": [
+          "gateway",
+          "cron",
+          "sessions_spawn"
+        ]
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "useAccessGroups": false
+  },
+  "session": {
+    "scope": "per-sender"
+  },
+  "channels": {
+    "whatsapp": {
+      "dmPolicy": "pairing",
+      "groupPolicy": "allowlist",
+      "mediaMaxMb": 50,
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      },
+      "debounceMs": 0
+    },
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "disabled",
+      "botToken": "8410403087:AAFa6-22vvsaNezKBIw7EB_N2Dj8qhvN7wg",
+      "groups": {
+        "-5157705859": {
+          "requireMention": true
+        }
+      },
+      "groupPolicy": "open",
+      "streamMode": "partial",
+      "retry": {
+        "attempts": 5,
+        "maxDelayMs": 60000
+      }
+    }
+  },
+  "discovery": {
+    "mdns": {
+      "mode": "minimal"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "7a8031d0994e487aa73775c9fc76edff5e27e041a0298c0d"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "http": {
+      "endpoints": {
+        "chatCompletions": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "gog": {
+        "enabled": true
+      },
+      "qmd": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      },
+      "whatsapp": {
+        "enabled": true
+      },
+      "clawguard": {
+        "enabled": true
+      }
+    },
+    "installs": {
+      "clawguard": {
+        "source": "npm",
+        "spec": "@capsulesecurity/clawguard",
+        "installPath": "/Users/vinnyvenn/.openclaw/extensions/clawguard",
+        "version": "0.1.5",
+        "installedAt": "2026-02-05T05:59:25.932Z"
+      }
+    }
+  }
+}

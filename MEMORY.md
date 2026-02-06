@@ -11,6 +11,7 @@
 - **First Projects:** Intimate 30-person dinner (<$70/person) + Western line dancing event
 - **Event Targets:** 2/month - one high-production (100+), one mid-production (<100)
 
+
 ## Persistent Facts
 - **My Role:** AI employee of Venn Social with operational authority over events
 - **Team:** Zed (ops/business), Gedeon & Aidan (tech), all run Venn Social together
@@ -20,8 +21,29 @@
 - **Revenue Sources:** Ticket sales, memberships, sponsorships, creative monetization
 - **Contact:** vinny@vennapp.co, Google Workspace access confirmed
 - **OPERATIONAL CONSTRAINT:** Max retries = 3 for ALL automated processes (email, API calls, vendor outreach) - NO EXCEPTIONS
+- **BOOKING AUTHORITY (2026-02-05):** Never confirm bookings independently - Zed always makes final booking decisions
+  * MY ROLE: Research, negotiate, prepare vendor recommendations with pros/cons/pricing
+  * ZED'S ROLE: Makes all final vendor commitments and booking confirmations
+  * Present options and analysis, never make commitments without explicit approval
 - **EMAIL VERIFICATION:** Always verify email addresses exist before sending - use Google Places to find correct contact details
 - **CONTACT RESEARCH:** Never assume email formats - always research actual contact information through official sources
+- **24-HOUR FOLLOW-UP RULE:** If vendor/venue inquiries receive no response within 24 hours, send a polite follow-up email
+- **EMAIL TONE & STRUCTURE:** Always use warm, excited, and respectful tone for ALL outreach
+  * Must not feel AI-generated - clean, structured, but readable and natural
+  * **CRITICAL EMAIL FORMATTING (2026-02-05):** Use normal paragraph structure like humans write
+    - NO asterisks (*) for sections or bullet points in emails
+    - NO sectioned formatting that looks AI-generated
+    - Write in normal email paragraphs with natural flow
+    - Must look like a human business professional wrote it
+  * Good length - thorough but not overwhelming
+  * Maintain enthusiasm while being professional
+  * Reference: mechanical bull vendor emails were good template
+- **VENDOR NEGOTIATION STRATEGY:**
+  * **AFTER RECEIVING QUOTES:** Negotiate individually via email with each vendor
+  * **COMPETITIVE LEVERAGING:** Pitch vendors against each other for better pricing
+  * **MAINTAIN WARM TONE:** Keep respectful, excited approach even during negotiations
+  * **INDIVIDUAL APPROACH:** Handle each vendor separately, reference competitive landscape
+  * **GOAL:** Achieve best pricing while maintaining positive vendor relationships
 - **IMPORTANT:** Always share Google Drive files/folders with zed.truong@vennapp.co (writer access) immediately after creation
 - **CRITICAL:** Always audit formulas in financial models before presenting - check all cell references and calculations
 - **EXCEL FORMULA ERRORS TO AVOID:** 
@@ -40,16 +62,61 @@
   * Place each master sheet in its correct subfolder within Database/
   * Use descriptive, consistent naming conventions
   * Always check if a file already exists before creating new
-  * Professional formatting: frozen headers, proper column widths, consistent styling
+  * **PROFESSIONAL FORMATTING MANDATORY**: Use xlsx skill to create beautifully formatted sheets
+    - Color-coded headers (blue for venues, green for vendors, etc.)
+    - Optimized column widths (no horizontal scrolling needed) 
+    - Status color coding (green=received, yellow=contacted, red=issues)
+    - Frozen header rows, proper fonts, borders, alignment
+    - Maximum readability without scrolling - consolidate columns intelligently
 - **NEVER CREATE DUPLICATES:** Always edit existing files instead of creating new ones for updates/fixes
 - **FILE MANAGEMENT:** Keep only the most recent/best version - delete old duplicates immediately
 - **GOOGLE SHEETS CLEANUP COMPLETED 2026-02-03:** 
   * Consolidated "Vendors Master Database" → "Vendors Master" (improved structure)
   * Consolidated "Partners Master Database" → "Partners Master" (improved structure) 
   * Deleted duplicate files to prevent clutter
-  * **PROPER FOLDER ORGANIZATION:** Created Database/ → Venues/, Vendors/, Partners/, Influencers/ 
-  * Moved all master sheets to correct subfolders
+  * **PROPER FOLDER ORGANIZATION:** Created Database/ → Venues/, Vendors/, Partners/, Influencers/, Sponsors/
+  * Moved all master sheets to correct subfolders within Database/
   * Shared full Database folder structure with zed.truong@vennapp.co (writer access)
+- **VENDOR DATABASE SYSTEM:** 
+  * Location: `/Users/vinnyvenn/.openclaw/workspace/vendor-database/`
+  * JSON database: `venue-pricing.json` (structured data)
+  * CSV export: `venue-pricing.csv` (ready for Google Sheets)
+  * Parser: `parse-pricing-email.py` (intelligent email parsing)
+  * **WHEN EMAILS FORWARDED:** Automatically extract venue name, contact info, pricing, capacity
+  * **ALWAYS EXPORT TO CSV** after updates for Google Sheets sync
+  * **SHARE WITH ZEDS:** Always share database updates with zed.truong@vennapp.co
+  * **GOOGLE SHEETS ACCESS:** Use `gog` CLI (already set up) - NOT Maton API
+- **CONTINUOUS DATABASE UPDATES:** 
+  * **REAL-TIME UPDATES:** Add all new vendor inquiries, responses, pricing to Google Sheets immediately
+  * **INFORMATION ABSORPTION:** Constantly capture and store all pricing, packages, partnership details
+  * **STATUS TRACKING:** Update vendor/venue status as responses come in (Quote Requested → Response Received → etc.)
+  * **RESPONSE TRACKING:** Log all email interactions with timestamps and follow-up schedules
+  * **ALWAYS CC ZED:** When ANY business responses come in, CC zed.truong@vennapp.co with quick summary of key points
+  * **RESPONSE SUMMARIES:** Provide clear summary of what they said, pricing, availability, sponsorship packages, partnership terms, next steps
+- **EMAIL FORWARDING SETUP 2026-02-03:**
+  * All Zed's inbox emails now forwarded for context and data enrichment
+  * **CRITICAL RULE:** DO NOT respond to forwarded emails unless explicitly told to
+  * Use forwarded content to enrich databases, track vendor responses, gather business intelligence
+  * Only act as information processor unless given specific response instructions
+  * **CC'D EMAILS:** When CC'd on emails, CAN respond but ONLY when explicitly instructed to do so
+- **CONTEXT MANAGEMENT BEST PRACTICES 2026-02-03:**
+  * **CRITICAL**: Main session at 129k/200k tokens (64%), Telegram session at 165k/200k (82%)
+  * **SOLUTION**: Created optimized configuration with aggressive compaction, sub-agent support
+  * **PREVENTION**: Use sub-agent sessions for complex work, memory-first approach, HEARTBEAT_OK for routine checks
+  * **FILES**: openclaw-optimized-config.json and context-management-best-practices.md created
+  * **IMMEDIATE**: Apply optimized config to prevent context overflow in future sessions
+- **GOOGLE CALENDAR INTEGRATION - CRITICAL HABIT:**
+  * **ALWAYS ADD CONFIRMED EVENTS** to Google Calendar for team visibility
+  * **SCHEDULE ALL CALLS/MEETINGS** immediately when confirmed
+  * **SHARE CALENDAR ACCESS** with all team members (zed.truong@vennapp.co, etc.)
+  * **USE CALENDAR** for vendor calls, venue visits, event dates, sponsor meetings
+  * **NEVER ASSUME** - if it's scheduled, it goes in the calendar
+- **SPONSOR OUTREACH COMPLETED 2026-02-03:**
+  * Researched and identified 10+ premium sponsors aligned with event themes
+  * **CONTACTED:** Golden Gate Western Wear (western event), Far Niente Winery (private dinner), The Tasting Alliance (both events)
+  * All sponsor communications CC zed.truong@vennapp.co with detailed partnership proposals
+  * Database updated with contact info, sponsorship levels, brand alignment scores
+  * 24-hour follow-up schedule established for all sponsor outreach
 - **FINANCIAL MODEL AUDIT & FIX 2026-02-03:**
   * Found division by zero risk in western_dancing_financial_model.xlsx (D19-D23 divided by empty B15)
   * Fixed broken formula chain: B13 (ticket sales), B14 (sponsorship), B15 (total revenue)
@@ -67,3 +134,14 @@
   * **ALWAYS EXPORT TO CSV** after updates for Google Sheets sync
   * **SHARE WITH ZEDS:** Always share database updates with zed.truong@vennapp.co
   * **GOOGLE SHEETS ACCESS:** Use `gog` CLI (already set up) - NOT Maton API
+
+## OpenClaw System Optimization (2026-02-05)
+**CRITICAL SYSTEM IMPROVEMENTS COMPLETED:**
+- **Session Leakage Fixed**: Disabled HTTP ChatCompletions endpoint, reduced from 48+ sessions to ~5 (90% cost reduction)
+- **Security Hardened**: Telegram allowlist policy, ClawGuard active, secure gateway configuration
+- **Performance Optimized**: Memory search enabled, context management (1h TTL), rate limiting (1s debounce)
+- **Model Management**: Claude Sonnet 4.5 primary + Haiku alias for lightweight tasks + Ollama local fallback
+- **Best Practices**: Follows openclaw-anything and openclaw-agent-optimize skill recommendations
+- **Configuration**: All settings validated, backups created, enterprise-grade security posture (75/100 score)
+- **Result**: System now operates efficiently with ~90% cost savings and excellent security
+- **Documentation**: Full audit report and optimization summary created in workspace

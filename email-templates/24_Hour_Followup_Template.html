@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Follow-up: {{EVENT_NAME}}</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center; }
+        .content { background: #fff; padding: 30px; border: 1px solid #e0e0e0; border-radius: 0 0 8px 8px; }
+        .cta-button { display: inline-block; background: #667eea; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: bold; }
+        .signature { border-top: 1px solid #eee; margin-top: 30px; padding-top: 20px; color: #666; }
+        .highlight { background: #f8f9ff; padding: 15px; border-left: 4px solid #667eea; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>🍽️ Venn Social Events</h2>
+            <p>Creating Exclusive San Francisco Dining Experiences</p>
+        </div>
+        
+        <div class="content">
+            <p>Hi {{VENDOR_NAME}},</p>
+            
+            <p>I hope this message finds you well! I wanted to personally follow up on our inquiry about <strong>{{EVENT_NAME}}</strong>.</p>
+            
+            <div class="highlight">
+                <p><strong>Quick recap:</strong> We're looking to partner with exceptional venues like yours to create intimate dining experiences that showcase San Francisco's culinary heritage.</p>
+            </div>
+            
+            <p>We're particularly excited about the possibility of working with {{VENDOR_NAME}} because:</p>
+            <ul>
+                <li>Your venue's atmosphere perfectly matches our vision</li>
+                <li>We believe our audience would love experiencing your space</li>
+                <li>This could be the start of a valuable ongoing partnership</li>
+            </ul>
+            
+            <p>Could you please let us know:</p>
+            <ol>
+                <li><strong>Initial availability</strong> for the dates we mentioned?</li>
+                <li><strong>Any questions</strong> you might have about the partnership?</li>
+                <li><strong>Best time</strong> for a quick 15-minute call to discuss details?</li>
+            </ol>
+            
+            <a href="mailto:hello@vennsocial.com?subject=Re: {{EVENT_NAME}} - Available to Chat" class="cta-button">📧 Reply to Discuss</a>
+            
+            <p>We're flexible with timing and always open to creative collaboration. Looking forward to creating something amazing together!</p>
+            
+            <div class="signature">
+                <p><strong>Best regards,</strong><br>
+                {{SENDER_NAME}}<br>
+                <em>Venn Social Events Team</em></p>
+                
+                <p style="font-size: 14px; color: #888;">
+                    📧 <a href="mailto:hello@vennsocial.com">hello@vennsocial.com</a><br>
+                    🌐 Creating exclusive dining experiences that bring SF together<br>
+                    📍 San Francisco, CA
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

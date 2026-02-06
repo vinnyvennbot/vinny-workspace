@@ -1,0 +1,426 @@
+{
+  "name": "Venn_Vendor_Follow_Up_Automation",
+  "active": true,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours"
+            }
+          ]
+        }
+      },
+      "id": "1",
+      "name": "Schedule Check (Every Hour)",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [300, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Generate unique run ID for audit trail\nconst runId = 'vendor-check-' + new Date().toISOString().replace(/[:.]/g, '-');\nconst timestamp = new Date().toISOString();\n\n// Initialize run tracking\nreturn {\n  run_id: runId,\n  timestamp: timestamp,\n  check_type: 'vendor_followup',\n  status: 'initiated'\n};"
+      },
+      "id": "2", 
+      "name": "Initialize Run",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [500, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "action",
+              "value": "get_pending_followups"
+            },
+            {
+              "name": "run_id", 
+              "value": "={{$node['Initialize Run'].json['run_id']}}"
+            }
+          ]
+        }
+      },
+      "id": "3",
+      "name": "Check Google Sheets for Pending Follow-ups",
+      "type": "n8n-nodes-base.httpRequest", 
+      "typeVersion": 1,
+      "position": [700, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$node['Check Google Sheets for Pending Follow-ups'].json['pending_vendors']}}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "4",
+      "name": "Any Vendors Need Follow-up?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1, 
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "5",
+      "name": "Process Each Vendor",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract vendor details and determine follow-up type\nconst vendor = $input.all()[0].json.pending_vendors[$node['Process Each Vendor'].context['currentRunIndex']];\n\nconst now = new Date();\nconst lastContact = new Date(vendor.last_contact_date);\nconst hoursSince = (now - lastContact) / (1000 * 60 * 60);\n\nlet followUpType;\nlet emailTemplate;\nlet subject;\n\nif (hoursSince >= 24 && hoursSince < 48) {\n  followUpType = '24_hour';\n  subject = `Re: ${vendor.event_name} - Quick Check on Availability`;\n  emailTemplate = 'followup_24h';\n} else if (hoursSince >= 48 && hoursSince < 72) {\n  followUpType = '48_hour';\n  subject = `Re: ${vendor.event_name} - Following Up on Our Inquiry`;\n  emailTemplate = 'followup_48h';\n} else if (hoursSince >= 72) {\n  followUpType = '72_hour';\n  subject = `Re: ${vendor.event_name} - Final Follow-up`;\n  emailTemplate = 'followup_72h';\n}\n\nreturn {\n  vendor_id: vendor.vendor_id,\n  vendor_name: vendor.vendor_name,\n  vendor_email: vendor.vendor_email,\n  event_name: vendor.event_name,\n  original_inquiry_date: vendor.original_inquiry_date,\n  last_contact_date: vendor.last_contact_date,\n  follow_up_type: followUpType,\n  email_template: emailTemplate,\n  subject: subject,\n  hours_since_contact: Math.round(hoursSince),\n  run_id: $node['Initialize Run'].json.run_id\n};"
+      },
+      "id": "6",
+      "name": "Determine Follow-up Strategy", 
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1300, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "action",
+              "value": "get_email_template"
+            },
+            {
+              "name": "template_name",
+              "value": "={{$node['Determine Follow-up Strategy'].json['email_template']}}"
+            },
+            {
+              "name": "vendor_name",
+              "value": "={{$node['Determine Follow-up Strategy'].json['vendor_name']}}"
+            },
+            {
+              "name": "event_name", 
+              "value": "={{$node['Determine Follow-up Strategy'].json['event_name']}}"
+            }
+          ]
+        }
+      },
+      "id": "7",
+      "name": "Generate Email Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1500, 200]
+    },
+    {
+      "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "gmailOAuth2Api",
+        "sendTo": "={{$node['Determine Follow-up Strategy'].json['vendor_email']}}",
+        "subject": "={{$node['Determine Follow-up Strategy'].json['subject']}}",
+        "emailFormat": "html", 
+        "message": "={{$node['Generate Email Content'].json['email_content']}}",
+        "ccEmail": "zed.truong@vennapp.co",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "id": "8",
+      "name": "Send Follow-up Email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 1,
+      "position": [1700, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "action",
+              "value": "log_followup_sent"
+            },
+            {
+              "name": "vendor_id",
+              "value": "={{$node['Determine Follow-up Strategy'].json['vendor_id']}}"
+            },
+            {
+              "name": "follow_up_type",
+              "value": "={{$node['Determine Follow-up Strategy'].json['follow_up_type']}}"
+            },
+            {
+              "name": "email_sent_time",
+              "value": "={{new Date().toISOString()}}"
+            },
+            {
+              "name": "run_id",
+              "value": "={{$node['Determine Follow-up Strategy'].json['run_id']}}"
+            }
+          ]
+        }
+      },
+      "id": "9",
+      "name": "Update Vendor Database",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1900, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "text", 
+              "value": "📧 Vendor follow-up sent: {{$node['Determine Follow-up Strategy'].json['vendor_name']}} ({{$node['Determine Follow-up Strategy'].json['follow_up_type']}} follow-up for {{$node['Determine Follow-up Strategy'].json['event_name']}})"
+            }
+          ]
+        }
+      },
+      "id": "10",
+      "name": "Notify Team via Slack",
+      "type": "n8n-nodes-base.httpRequest", 
+      "typeVersion": 1,
+      "position": [2100, 200]
+    },
+    {
+      "parameters": {
+        "url": "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "action",
+              "value": "log_workflow_completion"
+            },
+            {
+              "name": "run_id",
+              "value": "={{$node['Initialize Run'].json['run_id']}}"
+            },
+            {
+              "name": "vendors_processed",
+              "value": "={{$node['Check Google Sheets for Pending Follow-ups'].json['pending_vendors'].length}}"
+            },
+            {
+              "name": "completion_time",
+              "value": "={{new Date().toISOString()}}"
+            },
+            {
+              "name": "status",
+              "value": "success"
+            }
+          ]
+        }
+      },
+      "id": "11",
+      "name": "Log Completion - Success",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1, 
+      "position": [1100, 400]
+    },
+    {
+      "parameters": {
+        "url": "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "action",
+              "value": "log_workflow_completion"
+            },
+            {
+              "name": "run_id",
+              "value": "={{$node['Initialize Run'].json['run_id']}}"
+            },
+            {
+              "name": "vendors_processed", 
+              "value": "0"
+            },
+            {
+              "name": "completion_time",
+              "value": "={{new Date().toISOString()}}"
+            },
+            {
+              "name": "status",
+              "value": "no_vendors_pending"
+            }
+          ]
+        }
+      },
+      "id": "12",
+      "name": "Log Completion - No Vendors",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1100, 500]
+    },
+    {
+      "parameters": {
+        "url": "https://hooks.slack.com/services/YOUR_SLACK_WEBHOOK",
+        "options": {
+          "bodyContentType": "json"
+        },
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "text",
+              "value": "❌ Vendor follow-up workflow error: {{$json.error}} (Run ID: {{$node['Initialize Run'].json['run_id']}})"
+            }
+          ]
+        }
+      },
+      "id": "13",
+      "name": "Error Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1500, 400]
+    }
+  ],
+  "connections": {
+    "Schedule Check (Every Hour)": {
+      "main": [
+        [
+          {
+            "node": "Initialize Run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Initialize Run": {
+      "main": [
+        [
+          {
+            "node": "Check Google Sheets for Pending Follow-ups",
+            "type": "main", 
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Google Sheets for Pending Follow-ups": {
+      "main": [
+        [
+          {
+            "node": "Any Vendors Need Follow-up?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Any Vendors Need Follow-up?": {
+      "main": [
+        [
+          {
+            "node": "Process Each Vendor",
+            "type": "main", 
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Completion - No Vendors",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Each Vendor": {
+      "main": [
+        [
+          {
+            "node": "Determine Follow-up Strategy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Determine Follow-up Strategy": {
+      "main": [
+        [
+          {
+            "node": "Generate Email Content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Email Content": {
+      "main": [
+        [
+          {
+            "node": "Send Follow-up Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Follow-up Email": {
+      "main": [
+        [
+          {
+            "node": "Update Vendor Database", 
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update Vendor Database": {
+      "main": [
+        [
+          {
+            "node": "Notify Team via Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Team via Slack": {
+      "main": [
+        [
+          {
+            "node": "Log Completion - Success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "errorWorkflow": {
+      "errorWorkflow": "error_handler_workflow_id"
+    },
+    "timezone": "America/Los_Angeles"
+  },
+  "staticData": null
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Final Follow-up: {{EVENT_NAME}}</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px 8px 0 0; text-align: center; }
+        .content { background: #fff; padding: 30px; border: 1px solid #e0e0e0; border-radius: 0 0 8px 8px; }
+        .cta-button { display: inline-block; background: #e74c3c; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 20px 0; font-weight: bold; }
+        .cta-secondary { display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; margin: 10px 5px; }
+        .signature { border-top: 1px solid #eee; margin-top: 30px; padding-top: 20px; color: #666; }
+        .gentle-notice { background: #f8f9fa; padding: 20px; border-left: 4px solid #6c757d; margin: 20px 0; border-radius: 0 6px 6px 0; }
+        .future-note { background: #e8f5e8; padding: 15px; border-radius: 6px; margin: 20px 0; border-left: 4px solid #28a745; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>🍽️ Venn Social Events</h2>
+            <p>Creating Exclusive San Francisco Dining Experiences</p>
+        </div>
+        
+        <div class="content">
+            <p>Hi {{VENDOR_NAME}},</p>
+            
+            <p>I hope you're doing well! This is my final follow-up regarding <strong>{{EVENT_NAME}}</strong>.</p>
+            
+            <div class="gentle-notice">
+                <p><strong>I completely understand</strong> that timing doesn't always align, and that's perfectly okay! The restaurant industry moves fast, and priorities shift constantly.</p>
+            </div>
+            
+            <p>Since I haven't heard back, I'm assuming that <strong>{{EVENT_NAME}}</strong> isn't the right opportunity for {{VENDOR_NAME}} right now—and that's absolutely fine.</p>
+            
+            <p><strong>Two quick options:</strong></p>
+            
+            <div style="text-align: center; margin: 25px 0;">
+                <a href="mailto:hello@vennsocial.com?subject={{EVENT_NAME}} - Still Interested" class="cta-button">🙌 Actually, I'm Interested!</a>
+                <br>
+                <a href="mailto:hello@vennsocial.com?subject=Keep me posted on future events" class="cta-secondary">📮 Future Opportunities</a>
+                <a href="mailto:hello@vennsocial.com?subject=Please remove {{VENDOR_NAME}} from your list" class="cta-secondary">🚫 Remove from List</a>
+            </div>
+            
+            <div class="future-note">
+                <h3>🌱 Looking Ahead</h3>
+                <p>Even if this specific event isn't a match, we're always planning new experiences. {{VENDOR_NAME}} could be perfect for future intimate dinners, wine tastings, or special occasions.</p>
+                <p><strong>We'll keep you in mind!</strong> (Unless you tell us otherwise, of course.)</p>
+            </div>
+            
+            <p>Thank you for your time and consideration. The SF dining scene is lucky to have venues like yours, and we hope our paths cross when the timing is right.</p>
+            
+            <p style="text-align: center; font-style: italic; color: #666; margin: 30px 0;">
+                <strong>No response needed—we'll take that as a "not right now" and respect your time! 🙏</strong>
+            </p>
+            
+            <div class="signature">
+                <p><strong>All the best,</strong><br>
+                {{SENDER_NAME}}<br>
+                <em>Venn Social Events Team</em></p>
+                
+                <p style="font-size: 14px; color: #888;">
+                    📧 <a href="mailto:hello@vennsocial.com">hello@vennsocial.com</a><br>
+                    🌐 Building community through exceptional dining experiences<br>
+                    📍 San Francisco, CA
+                </p>
+                
+                <div style="border-top: 1px solid #f0f0f0; margin-top: 20px; padding-top: 15px;">
+                    <p style="font-size: 12px; color: #999; font-style: italic;">
+                        📱 Follow our journey: <a href="https://instagram.com/vennsocial" style="color: #667eea;">@vennsocial</a> on Instagram<br>
+                        🍷 See what we're up to and the amazing venues we partner with!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

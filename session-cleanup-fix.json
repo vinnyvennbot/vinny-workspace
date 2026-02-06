@@ -1,0 +1,52 @@
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-20250514"
+      },
+      "models": {
+        "anthropic/claude-sonnet-4-20250514": {
+          "alias": "claude",
+          "params": {
+            "cacheRetention": "short"
+          }
+        }
+      },
+      "workspace": "/Users/vinnyvenn/.openclaw/workspace",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "thinkingDefault": "low",
+      "timeoutSeconds": 1200,
+      "heartbeat": {
+        "every": "30m"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 3,
+        "archiveAfterMinutes": 60,
+        "model": "anthropic/claude-sonnet-4-20250514"
+      },
+      "sessionManagement": {
+        "archiveAfterMinutes": 120,
+        "cleanupAfterMinutes": 240,
+        "maxIdleSessions": 10
+      },
+      "sandbox": {
+        "mode": "off"
+      }
+    }
+  },
+  "session": {
+    "scope": "per-sender",
+    "cleanup": {
+      "archiveAfterMinutes": 120,
+      "deleteAfterMinutes": 240,
+      "maxIdleSessions": 10
+    }
+  }
+}

@@ -44,6 +44,54 @@
     "agentmail": {
       "version": "1.1.1",
       "installedAt": 1770113696559
+    },
+    "create-content": {
+      "version": "1.0.0",
+      "installedAt": 1770270907180
+    },
+    "social-media-management": {
+      "version": "1.0.0",
+      "installedAt": 1770270912289
+    },
+    "research-idea": {
+      "version": "0.1.0",
+      "installedAt": 1770270917260
+    },
+    "email": {
+      "version": "1.1.0",
+      "installedAt": 1770270922269
+    },
+    "openclaw-agent-optimize": {
+      "version": "1.0.0",
+      "installedAt": 1770271100558
+    },
+    "clawguard": {
+      "version": "0.1.5",
+      "installedAt": 1770271106326
+    },
+    "config-guardian": {
+      "version": "1.0.0",
+      "installedAt": 1770271112246
+    },
+    "openclaw-security-auditor": {
+      "version": "1.0.0",
+      "installedAt": 1770272898808
+    },
+    "n8n-workflow-automation": {
+      "version": "1.0.0",
+      "installedAt": 1770278886100
+    },
+    "task-decomposer": {
+      "version": "1.0.0",
+      "installedAt": 1770278890616
+    },
+    "email-best-practices": {
+      "version": "1.0.0",
+      "installedAt": 1770278895134
+    },
+    "task-status": {
+      "version": "1.0.0",
+      "installedAt": 1770278899830
     }
   }
 }
