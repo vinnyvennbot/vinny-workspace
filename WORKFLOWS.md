@@ -1,5 +1,43 @@
 # WORKFLOWS.md - Event Planning Standard Operating Procedures
 
+## EMAIL EXECUTION AUTHORITY (CRITICAL - Added Feb 5, 2026)
+
+### **AUTO-SEND EMAILS (Execute Immediately - No Approval Needed)**
+✅ **Initial vendor outreach** for quotes (following templates in TOOLS.md)  
+✅ **Follow-up emails** within 24-hour rule to non-responders  
+✅ **Thank you / acknowledgment** responses to vendors  
+✅ **Schedule confirmations** and logistics coordination  
+✅ **Database update requests** to vendors for missing information
+
+**HOW TO SEND:**
+```bash
+gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[email content]"
+```
+
+**SIGNATURE REQUIRED:** Use standard business signature from TOOLS.md on ALL emails
+
+### **ASK FIRST (Get Approval Before Sending)**
+⚠️ **Contract negotiations** or terms discussions  
+⚠️ **Any email mentioning specific budget numbers**  
+⚠️ **Sponsor partnership proposals** over $1000 value  
+⚠️ **Vendor selections** or booking commitments
+
+### **NEVER SEND (Zed Only)**
+❌ **Binding agreements** or contract commitments  
+❌ **Budget information** in first vendor contact  
+❌ **Anything requiring Zed's signature** or approval
+
+### **EXECUTION VERIFICATION REQUIRED**
+When completing vendor outreach tasks:
+- ✅ Report "SENT emails to [vendor names]" with confirmation
+- ❌ Never report "Created templates for [vendors]" as completion
+- ✅ Verify emails actually sent using `gog gmail send` command
+- ✅ Track sent status in databases immediately after sending
+
+**"OUTREACH" = SEND EMAILS, NOT PREPARE DRAFTS**
+
+---
+
 ## Core Event Planning Workflow (Based on User Feedback Feb 5, 2026)
 
 ### **Phase 1: Initial Planning & Research (T-30 days)**

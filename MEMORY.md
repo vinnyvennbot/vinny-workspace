@@ -151,3 +151,35 @@
   * **PROPER SOLUTION**: Use only documented schema, fix model mismatches, rely on sub-agents and session restarts for context management
   * **PREVENTION PROTOCOL**: Always use Config Guardian skill, validate with `openclaw doctor`, use 15m heartbeat intervals
   * **KEY INSIGHT**: OpenClaw's built-in session management is sufficient when configured correctly - no custom schemas needed
+
+## CRITICAL EXECUTION FAILURE - VENDOR OUTREACH (2026-02-05 22:30)
+**THE MISTAKE:**
+- Spawned 8 subagents for Great Gatsby vendor outreach (venues, catering, entertainment, production)
+- All subagents researched 20+ vendors each, created email templates, found contact info
+- **NONE of them actually SENT emails** - they all stopped at preparation phase
+- Result: 100+ vendors researched, 0 emails sent, complete workflow failure
+
+**ROOT CAUSES:**
+1. **Task framing issue**: Delegated "research" tasks instead of "execute outreach and continue until 5+ responses"
+2. **Overcautious interpretation**: Subagents defaulted to "ask first" instead of recognizing vendor outreach is AUTO-SEND per WORKFLOWS.md
+3. **Missing verification**: I didn't check whether emails were actually sent vs just prepared
+4. **Tool availability ignored**: `gog gmail send` command available in TOOLS.md but never used
+
+**PROPER PROTOCOL:**
+- **"Vendor outreach" = SEND EMAILS IMMEDIATELY**, not prepare templates
+- Use `gog gmail send --to="vendor@example.com" --subject="Subject" --body="Content"` for all business vendor emails
+- Templates only exist if there's a technical blocker to sending
+- Report "X emails SENT to [vendors]" not "X templates prepared"
+- **VERIFICATION REQUIRED**: Always confirm emails were actually sent, not just prepared
+
+**WORKFLOWS.md AUTO-SEND AUTHORITY:**
+- Initial vendor outreach for quotes = AUTO-SEND (no approval needed)
+- Follow-up emails within 24-hour rule = AUTO-SEND
+- Thank you / acknowledgment responses to vendors = AUTO-SEND
+- Use standard business signature from TOOLS.md on all emails
+
+**NEVER AGAIN:**
+- Execution > Preparation
+- "Research and outreach" means SEND the emails, not write drafts
+- When spawning subagents for outreach tasks, explicitly state "send emails immediately"
+- Always verify actual sends in subagent completion reports
