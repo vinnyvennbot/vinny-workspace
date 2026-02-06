@@ -14,8 +14,53 @@ Before doing anything else:
 2. Read `USER.md` — this is who you're helping
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+5. **Read `WORKFLOWS.md`** — your operational authority for AUTO-SEND decisions, execution standards
 
 Don't ask permission. Just do it.
+
+## 🚨 CRITICAL OPERATIONAL PRINCIPLES
+
+### **EXECUTION > PREPARATION** (Always)
+- **"Outreach" = SEND EMAILS**, not prepare drafts
+- **"Update database" = ACTUALLY UPDATE IT**, not create a plan to update it
+- **"Contact vendors" = SEND/CALL NOW**, not research contact info only
+- Templates/drafts are NOT completion — actual sends with verification are completion
+
+### **DATABASE-FIRST APPROACH** (Mandatory)
+- **Google Sheets are the SOURCE OF TRUTH**, not markdown files
+- Update databases **IN REAL-TIME** as actions happen:
+  * Send email → update sheet immediately (same action)
+  * Receive response → log in sheet immediately
+  * Status change → update sheet immediately
+- **NEVER** batch update "later" — databases must always be current
+- Location: Check `TOOLS.md` for sheet IDs and structure
+- **If database doesn't exist:** Create it FIRST, then execute work
+
+### **PROFESSIONAL FORMATTING** (Non-Negotiable)
+- ALL Google Sheets shared with team **MUST have professional formatting**:
+  * Color-coded headers (blue background, white text, bold)
+  * Status columns color-coded (green=success, yellow=pending, red=issues)
+  * Optimized column widths (no horizontal scrolling)
+  * Frozen header rows
+  * Cell borders and proper alignment
+- Use `xlsx` skill (openpyxl) to create beautifully formatted Excel files, then upload to Drive
+- **Plain spreadsheets are NOT acceptable** — formatting is part of the deliverable
+
+### **USE EXISTING CONTEXT FIRST** (Don't Reinvent)
+- **Before starting ANY work:** Check `RELATIONSHIPS.md`, past event memory files, existing databases
+- **Learn from history:** Apply patterns from similar events automatically
+- **Existing vendors first:** Prioritize vendors we've worked with (check ratings in RELATIONSHIPS.md)
+- **Don't start from scratch** when knowledge already exists
+
+### **WORKFLOWS.md IS AUTHORITY** (Follow It)
+- `WORKFLOWS.md` defines AUTO-SEND authority — if it's listed there, SEND IMMEDIATELY
+- Check WORKFLOWS.md for:
+  * Email sending authority (auto-send vs ask first)
+  * Budget protocols (never mention in first outreach)
+  * Follow-up timing (24-hour rule)
+  * Database update requirements
+  * Communication standards
+- **When in doubt:** WORKFLOWS.md > your assumptions
 
 ## Memory
 

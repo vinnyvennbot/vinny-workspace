@@ -1,5 +1,41 @@
 # WORKFLOWS.md - Event Planning Standard Operating Procedures
 
+## ⚡ EXECUTION PRINCIPLES (READ FIRST)
+
+### **This File Is Your Authority**
+- WORKFLOWS.md defines when to **EXECUTE** vs when to **ASK**
+- If this file says AUTO-SEND → **SEND IMMEDIATELY**, no approval needed
+- If this file says ASK FIRST → Get explicit approval before acting
+- When in doubt: Check this file FIRST, not your assumptions
+
+### **Execution = Complete Action + Database Update**
+Completing a task means BOTH:
+1. ✅ **Action taken** (email sent with message ID, call made, response logged)
+2. ✅ **Database updated** (Google Sheet updated immediately with action details)
+
+**NOT complete:**
+- ❌ "Created email template" (no send = no execution)
+- ❌ "Researched vendors" (no contact = no execution)
+- ❌ "Plan to update database" (no actual update = no execution)
+
+### **Default Mode: Proactive Execution**
+- Don't default to "ask first" / "prepare draft" mode
+- If WORKFLOWS.md lists it as AUTO-SEND → **SEND IT**
+- If database needs updating → **UPDATE IT NOW**
+- If formatting is required → **FORMAT IT BEFORE SHARING**
+
+### **Reference Chain**
+```
+WORKFLOWS.md (authority) 
+  ↓ defines AUTO-SEND categories
+TOOLS.md (implementation)
+  ↓ shows how to execute + update databases  
+AGENTS.md (principles)
+  ↓ explains execution > preparation mindset
+```
+
+---
+
 ## EMAIL EXECUTION AUTHORITY (CRITICAL - Added Feb 5, 2026)
 
 ### **AUTO-SEND EMAILS (Execute Immediately - No Approval Needed)**
@@ -35,6 +71,59 @@ When completing vendor outreach tasks:
 - ✅ Track sent status in databases immediately after sending
 
 **"OUTREACH" = SEND EMAILS, NOT PREPARE DRAFTS**
+
+---
+
+## 🗄️ DATABASE MANAGEMENT (MANDATORY REAL-TIME UPDATES)
+
+### **Google Sheets = Source of Truth**
+**CRITICAL:** All vendor/venue interactions tracked in real-time in Google Sheets, NOT markdown files.
+
+### **Database Update Protocol**
+**Every action requires immediate database update:**
+
+```
+SEND EMAIL → UPDATE SHEET (same minute)
+RECEIVE RESPONSE → LOG IN SHEET (immediately)  
+MAKE PHONE CALL → RECORD IN SHEET (right after)
+STATUS CHANGE → UPDATE SHEET (real-time)
+```
+
+### **Update Workflow Example**
+```bash
+# 1. Send vendor email
+gog gmail send --to="vendor@example.com" --subject="..." --body="..."
+# Message ID: 19c31a6ae1f38b48
+
+# 2. IMMEDIATELY update Google Sheet (same action)
+gog sheets update SHEET_ID "A5:J5" \
+  "Vendor Name" "Category" "vendor@example.com" "555-1234" \
+  "Specialty" "2026-02-05" "22:31 PST" "Email Sent - Awaiting Response" \
+  "19c31a6ae1f38b48" "Notes about inquiry"
+
+# 3. Commit tracking
+git add -A && git commit -m "Contacted Vendor Name - database updated"
+```
+
+### **Database Locations (See TOOLS.md for IDs)**
+- **Venues:** Database/Venues/Event Venues Master
+- **Vendors:** Database/Vendors/vendors_master_formatted.xlsx
+- **Partners:** Database/Partners/
+- **Sponsors:** Database/Sponsors/
+
+### **NEVER:**
+- ❌ Create tracking in markdown files instead of sheets
+- ❌ Batch updates "at the end of day"
+- ❌ Share unformatted sheets with team
+- ❌ Skip database updates because "I'll do it later"
+
+### **Professional Formatting Required**
+Before sharing ANY sheet with team:
+- Blue header row (white bold text)
+- Color-coded status column (green/yellow/red)
+- Optimized column widths (no scrolling)
+- Frozen header rows
+- Use `xlsx` skill for formatting (see TOOLS.md)
 
 ---
 
