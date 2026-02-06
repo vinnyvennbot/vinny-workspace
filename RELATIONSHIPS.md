@@ -131,6 +131,29 @@
 
 ---
 
+## **Great Gatsby Festival Vendor Relationships (EVT-003, 1000 Guests)**
+
+### **Catering Vendors**
+
+**Fraiche Catering** ⭐⭐⭐⭐⭐
+- **Contact:** Laura Schoolcraft (CFO/Director of Operations), 925-389-0348, laura@fraichecater.com
+- **Team:** Chi Luong (Senior Event Specialist), Mia Navellier, Christopher Woods
+- **Specialty:** Award-winning custom menu planning, large-scale themed events
+- **Website:** fraichecater.com
+- **Gallery:** https://fraichecater.com/maingallery
+- **Status:** Responded Feb 6, 06:36 PST - Very enthusiastic
+- **Response Time:** 8 hours (excellent)
+- **Next Action:** Chi Luong will schedule discovery call
+- **Strengths:** 
+  - Reviewed vennsocial.co website and loved the concept
+  - Offering venue assistance if needed
+  - Full team collaboration on proposal (operational planning + design)
+  - Experience with large-scale events
+  - Immediate internal team coordination (CC'd full team)
+- **Notes:** High-quality lead, genuine excitement about Gatsby theme, professional multi-person response
+
+---
+
 ## **Great Gatsby Festival Vendor Research (1000-Person Event)**
 
 ### **Jazz Bands & 1920s Music**
