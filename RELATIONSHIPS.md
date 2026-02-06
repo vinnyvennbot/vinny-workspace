@@ -129,6 +129,21 @@
 - **Next Action**: Provide event details for quote
 - **Notes**: Professional corporate photographer, properly sizing team for large yacht event
 
+**Jack Simpson Photography** ⭐⭐⭐⭐⭐
+- **Contact**: Jack Simpson, 707-690-0106, jack@jacksimpson.com
+- **Website**: jacksimpson.com
+- **Quote**: $300/hour ($1,800 estimate for 6 hours all-inclusive)
+- **Experience**: 10 years low-light and dynamic environments, recent marine/yacht work
+- **Yacht Portfolio**: 
+  - https://client.jacksimpson.com/malibu/
+  - https://client.jacksimpson.com/johnlauren/
+  - https://client.jacksimpson.com/katiaandpavel/
+- **Deliverables**: Shooting, professional editing, next-day delivery via private gallery
+- **Status**: Responded Feb 6, 08:51 PST - Full quote provided
+- **Response Time**: 8.5 hours (good)
+- **Next Action**: Provide event date/time for formal quote and contract
+- **Notes**: Most budget-friendly option with proven yacht experience, solo photographer
+
 ### **AV/Technical Production Vendors**
 
 **Verducci Event Productions** ⭐⭐⭐⭐⭐
