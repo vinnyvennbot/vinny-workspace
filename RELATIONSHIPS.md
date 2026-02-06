@@ -143,14 +143,21 @@
 - **Next Action:** Answer questions once EVT-004 details locked
 - **Notes:** STRONGEST AV LEAD - proven SF yacht experience with major client (Giants), full-service production company
 
-**Stage, Lights & Sound Co. (A Caballero Productions)** ⭐⭐⭐⭐
+**Stage, Lights & Sound Co. (A Caballero Productions)** ⭐⭐⭐⭐⭐
 - **Contact:** Albert Caballero, 415-652-0080, stagelightsandsound@gmail.com
-- **Experience:** Boat parties in the past
+- **🚢 OWNS 4 BOATS:** "Very familiar with the water"
+- **Marine Experience:** 
+  - USS Jeremiah O'Brien (historic WWII ship) - Audio/video viewing platform for World Cup
+  - Previous boat party setups
+  - Personal boat ownership (4 boats)
+- **Quote:** $3,500 with technicians included
+- **Equipment:** Small footprint speakers throughout yacht, Shure ULXD wireless mics
 - **Services:** Sound systems, video walls, stage, lighting, draping, tents
-- **Status:** Responded Feb 6, 07:28 PST - Interested, asking for date
-- **Response Time:** 7.5 hours (good)
-- **Next Action:** Awaiting capabilities/pricing details response
-- **Notes:** First AV vendor with confirmed yacht/boat experience (critical for EVT-004)
+- **Status:** Full quote received Feb 6, 08:33 PST
+- **Response Time:** 1 hour follow-up (excellent)
+- **Questions Asked:** Load/unload location (city/pier, same dock?)
+- **Next Action:** Provide venue/dock details once EVT-004 locked
+- **Notes:** FIRST CONCRETE YACHT AV QUOTE - uniquely qualified with personal boat ownership + USS Jeremiah O'Brien credentials
 
 **Geoevent LLC** ⭐⭐⭐⭐
 - **Contact:** David C., 818-478-2009, info@geoevent.net
