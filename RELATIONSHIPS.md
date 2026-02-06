@@ -86,6 +86,25 @@
 
 ## **Murder Mystery Yacht Vendor Relationships (EVT-004, 400 Guests)**
 
+### **Catering Vendors**
+
+**SF Catering Company** ⭐⭐⭐⭐⭐
+- **Contact:** Dani, 1877-789-4377, info@sfcateringcompany.com
+- **Website:** www.sfcateringcompany.com
+- **Experience:** Yacht/boat events experience confirmed
+- **Capacity:** 400 guests (requires Executive Chef approval for 100+)
+- **Services:** Full Service Buffet, bartending ($60/hr), rentals, staging/decor
+- **Status:** Responded Feb 6, 07:29 PST - Full custom quote PDF created
+- **Response Time:** 7.5 hours (excellent)
+- **Quote:** Full Service Buffet Dinner package (PDF saved: SF_Catering_Quote_EVT004.pdf)
+- **Booking Notes:** 
+  - Experiencing "extremely high demand" - books far in advance
+  - Need signed contract + CC 10 days before event
+  - Weekend/full service events especially competitive
+- **Questions Asked:** Event details (address, times, kitchen onsite, water, sternos, etc.)
+- **Next Action:** Review quote PDF, fill questionnaire once EVT-004 details locked
+- **Notes:** Professional, immediate quote turnaround, established yacht experience
+
 ### **Photography Vendors**
 
 **Ian Chin Photography** ⭐⭐⭐⭐⭐
@@ -123,6 +142,13 @@
 - **Notes**: Professional acknowledgment, appropriate follow-up timeline
 
 ### **Declined/Not Suitable**
+
+**CSZ San Jose (Jeff Kramer)** ⚠️
+- **Contact:** jeff@cszsanjose.com
+- **Status:** Declined Feb 6, 07:39 PST - "We don't do murder mystery"
+- **Response Time:** 5.5 hours (professional decline)
+- **Alternative:** Offers entertainment/team building options (since 1987)
+- **Notes:** Not suitable for EVT-004, but could use for non-murder mystery events
 
 **Impact SF (Dan Kervick)** ⚠️
 - **Contact**: dank@impactsf.com, 510-965-4664 (office), 650-222-2476 (cell)
