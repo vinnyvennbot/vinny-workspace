@@ -1,0 +1,11 @@
+Event_ID,Company_Name,Contact_Email,Contact_Phone,Website,Contact_Verified,Verification_Method,Verification_Date,Status,Notes
+EVT-004,The Clue Collective,booking@thecluecollective.com,(408) 831-2583,https://www.thecluecollective.com,Yes,Website + Google Places,2026-02-06,Verified,San Jose based - serves Bay Area
+EVT-004,The Speakeasy SF,boxoffice@thespeakeasysf.com,415.226.9680,https://thespeakeasysf.com,Yes,Website,2026-02-06,Verified,Immersive theater at Palace Theater SF
+EVT-004,THEY Improv,info@THEYimprov.com,415.360.5450,https://theyimprov.com,Yes,Website,2026-02-06,Verified,Murder mystery & improv for SF Bay Area
+EVT-004,The Murder Mystery Company,,( 888) 643-2583,https://murdermysterydinnersanfrancisco.com,Pending,Phone only - no email,2026-02-06,Phone Only,Contact form only - phone verified
+EVT-004,The Dinner Detective,,(866) 496-0535,https://www.thedinnerdetective.com,Pending,Phone only - no email,2026-02-06,Phone Only,National company - SF location
+EVT-004,MysteryHouse Performers,,(925) 414-2133,https://mysteryhouseperformers.com,Pending,Phone only - no email,2026-02-06,Phone Only,Bay Area murder mystery dinner theater
+EVT-004,Mysteries For Hire,,,https://www.mysteriesforhire.com,No,Website failed to load,2026-02-06,Unable to Verify,Hit & Run Productions - website inaccessible
+EVT-004,Dead Beats & Co.,,,https://www.dead-beats.com,No,Minimal website info,2026-02-06,Unable to Verify,Immersive murder mystery musical dinner events
+EVT-004,Epic Immersive,,,https://epicimmersive.com,No,No contact page found,2026-02-06,Unable to Verify,Large-scale immersive experiences - may not fit murder mystery
+EVT-004,A Touch of Mystery,,,https://atouchofmystery.com,No,Website has extensive info but no direct contact,2026-02-06,Research Needed,Based in Las Vegas - serves corporate events

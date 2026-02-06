@@ -1,5 +1,19 @@
 # TOOLS.md - Local Tool Configuration
 
+## ⚡ API RATE LIMITS & EFFICIENCY RULES
+
+### **Brave Search API**
+- **CRITICAL RATE LIMIT:** Maximum 1 request per second
+- Always wait at least 1 second between consecutive web_search calls
+- Batch research needs instead of rapid-fire searches
+
+### **Browser Usage**
+- **❌ NEVER use browser UI for automation** - extremely inefficient and wastes tokens
+- ✅ Use direct APIs (gog, web_fetch, web_search) instead
+- Browser is for visual verification only, not data extraction
+
+---
+
 ## 🗄️ DATABASE LOCATIONS & REAL-TIME UPDATE PROTOCOL
 
 ### **Google Sheets - Source of Truth**

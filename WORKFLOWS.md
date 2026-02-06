@@ -76,11 +76,39 @@ AGENTS.md (principles)
 ✅ **Thank you / acknowledgment** responses to vendors  
 ✅ **Schedule confirmations** and logistics coordination  
 ✅ **Database update requests** to vendors for missing information
+✅ **VERIFIED VENDOR EMAILS** - Once Phase 1 verification complete, proceed directly to Phase 2 sends (Added 2026-02-06)
 
-**HOW TO SEND:**
+### **🚨 MANDATORY EMAIL VERIFICATION BEFORE SENDING**
+**CRITICAL:** NEVER send emails without verifying contact details first.
+
+**Verification Protocol (REQUIRED FOR EVERY EMAIL):**
+1. **Find vendor website** via web search
+2. **Check official contact page** for email addresses
+3. **Use goplaces CLI** to verify business contact info: `goplaces text-search "Vendor Name San Francisco"`
+4. **Verify email format** - never assume "info@" or "events@" without checking
+5. **NO GUESSING** - if contact info not found, research more or skip vendor
+
+**How to Verify:**
 ```bash
-gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[email content]"
+# Option 1: Google Places API (most reliable)
+goplaces text-search "Vendor Name San Francisco" --format json
+
+# Option 2: Check website contact page
+web_fetch https://vendorwebsite.com/contact
+
+# Option 3: Web search for contact info
+web_search "Vendor Name San Francisco contact email"
 ```
+
+**Only send AFTER verification:**
+```bash
+gog gmail send --to="verified@vendor.com" --subject="..." --body="..."
+```
+
+**If email bounces:**
+- ❌ DO NOT retry with guessed addresses
+- ✅ Research alternative contact methods (phone, contact form)
+- ✅ Mark in database as "Contact Info Needed"
 
 **SIGNATURE REQUIRED:** Use standard business signature from TOOLS.md on ALL emails
 

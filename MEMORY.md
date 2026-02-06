@@ -28,6 +28,12 @@
 - **EMAIL VERIFICATION:** Always verify email addresses exist before sending - use Google Places to find correct contact details
 - **CONTACT RESEARCH:** Never assume email formats - always research actual contact information through official sources
 - **24-HOUR FOLLOW-UP RULE:** If vendor/venue inquiries receive no response within 24 hours, send a polite follow-up email
+- **🚨 NEVER INCLUDE INTERNAL IDS IN EXTERNAL EMAILS (2026-02-05):**
+  * **CRITICAL:** Event IDs (EVT-001, EVT-002, EVT-003, etc.) are INTERNAL ONLY
+  * NEVER include event IDs in subject lines or email body when contacting vendors/venues/sponsors
+  * Use professional subject lines: "Great Gatsby Festival Inquiry", "Venue Inquiry for Private Event", etc.
+  * Internal reference codes are for OUR database tracking and organization only
+  * This is a major professionalism issue - external contacts should NEVER see our internal codes
 - **EMAIL TONE & STRUCTURE:** Always use warm, excited, and respectful tone for ALL outreach
   * Must not feel AI-generated - clean, structured, but readable and natural
   * **CRITICAL EMAIL FORMATTING (2026-02-05):** Use normal paragraph structure like humans write
