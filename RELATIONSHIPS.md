@@ -119,7 +119,29 @@
 - **Next Action**: Provide event date/time once confirmed
 - **Notes**: Professional, enthusiastic, has proven yacht event experience
 
+**Michaela Joy Photography** ⭐⭐⭐⭐
+- **Contact**: Michaela Joy O'Shea (CEO/Head Photographer), 707-931-9609, mjoy@mjoyphoto.com
+- **Websites**: mjoyphoto.com (corporate), mjoyphotoweddings.com (weddings)
+- **Team**: Suggesting 2-3 photographers for 400-guest event
+- **Status**: Responded Feb 6, 08:17 PST - Interested, ready to quote
+- **Response Time**: 8 hours (good)
+- **Questions Asked**: Event date, hours needed, embarkation location
+- **Next Action**: Provide event details for quote
+- **Notes**: Professional corporate photographer, properly sizing team for large yacht event
+
 ### **AV/Technical Production Vendors**
+
+**Verducci Event Productions** ⭐⭐⭐⭐⭐
+- **Contact:** Andrew Verducci (Founder/CEO), (415) 545-8635, (650) 307-2207 mobile, andrew@wearevep.com
+- **Website:** wearevep.com
+- **🚢 SF GIANTS YACHT EXPERIENCE:** "We have worked on the SF Spirit, which is the SF Giants Yacht"
+- **Services:** Full AV production, entertainment, video production, brand activation
+- **Status:** Responded Feb 6, 08:20 PST - Very enthusiastic: "We would love to be a part of your event"
+- **Response Time:** 8 hours (excellent)
+- **Capabilities:** Sent full capabilities deck
+- **Questions Asked:** Date, AV budget, entertainment/video/brand activation needs, start/end time, install time, yacht photos
+- **Next Action:** Answer questions once EVT-004 details locked
+- **Notes:** STRONGEST AV LEAD - proven SF yacht experience with major client (Giants), full-service production company
 
 **Stage, Lights & Sound Co. (A Caballero Productions)** ⭐⭐⭐⭐
 - **Contact:** Albert Caballero, 415-652-0080, stagelightsandsound@gmail.com
