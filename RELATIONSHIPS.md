@@ -164,6 +164,18 @@
 - **Next Action**: Provide event date/time for formal quote and contract
 - **Notes**: Most budget-friendly option with proven yacht experience, solo photographer
 
+**Drew Bird Photo** ⭐⭐⭐⭐
+- **Contact**: Shae (Studio Manager), +1.503.545.7580, studio@drewbirdphoto.com
+- **Style**: Commercial & editorial photography (high-impact imagery, visual direction)
+- **Team**: Creative studio team approach
+- **Location**: San Francisco + International
+- **Status**: Responded Feb 6, 09:25 PST - Very interested: "Fantastic project - truly a great fit for our creative team"
+- **Response Time**: 9.5 hours (good)
+- **Materials**: Sent PDF brochure for review
+- **Questions Asked**: Event date (Drew onsite with projects this week)
+- **Next Action**: Provide event date for quote
+- **Notes**: More editorial/commercial approach vs traditional event photography, studio-based team
+
 ### **AV/Technical Production Vendors**
 
 **Verducci Event Productions** ⭐⭐⭐⭐⭐
