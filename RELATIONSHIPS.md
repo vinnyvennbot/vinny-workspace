@@ -84,6 +84,44 @@
 - **B-tier vendors** (3-4⭐): Quarterly updates, seasonal availability checks
 - **C-tier vendors** (1-2⭐): Event-specific contact only
 
+## **Murder Mystery Yacht Vendor Relationships (EVT-004, 400 Guests)**
+
+### **Photography Vendors**
+
+**Ian Chin Photography** ⭐⭐⭐⭐⭐
+- **Contact**: Ian Chin, 415-756-9335, ianchinphotography@gmail.com
+- **Team**: 3 photographers + 2 videographers
+- **Rates**: $450/hr (Ian lead) or $375/hr (associates)
+- **Delivery**: 3-5 business days
+- **Portfolio**: https://ianchinphotography.com/event-photographer-in-san-francisco
+- **Boat Experience**: https://ianchinphotography.smugmug.com/Events/Lettieri-30th-Year-Event-91518
+- **Status**: Responded Feb 6, 01:02 PST - Interested and available
+- **Response Time**: <25 minutes (excellent)
+- **Next Action**: Provide event date/time once confirmed
+- **Notes**: Professional, enthusiastic, has proven yacht event experience
+
+### **Venue/Entertainment Vendors**
+
+**Palace Theater / Boxcar Theatre** ⭐⭐⭐
+- **Contact**: boxoffice@thepalacetheatersf.com, 415-226-9680
+- **Services**: Murder mystery events, private event space
+- **Website**: www.thepalacetheatersf.com, www.thespeakeasysf.com/events-rentals/
+- **Status**: Auto-reply received Feb 6, 00:23 PST
+- **Response Time**: Will respond within 48 business hours
+- **Next Action**: Wait for full response
+- **Notes**: Professional acknowledgment, appropriate follow-up timeline
+
+### **Failed Email Contacts**
+
+**Gatsby Events Studios** ❌
+- **Failed Email**: Info@gatsbyeventstudios.com (address doesn't exist)
+- **Date**: Feb 6, 00:31 PST
+- **Error**: 550 5.1.1 - Account does not exist
+- **Next Action**: Find alternative contact method or remove from list
+- **Notes**: Email address research error, need to verify before future outreach
+
+---
+
 ## **Great Gatsby Festival Vendor Research (1000-Person Event)**
 
 ### **Jazz Bands & 1920s Music**
