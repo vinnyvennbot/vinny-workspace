@@ -100,6 +100,17 @@
 - **Next Action**: Provide event date/time once confirmed
 - **Notes**: Professional, enthusiastic, has proven yacht event experience
 
+### **AV/Technical Production Vendors**
+
+**Stage, Lights & Sound Co. (A Caballero Productions)** ⭐⭐⭐⭐
+- **Contact:** Albert Caballero, 415-652-0080, stagelightsandsound@gmail.com
+- **Experience:** Boat parties in the past
+- **Services:** Sound systems, video walls, stage, lighting, draping, tents
+- **Status:** Responded Feb 6, 07:28 PST - Interested, asking for date
+- **Response Time:** 7.5 hours (good)
+- **Next Action:** Awaiting capabilities/pricing details response
+- **Notes:** First AV vendor with confirmed yacht/boat experience (critical for EVT-004)
+
 ### **Venue/Entertainment Vendors**
 
 **Palace Theater / Boxcar Theatre** ⭐⭐⭐
