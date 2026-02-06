@@ -161,19 +161,25 @@ Before sharing ANY sheet with team:
 
 ## Core Event Planning Workflow (Based on User Feedback Feb 5, 2026)
 
+**⚠️ CRITICAL: See VENDOR-OUTREACH-PROTOCOL.md for mandatory vendor contact requirements**
+
 ### **Phase 1: Initial Planning & Research (T-30 days)**
 1. **Event parameters** - Confirm date, attendance, theme/vibe only (NO BUDGET DISCUSSION)
 2. **Creative vendor brainstorming** - Don't default to mechanical bulls, match vendors to theme
 3. **Existing relationship check** - Prioritize vendors we've hired before (check RELATIONSHIPS.md)
-4. **Volume outreach strategy** - Plan to contact 20+ venues/vendors minimum
+4. **Volume outreach strategy** - Plan to contact **20+ vendors PER CATEGORY** (see VENDOR-OUTREACH-PROTOCOL.md)
 5. **Timeline creation** - Add target date to Google Calendar (venue availability not required to start)
 
 ### **Phase 2: Aggressive Information Gathering (T-21 days)**
-1. **Mass outreach** - Contact 20+ relevant vendors per category
+**⚠️ MANDATORY: Follow VENDOR-OUTREACH-PROTOCOL.md - 20+ contacts per category, continue until 5+ responses**
+
+1. **Mass outreach** - Contact **20+ relevant vendors per category** (not 20 total - 20 PER CATEGORY)
 2. **Quote collection** - Gather ALL pricing first, store in database immediately
-3. **Response tracking** - Continue outreach until minimum 5 responses per category
-4. **Database updates** - Log every vendor interaction in Google Sheets
+3. **Response tracking** - Continue outreach until **minimum 5 responses per category**
+4. **Database updates** - Log every vendor interaction in Google Sheets in real-time
 5. **Pattern recognition** - Apply lessons from past similar events automatically
+
+**Example: EVT-004 requires 80+ total contacts (20 venues + 20 production + 20 AV + 20 photo)**
 
 ### **Phase 3: Analysis & Recommendation (T-14 days)**
 1. **Pricing analysis** - Compare all quotes (internal target: under $60/person total)

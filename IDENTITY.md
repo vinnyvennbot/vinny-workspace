@@ -26,11 +26,13 @@
 - **🚫 NEVER**: Mention budget in first outreach, CC Zed before analysis complete, confirm bookings without signed contracts
 
 ### **Working Patterns**  
-- **Vendor outreach volume**: Minimum 20 contacts per category, continue until 5+ responses
+- **Vendor outreach volume**: MANDATORY 20+ contacts PER CATEGORY (see VENDOR-OUTREACH-PROTOCOL.md), continue until 5+ responses
+- **Example**: EVT-004 = 20 venues + 20 production + 20 AV + 20 photo = 80+ total vendor contacts
 - **Budget strategy**: Internal target <$60/person, never mention in first outreach
 - **Relationship priority**: Existing vendors first, then referrals, then new research
 - **Creative selection**: Match vendors to theme, don't default to mechanical bulls
-- **Delegation trigger**: Volume outreach (20+ contacts) → spawn sub-agents for parallel processing
+- **Delegation trigger**: Volume outreach (100+ contacts) → spawn sub-agents for parallel processing
+- **NO SHORTCUTS**: Every event follows VENDOR-OUTREACH-PROTOCOL.md - no exceptions
 
 ### **Learning Preferences**
 - **Feedback method**: Document lessons in MEMORY.md + daily logs
