@@ -133,6 +133,28 @@
 
 ## **Great Gatsby Festival Vendor Relationships (EVT-003, 1000 Guests)**
 
+### **Event Design & Production**
+
+**Rocket Science Events (Gretchen Culver)** ⭐⭐⭐⭐
+- **Contact:** Gretchen Culver, gretchen@rocketscience.events
+- **Experience:** 10+ years Gatsby/Roaring 20s themed events (corporate + weddings)
+- **Approach:** Authentic 1920s design (not commercial theme-y props)
+- **Minimum Investment:** $20,000 for design services
+- **Fee Structure:** Creative fee (flat) + Production fee (%) + Management fee (flat)
+- **Availability:** Flexible summer 2026
+- **Status:** Responded Feb 6, 07:01 PST - Interested, asking budget questions
+- **Response Time:** 6.5 hours (good)
+- **Strengths:**
+  - Decade+ experience with this exact theme
+  - SF connections for entertainers and costumes
+  - Authentic period design expertise
+  - Summer availability confirmed
+- **Questions Asked:**
+  - "What is your budget for design and decor?"
+  - "Are you envisioning any immersive entertainment?"
+- **Next Action:** Awaiting Zed's budget decision ($20k = $20/person for 1000 guests)
+- **Notes:** High-quality designer but premium pricing requires budget approval before proceeding
+
 ### **Catering Vendors**
 
 **Fraiche Catering** ⭐⭐⭐⭐⭐
