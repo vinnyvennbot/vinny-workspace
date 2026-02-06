@@ -145,3 +145,9 @@
 - **Configuration**: All settings validated, backups created, enterprise-grade security posture (75/100 score)
 - **Result**: System now operates efficiently with ~90% cost savings and excellent security
 - **Documentation**: Full audit report and optimization summary created in workspace
+- **CONTEXT OVERFLOW LESSON (2026-02-05 22:30):** 
+  * **CRITICAL DISCOVERY**: OpenClaw doesn't support custom compaction settings like "aggressive" mode or session-level compaction
+  * **ROOT CAUSE**: Model ID mismatch (primary: claude-sonnet-4-20250514 vs allowed: claude-sonnet-4-5) caused validation failures
+  * **PROPER SOLUTION**: Use only documented schema, fix model mismatches, rely on sub-agents and session restarts for context management
+  * **PREVENTION PROTOCOL**: Always use Config Guardian skill, validate with `openclaw doctor`, use 15m heartbeat intervals
+  * **KEY INSIGHT**: OpenClaw's built-in session management is sufficient when configured correctly - no custom schemas needed

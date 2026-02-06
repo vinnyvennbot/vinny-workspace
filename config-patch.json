@@ -1,0 +1,26 @@
+{
+  "agents": {
+    "defaults": {
+      "compaction": {
+        "mode": "aggressive",
+        "preserveRecent": 10,
+        "preserveMemory": true
+      },
+      "heartbeat": {
+        "every": "15m",
+        "compactOnHeartbeat": true
+      },
+      "subagents": {
+        "maxConcurrent": 12,
+        "cleanup": "auto"
+      }
+    }
+  },
+  "session": {
+    "scope": "per-sender",
+    "compaction": {
+      "triggerAtTokens": 150000,
+      "targetTokens": 60000
+    }
+  }
+}

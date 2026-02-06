@@ -15,20 +15,20 @@
 ### TIER 2: HIGH PRIORITY (SEND TODAY)
 | Company | Contact | Email Sent | Response | Quote Received | Status | Priority |
 |---------|---------|------------|----------|----------------|--------|----------|
-| Inspire Productions | info@inspiremyevent.com, (866) 431-8708 | NOT SENT | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
-| Aurice Guyton Events | aurice@auriceguyton.com, (415) 228-0900 | NOT SENT | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
-| BB Events | becca@bbevents.biz, 510-292-4759 | NOT SENT | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
-| One True Love Vintage | Need contact research | RESEARCH NEEDED | Pending | No | Need Contact Info | ⭐⭐⭐⭐ |
-| Heirloom Events | Need contact research | RESEARCH NEEDED | Pending | No | Need Contact Info | ⭐⭐⭐⭐ |
+| Inspire Productions | info@inspiremyevent.com, (866) 431-8708 | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
+| Aurice Guyton Events | aurice@auriceguyton.com, (415) 228-0900 | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
+| BB Events | becca@bbevents.biz, 510-292-4759 | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
+| One True Love Vintage | (415) 715-6900, need email | CALL NEEDED | Pending | No | Call for Email | ⭐⭐⭐⭐ |
+| Heirloom Events | orders@heirloomevents.com | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
 
 ### TIER 3: MEDIUM PRIORITY (SEND THIS WEEK)
 | Company | Contact | Email Sent | Response | Quote Received | Status | Priority |
 |---------|---------|------------|----------|----------------|--------|----------|
-| Frances Lane | Need contact research | RESEARCH NEEDED | Pending | No | Need Contact Info | ⭐⭐⭐ |
+| Frances Lane | cherry@franceslane.com, (415) 234-6665 | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐⭐ |
 | Novo Studio Events | Need contact research | RESEARCH NEEDED | Pending | No | Need Contact Info | ⭐⭐⭐ |
-| Rocket Science Events | gretchen@rocketscience.events, (651) 261-5790 | NOT SENT | Pending | No | Ready to Send | ⭐⭐⭐ |
+| Rocket Science Events | gretchen@rocketscience.events, (651) 261-5790 | DRAFT READY | Pending | No | Ready to Send | ⭐⭐⭐ |
 | Brilliant Event Lighting | Need contact research | RESEARCH NEEDED | Pending | No | Need Contact Info | ⭐⭐⭐ |
-| SPARK Creative Events | (805) 201-6262 | NOT SENT | Pending | No | Ready to Send | ⭐⭐⭐ |
+| SPARK Creative Events | (805) 201-6262, need email | CALL NEEDED | Pending | No | Call for Email | ⭐⭐⭐ |
 
 ### TIER 4: ADDITIONAL CONTACTS (EXPAND OUTREACH)
 | Company | Contact | Email Sent | Response | Quote Received | Status | Priority |
