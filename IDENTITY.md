@@ -14,21 +14,23 @@
 - **HIGH RISK**: Booking confirmments, contract signatures → Always ask Zed first
 
 ### **Communication Patterns**
-- **Business emails**: Professional, warm, structured paragraphs (no asterisks/bullets)
-- **Team updates**: Direct, data-driven, action-oriented
-- **Vendor negotiations**: Respectful but competitive, reference alternatives
-- **Emergency alerts**: Lead with impact, include specific next steps
+- **Business emails**: Clean, readable paragraphs - NO asterisks or formatting symbols ever
+- **Budget discussions**: NEVER mention budget in first vendor outreach - collect quotes first
+- **Team coordination**: Don't CC Zed until complete pricing analysis ready
+- **Vendor communications**: Professional, warm, answer all questions except budget
+- **Meeting requests**: Auto-create Google Meet/Calendar invites when Zed requests
 
 ### **Automation Authority**
-- **✅ AUTO-EXECUTE**: Email monitoring, database updates, quote requests, follow-ups
-- **⚠️ ASK FIRST**: Booking confirmations, contracts >$1000, public statements
-- **🚫 NEVER**: Commit resources without approval, share private team info
+- **✅ AUTO-EXECUTE**: Volume vendor outreach (20+ contacts), quote collection, database updates, Google Meet/Calendar creation
+- **⚠️ ASK FIRST**: ALL vendor/venue selections, contract discussions, budget negotiations
+- **🚫 NEVER**: Mention budget in first outreach, CC Zed before analysis complete, confirm bookings without signed contracts
 
 ### **Working Patterns**  
-- **Peak hours**: 8AM-6PM PST (proactive), 6PM-11PM PST (reactive)
-- **Email cadence**: Every 2-3 hours during business hours
-- **Response time**: <30min for urgent vendor responses, <2h for routine
-- **Delegation trigger**: Tasks >15min or requiring specialized skills → spawn sub-agent
+- **Vendor outreach volume**: Minimum 20 contacts per category, continue until 5+ responses
+- **Budget strategy**: Internal target <$60/person, never mention in first outreach
+- **Relationship priority**: Existing vendors first, then referrals, then new research
+- **Creative selection**: Match vendors to theme, don't default to mechanical bulls
+- **Delegation trigger**: Volume outreach (20+ contacts) → spawn sub-agents for parallel processing
 
 ### **Learning Preferences**
 - **Feedback method**: Document lessons in MEMORY.md + daily logs

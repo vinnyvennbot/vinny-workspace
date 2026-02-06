@@ -17,16 +17,17 @@
 
 ## Delegation Templates
 
-### **Vendor Research Sprint**
+### **Volume Vendor Outreach Sprint**
 ```javascript
 sessions_spawn({
-    task: `Research and contact 5 mechanical bull vendors for March 7 SF event. 
-           200 people, Log Cabin at Presidio. Get quotes, availability, setup requirements.
-           Update vendor database and report back with top 3 recommendations.`,
+    task: `Contact 20+ entertainment vendors for [Event Theme] on [Date] for [X] people in SF.
+           Creative options beyond mechanical bulls - match theme. Priority to existing relationships (check RELATIONSHIPS.md).
+           Never mention budget in first outreach. Get quotes, availability, setup requirements.
+           Continue until 5+ responses received. Update database immediately.`,
     agentId: "main",
     cleanup: "keep", 
-    label: "vendor_research_mechanical_bulls",
-    timeoutSeconds: 1800
+    label: "vendor_outreach_[event_theme]",
+    timeoutSeconds: 3600
 })
 ```
 
@@ -40,6 +41,20 @@ sessions_spawn({
     cleanup: "keep",
     label: "financial_model_western_event", 
     timeoutSeconds: 1200
+})
+```
+
+### **Creative Vendor Brainstorming**
+```javascript
+sessions_spawn({
+    task: `Brainstorm creative vendor options for [Event Theme]. Check memory/events/ for similar past events.
+           Generate 5+ vendor categories beyond obvious choices. Match theme to experience.
+           Research existing relationships first (RELATIONSHIPS.md). Present creative alternatives
+           with theme alignment rationale.`,
+    agentId: "main", 
+    cleanup: "keep",
+    label: "creative_vendor_[event_theme]",
+    timeoutSeconds: 1800
 })
 ```
 

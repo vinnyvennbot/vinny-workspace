@@ -3,13 +3,15 @@
 **Write-Ahead Log Protocol: WRITE STATE BEFORE RESPONDING**
 
 ## Current Task
-COMPLETED: System improvement implementation - Phase 1: Local security, memory, and config protection
+Incorporating comprehensive event planning feedback from user - critical workflow updates needed
 
 ## Key Context
-- User rejected API-key requiring solutions (no ClawGuard, no Mem0, no vector search)  
-- Focus on local-only, filesystem-based improvements
-- Current security score: 75/100 (needs improvement)
-- Evolution cycle #0001 completed: IDENTITY.md, WORKFLOWS.md, RELATIONSHIPS.md, DELEGATION-PROTOCOL.md created
+- **CRITICAL FEEDBACK**: User provided detailed event planning process refinements
+- **Budget Strategy**: Internal target <$60/person, NEVER mention budget in first outreach - collect quotes first
+- **Vendor Strategy**: Contact 20+ vendors, get 5+ responses, prioritize existing relationships, be creative beyond mechanical bulls
+- **Communication**: Clean emails (no ** formatting), don't CC Zed until pricing complete
+- **Approvals**: Zed approves ALL vendor/venue selections, wait for signed contracts
+- System evolution cycle #0001 completed, now applying user feedback to workflows
 
 ## Active Work Session
 - **Started**: 2026-02-06 20:20 PST
@@ -31,6 +33,12 @@ COMPLETED: System improvement implementation - Phase 1: Local security, memory, 
 - **2026-02-06**: WAL Protocol implemented via SESSION-STATE.md
 - **2026-02-06**: Rejected external API dependencies per user preference  
 - **2026-02-06**: Focus on local filesystem-based improvements only
+- **2026-02-05 21:29**: MAJOR WORKFLOW UPDATE - comprehensive event planning feedback integration
+  * Budget strategy: <$60/person internal, never mention in first outreach
+  * Volume outreach: 20+ vendors minimum, 5+ responses required
+  * Creative selection: match theme, prioritize existing relationships  
+  * Clean communication: no asterisks/formatting, professional only
+  * Approval process: Zed approves ALL selections, wait for signed contracts
 
 ## Persistent Context (Survives Restart)
 - **Insurance Requirements**: Let's Party vendor still waiting since Feb 5, 2:59 PM  
