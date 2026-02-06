@@ -84,6 +84,140 @@
 - **B-tier vendors** (3-4⭐): Quarterly updates, seasonal availability checks
 - **C-tier vendors** (1-2⭐): Event-specific contact only
 
+## **Great Gatsby Festival Vendor Research (1000-Person Event)**
+
+### **Jazz Bands & 1920s Music**
+
+**Radio Gatsby** ⭐⭐⭐⭐⭐
+- **Contact**: 415-602-3305, inquiries@radiogatsby.com
+- **Specialty**: 1920s & Speakeasy Jazz, Big Band Swing
+- **Strength**: Modular sizing (trio to 10-piece), SF-based premier band
+- **Status**: HIGH PRIORITY - Perfect Gatsby fit
+- **Response Time**: TBD
+- **Next Action**: Send inquiry immediately
+
+**Royal Society Jazz Orchestra** ⭐⭐⭐⭐⭐
+- **Contact**: 707-765-2055, www.rsjo.com
+- **Specialty**: Authentic 1920s and '30s music
+- **Strength**: 11-piece orchestra, Art Deco Society favorite
+- **Status**: HIGH PRIORITY - Proven Gatsby performer
+- **Next Action**: Call for availability
+
+**Retro JukeBox Band** ⭐⭐⭐⭐
+- **Website**: www.retrojukeboxband.com
+- **Specialty**: 1920s-1960's Jazz, Blues, high energy
+- **Status**: Research contact via website form
+- **Notes**: Bay Area based, extensive testimonials
+
+**Magnolia Jazz Band** ⭐⭐⭐⭐
+- **Contact**: 408-245-9120, Robbie@MagnoliaJazz.com
+- **Specialty**: Jazz for weddings and events
+- **Status**: PRIORITY - Direct contact available
+- **Notes**: SF Bay Area based, Sunnyvale office
+
+**Campbell's Jazz Soup** ⭐⭐⭐⭐
+- **Contact**: 415-499-3316, info@campbellsjazz.com, www.campbellsjazz.com
+- **Specialty**: 1920s, 30s, 40s, 50s jazz and swing
+- **Status**: PRIORITY - Direct contact available
+- **Notes**: SF Bay Area festivals and weddings, 20+ years experience
+
+### **Dance Performers & Instructors**
+
+**AngieDance** ⭐⭐⭐⭐⭐
+- **Contact**: 415-820-9699, angiedance.com
+- **Services**: Charleston lessons, professional performances, group entertainment
+- **Status**: HIGH PRIORITY - Multi-service dance specialist
+- **Notes**: Can teach guests + perform professionally
+
+**Sara & Swingtime** ⭐⭐⭐⭐
+- **Contact**: 510-541-1069
+- **Leader**: Pianist/vocalist Sara Klotz de Aguilar
+- **Specialty**: 1930s dance band
+- **Status**: PRIORITY - Direct contact available
+
+**Cynthia Glinka** ⭐⭐⭐⭐
+- **Contact**: 415-485-5500, www.dancewithglinka.com
+- **Specialty**: "Roll Up the Carpets" Fred & Ginger style
+- **Status**: PRIORITY - Authentic period specialist
+
+**Nathan Dias** ⭐⭐⭐⭐
+- **Contact**: (415) 385-5929, nathan@swingornothing.com
+- **Specialty**: Swing dance instruction, performance, wedding DJ
+- **Status**: PRIORITY - Direct contact available  
+- **Notes**: Cats Corner founder, extensive SF swing dance experience
+
+### **Casino Table Rentals**
+
+**San Francisco Casino Party** ⭐⭐⭐⭐⭐
+- **Website**: sanfranciscocasinoparty.com
+- **Services**: Full casino setup, professional dealers, 10+ years experience
+- **Tables**: Blackjack, poker, roulette, craps, baccarat, pai-gow
+- **Extras**: Bartending, mixology, photo booths, décor
+- **Status**: HIGH PRIORITY - Comprehensive services
+- **Next Action**: Request quote via website
+
+**Full House Casino Events** ⭐⭐⭐
+- **Contact**: (415) 308-1995, www.fhcevents.com
+- **Status**: Direct phone contact available
+- **Notes**: SF Bay Area specialist
+
+**BAM Casino Party Rentals** ⭐⭐⭐⭐
+- **Website**: bamcasinoparties.com
+- **Notes**: Casino parties and fundraiser specialist
+
+### **Vintage Car Displays**
+
+**California Motor Car Company** ⭐⭐⭐⭐⭐
+- **Contact**: (310) 776-5311
+- **Specialty**: Classic cars 1900-2020, film/TV experience
+- **Services**: Display, trade show, party, historical consulting
+- **Status**: HIGH PRIORITY - Extensive collection
+
+**Nationwide Limousine Service** ⭐⭐⭐⭐
+- **Contact**: 800-339-8936, www.nlslimo.com
+- **Services**: Antique car rentals and displays
+- **Status**: Direct contact available
+
+**Best San Francisco Limousine Service** ⭐⭐⭐⭐
+- **Contact**: 844-735-4667, www.bestsanfranciscolimousineservice.com
+- **Fleet**: Vintage Rolls-Royce Silver Clouds (white/black)
+- **Status**: PRIORITY - Direct contact available
+- **Notes**: Unique vintage Rolls-Royce collection
+
+**Classic Cars West** ⭐⭐⭐
+- **Website**: classiccarswest.com
+- **Specialty**: Vintage car dealership, SF Bay Area
+- **Status**: Research contact via website
+- **Notes**: Sales and potentially display services
+
+### **Additional Period Resources**
+
+**The Cosmo Alleycats** ⭐⭐⭐⭐
+- **Website**: www.cosmoalleycats.com
+- **Notes**: SF vintage dance band with Emily Day
+
+**Hot Club of San Francisco** ⭐⭐⭐
+- **Contact**: 415-931-0909, www.hotclubsf.com
+- **Specialty**: "Gypsy swing" Django Reinhardt style
+
+### **Gatsby Vendor Outreach Status**
+
+**Target**: 5+ responses per category (Jazz, Swing, Dance, Casino, Cars)
+
+**Current Status** (as of 2026-02-06):
+- Jazz Bands: 0/5 responses
+- Swing Orchestras: 0/5 responses  
+- Dance Performers: 0/5 responses
+- Casino Tables: 0/5 responses
+- Vintage Cars: 0/5 responses
+
+**Next Actions**:
+1. Contact all HIGH PRIORITY vendors with direct phone/email
+2. Research missing contact info for medium priority vendors
+3. Send professional inquiries (NO BUDGET MENTIONED)
+4. Track responses in this file
+5. Continue outreach until 5+ responses per category achieved
+
 ---
 
-*Relationships are assets. Updated 2026-02-06 via evolution cycle #0001.*
+*Relationships are assets. Updated 2026-02-06 via evolution cycle #0001. Gatsby research added.*
