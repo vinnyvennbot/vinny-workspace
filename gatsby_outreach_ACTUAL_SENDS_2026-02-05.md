@@ -38,9 +38,11 @@
    - Capacity: 3,000+ reception, 1,000 seated - PERFECT match
 
 ### Event Production & Decor (4 sent)
-7. ✅ **Archive Rentals** - hello@archiverentals.com
+7. ❌ **Archive Rentals** - hello@archiverentals.com
    - Message ID: 19c31a80be1240d8
    - Sent: 22:35 PST
+   - **STATUS: EMAIL BOUNCED (22:33 PST)**
+   - Action: Need phone follow-up at (888) 459-6598
    - Specialty: Luxury vintage furniture, Art Deco, chandeliers
 
 8. ✅ **Event Solutions** - sheila@eventsolutions-sf.com
