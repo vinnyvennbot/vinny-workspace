@@ -88,15 +88,36 @@
 
 ### **🚢 Yacht Charter Vendors**
 
-**City Experiences** ⭐⭐⭐⭐⭐
-- **Referral:** Sean Crothers, Waterfront Supervisor, Berkeley Marina, 510-981-6744
-- **Website:** https://www.cityexperiences.com/berkeley/city-cruises/social-events/
-- **Capacity:** 400-guest capability (confirmed as ONLY Berkeley Marina charter with this capacity)
+**Red and White Fleet** ⭐⭐⭐⭐⭐
+- **Contact:** Annabelle, charters@redandwhite.com, (415) 673-2900
+- **Location:** Pier 43 1/2, Fisherman's Wharf, San Francisco
+- **Vessel:** Enhydra (3-deck, 600 max capacity, nicest in fleet)
+- **🎯 FULL QUOTE RECEIVED:**
+  - Charter: $10,800 for 3 hours ($3,600/hour)
+  - Bar: Premium $35/person, Beer/Wine $25/person, Cash bar $300 setup
+  - Food: Appetizers $40/person, Hot buffet $50/person, Outside catering $250 fee
+  - Entertainment: DJ $1,400, Photobooth $1,300, Custom playlist free
+  - Catering menu: PDF saved (RedAndWhite_Catering_Menu.pdf)
+- **Status:** Full quote received Feb 6, 09:31 PST
+- **Response Time:** 9.5 hours (excellent)
+- **Cost Scenarios:**
+  - Budget: $11,350 base + outside catering
+  - Mid-tier: $38,200 ($95.50/person all-in)
+  - Full experience: $47,500 ($118.75/person all-in)
+- **Next Action:** Review catering menu, select package level, confirm date
+- **Notes:** FIRST COMPLETE YACHT CHARTER QUOTE - fully actionable pricing, perfect capacity for 400 guests
+
+**City Experiences (Hornblower)** ⭐⭐⭐⭐⭐
+- **Referrals:** 3 sources confirm as major 400+ capacity operator:
+  1. Berkeley Marina (Sean Crothers, 510-981-6744) - "ONLY Berkeley Marina charter with this capacity"
+  2. Sixth and Harbor (Jen Mackie, 415-302-5272) - "Need ferry-size boat, contact Hornblower"
+  3. Passage Nautical (Deborah Reynolds, 510-917-6629) - "Don't have 400-capacity, go to Hornblower"
+- **Website:** https://www.cityexperiences.com/san-francisco/city-cruises/private-events/
 - **Company:** Major SF Bay charter operator (formerly Hornblower)
 - **Services:** Social events, corporate events, large-scale SF Bay charters
-- **Status:** Referred Feb 6, 09:04 PST by Berkeley Marina
-- **Next Action:** Contact City Experiences for 400-guest yacht options, murder mystery packages, pricing, date availability
-- **Notes:** FIRST ACTUAL YACHT CHARTER COMPANY for EVT-004 - moves event from concept to actionable
+- **Status:** Multiple referrals Feb 6, 09:04-09:44 PST
+- **Next Action:** Contact for comparison quote against Red and White Fleet
+- **Notes:** Industry-recognized leader for 400+ guest capacity, confirmed by 3 independent yacht companies
 
 ### **Catering Vendors**
 
