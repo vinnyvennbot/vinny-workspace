@@ -237,6 +237,30 @@
 - **Next Action:** Schedule discovery call to discuss details and receive accurate quote
 - **Notes:** Second interested AV vendor, professional response, LA-based serving SF market
 
+### **Entertainment Vendors**
+
+**The Dinner Detective** ⭐⭐⭐⭐⭐
+- **Contact:** Natalie Sasso (Executive Producer), natalie@thedinnerdetective.com
+- **Website:** www.TheDinnerDetective.com
+- **Quote:** $5,995 base + $5/guest gratuity = $7,995 total for 400 guests ($19.99/person)
+- **Included:**
+  - Customized murder mystery show
+  - Cast of 10-11 professional performers
+  - Materials for each guest
+  - Prize package for winner
+  - Actors blend in with guests
+- **Requirements:**
+  - Green room (separate from event room for actors)
+  - 1 hour venue access before guests arrive
+  - AV system with 2 handheld mics
+  - Actors fed same meal as guests
+  - Travel stipend may apply (venue-dependent)
+- **Flexibility:** Works with 2-4 course meal OR buffet format
+- **Status:** Responded Feb 6, 09:46 PST - Interested, provided full quote
+- **Response Time:** 9.5 hours (excellent)
+- **Next Action:** Provide venue details once yacht charter confirmed
+- **Notes:** Turnkey murder mystery solution, professional theatrical experience throughout event, integrates with catering timeline
+
 ### **Venue/Entertainment Vendors**
 
 **Palace Theater / Boxcar Theatre** ⭐⭐⭐
@@ -312,6 +336,27 @@
   - "Are you envisioning any immersive entertainment?"
 - **Next Action:** Awaiting Zed's budget decision ($20k = $20/person for 1000 guests)
 - **Notes:** High-quality designer but premium pricing requires budget approval before proceeding
+
+### **Entertainment Vendors**
+
+**Cosmo Alleycats** ⭐⭐⭐⭐⭐
+- **Contact:** Emily Day (Band Leader), 415-688-0123, emily@cosmoalleycats.com
+- **Website:** www.cosmoalleycats.com
+- **Band:** 6-piece (piano, upright bass, drums, sax, trumpet, lead vocals)
+- **Quote:** $4,250 for 3 hours, $900/hour beyond
+- **Availability:** April+ (unavailable entire March), weeknights generally open
+- **Style:** Authentic vintage jazz - background music, dance party, or featured performance
+- **Requirements:**
+  - 3rd party AV company for 1000-guest sound
+  - Footprint: 12ft x 18ft
+  - Food for band (same as guests or vendor meal)
+  - Parking reimbursement (3-5 cars)
+  - Green room/storage on same floor
+- **Status:** Responded Feb 6, 09:53 PST - Very interested: "I am in full support of your mission!"
+- **Response Time:** 11 hours (excellent)
+- **Materials:** Promo photos attached, extensive video/audio samples available
+- **Next Action:** Provide potential dates (April or later)
+- **Notes:** Perfect authentic Gatsby jazz band, Oakland-based, flexible performance style, professional setup
 
 ### **Catering Vendors**
 
