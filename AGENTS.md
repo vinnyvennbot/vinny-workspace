@@ -66,7 +66,39 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Anything that leaves the machine
 - Anything you're uncertain about
 
-## Email Response Protocol
+## Email Protocols
+
+### **Email Sending Authority**
+
+**✅ AUTO-SEND (Use gog gmail send)**:
+- Initial vendor outreach for quotes (following WORKFLOWS.md templates)
+- Follow-up emails within 24-hour rule
+- Thank you / acknowledgment responses to vendors
+- Schedule confirmations and logistics coordination
+
+**⚠️ ASK FIRST**:
+- Contract negotiations or terms discussions
+- Any email mentioning specific budget numbers
+- Sponsor partnership proposals over $1000 value
+
+**❌ NEVER SEND**:
+- Binding agreements or contract commitments
+- Budget information in first vendor contact
+- Anything requiring Zed's signature or approval
+
+### **How to Send Business Emails**
+
+**Use gog CLI for all business outreach:**
+```bash
+gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[professional content]"
+```
+
+**Standard signature (see TOOLS.md)**:
+- Always include full Venn Social contact information
+- Professional closing "Best regards, Vinny"
+- Phone number and website included
+
+### **Email Response Protocol**
 
 **Always check email threads before responding:**
 
@@ -81,7 +113,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Thank them for their time and response
 - Maintain relationships for future opportunities
 
-**Never use emojis in business emails**
+**Communication Standards:**
+- Never use emojis in business emails
+- Clean paragraph structure (no asterisks or AI formatting)
+- Professional tone throughout all vendor communications
 
 ## Group Chats
 

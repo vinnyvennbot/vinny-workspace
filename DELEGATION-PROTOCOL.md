@@ -3,10 +3,10 @@
 ## When to Delegate (sessions_spawn)
 
 ### **AUTO-DELEGATE (>15 min tasks)**
-- Vendor research across multiple categories
+- Vendor research AND outreach execution across multiple categories
 - Complex financial model creation  
 - Competitive analysis with multiple data points
-- Multi-vendor negotiation campaigns
+- Multi-vendor email campaigns with systematic sending
 - Event post-mortem analysis with attendee feedback
 
 ### **KEEP INLINE (<5 min tasks)**
@@ -20,10 +20,12 @@
 ### **Volume Vendor Outreach Sprint**
 ```javascript
 sessions_spawn({
-    task: `Contact 20+ entertainment vendors for [Event Theme] on [Date] for [X] people in SF.
+    task: `EXECUTE vendor outreach campaign: Contact 20+ entertainment vendors for [Event Theme] on [Date] for [X] people in SF.
+           1. Research vendor contacts and create professional email templates
+           2. SEND ACTUAL EMAILS using: gog gmail send --to="vendor@email.com" --subject="Event Inquiry" --body="[template content]"
+           3. Track sent emails and responses systematically
            Creative options beyond mechanical bulls - match theme. Priority to existing relationships (check RELATIONSHIPS.md).
-           Never mention budget in first outreach. Get quotes, availability, setup requirements.
-           Continue until 5+ responses received. Update database immediately.`,
+           Never mention budget in first outreach. Continue until 5+ responses received. Update RELATIONSHIPS.md immediately.`,
     agentId: "main",
     cleanup: "keep", 
     label: "vendor_outreach_[event_theme]",
@@ -123,6 +125,29 @@ Sub-agents should:
 - CC main session on critical findings
 - Create handoff summaries for complex research
 - Store work products in accessible workspace files
+
+## Email Execution Protocol (CRITICAL)
+
+### **Sub-Agent Email Authority**
+- **✅ CAN SEND**: Initial vendor inquiries using professional templates
+- **✅ CAN SEND**: Follow-up emails per 24-hour rule
+- **✅ MUST USE**: `gog gmail send` for ALL business email outreach
+- **❌ CANNOT**: Mention budget, negotiate contracts, make commitments
+
+### **Email Execution Steps**
+1. **Research phase**: Gather vendor contacts and specialties
+2. **Template creation**: Professional email content (no budget mentions)
+3. **EXECUTION PHASE**: Actually send emails using gog CLI:
+   ```bash
+   gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[template content]"
+   ```
+4. **Tracking phase**: Monitor responses, update RELATIONSHIPS.md
+5. **Reporting**: Confirm "Sent X emails, received Y responses"
+
+### **Execution vs Preparation**
+- **WRONG**: Create templates and contact lists only
+- **RIGHT**: Create templates AND send actual emails AND track responses
+- **Success metric**: Number of actual emails sent and responses received
 
 ## Parallel Execution Examples
 
