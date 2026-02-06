@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-002",
+  "name": "Intimate 30-Person Dinner",
+  "date": "2026-02-28",
+  "status": "planning",
+  "capacity": 30,
+  "budget_per_person": 70,
+  "theme": "Private upscale dining experience",
+  "venue": "TBD - Historic mansion or exclusive venue",
+  "created": "2026-02-02",
+  "last_updated": "2026-02-05",
+  "priority": "high",
+  "notes": "Budget constraint: must stay at or below $70/person"
+}

@@ -1,5 +1,37 @@
 # WORKFLOWS.md - Event Planning Standard Operating Procedures
 
+## 🗂️ EVENT TAXONOMY SYSTEM (Critical - Added Feb 5, 2026)
+
+**All events are organized in `/events/` with unique Event IDs to prevent confusion:**
+
+```
+/events/
+  EVENT-REGISTRY.md              ← Master event list & conflict checker
+  /EVT-001-western-march7/       ← Western line dancing (March 7)
+  /EVT-002-dinner-feb28/         ← Intimate dinner (Feb 28)
+  /EVT-003-gatsby-festival-1000/ ← Great Gatsby festival (TBD)
+```
+
+**Mandatory Rules:**
+1. **Always use Event ID** (EVT-XXX) when referencing events in emails, databases, memory files
+2. **All event files** must live in event folder - NO root-level mixing
+3. **Check EVENT-REGISTRY.md** before scheduling new events to avoid date conflicts
+4. **Update metadata.json** when event status/details change
+5. **Google Sheets MUST include Event_ID column** in all vendor/venue databases
+
+**When starting a new event:**
+```bash
+# 1. Create event folder
+mkdir -p events/EVT-00X-eventname-date/
+
+# 2. Create metadata.json with event details
+# 3. Update EVENT-REGISTRY.md
+# 4. Move all files into event folder
+# 5. Add Event_ID column to all database entries
+```
+
+---
+
 ## ⚡ EXECUTION PRINCIPLES (READ FIRST)
 
 ### **This File Is Your Authority**

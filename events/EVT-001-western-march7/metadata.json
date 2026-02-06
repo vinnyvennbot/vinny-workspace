@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-001",
+  "name": "Western Line Dancing Night",
+  "date": "2026-03-07",
+  "status": "planning",
+  "capacity": 150,
+  "budget_per_person": 60,
+  "theme": "Wild West / Line Dancing",
+  "venue": "TBD - Yacht or western venue",
+  "created": "2026-02-02",
+  "last_updated": "2026-02-05",
+  "priority": "high",
+  "notes": "Possible date conflict with SF Chronicle Wine Competition - may need to move to March 14"
+}

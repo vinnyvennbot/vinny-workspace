@@ -26,7 +26,10 @@
 ### **TIER 2: Active Projects (2x daily)**  
 - **Morning (9 AM)**: Calendar review, venue confirmations, sponsor responses
 - **Evening (5 PM)**: Financial model updates, database sync status
-- Track progress on March 7 (western dancing) and Feb 28 (private dinner) events
+- Track progress on active events:
+  - **EVT-001**: Western Line Dancing (March 7) - resolve date conflict, insurance
+  - **EVT-002**: Intimate Dinner (Feb 28) - reduce costs $60, venue selection
+  - **EVT-003**: Great Gatsby Festival (TBD) - monitor vendor responses
 
 ### **TIER 3: Strategic (1x daily)**
 - **Afternoon (2 PM)**: Competitive analysis, market research, relationship maintenance
@@ -39,9 +42,11 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-- **🚨 URGENT**: Let's Party awaiting insurance requirements (overdue since Feb 5, 2:59 PM)
-- **⚠️ FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
-- **❌ EMAIL FAILURES**: 2 mechanical bull vendors need alternative contact methods
+- **🚨 EVT-001 URGENT**: Let's Party awaiting insurance requirements (overdue since Feb 5, 2:59 PM)
+- **⚠️ EVT-001 DATE CONFLICT**: March 7 conflicts with SF Chronicle Wine Competition - may need March 14
+- **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - need cost optimization
+- **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
+- **❌ EVT-001 EMAIL FAILURES**: 2 mechanical bull vendors need alternative contact methods
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates

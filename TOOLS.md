@@ -41,8 +41,8 @@ gog sheets update SHEET_ID "A2" "Vendor Name" "Category" "email@example.com" "..
 # List sheets in folder
 gog drive ls --parent FOLDER_ID
 
-# Update single row
-gog sheets update SHEET_ID "A2:J2" "value1" "value2" "..." 
+# Update single row (ALWAYS include Event_ID column)
+gog sheets update SHEET_ID "A2:K2" "EVT-001" "Vendor Name" "Category" "email@example.com" "..." 
 
 # Get sheet metadata
 gog sheets metadata SHEET_ID
@@ -50,6 +50,16 @@ gog sheets metadata SHEET_ID
 # Share with team (ALWAYS do this)
 gog drive share SHEET_ID --email zed.truong@vennapp.co --role writer
 ```
+
+### **Event ID Column Requirement**
+**CRITICAL:** All vendor/venue databases MUST include Event_ID column:
+```
+Event_ID | Vendor_Name | Category | Contact_Email | Status | Date_Contacted | ...
+EVT-001  | Let's Party | Bull     | info@...      | Quote  | 2026-02-05     | ...
+EVT-003  | Fort Mason  | Venue    | events@...    | Email  | 2026-02-05     | ...
+```
+
+This prevents mixing vendors from different events and enables filtering.
 
 ### **Professional Formatting (Use xlsx skill)**
 ```python

@@ -1,0 +1,14 @@
+{
+  "event_id": "EVT-003",
+  "name": "Great Gatsby Festival",
+  "date": "TBD",
+  "status": "outreach_phase",
+  "capacity": 1000,
+  "budget_per_person": 60,
+  "theme": "1920s Great Gatsby / Art Deco / Jazz Age",
+  "venue": "TBD - Large historic venue (Fort Mason, Pier, etc)",
+  "created": "2026-02-05",
+  "last_updated": "2026-02-05",
+  "priority": "medium",
+  "notes": "Large-scale production event. Vendor outreach phase active. Theme recommendation: 'The Great Gatsby Murder' interactive experience."
+}
