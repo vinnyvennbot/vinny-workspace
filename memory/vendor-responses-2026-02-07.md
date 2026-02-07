@@ -127,3 +127,13 @@
 ---
 
 *Processed during heartbeat monitoring - 2026-02-07 02:30 PST*
+## SFMOMA Response - Feb 7, 11:37 AM
+
+**SFMOMA Groups** - Venue inquiry for Great Gatsby Festival
+- Response: Standard routing to rental events inquiry form
+- Website: https://www.sfmoma.org/rental-events/
+- Status: Neutral (requires formal submission)
+- Next Action: Fill out rental events form for 1000-guest capacity inquiry
+- Timeline: Follow up within 24 hours
+
+Not a decline - just routing through their formal process for large events.
