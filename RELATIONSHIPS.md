@@ -4,13 +4,19 @@
 
 ### **Mechanical Bull Vendors (March 7 Event)**
 
-**Let's Party (Salinas)** ⭐⭐⭐⭐
+**Let's Party (Salinas)** ⭐⭐⭐
 - **Contact**: Summer Elam, 831-258-7946, party@letspartysalinas.com
 - **Strength**: 26 years experience, LED timer feature
-- **Status**: Quote pending - needs insurance requirements 
-- **Response Time**: <4 hours
-- **Negotiation Notes**: Professional, detail-oriented, ready to finalize
-- **Next Action**: Send insurance requirements ASAP
+- **Quote**: $3,500 rental minimum (firm, non-negotiable)
+- **Distance Pricing**: "Located a few hours from the venue...in order for it to be feasible to service that location"
+- **Status**: Budget negotiation DECLINED Feb 6, 22:09 PST
+- **Response Time**: <4 hours (consistently fast)
+- **Confidence Score**: 0.65 (medium-high - reliable vendor but pricing conflict)
+- **Negotiation Pattern**: Firm on distance-based minimums, will not negotiate below $3,500
+- **Context**: Zed attempted negotiation to $1,500-2,000 range based on Astro Jump $1,299 quote
+- **Decision Point**: Accept $3,500 premium or switch to Astro Jump $1,299
+- **Next Action**: ZED DECISION REQUIRED - vendor selection for EVT-001
+- **Notes**: Professional, experienced, but pricing not flexible for distance travel; relationship established but budget mismatch
 
 **Astrojump** ⭐⭐⭐
 - **Quote**: $1299 for mechanical bull
@@ -140,6 +146,22 @@
 
 ### **Catering Vendors**
 
+**Caterman Catering (Semih Gun - CEO)** ⭐⭐⭐⭐⭐
+- **Contact:** Semih Gun (Founder & CEO), 408-533-2585, semih@caterman.net
+- **Website:** caterman.net
+- **Large-Scale Capability:** "We regularly execute high-volume, logistically complex events"
+- **Capacity Confirmation:** "400-guest headcount is not an issue for our team, provided the yacht capacity and onboard flow support full service operations"
+- **Executive Engagement:** CEO responded personally (high-priority vendor signal)
+- **Status:** Responded Feb 6, 16:11 PST - Very interested, ready for discovery call
+- **Response Time:** 16 hours (excellent)
+- **Confidence Score:** 0.90 (very high - CEO engagement, confirmed large-scale capability)
+- **Questions Needed:**
+  1. Event date/timeframe (even rough month or preferred weeks)
+  2. Service style (passed apps, chef stations, buffet, plated dinner, hybrid)
+  3. Menu direction (cuisine style, dietary needs, premium vs elevated-casual)
+- **Next Steps:** Executive Chef will curate menu concepts + follow-up call for service flow, staffing, pricing
+- **Notes:** Professional, detail-oriented, yacht-appropriate operational approach, ready to customize for event
+
 **SF Catering Company** ⭐⭐⭐⭐⭐
 - **Contact:** Dani, 1877-789-4377, info@sfcateringcompany.com
 - **Website:** www.sfcateringcompany.com
@@ -244,6 +266,18 @@
 
 ### **AV/Technical Production Vendors**
 
+**Got Light (Holly Smith)** ⭐⭐⭐
+- **Contact:** Holly Smith (Director of Events), 415-863-4300 (office), 415-907-3469 (direct), holly@got-light.com
+- **Website:** www.got-light.com
+- **Services:** Lighting, audio, video, drape, staging
+- **Yacht Experience:** "Yachts are not a regular occurrence for our team"
+- **Willingness:** "Happy to hop on a call to talk more about the specifics of the yacht in question with your team and our Audio Producer"
+- **Status:** Responded Feb 6, 18:29 PST - Cautious interest, wants discovery call
+- **Response Time:** 18.5 hours (good)
+- **Confidence Score:** 0.55 (medium - limited yacht experience but professional approach)
+- **Next Action:** Schedule call next week with Audio Producer to assess project fit
+- **Notes:** Backup AV option, less yacht-specialized than Stage Lights & Sound Co. or Verducci, but willing to consult
+
 **Verducci Event Productions** ⭐⭐⭐⭐⭐
 - **Contact:** Andrew Verducci (Founder/CEO), (415) 545-8635, (650) 307-2207 mobile, andrew@wearevep.com
 - **Website:** wearevep.com
@@ -251,6 +285,7 @@
 - **Services:** Full AV production, entertainment, video production, brand activation
 - **Status:** Responded Feb 6, 08:20 PST - Very enthusiastic: "We would love to be a part of your event"
 - **Response Time:** 8 hours (excellent)
+- **Confidence Score:** 0.88 (very high - proven SF yacht experience with major client)
 - **Capabilities:** Sent full capabilities deck
 - **Questions Asked:** Date, AV budget, entertainment/video/brand activation needs, start/end time, install time, yacht photos
 - **Next Action:** Answer questions once EVT-004 details locked
@@ -429,6 +464,27 @@
 
 ### **Catering Vendors**
 
+**The Liquid Caterers (Polly Lau)** ⭐⭐⭐⭐⭐
+- **Contact:** Polly Lau (Event Manager), 707-297-0814, TheLiquidCaterers@gmail.com
+- **Website:** TheLiquidCaterers.com, Yelp reviews
+- **Specialty:** Mobile beverage catering (private, corporate, public events)
+- **Experience:** 18 years, 6000+ guest events (recent: 37-day Lightscape at SF Botanical Gardens)
+- **Gatsby Expertise:** 
+  - "Many occasions where we successfully created a drink menu and delivered delicious 1920s/Great Gatsby cocktails"
+  - "We even still have not one but several costumes that we have collected over the years"
+  - "Yes we have worked quite a few prohibition era events!"
+- **1920s Cocktail Menu:** Bees Knees, Mary Pickford, Gin Rickey, Corpse Reviver, Ward Eight, Hemingway, Sidecar, Last Word, Tom Collins, French 75, Mojito, White Lady, + more
+- **Scale Confirmation:** "If we can handle 37 almost consecutive days during holiday season, we can DEF accommodate any of your events when its slower in spring/summer"
+- **Competitive Pricing:** "We will try to MEET or BEAT our competitor's quotes!"
+- **Self-Sufficient:** Full equipment and staffing included
+- **Status:** Responded Feb 6, 20:34 PST - Very enthusiastic
+- **Response Time:** 18 hours (good)
+- **Confidence Score:** 0.92 (very high - perfect thematic fit + proven large-scale capability)
+- **Questions Needed:** Start/end time, hosted vs non-hosted bar, # of bar setups, bar distances, indoor/outdoor
+- **Call Availability:** Mon-Fri 10am-2pm (super flexible)
+- **Next Action:** Provide event details for comprehensive quote
+- **Notes:** PERFECT GATSBY FIT - authentic period cocktails, costumes, competitive pricing strategy, massive event experience
+
 **Fraiche Catering** ⭐⭐⭐⭐⭐
 - **Contact:** Laura Schoolcraft (CFO/Director of Operations), 925-389-0348, laura@fraichecater.com
 - **Team:** Chi Luong (Senior Event Specialist), Mia Navellier, Christopher Woods
@@ -437,6 +493,7 @@
 - **Gallery:** https://fraichecater.com/maingallery
 - **Status:** Responded Feb 6, 06:36 PST - Very enthusiastic
 - **Response Time:** 8 hours (excellent)
+- **Confidence Score:** 0.87 (very high - professional team engagement)
 - **Next Action:** Chi Luong will schedule discovery call
 - **Strengths:** 
   - Reviewed vennsocial.co website and loved the concept
