@@ -148,3 +148,27 @@ Not a decline - just routing through their formal process for large events.
 - Note: "Items not guaranteed until contract signed + deposit received"
 - Action: No change to decision matrix (still ,500 vs Astro Jump ,299)
 - Awaiting Zed's vendor selection decision
+
+## 🎯 ZED DECISION: Astro Jump Selected for EVT-001 (Feb 7, 5:17 PM)
+
+**CRITICAL DECISION MADE**
+
+Zed responded to Astro Jump (Greg), confirming mechanical bull rental:
+- **Vendor Selected:** Astro Jump ($1,299 for 5 hours with operator)
+- **Savings:** $2,201 vs Let's Party ($3,500)
+- **Budget Impact:** Solves EVT-001 $60 over-budget issue completely
+
+**BONUS: Bulk Discount Inquiry**
+Zed proactively asked about:
+- Bulk discounts for multiple party rentals
+- Additional western-themed items: axe throwing, hay bales, photo props
+- Building long-term relationship for future Bay Area events
+
+**Greg's Notes:**
+- Covered patio outside works (no weather issues)
+- Astro Jump has "wonderful relationship with SF Parks & Rec"
+- Very familiar with Log Cabin location
+- Based in Marin/Sonoma (perfect for SF/Marin events)
+
+**Status:** EVT-001 mechanical bull CONFIRMED, exploring enhancement options
+**Next Action:** Await Greg's bulk discount response + additional rental pricing
