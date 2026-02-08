@@ -43,13 +43,15 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-- **🚨 EVT-001 URGENT DECISION**: Let's Party DECLINED budget negotiation ($3,500 firm) - Zed decision needed: Accept premium or book Astro Jump $1,299? (Alerted Feb 7, 02:35 AM)
+- **✅ EVT-001 DECISION RESOLVED**: Astro Jump selected ($1,299), saved $2,201, budget issue SOLVED (Feb 7, 5:17 PM)
+- **🎯 EVT-001 ENHANCEMENT**: Zed exploring bulk discount + western rentals (axe throwing, hay bales, photo props)
 - **⚠️ EVT-001 DATE CONFLICT**: March 7 conflicts with SF Chronicle Wine Competition - may need March 14
 - **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - cost optimization needed
 - **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
 - **⚠️ EVT-004 EMAIL DELIVERY**: 5 delay notifications overnight + 1 permanent failure (investigating which vendors)
 - **✅ EVT-004 VENDOR RESPONSES PROCESSED**: THEYimprov (April 19 available), Caterman CEO (wants call), Got Light (cautious interest)
 - **✅ EVT-003 BAR SERVICE LEAD**: Liquid Caterers (perfect Gatsby fit, 18 yrs exp, competitive pricing)
+- **✅ EVT-003 VENUE RESPONSE**: SFMOMA directed to formal inquiry form (follow up needed)
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates
