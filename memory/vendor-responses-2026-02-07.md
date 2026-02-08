@@ -229,3 +229,28 @@ Zed proactively asked about:
 - EVT-003 date range
 - Venue selection or shortlist
 - Production budget range disclosure strategy
+
+## Astro Jump Urgency Follow-Up - Feb 7, 7:44 PM
+
+**Greg (Astro Jump) pushing for date/time confirmation:**
+
+⚠️ **HIGH DEMAND ALERT:**
+- "The Bull an AX are in high demand"
+- Needs dates and times ASAP to secure
+- All inventory listed on website for review
+
+**Zed's Additional Questions (6:46 PM):**
+- Other western-themed games recommendations?
+- Beer pong table availability?
+
+**Greg's Response:**
+- Check website for full inventory list
+- Waiting for dates and times to proceed
+
+**CRITICAL ACTION NEEDED:**
+- Zed must confirm March 7 + event times (start/end)
+- High demand items may book out if delayed
+- Website: astrojump.com (check inventory)
+
+**Status:** URGENT - Risk of losing bull + axe throwing if date not confirmed soon
+**Next Action:** Zed confirm March 7 date + hours (e.g., 2:00 PM - 7:00 PM)
