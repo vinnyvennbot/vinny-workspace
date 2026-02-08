@@ -172,3 +172,30 @@ Zed proactively asked about:
 
 **Status:** EVT-001 mechanical bull CONFIRMED, exploring enhancement options
 **Next Action:** Await Greg's bulk discount response + additional rental pricing
+
+## Astro Jump Bulk Rental Response - Feb 7, 6:21 PM
+
+**Greg (Astro Jump) responded to Zed's bulk discount inquiry:**
+
+✅ **Available:**
+- Axe throwing (can provide)
+
+❌ **Not Available:**
+- Hay bales (cannot provide)
+
+⚡ **Electrical Requirements:**
+- 2 dedicated circuits for mechanical bull
+- 1 dedicated circuit for axe throwing
+- Total: 3 dedicated circuits needed at Log Cabin
+
+❓ **Greg's Question:**
+- "What's the date of your event?" (needs March 7 confirmation)
+
+**Next Actions for Zed:**
+1. Confirm March 7 date to Greg
+2. Verify Log Cabin has 3 dedicated electrical circuits
+3. Request axe throwing pricing for quote
+4. Source hay bales from alternative vendor if still desired
+
+**Status:** EVT-001 expansion opportunity - axe throwing adds western engagement
+**Impact:** More activities = better outdoor patio utilization + crowd engagement
