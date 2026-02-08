@@ -199,3 +199,33 @@ Zed proactively asked about:
 
 **Status:** EVT-001 expansion opportunity - axe throwing adds western engagement
 **Impact:** More activities = better outdoor patio utilization + crowd engagement
+
+## Hunter Events Response - Feb 7, 6:59 PM
+
+**Robert Hunter (Hunter Events)** - Great Gatsby Event Production
+- **Location:** 1686 Union Street Suite 305, San Francisco, CA 94123
+- **Experience:** 25+ years SF events industry
+- **Specialty:** "Immersive, large-scale experiences"
+- **Website:** hunterevents.net
+- **Response:** Professional, interested, needs strategic details
+
+**Quote:** "Producing immersive, large-scale experiences is a specialty of ours, and a Roaring Twenties celebration for 1,000 guests aligns with the caliber of events we are known for delivering."
+
+**Questions Before Proposal:**
+1. Preferred event date and hours
+2. Confirmed venue (or venues under consideration)
+3. **Estimated production budget range**
+4. Hosting organization and primary decision-maker
+5. Overall program format (festival-style flow, staged entertainment, scheduled program)
+6. Level of creative support desired
+
+**Next Steps:** Will provide portfolio examples and proposal once details provided
+
+**Status:** High-quality lead, professional engagement, awaiting strategic direction
+**Priority:** MEDIUM-HIGH - Established SF event production company
+**Confidence Score:** 0.80 (high - professional response, aligned specialty, 25+ years experience)
+
+**Zed Decision Needed:**
+- EVT-003 date range
+- Venue selection or shortlist
+- Production budget range disclosure strategy
