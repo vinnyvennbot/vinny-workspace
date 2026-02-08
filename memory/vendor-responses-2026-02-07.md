@@ -254,3 +254,23 @@ Zed proactively asked about:
 
 **Status:** URGENT - Risk of losing bull + axe throwing if date not confirmed soon
 **Next Action:** Zed confirm March 7 date + hours (e.g., 2:00 PM - 7:00 PM)
+
+## ✅ EVT-001 DATE CONFIRMED - Astro Jump (Feb 7, 8:29 PM)
+
+**CRITICAL UPDATE:**
+
+Zed confirmed date/time with Greg (Astro Jump):
+- **Date:** March 7, 2026
+- **Time:** 2:00 PM - 6:00 PM (4 hours)
+- **Items:** Mechanical Bull + Axe Throwing
+- **Electrical:** 3 dedicated circuits needed
+
+**Bonus - Business Development:**
+- Zed gave website feedback: "laggy and hard to navigate"
+- Offered website redesign referral (Venn's developer)
+- Greg: "I'll pass along your comments to our team"
+- Potential upsell opportunity: Website redesign project for Astro Jump
+
+**Status:** EVT-001 core rentals LOCKED IN, awaiting final pricing for bull + axe throwing package
+**Next Action:** Greg will provide combined quote for bull + AX rental
+**Business Opportunity:** Website redesign lead for future revenue
