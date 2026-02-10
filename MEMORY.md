@@ -44,6 +44,15 @@
   * Good length - thorough but not overwhelming
   * Maintain enthusiasm while being professional
   * Reference: mechanical bull vendor emails were good template
+- **🚨 DATE VERIFICATION - CRITICAL ERROR (2026-02-09):**
+  * **THE MISTAKE:** Sent 15+ DJ vendor emails stating "Friday, March 7, 2026" when March 7 is actually SATURDAY
+  * **ROOT CAUSE:** Did not verify day of week before sending, assumed Friday incorrectly
+  * **IMPACT:** Extremely unprofessional, confusing for vendors, disrupts planning process
+  * **THE FIX:** ALWAYS verify dates using `date -j -f "%Y-%m-%d" "YYYY-MM-DD" "+%A"` before ANY email
+  * **MANDATORY RULE:** Never assume day of week - verify EVERY time before mentioning dates
+  * **WHY IT MATTERS:** Incorrect dates undermine credibility and create operational chaos
+  * **DOCUMENTED IN:** TOOLS.md and AGENTS.md with verification commands
+  * **NEVER FORGET:** Date errors are as serious as financial errors - both are NON-NEGOTIABLE
 - **🚨 SHELL ESCAPING - CRITICAL EMAIL BUG (2026-02-09):**
   * **THE MISTAKE:** Sent emails with broken prices: "$1,400" became ",400" and "$250/hr" became "/hr"
   * **ROOT CAUSE:** Used double quotes with dollar signs: `--body="...the $1,400 quote..."` - shell interpreted `$1` as empty variable

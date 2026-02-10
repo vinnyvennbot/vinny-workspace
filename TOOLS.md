@@ -94,6 +94,28 @@ gog drive upload formatted_sheet.xlsx --parent FOLDER_ID --name "Sheet Name"
 
 ### **Business Email Protocol**
 
+### **🚨 MANDATORY: VERIFY DATES BEFORE SENDING 🚨**
+**ALWAYS verify the day of week before mentioning ANY date in emails!**
+
+Incorrect dates are extremely unprofessional and disrupt planning.
+
+**Verification Commands:**
+```bash
+# Check specific date
+date -j -f "%Y-%m-%d" "2026-03-07" "+%A %B %d, %Y"
+
+# View monthly calendar
+cal 3 2026  # March 2026
+
+# Quick check
+date -v+1d  # Tomorrow
+date -v+7d  # Week from now
+```
+
+**Rule:** If you write "Friday, March 7" but don't verify it's actually Friday, STOP and verify first.
+
+---
+
 ### **🚨 CRITICAL: SHELL ESCAPING FOR DOLLAR SIGNS 🚨**
 **NEVER USE DOUBLE QUOTES WITH DOLLAR SIGNS IN EMAIL BODIES!**
 

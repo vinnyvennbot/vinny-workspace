@@ -133,6 +133,31 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 ### **How to Send Business Emails**
 
+### **🚨 MANDATORY: VERIFY DATES BEFORE SENDING 🚨**
+**ALWAYS verify the day of week for ANY date mentioned in emails!**
+
+**The Mistake (2026-02-09):**
+- Sent 15+ DJ vendor emails stating "Friday, March 7, 2026"
+- March 7, 2026 is actually a **SATURDAY**, not Friday
+- Extremely unprofessional and confusing for vendors
+
+**MANDATORY VERIFICATION STEP:**
+Before sending ANY email with a date, verify the day of week:
+```bash
+# Verify any date before using it
+date -j -f "%Y-%m-%d" "2026-03-07" "+%A %B %d, %Y"
+# Output: Saturday March 07, 2026
+```
+
+**Or use online calendar verification:**
+```bash
+cal 3 2026  # Shows March 2026 calendar
+```
+
+**NEVER assume the day of week. ALWAYS verify first.**
+
+---
+
 ### **🚨 CRITICAL: SHELL ESCAPING - NEVER BREAK DOLLAR SIGNS! 🚨**
 **MANDATORY RULE FOR ALL EMAIL SENDS:**
 
