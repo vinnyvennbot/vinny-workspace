@@ -44,6 +44,14 @@
   * Good length - thorough but not overwhelming
   * Maintain enthusiasm while being professional
   * Reference: mechanical bull vendor emails were good template
+- **🚨 SHELL ESCAPING - CRITICAL EMAIL BUG (2026-02-09):**
+  * **THE MISTAKE:** Sent emails with broken prices: "$1,400" became ",400" and "$250/hr" became "/hr"
+  * **ROOT CAUSE:** Used double quotes with dollar signs: `--body="...the $1,400 quote..."` - shell interpreted `$1` as empty variable
+  * **THE FIX:** ALWAYS use single quotes for email bodies with prices: `--body='...the $1,400 quote...'`
+  * **MANDATORY RULE:** ANY email mentioning prices/costs/dollar amounts MUST use single quotes or --body-file
+  * **WHY IT MATTERS:** Unprofessional broken emails damage credibility with vendors
+  * **DOCUMENTED IN:** TOOLS.md (with examples) and AGENTS.md (with warnings)
+  * **NEVER FORGET:** This is a NON-NEGOTIABLE rule for all future email sends
 - **VENDOR NEGOTIATION STRATEGY:**
   * **AFTER RECEIVING QUOTES:** Negotiate individually via email with each vendor
   * **COMPETITIVE LEVERAGING:** Pitch vendors against each other for better pricing

@@ -93,14 +93,46 @@ gog drive upload formatted_sheet.xlsx --parent FOLDER_ID --name "Sheet Name"
 ## Email Sending (gog CLI)
 
 ### **Business Email Protocol**
+
+### **🚨 CRITICAL: SHELL ESCAPING FOR DOLLAR SIGNS 🚨**
+**NEVER USE DOUBLE QUOTES WITH DOLLAR SIGNS IN EMAIL BODIES!**
+
+Dollar signs (`$`) are shell variables. If you write `--body="The price is $1,400"`, the shell will interpret `$1` as a variable and strip it out, leaving `"The price is ,400"`.
+
+**✅ CORRECT - Use single quotes for email bodies with prices:**
+```bash
+gog gmail send --to="vendor@example.com" --subject="Quote Follow-up" --body='Thank you for the $1,400 quote for DJ services.'
+```
+
+**❌ WRONG - Double quotes will break dollar signs:**
+```bash
+gog gmail send --to="vendor@example.com" --body="Thank you for the $1,400 quote"  # BROKEN!
+# Result: "Thank you for the ,400 quote" (shell strips $1)
+```
+
+**Alternative: Escape dollar signs with backslash:**
+```bash
+gog gmail send --to="vendor@example.com" --body="Thank you for the \$1,400 quote"
+```
+
+**Best Practice: Use --body-file for complex emails:**
+```bash
+echo 'Thank you for the $1,400 quote for DJ services.' > /tmp/email.txt
+gog gmail send --to="vendor@example.com" --subject="Quote" --body-file=/tmp/email.txt
+```
+
+**REMEMBER:** ANY email mentioning prices, costs, rates, or dollar amounts MUST use single quotes or escaped dollar signs!
+
+---
+
 ```bash
 # Send vendor outreach email
-gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[email content]"
+gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body='[email content with $prices]'
 
 # Send with CC to team
-gog gmail send --to="vendor@example.com" --cc="zed.truong@vennapp.co" --subject="Subject" --body="Content"
+gog gmail send --to="vendor@example.com" --cc="zed.truong@vennapp.co" --subject="Subject" --body='Content with $amounts'
 
-# Send using template file
+# Send using template file (safest for complex emails)
 gog gmail send --to="vendor@example.com" --subject="Subject" --body-file="templates/vendor-outreach.txt"
 ```
 

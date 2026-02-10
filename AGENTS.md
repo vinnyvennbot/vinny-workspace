@@ -133,9 +133,35 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 ### **How to Send Business Emails**
 
+### **🚨 CRITICAL: SHELL ESCAPING - NEVER BREAK DOLLAR SIGNS! 🚨**
+**MANDATORY RULE FOR ALL EMAIL SENDS:**
+
+When emails mention prices, costs, or dollar amounts, you MUST use **single quotes** for the `--body` parameter!
+
+**❌ WRONG (breaks prices):**
+```bash
+gog gmail send --to="vendor@example.com" --body="The $1,400 quote"
+# Result: "The ,400 quote" - BROKEN! Shell strips $1 as variable
+```
+
+**✅ CORRECT (preserves prices):**
+```bash
+gog gmail send --to="vendor@example.com" --body='The $1,400 quote looks great!'
+```
+
+**Why:** Dollar signs (`$`) trigger shell variable expansion. `$1` gets interpreted as an empty variable and disappears. Single quotes prevent this.
+
+**Alternatives:**
+- Escape: `--body="The \$1,400 quote"`
+- Use file: `--body-file=/tmp/email.txt`
+
+**This is NON-NEGOTIABLE.** Every email with prices MUST follow this rule. See TOOLS.md for full details.
+
+---
+
 **Use gog CLI for all business outreach:**
 ```bash
-gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body="[professional content]"
+gog gmail send --to="vendor@example.com" --subject="Great Gatsby Festival Inquiry" --body='[professional content with $prices]'
 ```
 
 **Standard signature (see TOOLS.md)**:
