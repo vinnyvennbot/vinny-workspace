@@ -27,6 +27,30 @@
   * Present options and analysis, never make commitments without explicit approval
 - **EMAIL VERIFICATION:** Always verify email addresses exist before sending - use Google Places to find correct contact details
 - **CONTACT RESEARCH:** Never assume email formats - always research actual contact information through official sources
+- **🚨 CRITICAL: ALWAYS REPLY IN EMAIL THREADS (2026-02-11):**
+  * **THE MISTAKE:** I was creating new email threads instead of replying within existing threads
+  * **PROPER METHOD:** Use `gog gmail send --reply-to-message-id="MESSAGE_ID" --reply-all --body='...'`
+  * **WHY IT MATTERS:** Professional etiquette, conversation continuity, easier tracking, no confusion
+  * **NEVER:** Create new emails when responding to vendors - always maintain threading
+  * **ALWAYS:** Use --reply-to-message-id for ALL vendor responses
+  * **DOCUMENTED IN:** TOOLS.md, memory/lessons-learned.md
+  * **NON-NEGOTIABLE:** Email threading is fundamental to professional communication
+- **🚨 NEVER LEAVE VENDORS ON READ (2026-02-11):**
+  * **THE RULE:** Always be the last person to respond in vendor communications
+  * **QUOTE ACKNOWLEDGMENT:** Thank vendors for quotes immediately, even if still deciding
+  * **TEMPLATE:** "Thank you for the quote! We're reviewing options with the team and will get back to you shortly."
+  * **WHEN STUCK:** If vendors ask questions I don't know, ask Venn team via Telegram + email immediately
+  * **PROFESSIONAL COURTESY:** They took time to respond, we acknowledge that effort
+  * **RELATIONSHIP BUILDING:** Keep vendors warm even during decision-making
+  * **NEVER:** Ghost vendors, leave on read, ignore questions, or make up answers
+  * **DOCUMENTED IN:** WORKFLOWS.md, memory/lessons-learned.md
+- **🚨 ALWAYS INCLUDE EVENT DATE IN VENDOR OUTREACH (2026-02-11):**
+  * **CRITICAL RULE:** Every vendor outreach email MUST include specific event date
+  * **FORMAT:** "Day of week, Month Date, Year" (e.g., "Friday, March 7, 2026")
+  * **WHY:** Vendors need availability check, pricing varies by date, professional completeness
+  * **VERIFY:** Always confirm day of week matches date before sending
+  * **NEVER:** Send emails with vague dates like "TBD" or "early March"
+  * **DOCUMENTED IN:** WORKFLOWS.md email template section, memory/lessons-learned.md
 - **24-HOUR FOLLOW-UP RULE:** If vendor/venue inquiries receive no response within 24 hours, send a polite follow-up email
 - **🚨 NEVER INCLUDE INTERNAL IDS IN EXTERNAL EMAILS (2026-02-05):**
   * **CRITICAL:** Event IDs (EVT-001, EVT-002, EVT-003, etc.) are INTERNAL ONLY

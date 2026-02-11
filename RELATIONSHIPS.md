@@ -33,20 +33,83 @@
 - **Status**: Connection refused
 - **Next Action**: Research phone/alternative contacts
 
+### **DJ Vendors (EVT-001 - Western Line Dancing March 7)**
+
+**Bay Area Beats DJs** ⭐⭐⭐⭐⭐
+- **Contact**: Adrian Blackhurst (Owner/Main DJ), info@bayareabeatsdjs.com
+- **Phone**: See intake form or website
+- **Experience**: 10+ years, 800+ events, team of 5 DJs
+- **Reviews**: 125+ reviews (4.8-5.0 stars, zero negative)
+- **Awards**: Top 3 DJs Oakland 2018-2024, The Knot Pro DJ Award, Wedding Wire Couples Choice (top 5% nationally)
+- **Quote**: $1,500-$2,500 all-inclusive (soundsystem, wireless mics, party lights, DJ/MC services, setup/teardown)
+- **🎯 SPECIAL OFFER**: 10% discount if booked within 7 days (expires Feb 18, 2026)
+- **Availability**: March 7, 2026 (Friday) confirmed available
+- **Status**: Quote received Feb 11, 06:22 PST - Very enthusiastic
+- **Response Time**: Fast response (night/early morning)
+- **Confidence Score**: 0.88 (very high - proven track record, excellent reviews, perfect fit)
+- **Requirements**: Intake form needs completion (event details, timeline, guest count, music genres, add-ons)
+- **Add-ons Available**: Silent Disco headphones, uplighting, extra microphones, live music coordination
+- **Venue Familiarity**: Will need venue manager contact for Log Cabin coordination
+- **Next Action**: Complete intake questionnaire ASAP to lock in 10% discount (7-day window)
+- **Notes**: Highly credentialed, perfect for western country music event, professional presentation with FAQ/gallery links
+
+**Justintertainment** ⭐⭐⭐
+- **Contact**: Instagram @Justintertainment, justintertainment415@gmail.com
+- **Services**: DJ services (details TBD)
+- **Status**: Marketing contact received Feb 11, 11:27 AM - Invited to check Instagram story highlights
+- **Response Time**: Proactive outreach (no quote requested yet)
+- **Confidence Score**: 0.45 (low-medium - promotional contact, no detailed info yet)
+- **Next Action**: Review Instagram portfolio if needing additional DJ quotes
+- **Notes**: Marketing-focused outreach, SF area based on Instagram handle, no pricing or services detail yet
+
 ### **Venue Relationships**
 
 **Presidio Events (Katie)** ⭐⭐⭐⭐⭐
-- **Contact**: Katie (venue pricing specialist)  
+- **Contact**: Katie (venue pricing specialist), presidio@wedgewoodevents.com, 628.201.0274 X 104
 - **Meeting**: Feb 5, 12:00 PM PST (pricing negotiation)
 - **Venue**: Log Cabin at the Presidio
-- **Status**: Active negotiation for March 7
-- **Response Time**: Same day
-- **Notes**: Professional, accommodating, experienced with similar events
+- **Status**: Waiting Management approval (meeting Thursday Feb 13)
+- **Last Update**: Feb 10, 10:25 PM - Apologized for delay (company awards banquet), waiting on management meeting
+- **Zed Action**: Introduced Nandini (liquor distributor) for corkage fee management
+- **Response Time**: Same day (when available)
+- **Confidence Score**: 0.85 (high - professional but needs management approval)
+- **Thread ID**: 19c256277db5407f
+- **Next Action**: Wait for Thursday management decision before confirming vendors
+- **Notes**: Professional, accommodating, experienced with similar events; corkage fee option being explored with liquor sponsor
+
+**The Barrel Room** ⭐⭐⭐⭐⭐
+- **Contact**: Manuel Hewitt, (808) 769-9245, the-barrel-room-d2cc58fdd0cd@reply.perfectvenue.com
+- **Address**: 415 Sansome Street, San Francisco, CA 94111
+- **Website**: www.barrelroomsf.com
+- **Event**: EVT-002 - Intimate Dinner (Feb 28, 2026)
+- **Status**: Design mockup sent Feb 11, 09:56 PST - Awaiting feedback
+- **Response Time**: Proactive design delivery
+- **Confidence Score**: 0.85 (high - proactive service, professional presentation)
+- **Materials**: Canva design document (attachment: Venn Social (1).png)
+- **Next Action**: Review design mockup, provide feedback or request edits
+- **Notes**: Very proactive vendor, offering design access and customization, professional presentation
 
 **Hotel Zelos** ⭐⭐⭐
 - **Availability**: Feb 21 for private dinner
 - **Status**: Quote received for 30-person event
 - **Notes**: Good backup option for intimate dinners
+
+### **Entertainment - Close-up Magic (EVT-002)**
+
+**Perry Yan Magic** ⭐⭐⭐⭐⭐
+- **Contact**: Perry Yan, 415-601-2249, Perry@pymagic.com
+- **Website**: www.PyMagic.com
+- **Service**: Strolling close-up magic (interactive, small group rotation)
+- **Quote**: $400 for 30 minutes
+- **Availability**: Feb 28, 2026 confirmed available
+- **Experience**: 100+ 5-star Yelp reviews, major corporate clients (Google, Dropbox, Microsoft, Slack, HP, Firefox, Kron 4, SF Giants, Oracle)
+- **Guarantee**: 100% money-back guarantee
+- **Status**: Quote received Feb 11, 07:14 PST (to zed.truong@vennapp.co)
+- **Response Time**: Overnight response (7 hours)
+- **Confidence Score**: 0.92 (very high - stellar reviews, major clients, risk-free booking)
+- **Professionalism**: Award-winning magic training, arrives early, fast communication, 3-day pre-event confirmation call
+- **Next Action**: Decide if booking for Feb 28 intimate dinner event
+- **Notes**: Perfect for intimate 30-person dinner, highly interactive crowd-favorite entertainment, proven track record with major tech companies
 
 ### **Sponsor Relationships**
 
@@ -217,13 +280,15 @@
 
 **Michaela Joy Photography** ⭐⭐⭐⭐
 - **Contact**: Michaela Joy O'Shea (CEO/Head Photographer), 707-931-9609, mjoy@mjoyphoto.com
-- **Websites**: mjoyphoto.com (corporate), mjoyphotoweddings.com (weddings)
+- **Assistant**: Sybrina (Admin Assistant/Client Concierge)
+- **Websites**: mjoyphoto.com (corporate), mjoyphotoweddings.com (weddings), Instagram @michaelajoyphotography
+- **Office Hours**: M-F 9:00-3:00 PST (usually out weekends, hours subject to change)
 - **Team**: Suggesting 2-3 photographers for 400-guest event
-- **Status**: Responded Feb 6, 08:17 PST - Interested, ready to quote
-- **Response Time**: 8 hours (good)
+- **Status**: Follow-up Feb 11, 07:11 PST - Requesting event details
+- **Response Time**: 8 hours (good) - multiple follow-ups showing strong interest
 - **Questions Asked**: Event date, hours needed, embarkation location
-- **Next Action**: Provide event details for quote
-- **Notes**: Professional corporate photographer, properly sizing team for large yacht event
+- **Next Action**: Provide event details once EVT-004 date confirmed
+- **Notes**: Professional corporate photographer, properly sizing team for large yacht event, proactive follow-up from assistant shows organizational capacity
 
 **Jack Simpson Photography** ⭐⭐⭐⭐⭐
 - **Contact**: Jack Simpson, 707-690-0106, jack@jacksimpson.com
@@ -283,13 +348,15 @@
 - **Website:** wearevep.com
 - **🚢 SF GIANTS YACHT EXPERIENCE:** "We have worked on the SF Spirit, which is the SF Giants Yacht"
 - **Services:** Full AV production, entertainment, video production, brand activation
-- **Status:** Responded Feb 6, 08:20 PST - Very enthusiastic: "We would love to be a part of your event"
-- **Response Time:** 8 hours (excellent)
-- **Confidence Score:** 0.88 (very high - proven SF yacht experience with major client)
+- **Status:** FOLLOW-UP RECEIVED Feb 11, 12:08 PST - Second polite follow-up: "I wanted to follow up on my previous email"
+- **Last Response:** Feb 11, 13:36 PST - Explained still finalizing event date, will reach out when ready
+- **Response Time:** 8 hours initial (excellent), patient on follow-up
+- **Confidence Score:** 0.90 (very high - proven SF yacht experience + professional persistence)
 - **Capabilities:** Sent full capabilities deck
 - **Questions Asked:** Date, AV budget, entertainment/video/brand activation needs, start/end time, install time, yacht photos
-- **Next Action:** Answer questions once EVT-004 details locked
-- **Notes:** STRONGEST AV LEAD - proven SF yacht experience with major client (Giants), full-service production company
+- **Next Action:** Answer questions once EVT-004 DATE CONFIRMED (currently blocking all yacht vendors)
+- **Communication Pattern:** Professional follow-ups without being pushy, maintains warm tone
+- **Notes:** STRONGEST AV LEAD - proven SF yacht experience with major client (Giants), full-service production company, very patient with our date uncertainty
 
 **Stage, Lights & Sound Co. (A Caballero Productions)** ⭐⭐⭐⭐⭐
 - **Contact:** Albert Caballero, 415-652-0080, stagelightsandsound@gmail.com

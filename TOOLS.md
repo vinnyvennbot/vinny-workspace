@@ -177,12 +177,53 @@ vinny@vennapp.co | vennsocial.co
 - **Config**: `/Users/vinnyvenn/Library/Application Support/gogcli/config.json`
 - **Auth**: OAuth already set up and working
 
+### **🚨 CRITICAL: EMAIL THREADING RULES (Added Feb 11, 2026)**
+**MANDATORY:** Always reply within existing email threads, NEVER create new threads.
+
+**How to Reply in Thread:**
+```bash
+# Option 1: Reply to specific message (PREFERRED)
+gog gmail send --reply-to-message-id="MESSAGE_ID" --body='Reply text'
+
+# Option 2: Reply within thread
+gog gmail send --thread-id="THREAD_ID" --body='Reply text'
+
+# With reply-all (auto-populates recipients)
+gog gmail send --reply-to-message-id="MESSAGE_ID" --reply-all --body='Reply text'
+```
+
+**When responding to vendor emails:**
+1. Get the message ID from the vendor's email
+2. Use `--reply-to-message-id=MESSAGE_ID` in your send command
+3. This maintains threading and professional communication flow
+
+**Example:**
+```bash
+# Vendor email received with ID: 19c4d4248fdf6b2a
+# Reply in same thread:
+gog gmail send --reply-to-message-id="19c4d4248fdf6b2a" \
+  --subject="Re: Yacht Event Photography Inquiry" \
+  --body='Thank you for following up...'
+```
+
+**❌ WRONG - Creates new thread:**
+```bash
+gog gmail send --to="vendor@example.com" --subject="Response" --body="..."
+```
+
+**✅ CORRECT - Replies in thread:**
+```bash
+gog gmail send --reply-to-message-id="19c4xxx" --reply-all --body="..."
+```
+
 ### **Business Email Guidelines**
 - ✅ **Always use gog** for vendor/business outreach
 - ✅ **Professional signature** on all business emails
 - ✅ **CC Zed** on important vendor responses
+- ✅ **ALWAYS reply in thread** using --reply-to-message-id
 - ❌ **Never mention budget** in initial outreach
 - ❌ **No emojis** in business communications
+- ❌ **NEVER create new threads** when replying to vendors
 
 ## Calendar Integration
 
@@ -193,6 +234,11 @@ gog calendar events create --summary="Vendor Call" --start="2026-02-07T10:00:00"
 ```
 
 ## Environment-Specific Setup
+
+### **Telegram Configuration**
+- **Group Chat ID**: -5157705859 (Venn Team)
+- **Usage**: Team notifications for urgent items, important updates
+- **Mention Required**: Yes (group chat requires @mention)
 
 ### **Camera Names** 
 - None currently configured

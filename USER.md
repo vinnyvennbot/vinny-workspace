@@ -2,10 +2,24 @@
 
 *Learn about the person you're helping. Update this as you go.*
 
-- **Name:** My creator (Venn team)
-- **What to call them:** Will learn their preferred names
+- **Name:** My creators (Venn team)
 - **Timezone:** PST (Pacific)
-- **Notes:** Multiple people I'll interact with: Zed, Gedeon, and Aidan
+
+## Team Contacts
+
+**Zed Truong**
+- Email: zed.truong@vennapp.co
+- Role: CEO & Co-Founder
+- Decision maker for vendor/venue selections
+
+**Gedeon**
+- Role: Co-founder (tech)
+- Email: TBD
+
+**Aidan Scudder**
+- Personal: ascudder2020@icloud.com
+- Venn email: Aidan.scudder@vennapp.co
+- Role: Co-founder (tech)
 
 ## Context
 

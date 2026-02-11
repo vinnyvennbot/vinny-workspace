@@ -292,16 +292,30 @@ Before sharing ANY sheet with team:
 - **Concise but thorough** - All necessary info without overwhelming
 - **Professional signature** with multiple contact methods
 
+### **🚨 CRITICAL: ALWAYS INCLUDE EVENT DATE IN OUTREACH (Added Feb 11, 2026)**
+**MANDATORY RULE:** Every vendor outreach email MUST include the specific event date.
+
+**Why it matters:**
+- Vendors need to check availability immediately
+- Pricing may vary by date/season/day-of-week
+- Professional and complete inquiry
+- Enables accurate quotes without back-and-forth
+- Shows we're organized and serious
+
+**Date Format:** "Day of week, Month Day, Year" (e.g., "Friday, March 7, 2026")
+
+**⚠️ VERIFY DAY OF WEEK:** Always confirm the date/day combination is correct before sending!
+
 ### **Revised Email Template**
 ```
 Hi [Vendor Name],
 
-I'm reaching out regarding a [Event Type] event on [Date] for approximately [Number] guests in San Francisco.
+I'm reaching out regarding a [Event Type] event on [Day], [Month] [Date], [Year] for approximately [Number] guests in San Francisco.
 
 [Brief event description with theme/vibe - 2-3 sentences max]
 
 We're looking for [Specific Service] and would love to learn more about:
-- Your availability for [Date]
+- Your availability for [Day], [Month] [Date], [Year]
 - Pricing for our group size
 - What's included in your packages
 - Setup and breakdown logistics
@@ -323,6 +337,78 @@ vinny@vennapp.co | vennsocial.co
 - **DO NOT CC Zed** until all pricing and options are gathered
 - **Only CC Zed** when presenting final recommendations with complete analysis
 - **Clean presentation** - organized, professional, decision-ready format
+
+### **🚨 CRITICAL: Never Leave Vendors On Read (Added Feb 11, 2026)**
+**MANDATORY:** Always be the last person to respond in vendor communications.
+
+**The Rule:**
+- **NEVER ghost vendors** after they provide quotes or responses
+- **ALWAYS acknowledge** their time and effort professionally
+- **Keep relationships warm** even during decision-making phase
+
+**When in Quote Collection Phase:**
+```bash
+# Vendor sends quote → IMMEDIATELY acknowledge (same day)
+gog gmail send --reply-to-message-id="VENDOR_MESSAGE_ID" --reply-all \
+  --subject="Re: [Original Subject]" \
+  --body='Thank you so much for the detailed quote and information. We truly appreciate your time and responsiveness.
+
+We are currently reviewing all vendor options with our team and will get back to you shortly with next steps.
+
+Best regards,
+Vinny
+Venn Social Events
+vinny@vennapp.co | vennsocial.co
+925-389-4794'
+```
+
+**When Vendors Ask Questions You Don't Know:**
+1. **Don't guess** or make up answers
+2. **Ask the team immediately** - Telegram group + Email to Zed
+3. **Acknowledge vendor** - "Great question, checking with the team and will get back to you shortly"
+4. **Follow up promptly** once you have the answer
+
+**Why This Matters:**
+- Professional courtesy - they took time to respond
+- Relationship building - keeps vendors engaged and positive
+- Reputation management - we want to be known as responsive and professional
+- Future opportunities - today's "no" could be tomorrow's "yes"
+
+**Example Scenarios:**
+
+**Scenario 1: Quote Received, Still Deciding**
+✅ CORRECT: "Thank you for the quote! We're reviewing options with the team and will respond by [date]."
+❌ WRONG: Leave on read while we decide
+
+**Scenario 2: Vendor Asks Event Details We Don't Have**
+✅ CORRECT: "Great question! Let me check with the team and get back to you today."
+❌ WRONG: Ignore the question or guess
+
+**Scenario 3: We Choose Another Vendor**
+✅ CORRECT: "Thank you so much for your time and quote. We've decided to move forward with another vendor for this event, but we'd love to keep you in mind for future opportunities."
+❌ WRONG: Ghost them after choosing someone else
+
+### **🚨 CRITICAL: Team Notification Protocol (Added Feb 11, 2026)**
+**When important action is needed, ALWAYS notify the team through multiple channels:**
+
+1. **Post to Telegram group chat** - Team's active communication channel
+2. **Email Zed directly** (zed.truong@vennapp.co) - Decision maker notification  
+3. Then report in current chat session
+
+**What qualifies as "important action needed":**
+- Time-sensitive vendor discounts or deadlines (e.g., "10% off if booked within 7 days")
+- Vendor responses requiring decisions (e.g., venue options, entertainer selection)
+- Budget-critical choices (e.g., $3,500 vs $1,299 bull rental)
+- Event booking confirmations needed
+- Urgent issues or problems (e.g., email bounces, vendor cancellations)
+- Opportunities that could expire (e.g., limited availability dates)
+
+**NEVER assume webchat notification is sufficient** - proactively push to team channels
+
+**Proper notification order:**
+1. Telegram group → Immediate team visibility
+2. Email to Zed → Decision maker gets details
+3. Webchat update → Acknowledge in current session
 
 ---
 
