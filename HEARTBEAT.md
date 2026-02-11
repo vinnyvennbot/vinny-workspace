@@ -43,7 +43,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-- **🚨 EVT-001 CRITICAL MEETING TOMORROW**: Zed + Katie 1PM Thursday Feb 12 - management decision + date options
+- **🚨 EVT-001 CRITICAL MEETING TOMORROW**: Zed + Katie 3:30PM Thursday Feb 12 - management decision + date options
 - **🚨 EVT-001 DATE NOW FLEXIBLE**: Zed open to ANY Sundays in March (not locked to March 7 anymore)
 - **✅ EVT-001 ALCOHOL PRICING CONFIRMED**: Hard liquor from venue bar, beer $7/drink, wine/champagne $30 corkage
 - **✅ EVT-001 DECISION RESOLVED**: Astro Jump selected ($1,299), saved $2,201, budget issue SOLVED (Feb 7, 5:17 PM)
