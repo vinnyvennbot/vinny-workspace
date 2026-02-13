@@ -268,13 +268,16 @@
 - **Next Action:** Schedule call early next week with Chi (events) + Mia (operations)
 - **Notes:** CAN HANDLE BOTH GATSBY + YACHT EVENTS - Navy/USS Hornet experience, relationship continuity opportunity
 
-**49 Square Catering** ⭐⭐⭐⭐
+**49 Square Catering** ⭐⭐⭐⭐⭐
 - **Contact:** Anthony Barr, anthony@49sqcatering.com
-- **Status:** Responded Feb 6, 09:08 PST - Wants discovery call
-- **Response Time:** 9 hours (good)
+- **Status:** ⚠️ 3RD FOLLOW-UP (Feb 13, 10:25 AM) - Acknowledged immediately
+- **Response Time:** 9 hours initial (good), persistent follow-ups (Feb 6, Feb 10, Feb 13)
 - **Approach:** "Exceptional food, thoughtful planning, seamless guest experience"
-- **Next Action:** Schedule discovery call for accurate proposal (calendar link provided)
-- **Notes:** Professional catering company, wants detailed discussion before quote
+- **Communication Pattern:** Professional persistence - explicitly asked if we're still interested or went another direction
+- **Recovery:** Apologized for delay, confirmed still interested, explained date blocker, offered late Feb/early March call
+- **Confidence Score:** 0.85 (high - patient vendor still engaged despite 3 follow-ups needed)
+- **Next Action:** Schedule discovery call once EVT-004 date confirmed (late Feb/early March)
+- **Notes:** Vendor stayed professional through 3 unanswered follow-ups - shows patience and genuine interest
 
 ### **Photography Vendors**
 
