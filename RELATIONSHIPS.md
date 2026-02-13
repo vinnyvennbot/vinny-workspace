@@ -123,6 +123,22 @@
 - **Next Action**: Decide if booking for Feb 28 intimate dinner event
 - **Notes**: Perfect for intimate 30-person dinner, highly interactive crowd-favorite entertainment, proven track record with major tech companies
 
+**Merrill Collier Magic** ⭐⭐⭐⭐⭐
+- **Contact**: Merrill Collier, 707-241-3038, merrill@magicbymerrill.com
+- **Website**: www.magicbymerrill.com/reviews, @magicbymerrill (IG/FB)
+- **Service**: Close-up magic for corporate events, weddings, private celebrations
+- **Quote**: $1,400 for 30 minutes (or $1,478 if credit card payment)
+- **Experience**: European award-winning magician, Member Academy of Magical Arts, Magic Castle
+- **Location**: Northern California Wine Country (Santa Rosa)
+- **🚨 URGENT STATUS**: Has competing inquiry for Feb 28, needs response by MONDAY FEB 16
+- **Status**: Asking for decision Feb 13, 2:20 PM - acknowledged same day
+- **Response Time**: Fast, professional communication
+- **Confidence Score**: 0.85 (high - award-winning but competing demand for his date)
+- **Pricing Context**: Zed mentioned "a bit higher on the spectrum" compared to other quotes
+- **Payment Options**: Venmo/Zelle/check ($1,400) or credit card ($1,478)
+- **Next Action**: ZED DECISION REQUIRED BY MONDAY - book or lose to competing client
+- **Notes**: Very high quality, selective bookings, corporate personality, repeat-gig focused, but premium pricing vs Perry Yan ($400)
+
 ### **Sponsor Relationships**
 
 **Golden Gate Western Wear** 🎯

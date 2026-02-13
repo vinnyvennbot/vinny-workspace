@@ -54,7 +54,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **✅ EVT-001 DECISION RESOLVED**: Astro Jump selected ($1,299), saved $2,201, budget issue SOLVED (Feb 7, 5:17 PM)
 - **🎯 EVT-001 ENHANCEMENT**: Zed exploring bulk discount + western rentals (axe throwing, hay bales, photo props)
 - **✅ EVT-002 VENUE CONFIRMED**: Fort Mason Center clarified to Merrill Collier (Feb 12, 2:40 PM)
-- **⏳ EVT-002 BOOKING PENDING**: Merrill Collier $1,400 magic booking awaiting Zed's confirmation
+- **🚨 EVT-002 URGENT DECISION**: Merrill Collier has competing Feb 28 inquiry, needs response by MONDAY (Feb 16) - acknowledged immediately
 - **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - cost optimization needed
 - **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
 - **🚨 EVT-004 NO DATE SET**: Blocking 3+ vendors (Slava Blazer photo, AVT Productions AV, Salt & Honey catering)
