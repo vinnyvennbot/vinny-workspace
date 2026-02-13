@@ -344,6 +344,18 @@
 - **Next Action**: Provide event date/timeline for confirmation
 - **Notes**: Fast delivery (24-48hrs vs 3-5 days), full usage rights included, video option available
 
+**SF Event Photo** ⭐⭐⭐⭐⭐
+- **Contact**: Phil (Booking Team), 415-319-7388, bookings@sfeventphoto.com
+- **Coverage**: SF | LA | SD
+- **Yacht Experience**: Shared previous yacht event portfolio (professional work)
+- **⚠️ COMMUNICATION GAP**: Offered Feb 9 call + portfolio, we never responded until Feb 13 follow-up
+- **Status**: Follow-up Feb 13, 12:25 PM - Asking for progress update, acknowledged immediately
+- **Response Time**: Fast (same-day responses)
+- **Recovery**: Apologized for delay, confirmed still interested, explained date blocker, offered late Feb/early March call
+- **Confidence Score**: 0.82 (high - professional persistence, yacht portfolio strong, stayed engaged)
+- **Next Action**: Schedule call once EVT-004 date confirmed (late Feb/early March timeline)
+- **Notes**: Multi-city coverage, previous yacht work looks excellent, patient vendor despite our 4-day gap
+
 ### **AV/Technical Production Vendors**
 
 **Got Light (Holly Smith)** ⭐⭐⭐
