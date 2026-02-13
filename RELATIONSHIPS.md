@@ -23,6 +23,18 @@
 - **Status**: Quote received, comparing options
 - **Notes**: Established company, higher pricing
 
+**Toro Show MBR (Alberto Rodriguez)** ⭐⭐⭐
+- **Contact**: Alberto Rodriguez, 650-400-2052, toroshow@yahoo.com
+- **Website**: www.toroshowmbr.com
+- **⚠️ COMMUNICATION GAP**: Missed Feb 5 call scheduling (8-day delay)
+- **Recovery**: Apologized + re-engaged Feb 13, 6:55 AM
+- **Availability**: Flexible today or next week for call
+- **Status**: Awaiting EVT-001 date confirmation, then schedule discovery call
+- **Response Pattern**: Patient but proactive follow-up (good vendor signal)
+- **Confidence Score**: 0.60 (medium - relationship recovery in progress)
+- **Next Action**: Schedule call after Presidio meeting confirms date
+- **Notes**: Vendor stayed engaged despite our 8-day silence - professional persistence
+
 **TJs House of Bounce** ⚠️
 - **Contact**: info@tjshouseofbounce.com (EMAIL FAILED)
 - **Status**: Connection timeout issues
