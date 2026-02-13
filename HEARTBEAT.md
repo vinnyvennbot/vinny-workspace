@@ -43,14 +43,21 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-- **🚨 EVT-001 CRITICAL MEETING TOMORROW**: Zed + Katie 3:30PM Thursday Feb 12 - management decision + date options
+- **🚨 EVT-001 MEETING TODAY**: Zed + Katie 10:00AM Friday Feb 13 - date options & logistics discussion
 - **🚨 EVT-001 DATE NOW FLEXIBLE**: Zed open to ANY Sundays in March (not locked to March 7 anymore)
+- **⏳ EVT-001 ASTRO JUMP QUOTE**: Mechanical bull quote received (Feb 12, 4:31 PM) - awaiting date confirmation to book
+- **✅ EVT-001 DJ CONFIRMED AVAILABLE**: Bay Area Beats DJs ready to help, sent intake form, 10% discount confirmed (Feb 13, 2:08 AM)
+- **🎯 EVT-001 DJ PRICING**: JustINtertainment pricing received (Feb 12, 11:42 AM) - awaiting review
+- **🎯 EVT-001 DJ PRICING RECEIVED**: JustINtertainment sent pricing proposal (Feb 12, 11:42 AM) - awaiting review
 - **✅ EVT-001 ALCOHOL PRICING CONFIRMED**: Hard liquor from venue bar, beer $7/drink, wine/champagne $30 corkage
 - **✅ EVT-001 DECISION RESOLVED**: Astro Jump selected ($1,299), saved $2,201, budget issue SOLVED (Feb 7, 5:17 PM)
 - **🎯 EVT-001 ENHANCEMENT**: Zed exploring bulk discount + western rentals (axe throwing, hay bales, photo props)
+- **✅ EVT-002 VENUE CONFIRMED**: Fort Mason Center clarified to Merrill Collier (Feb 12, 2:40 PM)
+- **⏳ EVT-002 BOOKING PENDING**: Merrill Collier $1,400 magic booking awaiting Zed's confirmation
 - **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - cost optimization needed
 - **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
-- **⚠️ EVT-004 NO DATE SET**: Blocking vendor confirmations (Andrew Verducci AV waiting on date)
+- **🚨 EVT-004 NO DATE SET**: Blocking 3+ vendors (Slava Blazer photo, AVT Productions AV, Salt & Honey catering)
+- **✅ EVT-004 VENDORS ACKNOWLEDGED**: Slava + AVT updated on date delay (Feb 12, 2:40 PM) - keeping warm
 - **✅ EVT-004 VENDOR RESPONSES PROCESSED**: THEYimprov (April 19 available), Caterman CEO (wants call), Got Light (cautious interest)
 - **✅ EVT-003 BAR SERVICE LEAD**: Liquid Caterers (perfect Gatsby fit, 18 yrs exp, competitive pricing)
 - **✅ EVT-003 VENUE RESPONSE**: SFMOMA directed to formal inquiry form (follow up needed)
