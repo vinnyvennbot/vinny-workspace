@@ -587,16 +587,26 @@ Known preferred vendors: Mooma Booth (photo booth), Jaziel (photography/video), 
 ### Follow-up Cadence
 
 - No response to first outreach → one follow-up after **25 hours**, same thread
-- No response to follow-up → mark as `no_response`, move on
+- No response to follow-up → mark as `no_response`, move on. **Do NOT send postponement emails to non-responders.** Ghost them.
 - Do not chase further unless Zed instructs
+- **Postponement emails are only for vendors who engaged** (replied, sent quote, had a call)
 
 ### Over-Budget Quote Protocol
 
 Received a quote that's over budget?
-- **Extremely over budget** (e.g. Cal Academy at $205K for a $60K event) → don't bring to Zed, just log it and move on
-- **A little over budget** → send vendor a holding reply ("We'll discuss internally and get back to you") then **ask Zed** before negotiating
+- **≥2x target budget** → don't surface to Zed. Log it, move on, find alternatives.
+- **1.1x–2x target budget** → confirm budget with Zed before any negotiation. Send vendor a holding reply: "We'll discuss internally and get back to you."
+- **Within budget** → acknowledge immediately, flag to Zed with recommendation.
 - Default reply to any quote: "Thank you for the quote! We're reviewing with the team and will be in touch shortly."
-- Never negotiate without Zed's explicit approval first
+- Never negotiate without Zed's explicit approval first.
+
+### Vendor Budget Guardrail (New Rule — Feb 18, 2026)
+
+**All vendor costs combined must not exceed 80% of venue cost.**
+
+Example: Venue = $20,000 → max total vendor spend = $16,000.
+If vendor estimates push past 80% of venue cost → flag to Zed before proceeding.
+This keeps the venue as the primary cost driver and prevents vendor overrun.
 
 ### Warm Intro Protocol
 
@@ -695,30 +705,27 @@ One event per email, per contact. Don't overload vendors with two separate asks 
 
 **Default:** Keep all event threads isolated. Do NOT mix scopes.
 
-### Decision Framework — When to reference another event in an active thread
+### Decision Gate — When to reference another event in an active thread
 
-Score three dimensions (0–100 each) before acting:
+Two questions only. Both must be yes to mention the new event:
 
-| Score | Description |
-|-------|-------------|
-| `close_probability` | How likely is the current event (EVT-001) to close with this vendor? |
-| `vendor_priority` | How important/unique is this vendor for the pipeline event (EVT-005)? |
-| `date_scarcity` | How tight is vendor availability for the pipeline event's date? |
+1. **Is this event likely to close with this vendor?** (are we in active negotiation, quote received and in range, near decision?)
+2. **Would this vendor be meaningfully hard to replace for the new event?** (past relationship, unique fit for the theme/scale, limited alternatives in SF?)
 
-**Rules:**
-- IF `close_probability ≥ 70` AND `vendor_priority ≥ 60` → May softly reference pipeline event. Language: *"If EVT-001 goes well, we're launching EVT-005 in June with a similar format — happy to keep you top of mind."* Do NOT negotiate both simultaneously.
-- IF `date_scarcity ≥ 80` → May ask to pencil additional dates on hold. Keep scopes separate.
-- IF `close_probability < 70` → Do NOT introduce EVT-005. Focus on closing EVT-001 cleanly first.
+**Both yes →** soft mention in existing thread. Example: *"If this goes well, we're launching [EVT-005] in June with a similar format — would love to keep you in mind."*
+**Either no →** stay focused on the current event. Don't distract.
 
-**Strategic principle:** Close first event clean. Deliver. Then expand relationship into recurring volume. Do not signal scale prematurely unless bundling is intentional for volume discount negotiation.
+**Strategic principle:** Close first event clean. Deliver. Then expand the relationship.
 
-**Always log for each cross-event decision:**
-```
-close_probability_score: X
-vendor_priority_score: X
-date_scarcity_score: X
-decision_taken: [reference pipeline / ask for hold / do nothing]
-reasoning: [why]
-```
+### Vendor Priority — What "hard to replace" means
 
-**Insufficient data to score?** Ask up to 3 clarifying questions (to Zed) before acting.
+Priority is based on:
+- **Past relationship quality** — did we work with them before? Did they deliver?
+- **Uniqueness/taste** — Venn's brand IS the venue/experience quality. Yachts, mansions, Officers' Club. Not another bar or club. Vendors who fit rare/iconic experiences rank higher.
+- **Limited SF alternatives** — fewer competitors = higher priority to lock in early
+
+### Date Scarcity
+
+Simple: how close is the event? The closer the date, the higher the urgency to lock vendors.
+- Event is 4+ months out → low scarcity
+- Event is 2–4 weeks out → high scarcity, may need to mention both events to hold dates
