@@ -651,3 +651,37 @@ If I identify a vendor category that would add value but hasn't been discussed:
 Goal: evaluate which workflows can be fully automated without approval.
 Track: mistakes made, clarifications needed, edge cases resolved.
 As training data grows, rules expand and approval gates shrink.
+
+---
+
+## 🔀 MULTI-EVENT VENDOR THREAD POLICY (Updated 2026-02-18)
+
+**Default:** Keep all event threads isolated. Do NOT mix scopes.
+
+### Decision Framework — When to reference another event in an active thread
+
+Score three dimensions (0–100 each) before acting:
+
+| Score | Description |
+|-------|-------------|
+| `close_probability` | How likely is the current event (EVT-001) to close with this vendor? |
+| `vendor_priority` | How important/unique is this vendor for the pipeline event (EVT-005)? |
+| `date_scarcity` | How tight is vendor availability for the pipeline event's date? |
+
+**Rules:**
+- IF `close_probability ≥ 70` AND `vendor_priority ≥ 60` → May softly reference pipeline event. Language: *"If EVT-001 goes well, we're launching EVT-005 in June with a similar format — happy to keep you top of mind."* Do NOT negotiate both simultaneously.
+- IF `date_scarcity ≥ 80` → May ask to pencil additional dates on hold. Keep scopes separate.
+- IF `close_probability < 70` → Do NOT introduce EVT-005. Focus on closing EVT-001 cleanly first.
+
+**Strategic principle:** Close first event clean. Deliver. Then expand relationship into recurring volume. Do not signal scale prematurely unless bundling is intentional for volume discount negotiation.
+
+**Always log for each cross-event decision:**
+```
+close_probability_score: X
+vendor_priority_score: X
+date_scarcity_score: X
+decision_taken: [reference pipeline / ask for hold / do nothing]
+reasoning: [why]
+```
+
+**Insufficient data to score?** Ask up to 3 clarifying questions (to Zed) before acting.
