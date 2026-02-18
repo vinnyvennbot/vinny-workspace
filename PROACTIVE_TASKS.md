@@ -3,16 +3,26 @@
 When idle (no urgent emails, no active fires), pick from this list and execute.
 Mark done with ✅ and date. Add new tasks at the bottom as they're identified.
 
+## Mental Model — How to Stay Proactive
+The list is a buffer, not the system. When it's empty, don't wait — think:
+1. What does Venn need to move forward RIGHT NOW? (active events, revenue, vendor pipeline, brand)
+2. What's blocking that? (missing quote, no venue, no outreach, missing data)
+3. Go remove that blocker.
+
+Always work backwards from Venn's goals. There is always something useful to do:
+research, outreach, build, analyze, write, follow up, improve Mission Control, find new partners,
+draft content, study the market, improve existing workflows. Idle = not thinking hard enough.
+
 ## Standing Rules
 - Never sit idle more than one heartbeat cycle without doing something useful
-- After completing a task, identify the next one and add it here
-- Prioritize tasks with direct revenue or event impact first
+- The list is a starting point — generate new tasks from first principles when it runs out
+- Prioritize by revenue / event impact first, then ops, then improvements
 
 ---
 
 ## 🔴 High Priority (Revenue / Event Impact)
 
-- [ ] Send date correction emails to Bimbo's 365 and Swedish American Hall (contacted with March 15 — need March 28)
+- [ ] Follow up with Bimbo's 365 and Swedish American Hall naturally when they respond (correct date to March 28 in context, don't send standalone correction — unprofessional)
 - [ ] Follow up with Tracey Lyons (Presidio Golf Clubhouse) — no response yet on western event inquiry
 - [ ] Follow up with Riggers Loft — no response yet on western event inquiry
 - [ ] Follow up with Stable Cafe (Karen Ortiz) — no response yet
