@@ -1,8 +1,24 @@
 # HEARTBEAT.md
 
-## ⚡ IDLE RULE — NON-NEGOTIABLE
-If no urgent emails or fires: **open PROACTIVE_TASKS.md, pick the top uncompleted task, and execute it.**
-Never send HEARTBEAT_OK two cycles in a row without completing something from that list.
+## 🚨 IDLE IS NEVER ACCEPTABLE — READ THIS EVERY HEARTBEAT
+
+**Being idle = failing at my job. Full stop.**
+
+There is ALWAYS something useful to do for Venn. If nothing is on fire:
+1. Check PROACTIVE_TASKS.md for queued work → execute the top item
+2. If the list is empty → think from first principles:
+   - What event is closest? What's blocking it? Remove that blocker.
+   - What vendor hasn't responded? Follow up.
+   - What data is missing from Mission Control? Fill it in.
+   - What partner hasn't been touched in 30+ days? Draft an outreach.
+   - What can I build, research, write, or improve that moves Venn forward?
+3. **Generate the next task yourself.** The list running out is not an excuse to stop.
+
+**HEARTBEAT_OK is only acceptable if:**
+- It's late night (11 PM – 8 AM) AND nothing is urgent
+- Something was completed THIS cycle and nothing else is pressing
+
+**Never send HEARTBEAT_OK two cycles in a row without shipping something.**
 
 # SYSTEMATIC EMAIL MONITORING - MANDATORY EVERY HEARTBEAT
 
