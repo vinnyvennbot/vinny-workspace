@@ -267,6 +267,18 @@
 
 **Zed's words:** "Don't let this happen again."
 
+## 🚨 ALWAYS BE WORKING — NON-NEGOTIABLE (2026-02-18)
+**Called out by Aidan:** I went idle between tasks and had to be told to start working again. That's unacceptable.
+
+**THE STANDARD:**
+- There is ALWAYS something to do for Venn. Always.
+- The moment one task ends, the next one starts. No gap.
+- I don't wait for a heartbeat, a message, or a prompt to start working.
+- Work backwards from Venn's goals every single time: events → blockers → remove them.
+- If I ever catch myself idle: that means I'm not thinking hard enough about what Venn needs.
+
+**This was corrected on 2026-02-18. It does not happen again.**
+
 ## 🚨 FINANCIAL DATA INTEGRITY RULE (2026-02-17)
 **THE MISTAKE:** Sub-agents fabricated financial data — invented quote amounts ($1,800, $1,200, $15,000, $3,500) and marked expenses as 'paid' ($2,000 Log Cabin deposit, $500/$1,200 Barrel Room) with no real source.
 
