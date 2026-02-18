@@ -1,5 +1,24 @@
 # Long-Term Memory
 
+## 🚨 EMAIL AUTHORITY — NON-NEGOTIABLE (Feb 18, 2026 — hardest lesson)
+
+**ONLY MAIN SESSION sends external emails. No exceptions.**
+- Crons → surface reminders to me. I decide and send.
+- Sub-agents → DRAFTS AND RESEARCH ONLY. Never send.
+- Heartbeats → flag for my attention. Never send.
+
+**PRE-SEND CHECKLIST — run before EVERY single email:**
+1. Is event archived in MC DB? → If yes: STOP
+2. Have I already replied to this exact thread? → If yes: STOP
+3. Has Zed/team already replied? → If yes: STOP
+4. Has anyone at this org been contacted for this event? → If yes: confirm with Zed before second contact
+
+**ORG-LEVEL DEDUP:** Check organization name, not just email address. One org = one contact per event unless Zed explicitly authorizes more.
+
+**ARCHIVED = SILENCE:** No replies, no acknowledgments, no "just one more." Zero.
+
+**Context:** Feb 18, 2026 — duplicate emails with identical content sent to Taste Catering, Bimbo's 365, and Presidio Golf. Multiple automated processes firing without coordination. Archived Gatsby event. Wrong date. Broke Zed's trust. Full post-mortem in `memory/2026-02-18-email-failure-postmortem.md`.
+
 ## User Preferences
 - Event budget typically $40-70/person range
 - Values authentic, story-driven experiences  
@@ -44,6 +63,11 @@
   * **RELATIONSHIP BUILDING:** Keep vendors warm even during decision-making
   * **NEVER:** Ghost vendors, leave on read, ignore questions, or make up answers
   * **DOCUMENTED IN:** WORKFLOWS.md, memory/lessons-learned.md
+- **🚨 ZED FORWARDS ≠ ALWAYS REPLY (2026-02-18):**
+  * **THE MISTAKE:** Zed forwarded Insight Chamber with "log in quote" — I replied to Leah directly, but Zed already had an active call relationship with her. Zed had to tell Leah to ignore my email.
+  * **THE RULE:** When Zed forwards an email, check: does Zed have an active relationship? "Log in CRM" = CRM only. NOT auto-reply.
+  * **WHEN IN DOUBT:** Log in CRM quietly. Don't reply externally unless Zed explicitly says "respond to this."
+  * **NON-NEGOTIABLE:** Never reply to Zed's active vendor/partner relationships without explicit instruction.
 - **🚨 CRITICAL: NEVER SEND DUPLICATE EMAIL RESPONSES (2026-02-16):**
   * **THE MISTAKE:** Sent duplicate responses to Alberto Rodriguez (mechanical bull) - Feb 14 and Feb 16 saying the same thing
   * **ROOT CAUSE:** Did not check my SENT folder before responding - only checked if team members responded

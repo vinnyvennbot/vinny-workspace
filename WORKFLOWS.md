@@ -70,6 +70,21 @@ AGENTS.md (principles)
 
 ## EMAIL EXECUTION AUTHORITY (CRITICAL - Added Feb 5, 2026)
 
+### 🚨 EMAIL SEND AUTHORITY — UPDATED FEB 18, 2026 (HARD LESSON)
+
+**ONLY MAIN SESSION (this chat) sends external emails.**
+- Sub-agents: DRAFTS ONLY. Never send. If a sub-agent sends emails, that is a failure.
+- Crons: Fire reminders to me. I review. I send.
+- Heartbeats: Surface flags to me. I send.
+
+**MANDATORY PRE-SEND CHECKLIST (run before EVERY email, no exceptions):**
+1. `sqlite3 dev.db "SELECT archived FROM Event WHERE id='evt-XXX'"` → archived=1? STOP.
+2. Search sent: `gog gmail messages search "in:sent to:vendor@email.com"` → already replied? STOP.
+3. Search all: `gog gmail messages search "from:zed.truong@vennapp.co to:vendor@email.com"` → team replied? STOP.
+4. Check org: Has ANY contact at this organization been emailed for this event? → If yes, confirm with Zed before second contact.
+
+**Context:** Feb 18 — identical duplicate emails sent to Taste Catering, Bimbo's 365, Presidio Golf. Archived Gatsby event. Multiple automated processes with no coordination. Full post-mortem: `memory/2026-02-18-email-failure-postmortem.md`
+
 ### **AUTO-SEND EMAILS (Execute Immediately - No Approval Needed)**
 ✅ **Initial vendor outreach** for quotes (following templates in TOOLS.md)  
 ✅ **Follow-up emails** within 24-hour rule to non-responders  
