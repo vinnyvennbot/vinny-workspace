@@ -34,7 +34,7 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 
 - [ ] Add all new vendor quote data to Google Sheets as responses come in
 - [ ] Research and add 5+ new western venue options in case Log Cabin falls through
-- [ ] Build out EVT-003 Gatsby vendor pipeline (catering, photography, AV still need outreach)
+- ✅ 2026-02-18: EVT-003 Gatsby — 9 vendors contacted (3 catering, 4 photo, 3 AV/lighting). 5 more need email verification before outreach (call first: KC Catering, Above & Beyond, Drew Altizer, Impact SF, AVT Productions)
 - [ ] Confirm EVT-004 yacht date — Red & White Fleet ($10,800) still waiting on date to finalize
 - [ ] Draft EVT-001 marketing copy for when venue is confirmed
 - [ ] Research SF community orgs for EVT-003 Gatsby partnership opportunities
