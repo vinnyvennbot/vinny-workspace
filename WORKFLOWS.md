@@ -548,3 +548,106 @@ Maintain this list in HEARTBEAT.md. Update in real-time:
 | Sunnyside Conservatory | SFRPD form review | Feb 17 |
 
 When any of these get resolved, remove from list. When new vendors added, add here immediately.
+
+---
+
+## 🤖 OUTREACH INTELLIGENCE SYSTEM (Updated 2026-02-18)
+*Built from Zed's training sessions. Review monthly. Next check-in: March 18, 2026.*
+
+### Pre-Flight: Before ANY external outreach
+
+Run this checklist. Stop and message Zed if any check fails:
+```
+1. Event exists in Mission Control DB?
+2. Event archived = false?
+3. Date AND key event details (theme, capacity) confirmed?
+4. This contact not already reached out to for this specific event?
+5. If contact exists in system from another event — use their existing thread
+```
+
+### Trigger: When to start first outreach
+
+**Do NOT reach out until:**
+- Event has a confirmed date
+- Event has a theme/concept defined
+- Event capacity/scale is known
+
+**Then: first outreach is fully autonomous, no approval needed.**
+
+### Vendor Re-engagement Rules
+
+**If they declined due to price:** Do not re-engage. Find alternatives.
+**If they were unavailable:** Can re-engage for a future event IF that category isn't covered yet.
+**Preferred vendor bias:** ALWAYS check existing/past vendors first before going to new ones.
+Known preferred vendors: Mooma Booth (photo booth), Jaziel (photography/video), and others as discovered.
+**Events over 100 people:** Ask Zed before going to market — "Should I get more quotes or go with [existing vendor]?"
+
+### Follow-up Cadence
+
+- No response to first outreach → one follow-up after **25 hours**, same thread
+- No response to follow-up → mark as `no_response`, move on
+- Do not chase further unless Zed instructs
+
+### Over-Budget Quote Protocol
+
+Received a quote that's over budget?
+- **Extremely over budget** (e.g. Cal Academy at $205K for a $60K event) → don't bring to Zed, just log it and move on
+- **A little over budget** → send vendor a holding reply ("We'll discuss internally and get back to you") then **ask Zed** before negotiating
+- Default reply to any quote: "Thank you for the quote! We're reviewing with the team and will be in touch shortly."
+- Never negotiate without Zed's explicit approval first
+
+### Warm Intro Protocol
+
+If Zed or team forwards a contact or intro: **always reference Zed in the outreach**
+> "Zed passed along your info and suggested we connect..."
+This signals relationship and increases response rate.
+
+### Competing Events, Same Vendor
+
+If a vendor can only do one date and we have two events conflicting:
+→ Ask them to do both. Let them sort out capacity. Don't pre-decide on their behalf.
+
+### Event Detail Changes Mid-Outreach
+
+**Planning mode:** Dates, venues, details may change. Do NOT notify vendors proactively.
+**Executing mode:** When Zed says in email/chat "we're ready to go with [date]" — that's the signal.
+Only notify vendors of confirmed details when we are in executing mode and everything is locked.
+**When in doubt:** Ask Zed before sending any update.
+
+### Event Archived → Postponement Protocol
+
+When an event is archived in Mission Control:
+1. Flag all VendorOutreach records for that event
+2. Queue a professional postponement email to everyone contacted for that event
+3. **Wait minimum 5 days** from archive date before sending (never day-of)
+4. **Exception:** If archived same day as outreach was sent — skip postponement entirely, too soon
+5. Default language: "Due to internal planning changes, we're postponing this event to a later date. We'd love to work together on a future event and will be in touch when timing is right."
+6. If a vendor contacted for the archived event fits an ACTIVE event — mention the transition in the postponement email (same thread), not as a separate email
+
+### Proactive Vendor Category Discovery
+
+If I identify a vendor category that would add value but hasn't been discussed:
+→ **Ask Zed first** before doing any outreach. Propose the category + rationale, wait for approval.
+
+### Contact Deduplication Rule
+
+**Never send a "first outreach" email to someone already in our system.**
+- Check VendorOutreach table: has this email been contacted before?
+- If yes → find their existing thread, continue there
+- If they were engaged on an archived event AND fit an active event → pivot in same thread
+
+### Execution Mode vs Planning Mode
+
+| Signal | Mode | Action |
+|--------|------|--------|
+| "We're ready to go with [date/venue]" in email/chat | Executing | Lock details, notify relevant vendors |
+| Event in Mission Control with status = planning | Planning | Don't notify vendors of changes |
+| Zed says "confirmed" explicitly | Executing | Treat as locked |
+| Uncertainty | Unknown | Ask Zed |
+
+### Monthly Autonomy Review
+
+**Next review: March 18, 2026**
+Goal: evaluate which workflows can be fully automated without approval.
+Track: mistakes made, clarifications needed, edge cases resolved.
+As training data grows, rules expand and approval gates shrink.
