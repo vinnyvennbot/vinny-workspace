@@ -1,5 +1,38 @@
 # RELATIONSHIPS.md - Vendor & Venue Intelligence
 
+## ⭐ PREFERRED VENDOR ROSTER (Top Priority — Check These First)
+*Confirmed past Venn relationships from email scan. Always prioritize over new contacts.*
+
+### Service Vendors (Hired/Used Directly)
+| Vendor | Category | Contact | Notes |
+|--------|----------|---------|-------|
+| FPV Studio (Jaziel) | FPV/Drone video & editing | fpvarchitecture@gmail.com · +1 619-289-1389 | Invoice #E5QUGIDL-0003 $350 (Feb 2026 reel editing); Zed's go-to for promo content |
+| Andey | Photo booth | **CONTACT NEEDED — ask Zed** | Confirmed preferred vendor by Zed; no email on file yet |
+
+### Sponsors & Brand Partners (Provided product/cash/co-branding)
+| Partner | Category | Contact | Last Event |
+|---------|----------|---------|-----------|
+| Best Day Brewing | NA Beer sponsor | Malanna Wheat · malanna@bestdaybrewing.com · 510.292.3813 | Fort Mason Gatsby May 9, 2025 (14 cases / 336 cans) |
+| Known | Co-sponsor | Asher · asher@knowndating.com | Yacht Party Sep 2025 (signed contract) |
+| Breakthrough Beverage | Alcohol distribution | Nandini Novarr · nnovarr@breakthrubev.com · 619.729.5472 | Fall into the Vibes Oct 2025 (Bar Hill Gin, Michter's) |
+| Blenders Eyewear | Merch/sunglasses | Oriana Suarez · oriana@blenderseyewear.com | Wholesale discount offered; no active event yet |
+
+### Venue Partners (Hosted or co-promoted events)
+| Partner | Category | Contact | Last Event |
+|---------|----------|---------|-----------|
+| Silver Cloud | Bar/venue | Tom · silvercloudrst@gmail.com | Yacht afterparty Jun 2025 (206 sign-ups) |
+| Catch French Bistro | Venue | catchfrenchbistro@yahoo.com | Fall into the Vibes Oct 2025 |
+| Veranda Social | Venue/bar | Rachael Ferrari · rachael@barbackhospitality.com | Post-party partner; $12K Thu / $15K Fri-Sat buyout, 300 cap |
+
+### Creator Partners
+| Partner | Category | Contact | Last Event |
+|---------|----------|---------|-----------|
+| AndrewToursSF | IG/TikTok creator | Andrew De Los Santos · info@andrewtourssf.com | Fall into the Vibes Oct 2025 |
+| Corbin Mason | IG creator | @corbin.mason | Creator partner |
+
+---
+
+
 ## Active Vendor Relationships
 
 ### **Mechanical Bull Vendors (March 7 Event)**
