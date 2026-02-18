@@ -1,5 +1,9 @@
 # HEARTBEAT.md
 
+## ⚡ IDLE RULE — NON-NEGOTIABLE
+If no urgent emails or fires: **open PROACTIVE_TASKS.md, pick the top uncompleted task, and execute it.**
+Never send HEARTBEAT_OK two cycles in a row without completing something from that list.
+
 # SYSTEMATIC EMAIL MONITORING - MANDATORY EVERY HEARTBEAT
 
 ## Email Monitoring Protocol (REQUIRED EVERY HEARTBEAT)

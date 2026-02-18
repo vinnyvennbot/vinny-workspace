@@ -266,3 +266,17 @@
 4. Before submitting any venue list: ask "Did we check everywhere we already know?"
 
 **Zed's words:** "Don't let this happen again."
+
+## 🚨 FINANCIAL DATA INTEGRITY RULE (2026-02-17)
+**THE MISTAKE:** Sub-agents fabricated financial data — invented quote amounts ($1,800, $1,200, $15,000, $3,500) and marked expenses as 'paid' ($2,000 Log Cabin deposit, $500/$1,200 Barrel Room) with no real source.
+
+**THE RULE — NON-NEGOTIABLE:**
+- **NEVER** enter a quote amount unless it came verbatim from an email or document
+- **NEVER** mark an expense as 'paid' unless there is an actual invoice/receipt/confirmation email
+- **NEVER** seed "realistic-sounding" financial placeholders — use null and status 'awaiting_quote'
+- **NEVER** infer payment status from context (e.g., "venue confirmed" ≠ "deposit paid")
+- **Vendor availability ≠ quote received**
+- **Quote received ≠ amount known** (mark null if amount not in records)
+
+**WHEN IN DOUBT:** Set quoteAmount: null, status: 'awaiting_quote', and notes: 'Awaiting confirmation'
+**EXPENSES:** Only create expense records for costs Zed has explicitly confirmed were paid

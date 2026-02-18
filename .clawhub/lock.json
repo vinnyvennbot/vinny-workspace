@@ -108,6 +108,10 @@
     "pymupdf-pdf-parser-clawdbot-skill": {
       "version": "1.0.0",
       "installedAt": 1771041101533
+    },
+    "tg-voice-whisper": {
+      "version": "1.0.0",
+      "installedAt": 1771393142366
     }
   }
 }
