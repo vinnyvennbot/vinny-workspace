@@ -245,6 +245,29 @@ gog drive upload formatted_sheet.xlsx --parent FOLDER_ID --name "Sheet Name"
 
 ## Email Sending (gog CLI)
 
+### **🚨 EMAIL BODY FORMATTING — NO HARD LINE WRAPS (Added Feb 18, 2026)**
+Never manually wrap lines within a paragraph. Hard line breaks (`\n`) are preserved literally in email clients, causing jagged right-edge whitespace gaps.
+
+**WRONG** (creates broken layout):
+```
+Thank you for the follow-up and for sharing those ideas —
+really thoughtful concepts, and I can see how the Guided
+Listening format could work beautifully at one of our events.
+```
+
+**CORRECT** (flows naturally):
+```
+Thank you for the follow-up and for sharing those ideas — really thoughtful concepts, and I can see how the Guided Listening format could work beautifully at one of our events.
+```
+
+Rules:
+- Each paragraph = **one continuous line** (no `\n` within a paragraph, ever)
+- Separate paragraphs with `\n\n` only (blank line between)
+- Use `--body-file` for long emails to control formatting precisely
+- **Never word-wrap at 80 chars** — email clients handle wrapping automatically
+
+---
+
 ### **Business Email Protocol**
 
 ### **🚨 MANDATORY: VERIFY DATES BEFORE SENDING 🚨**
