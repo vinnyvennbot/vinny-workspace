@@ -507,3 +507,44 @@ If event date or time changes after vendor outreach begins:
 ---
 
 *Workflows updated Feb 5, 2026 based on comprehensive user feedback. Focus: Volume outreach, creative vendor selection, clean communication, learning from experience.*
+---
+
+## 🚨 STATUS CHANGE PROTOCOL (Added 2026-02-17)
+
+**Triggered by:** Any change to venue, date, budget status, or event cancellation.
+
+### Step 1 — Map Impact Before Acting
+Before sending ANY communication, list every vendor/contact waiting on the changed info:
+```
+Status change: Venue uncertain
+Affected vendors: Party Jump ✓, Astrojump ✓, DJ (if confirmed date), [others]
+→ Update ALL before closing out
+```
+
+### Step 2 — Generalize Instructions
+When Zed gives a specific communication direction to ONE vendor, immediately ask:
+> "Does this message pattern apply to other vendors too?"
+If yes → apply to all. If unsure → ask Zed.
+
+### Step 3 — Confirm Sweep
+After sending, confirm all affected vendors were updated. Never mark complete with partial coverage.
+
+---
+
+## 🚧 BLOCKED VENDOR TRACKER
+Maintain this list in HEARTBEAT.md. Update in real-time:
+
+| Vendor | Waiting On | Since |
+|--------|------------|-------|
+| Astrojump | Venue + date confirmation | Feb 5 |
+| Party Jump (David Watson) | Venue + date confirmation | Feb 5 |
+| Bay Area Beats DJs | Venue + date confirmation | Feb 13 |
+| Tracey Lyons (Presidio Golf) | Quote request sent | Feb 17 |
+| Karen Ortiz (Stable Cafe) | Quote request sent | Feb 17 |
+| Bimbo's 365 | Quote request sent | Feb 17 |
+| Swedish American Hall | Quote request sent | Feb 17 |
+| Riggers Loft | Quote request sent | Feb 17 |
+| The Lodge at Regency | Quote request sent | Feb 17 |
+| Sunnyside Conservatory | SFRPD form review | Feb 17 |
+
+When any of these get resolved, remove from list. When new vendors added, add here immediately.

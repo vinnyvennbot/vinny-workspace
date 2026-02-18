@@ -92,6 +92,22 @@
     "task-status": {
       "version": "1.0.0",
       "installedAt": 1770278899830
+    },
+    "gogcli": {
+      "version": "1.0.0",
+      "installedAt": 1770933703567
+    },
+    "api-error-handling": {
+      "version": "1.0.0",
+      "installedAt": 1770933715763
+    },
+    "pdf-text-extractor": {
+      "version": "1.0.0",
+      "installedAt": 1771041083823
+    },
+    "pymupdf-pdf-parser-clawdbot-skill": {
+      "version": "1.0.0",
+      "installedAt": 1771041101533
     }
   }
 }

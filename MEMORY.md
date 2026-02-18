@@ -44,6 +44,18 @@
   * **RELATIONSHIP BUILDING:** Keep vendors warm even during decision-making
   * **NEVER:** Ghost vendors, leave on read, ignore questions, or make up answers
   * **DOCUMENTED IN:** WORKFLOWS.md, memory/lessons-learned.md
+- **🚨 CRITICAL: NEVER SEND DUPLICATE EMAIL RESPONSES (2026-02-16):**
+  * **THE MISTAKE:** Sent duplicate responses to Alberto Rodriguez (mechanical bull) - Feb 14 and Feb 16 saying the same thing
+  * **ROOT CAUSE:** Did not check my SENT folder before responding - only checked if team members responded
+  * **IMPACT:** Confusing and uncoordinated communication, looks unprofessional
+  * **THE FIX:** MANDATORY pre-send checklist:
+    1. Search full thread: `gog gmail messages search "to:vendor@email.com OR from:vendor@email.com"`
+    2. Check if I ALREADY responded to this specific message
+    3. Check if team members (Zed/Gedeon/Aidan) already responded
+    4. ONLY send if no one (including me) has responded yet
+  * **WHY IT MATTERS:** Duplicate responses create confusion, waste vendor time, make team look disorganized
+  * **NEVER AGAIN:** Always check SENT folder before every vendor response
+  * **NON-NEGOTIABLE:** This is as serious as venue errors - undermines team credibility
 - **🚨 ALWAYS INCLUDE EVENT DATE IN VENDOR OUTREACH (2026-02-11):**
   * **CRITICAL RULE:** Every vendor outreach email MUST include specific event date
   * **FORMAT:** "Day of week, Month Date, Year" (e.g., "Friday, March 7, 2026")
@@ -52,6 +64,15 @@
   * **NEVER:** Send emails with vague dates like "TBD" or "early March"
   * **DOCUMENTED IN:** WORKFLOWS.md email template section, memory/lessons-learned.md
 - **24-HOUR FOLLOW-UP RULE:** If vendor/venue inquiries receive no response within 24 hours, send a polite follow-up email
+- **🚨 CRITICAL VENUE ERROR - ALWAYS VERIFY BEFORE CONFIRMING (2026-02-12):**
+  * **THE MISTAKE:** Told Merrill Collier (magician) venue was "Fort Mason Center" when it's actually "The Barrel Room"
+  * **ROOT CAUSE:** Vendor asked "Barrel Room or Fort Mason?" - I guessed wrong instead of checking memory files
+  * **IMPACT:** Gave incorrect venue information to vendor, had to immediately send correction email
+  * **THE FIX:** Always check memory files and event README before confirming ANY venue details
+  * **MANDATORY RULE:** NEVER guess on venue information - verify first, confirm second
+  * **WHY IT MATTERS:** Wrong venue = vendor books wrong location, logistics chaos, unprofessional
+  * **DOCUMENTED IN:** events/EVT-002-dinner-feb28/README.md now has "⚠️ CRITICAL - DO NOT confuse with Fort Mason"
+  * **NEVER FORGET:** Venue errors are as serious as financial errors - both are NON-NEGOTIABLE
 - **🚨 NEVER INCLUDE INTERNAL IDS IN EXTERNAL EMAILS (2026-02-05):**
   * **CRITICAL:** Event IDs (EVT-001, EVT-002, EVT-003, etc.) are INTERNAL ONLY
   * NEVER include event IDs in subject lines or email body when contacting vendors/venues/sponsors
@@ -230,3 +251,18 @@
 - "Research and outreach" means SEND the emails, not write drafts
 - When spawning subagents for outreach tasks, explicitly state "send emails immediately"
 - Always verify actual sends in subagent completion reports
+
+## 🚨 VENUE OUTREACH RULE (2026-02-17 — Zed correction)
+**THE MISTAKE:** Missed the Presidio Golf Course Clubhouse during venue outreach for the western event — a perfect country lodge fit — despite already having a relationship with the Presidio through Katie (Log Cabin).
+
+**THE RULE:** When doing venue outreach, ALWAYS check ALL spaces within any organization/campus we already work with FIRST.
+- Already in contact with Presidio Events? → Check ALL Presidio venues (Log Cabin, Golf Clubhouse, Officers' Club, etc.)
+- Already working with a venue group? → Check every space they manage before going external
+
+**MANDATORY CHECKLIST FOR EVERY VENUE OUTREACH:**
+1. List all orgs/campuses Venn already has a relationship with
+2. Search ALL their event spaces first (inside track = faster + warmer response)
+3. THEN expand to new/cold venues
+4. Before submitting any venue list: ask "Did we check everywhere we already know?"
+
+**Zed's words:** "Don't let this happen again."

@@ -1,7 +1,8 @@
 # EVT-002: Intimate 30-Person Dinner
 
 ## Event Details
-- **Date:** February 28, 2026
+- **Date:** February 28, 2026 (Saturday)
+- **Venue:** The Barrel Room ⚠️ CRITICAL - DO NOT confuse with Fort Mason
 - **Time:** Evening
 - **Capacity:** 30
 - **Budget:** $70/person ($2,100 total) - HARD CAP

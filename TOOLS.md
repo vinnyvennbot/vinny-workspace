@@ -1,5 +1,158 @@
 # TOOLS.md - Local Tool Configuration
 
+## 🚨 COMMAND SYNTAX REFERENCE (CRITICAL - READ FIRST!)
+
+**ERROR PREVENTION PROTOCOL:**
+1. **ALWAYS run `command --help` before using ANY new command or flag**
+2. **NEVER assume syntax** - even similar commands differ across tools
+3. **Test commands with non-critical data first**
+4. **Document working patterns below immediately after discovery**
+
+### **Gmail Commands (gog CLI)**
+
+**❌ COMMON MISTAKES:**
+```bash
+# WRONG - these commands don't exist:
+gog gmail get MESSAGE_ID       # ❌ No such command
+gog gmail read MESSAGE_ID      # ❌ No such command  
+gog gmail show MESSAGE_ID      # ❌ No such command
+```
+
+**✅ CORRECT SYNTAX:**
+```bash
+# Read/view a message (just pass the ID directly):
+gog gmail MESSAGE_ID
+
+# Search messages:
+gog gmail messages search "query" --max 20
+gog gmail messages search "in:inbox newer_than:4h" --max 20
+
+# Send email (MUST include --to, --subject, --body):
+gog gmail send --to="vendor@example.com" --subject="Title" --body='Message text'
+
+# Reply in thread (PREFERRED - maintains threading):
+gog gmail send --reply-to-message-id="19c4xxx" --reply-all --subject="Re: Title" --body='Reply'
+
+# Get help when unsure:
+gog gmail --help
+gog gmail send --help
+gog gmail messages --help
+```
+
+**CRITICAL RULES:**
+- ✅ Always use `--reply-to-message-id` for vendor responses (maintains threading)
+- ✅ Always include `--reply-all` to auto-populate recipients
+- ✅ Always provide `--subject` even when replying
+- ✅ Use **single quotes** for `--body` when text contains `$` symbols
+- ❌ NEVER use double quotes with dollar amounts (`$1,400` becomes `,400`)
+
+### **Google Calendar Commands (gog CLI)**
+
+**❌ COMMON MISTAKES:**
+```bash
+# WRONG - these flags don't exist:
+gog calendar events create --summary="Title"     # ❌ Wrong flag
+gog calendar events create --time-min="..."      # ❌ Wrong flag
+gog calendar create --start="..." --end="..."    # ❌ Missing calendar ID
+```
+
+**✅ CORRECT SYNTAX:**
+```bash
+# Create event (MUST specify calendar ID first):
+gog calendar create primary --summary="Meeting Title" \
+  --from="2026-02-13T10:00:00-08:00" \
+  --to="2026-02-13T11:00:00-08:00" \
+  --attendees="person1@example.com,person2@example.com" \
+  --description="Meeting description" \
+  --with-meet                # Adds Google Meet link
+
+# List events:
+gog calendar events list --max 50
+gog calendar events list --from="2026-02-01" --to="2026-02-28"
+
+# Get help:
+gog calendar --help
+gog calendar create --help
+```
+
+**CRITICAL RULES:**
+- ✅ Calendar ID comes BEFORE flags (e.g., `create primary --summary=...`)
+- ✅ Use `--from` and `--to` (NOT `--start` and `--end`)
+- ✅ Use `--with-meet` to add Google Meet (NOT `--conference-solution`)
+- ✅ Date format: ISO 8601 with timezone (`2026-02-13T10:00:00-08:00`)
+
+### **Google Sheets Commands (gog CLI)**
+
+**❌ COMMON MISTAKE:**
+```bash
+# WRONG - trying to update Excel files as if they were Google Sheets:
+gog sheets update EXCEL_FILE_ID "A2" "data"   # ❌ Fails with "operation not supported"
+```
+
+**✅ CORRECT APPROACH:**
+```bash
+# Only works on actual Google Sheets (not .xlsx files in Drive):
+gog sheets update SHEET_ID "A2:K2" "col1" "col2" "col3" ...
+
+# Check if file is a Google Sheet first:
+gog drive ls --query "name contains 'filename'"  # Look for mimeType
+
+# For Excel files (.xlsx), you need to:
+# 1. Download the file
+# 2. Edit locally
+# 3. Re-upload to Drive
+```
+
+**CRITICAL RULES:**
+- ✅ `gog sheets` ONLY works with Google Sheets (mimeType: application/vnd.google-apps.spreadsheet)
+- ✅ Excel files (.xlsx) in Drive are NOT Google Sheets - need different approach
+- ✅ Check file type before attempting sheet operations
+
+### **Google Drive Commands (gog CLI)**
+
+**✅ CORRECT SYNTAX:**
+```bash
+# List files:
+gog drive ls
+gog drive ls --parent FOLDER_ID
+gog drive ls --query "name contains 'search'"
+
+# Upload file:
+gog drive upload /path/to/file.pdf --parent FOLDER_ID --name "Custom Name"
+
+# Share file:
+gog drive share FILE_ID --email person@example.com --role writer
+
+# Get help:
+gog drive --help
+```
+
+### **Error Recovery Protocol**
+
+When a command fails:
+
+1. **Read the error message carefully** - it usually tells you exactly what's wrong
+2. **Run `--help` on the command** - don't guess the fix
+3. **Check TOOLS.md** - see if pattern is documented
+4. **Test with a simple example** - verify syntax before complex usage
+5. **Document the working pattern** - update TOOLS.md immediately
+
+**Example Recovery:**
+```bash
+# Command failed:
+gog gmail send --to="vendor@example.com" --body="Hi there"
+# Error: required: --subject
+
+# Check help:
+gog gmail send --help
+# Output shows: --subject is required
+
+# Fix and document:
+gog gmail send --to="vendor@example.com" --subject="Hello" --body="Hi there"
+```
+
+---
+
 ## ⚡ API RATE LIMITS & EFFICIENCY RULES
 
 ### **Brave Search API**
