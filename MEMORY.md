@@ -267,6 +267,15 @@
 
 **Zed's words:** "Don't let this happen again."
 
+## 🚨 CHECK EVENT STATUS BEFORE ANY OUTREACH (2026-02-18)
+**THE MISTAKE:** Sent 9 vendor outreach emails for EVT-003 Great Gatsby Festival after it was archived.
+
+**THE RULE — NON-NEGOTIABLE:**
+- Before ANY vendor/venue/partner outreach, query Mission Control DB to verify event is active:
+  `sqlite3 /Users/vinnyvenn/.openclaw/workspace/venn-mission-control/dev.db "SELECT name, archived FROM Event;"`
+- If archived=1 → DO NOT send outreach. Full stop.
+- Task queue and memory are stale — the DB is the source of truth for event status.
+
 ## 🚨 ALWAYS BE WORKING — NON-NEGOTIABLE (2026-02-18)
 **Called out by Aidan:** I went idle between tasks and had to be told to start working again. That's unacceptable.
 
