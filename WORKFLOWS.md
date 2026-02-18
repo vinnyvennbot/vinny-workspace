@@ -567,12 +567,14 @@ Run this checklist. Stop and message Zed if any check fails:
 
 ### Trigger: When to start first outreach
 
-**Do NOT reach out until:**
-- Event has a confirmed date
-- Event has a theme/concept defined
-- Event capacity/scale is known
+**Trigger:** Event creation in Mission Control.
+When Zed texts here to create an event → log it in MC → outreach begins.
+The event creation message will contain date, theme, capacity — use those details.
 
-**Then: first outreach is fully autonomous, no approval needed.**
+**Do NOT reach out until the event exists in MC AND has at minimum: a date + event type.**
+(No point contacting a yacht charter if no date is set — use judgment on category-readiness.)
+
+**First outreach is fully autonomous once event is created in MC. No additional approval needed.**
 
 ### Vendor Re-engagement Rules
 
@@ -651,6 +653,41 @@ If I identify a vendor category that would add value but hasn't been discussed:
 Goal: evaluate which workflows can be fully automated without approval.
 Track: mistakes made, clarifications needed, edge cases resolved.
 As training data grows, rules expand and approval gates shrink.
+
+---
+
+## 🧠 OUTREACH INTELLIGENCE — ZED CLARIFICATIONS (2026-02-18)
+
+Six rules locked directly from Zed's instruction:
+
+### 1. Multi-event mention in active thread
+Yes — if a vendor is engaged on EVT-001 and a new event launches where they'd fit, proactively mention it in the existing thread.
+Use the scoring framework in MULTI-EVENT VENDOR THREAD POLICY below to decide timing and tone.
+
+### 2. First outreach trigger
+Event creation in Mission Control is sufficient to begin outreach.
+Zed will text here to create events — that text IS the trigger. Once logged in MC, start.
+(Note: Zed's event creation message will contain the relevant details. Use those details to drive outreach decisions.)
+
+### 3. Postponement language + believability
+Default framing for postponements: "We're postponing to a later date."
+**But:** Craft a believable, context-specific excuse — especially if we've already been in back-and-forth.
+Generic "internal planning changes" looks sloppy. Tailor it. Example excuses:
+- "Our venue partner had a conflict come up on that date, so we're pushing to a later window."
+- "The guest list grew more than expected and we're scouting a larger venue — will need a bit more time."
+Make it feel human, not like a form letter.
+
+### 4. 5-day postponement rule — scope
+Applies ONLY during active back-and-forth (proposals received, quotes sent, calls scheduled).
+If vendor received a cold first outreach and event is archived the next day → skip the postponement. Let it go.
+
+### 5. CRM deduplication
+Always check CRM before first outreach. If they're already in the system — for any event, any reason — find their existing thread and continue there.
+**Never open a parallel conversation with the same contact.**
+
+### 6. Dual-event outreach limit
+One event per email, per contact. Don't overload vendors with two separate asks at once.
+**Exception:** Existing partners only — can send two events in one message.
 
 ---
 
