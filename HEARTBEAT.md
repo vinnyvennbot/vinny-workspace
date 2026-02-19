@@ -87,7 +87,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **🎭 PALACE THEATER RESPONSE**: Laura Drake Chambers (Artistic Director) wants call today/tomorrow AM — replied asking for slots, flagged Zed for date confirmation on EVT-004
 - **🌍 LAURA ON GMT (Europe)**: Available before 2pm GMT = before 6am PST. Proposed 1-1:30pm GMT Fri (5-5:30am PST). Awaiting Zed: (1) confirm April 19 date, (2) who is on the call
 - **✅ TIMEZONE CLARIFIED**: Laura meant 2pm PST (11am-2pm PST window, no 10-11am). Proposed 11am or 12pm Fri. Awaiting Zed go-ahead to confirm.
-- **🔴 ACTION REQUIRED**: Laura confirmed 11am PST Friday. Told her calendar invite coming within the hour. NEED ZED: (1) April 19 date confirmed? (2) who joins call? Urgent email sent to Zed.
+- **✅ CALENDAR INVITE SENT**: Fri Feb 20 11am PST, Google Meet (meet.google.com/mvt-txus-ezj), Laura + Zed invited. Zed can confirm EVT-004 date on the call itself.
 - **✅ VENDORS KEPT WARM**: Jack Simpson acknowledged Feb 18, Slava + AVT updated Feb 12
 - **✅ VENDOR RESPONSES**: THEYimprov (April 19 avail), Caterman CEO (wants call), Got Light (cautious interest)
 
