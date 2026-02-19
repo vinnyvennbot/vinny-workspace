@@ -68,6 +68,8 @@ Track vendor reliability in RELATIONSHIPS.md:
 ### EVT-001: Western Line Dancing
 - **🚨 DATE UNDECIDED**: Zed considering April due to rain concerns (Log Cabin outdoor space); Presidio Golf is indoor — ask Zed to decide
 - **🎯 PRESIDIO GOLF FORMAL QUOTE RECEIVED**: Full venue buyout for 250-300 guests. April 19 (discounted): $10K total ($4.5K room + $5.5K F&B). March Sundays: $14K total. ZED DECISION NEEDED: approve April 19 or March date. Note: April 19 = potential EVT-004 conflict.
+- **📞 ZED CALL WITH KATIE (Feb 19)**: Sam confirmed "we will talk soon" — Log Cabin outdoor, $9K F&B min, rain risk. Presidio Golf indoor $8K Sunday is the March alternative. Vinny sent comparison note to Zed before call.
+- **✅ KAT ACKNOWLEDGED**: Told her reviewing internally, decision coming shortly. Booking: 1-week soft hold → 50% deposit + contract signature to lock date.
 - **📞 ZED CALL WITH KATIE TODAY (Feb 19)**: Sam confirmed "we will talk soon" — Log Cabin outdoor, $9K F&B min, rain risk → April consideration. Presidio Golf indoor $8K Sunday is the March alternative. Vinny sent comparison note to Zed before call.
 - **✅ EVT-001 PROPOSALS RECEIVED**: Katie (Wedgewood) sent 3 proposal options - Zed needs to select one
 - **✅ DJ**: Bay Area Beats DJs confirmed available, intake form completed, 10% discount (expires Feb 18 — may need to rebook)
