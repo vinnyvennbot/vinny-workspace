@@ -85,6 +85,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 ### EVT-004: Murder Mystery Yacht
 - **🚨 NO DATE SET**: Blocking Jack Simpson (photo), AVT Productions (AV), Salt & Honey (catering)
 - **🎭 PALACE THEATER RESPONSE**: Laura Drake Chambers (Artistic Director) wants call today/tomorrow AM — replied asking for slots, flagged Zed for date confirmation on EVT-004
+- **🌍 LAURA ON GMT (Europe)**: Available before 2pm GMT = before 6am PST. Proposed 1-1:30pm GMT Fri (5-5:30am PST). Awaiting Zed: (1) confirm April 19 date, (2) who is on the call
 - **✅ VENDORS KEPT WARM**: Jack Simpson acknowledged Feb 18, Slava + AVT updated Feb 12
 - **✅ VENDOR RESPONSES**: THEYimprov (April 19 avail), Caterman CEO (wants call), Got Light (cautious interest)
 
