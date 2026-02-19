@@ -92,6 +92,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **✅ TIMEZONE CLARIFIED**: Laura meant 2pm PST (11am-2pm PST window, no 10-11am). Proposed 11am or 12pm Fri. Awaiting Zed go-ahead to confirm.
 - **✅ CALENDAR INVITE SENT**: Fri Feb 20 11am PST, Google Meet (meet.google.com/mvt-txus-ezj), Laura + Zed invited. Zed can confirm EVT-004 date on the call itself.
 - **⚠️ ZED DECLINED INVITE**: No message. Emailed Zed to clarify: conflict & reschedule, or handle solo? Call with Laura still on unless Zed says otherwise.
+- **✅ LAURA CONFIRMED**: "Chat tomorrow." — 11am PST Fri Feb 20 is locked. Prep call brief tonight.
 - **✅ VENDORS KEPT WARM**: Jack Simpson acknowledged Feb 18, Slava + AVT updated Feb 12
 - **✅ VENDOR RESPONSES**: THEYimprov (April 19 avail), Caterman CEO (wants call), Got Light (cautious interest)
 
