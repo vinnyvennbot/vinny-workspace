@@ -63,25 +63,33 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-- **✅ EVT-001 PROPOSALS RECEIVED**: Katie sent 3 proposal options (3:05 PM) - Zed needs to select one to proceed
-- **⚠️ EVT-001 VENDOR RECOVERY**: Alberto Rodriguez (Toro Show MBR) - missed Feb 5 call scheduling, apologized + re-engaged Feb 13 6:55 AM
-- **🚨 EVT-001 DATE NOW FLEXIBLE**: Zed open to ANY Sundays in March (not locked to March 7 anymore)
-- **⏳ EVT-001 ASTRO JUMP QUOTE**: Mechanical bull quote received (Feb 12, 4:31 PM) - awaiting date confirmation to book
-- **✅ EVT-001 DJ CONFIRMED AVAILABLE**: Bay Area Beats DJs ready to help, sent intake form, 10% discount confirmed (Feb 13, 2:08 AM)
-- **🎯 EVT-001 DJ PRICING**: JustINtertainment pricing received (Feb 12, 11:42 AM) - awaiting review
-- **🎯 EVT-001 DJ PRICING RECEIVED**: JustINtertainment sent pricing proposal (Feb 12, 11:42 AM) - awaiting review
+*(Last updated: Feb 19, 2026 — heartbeat cycle)*
+
+### EVT-001: Western Line Dancing
+- **🚨 DATE UNDECIDED**: Zed considering April due to rain concerns (Log Cabin outdoor space); Presidio Golf is indoor — ask Zed to decide
+- **🎯 PRESIDIO GOLF PRICING**: Kat Crapps gave March 28 pricing (Sunday $8k / Saturday $18k); asked about April Sundays — awaiting her reply
+- **⏳ ZED DIRECTION NEEDED**: Zed call with Katie (Log Cabin/Wedgewood) scheduled "tomorrow" (Feb 19) — will determine venue + date
+- **✅ EVT-001 PROPOSALS RECEIVED**: Katie (Wedgewood) sent 3 proposal options - Zed needs to select one
+- **✅ DJ**: Bay Area Beats DJs confirmed available, intake form completed, 10% discount (expires Feb 18 — may need to rebook)
+- **⏳ MECHANICAL BULL**: Astro Jump quote $1,299 - awaiting date before booking
 - **✅ EVT-001 ALCOHOL PRICING CONFIRMED**: Hard liquor from venue bar, beer $7/drink, wine/champagne $30 corkage
-- **✅ EVT-001 DECISION RESOLVED**: Astro Jump selected ($1,299), saved $2,201, budget issue SOLVED (Feb 7, 5:17 PM)
-- **🎯 EVT-001 ENHANCEMENT**: Zed exploring bulk discount + western rentals (axe throwing, hay bales, photo props)
-- **✅ EVT-002 VENUE CONFIRMED**: Fort Mason Center clarified to Merrill Collier (Feb 12, 2:40 PM)
-- **🚨 EVT-002 URGENT DECISION**: Merrill Collier has competing Feb 28 inquiry, needs response by MONDAY (Feb 16) - acknowledged immediately
-- **⚠️ EVT-002 BUDGET**: Over budget by $60 total ($2/person) - cost optimization needed
-- **⚠️ EVT-003 FOLLOW-UP OVERDUE**: 3 sponsors (Golden Gate Western Wear, Far Niente, Tasting Alliance)
-- **🚨 EVT-004 NO DATE SET**: Blocking 3+ vendors (Slava Blazer photo, AVT Productions AV, Salt & Honey catering)
-- **✅ EVT-004 VENDORS ACKNOWLEDGED**: Slava + AVT updated on date delay (Feb 12, 2:40 PM) - keeping warm
-- **✅ EVT-004 VENDOR RESPONSES PROCESSED**: THEYimprov (April 19 available), Caterman CEO (wants call), Got Light (cautious interest)
-- **✅ EVT-003 BAR SERVICE LEAD**: Liquid Caterers (perfect Gatsby fit, 18 yrs exp, competitive pricing)
-- **✅ EVT-003 VENUE RESPONSE**: SFMOMA directed to formal inquiry form (follow up needed)
+
+### EVT-002: Intimate Dinner at The Barrel Room
+- **🔥 NEARLY SOLD OUT**: 16/20 Luma spots registered (80% full) — Zed may want to decide on expanding capacity
+- **✅ VENUE**: The Barrel Room confirmed
+- **⚠️ BUDGET**: Slightly over target — cost optimization still pending
+
+### EVT-003: Great Gatsby Festival
+- **🚫 ARCHIVED** — Do not contact any vendors for this event
+
+### EVT-004: Murder Mystery Yacht
+- **🚨 NO DATE SET**: Blocking Jack Simpson (photo), AVT Productions (AV), Salt & Honey (catering)
+- **✅ VENDORS KEPT WARM**: Jack Simpson acknowledged Feb 18, Slava + AVT updated Feb 12
+- **✅ VENDOR RESPONSES**: THEYimprov (April 19 avail), Caterman CEO (wants call), Got Light (cautious interest)
+
+### CRM Updates (Feb 19)
+- **✅ LOGGED**: Will Lupfer (Lupfer Entertainment Group LLC) — lupferentertainment@gmail.com · 503-407-6109; Zed intro'd Feb 18
+- **✅ LOGGED**: Kat Crapps (Presidio Golf Clubhouse) — kcrapps@presidiogolf.com; venue pricing received
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates

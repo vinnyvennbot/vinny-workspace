@@ -8,6 +8,7 @@
 |--------|----------|---------|-------|
 | FPV Studio (Jaziel) | FPV/Drone video & editing | fpvarchitecture@gmail.com · +1 619-289-1389 | Invoice #E5QUGIDL-0003 $350 (Feb 2026 reel editing); Zed's go-to for promo content |
 | Andey | Photo booth | **CONTACT NEEDED — ask Zed** | Confirmed preferred vendor by Zed; no email on file yet |
+| Will Lupfer (Lupfer Entertainment Group LLC) | Entertainment | lupferentertainment@gmail.com · 503-407-6109 | Zed intro'd Feb 18, 2026 — Will signed up for Venn membership to see service from user POV; warm contact, looking forward to working together |
 
 ### Sponsors & Brand Partners (Provided product/cash/co-branding)
 | Partner | Category | Contact | Last Event |
@@ -108,6 +109,19 @@
 - **Notes**: Marketing-focused outreach, SF area based on Instagram handle, no pricing or services detail yet
 
 ### **Venue Relationships**
+
+**Presidio Golf Course Clubhouse (Kat Crapps)** ⭐⭐⭐⭐
+- **Contact**: Kat Crapps, kcrapps@presidiogolf.com
+- **Venue**: Presidio Golf Course Clubhouse (Tented Terrace + main space)
+- **Event**: EVT-001 - Western Line Dancing Night (March/April 2026)
+- **Status**: Active conversation — pricing received Feb 18, awaiting date confirmation from Zed
+- **Pricing - Saturday full buyout**: $6,500 room rental + $11,500 F&B minimum = **$18,000 total**
+- **Pricing - Sunday Tented Terrace (non-buyout option)**: $3,500 room rental + $4,500 F&B minimum = **$8,000 total**
+- **Availability**: March 28 confirmed available; package guide sent to Zed directly
+- **Response Time**: Same-day (multiple responses within hours)
+- **Confidence Score**: 0.82 (high - very responsive, flexible, eager to host Venn)
+- **Next Action**: Wait for Zed's decision on March vs April dates, then confirm with Kat
+- **Notes**: March 15 was not available (booked). She re-sent package guide to Zed but original email to him didn't go through. Very warm and eager to host. Note: this is a SEPARATE contact from Presidio Events (Log Cabin/Katie/Wedgewood).
 
 **Presidio Events (Katie)** ⭐⭐⭐⭐⭐
 - **Contact**: Katie (venue pricing specialist), presidio@wedgewoodevents.com, 628.201.0274 X 104
