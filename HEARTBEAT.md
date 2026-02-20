@@ -63,42 +63,38 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-*(Last updated: Feb 19, 2026 — heartbeat cycle)*
+*(Last updated: Feb 19, 2026 EOD)*
 
 ### EVT-001: Western Line Dancing
-- **🚨 DATE UNDECIDED**: Zed considering April due to rain concerns (Log Cabin outdoor space); Presidio Golf is indoor — ask Zed to decide
-- **🎯 PRESIDIO GOLF FORMAL QUOTE RECEIVED**: Full venue buyout for 250-300 guests. April 19 (discounted): $10K total ($4.5K room + $5.5K F&B). March Sundays: $14K total. ZED DECISION NEEDED: approve April 19 or March date. Note: April 19 = potential EVT-004 conflict.
-- **📞 ZED CALL WITH KATIE (Feb 19)**: Sam confirmed "we will talk soon" — Log Cabin outdoor, $9K F&B min, rain risk. Presidio Golf indoor $8K Sunday is the March alternative. Vinny sent comparison note to Zed before call.
-- **✅ KAT ACKNOWLEDGED**: Told her reviewing internally, decision coming shortly. Booking: 1-week soft hold → 50% deposit + contract signature to lock date.
-- **⏰ KAT OOO FRI-SUN**: Back Monday — Zed has the weekend to decide. Book on Monday morning.
-- **📞 ZED CALL WITH KATIE TODAY (Feb 19)**: Sam confirmed "we will talk soon" — Log Cabin outdoor, $9K F&B min, rain risk → April consideration. Presidio Golf indoor $8K Sunday is the March alternative. Vinny sent comparison note to Zed before call.
-- **✅ EVT-001 PROPOSALS RECEIVED**: Katie (Wedgewood) sent 3 proposal options - Zed needs to select one
-- **✅ DJ**: Bay Area Beats DJs confirmed available, intake form completed, 10% discount (expires Feb 18 — may need to rebook)
-- **⏳ MECHANICAL BULL**: Astro Jump quote $1,299 - awaiting date before booking
-- **✅ EVT-001 ALCOHOL PRICING CONFIRMED**: Hard liquor from venue bar, beer $7/drink, wine/champagne $30 corkage
+- **🚨 DATE UNDECIDED**: Zed considering April due to rain (Log Cabin outdoor). Presidio Golf = indoor option.
+- **🎯 PRESIDIO GOLF FORMAL QUOTE**: April 19 (discounted): $10K ($4.5K room + $5.5K F&B). March Sundays: $14K. Full venue buyout, 250-300 guests, concrete tented terrace perfect for dancing.
+- **⏰ KAT OOO FRI-SUN**: Back Monday. Zed has weekend to decide → book Monday morning.
+- **⚠️ DATE CONFLICT**: April 19 also tentative for EVT-004 (yacht) — Zed must resolve.
+- **🆕 SHAMROCK & HOUSE**: Zed launched "Venn x LE" (Lupfer Entertainment) on Luma for March 14. Unclear if this replaces EVT-001 or is separate. Awaiting Zed direction.
+- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Mechanical Bull (Astro Jump $1,299) — waiting on date.
 
-### EVT-002: Intimate Dinner at The Barrel Room
-- **🔥 NEARLY SOLD OUT**: 16/20 Luma spots registered (80% full) — Zed may want to decide on expanding capacity
-- **✅ VENUE**: The Barrel Room confirmed
-- **⚠️ BUDGET**: Slightly over target — cost optimization still pending
+### EVT-002: Intimate Dinner at The Barrel Room (Feb 28)
+- **🔥 17/20 SPOTS SOLD** — 3 left. Zed's Luma push working. Capacity expansion decision pending.
+- **✅ VENUE**: The Barrel Room confirmed.
 
 ### EVT-003: Great Gatsby Festival
-- **🚫 ARCHIVED** — Do not contact any vendors for this event
+- **🚫 ARCHIVED** — Zero contact. Paula LeDuc (catering) replied — no response sent per rule. Logged as future lead.
 
 ### EVT-004: Murder Mystery Yacht
-- **🚨 NO DATE SET**: Blocking Jack Simpson (photo), AVT Productions (AV), Salt & Honey (catering)
-- **🎭 PALACE THEATER RESPONSE**: Laura Drake Chambers (Artistic Director) wants call today/tomorrow AM — replied asking for slots, flagged Zed for date confirmation on EVT-004
-- **🌍 LAURA ON GMT (Europe)**: Available before 2pm GMT = before 6am PST. Proposed 1-1:30pm GMT Fri (5-5:30am PST). Awaiting Zed: (1) confirm April 19 date, (2) who is on the call
-- **✅ TIMEZONE CLARIFIED**: Laura meant 2pm PST (11am-2pm PST window, no 10-11am). Proposed 11am or 12pm Fri. Awaiting Zed go-ahead to confirm.
-- **✅ CALENDAR INVITE SENT**: Fri Feb 20 11am PST, Google Meet (meet.google.com/mvt-txus-ezj), Laura + Zed invited. Zed can confirm EVT-004 date on the call itself.
-- **⚠️ ZED DECLINED INVITE**: No message. Emailed Zed to clarify: conflict & reschedule, or handle solo? Call with Laura still on unless Zed says otherwise.
-- **✅ LAURA CONFIRMED**: "Chat tomorrow." — 11am PST Fri Feb 20 is locked. Prep call brief tonight.
-- **✅ VENDORS KEPT WARM**: Jack Simpson acknowledged Feb 18, Slava + AVT updated Feb 12
-- **✅ VENDOR RESPONSES**: THEYimprov (April 19 avail), Caterman CEO (wants call), Got Light (cautious interest)
+- **🚨 NO DATE SET** — Blocking all vendors.
+- **📞 PALACE THEATER CALL TOMORROW**: Fri Feb 20, 11am PST, Google Meet meet.google.com/mvt-txus-ezj. Laura Drake Chambers confirmed. Zed declined invite — handling solo. Call brief prepped at events/EVT-004-yacht/call-brief-palace-theater-feb20.md
+- **⚠️ DO NOT commit April 19** on this call — date unconfirmed, possible conflict with EVT-001.
+- **✅ VENDORS WARM**: Jack Simpson (photo), AVT Productions (AV), Slava Blazer — all waiting on date.
+
+### Pending from Zed (no response yet)
+- April 19: line dancing or yacht? (critical conflict resolution)
+- Shamrock & House: new event or EVT-001 rebrand?
+- Palace Theater call: solo or does he want to reschedule to join?
+- Fraiche Catering call (Feb 25): cancel (Gatsby archived) or reviving?
 
 ### CRM Updates (Feb 19)
-- **✅ LOGGED**: Will Lupfer (Lupfer Entertainment Group LLC) — lupferentertainment@gmail.com · 503-407-6109; Zed intro'd Feb 18
-- **✅ LOGGED**: Kat Crapps (Presidio Golf Clubhouse) — kcrapps@presidiogolf.com; venue pricing received
+- **✅ LOGGED**: Will Lupfer (Lupfer Entertainment Group LLC) — lupferentertainment@gmail.com · 503-407-6109
+- **✅ LOGGED**: Kat Crapps (Presidio Golf) — kcrapps@presidiogolf.com; formal quote received
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates
