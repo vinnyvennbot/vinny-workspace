@@ -65,13 +65,12 @@ Track vendor reliability in RELATIONSHIPS.md:
 ## Current Active Issues (Auto-Update)
 *(Last updated: Feb 19, 2026 EOD)*
 
-### EVT-001: Western Line Dancing
-- **🚨 DATE UNDECIDED**: Zed considering April due to rain (Log Cabin outdoor). Presidio Golf = indoor option.
-- **🎯 PRESIDIO GOLF FORMAL QUOTE**: April 19 (discounted): $10K ($4.5K room + $5.5K F&B). March Sundays: $14K. Full venue buyout, 250-300 guests, concrete tented terrace perfect for dancing.
-- **⏰ KAT OOO FRI-SUN**: Back Monday. Zed has weekend to decide → book Monday morning.
-- **⚠️ DATE CONFLICT**: April 19 also tentative for EVT-004 (yacht) — Zed must resolve.
-- **🆕 SHAMROCK & HOUSE**: Zed launched "Venn x LE" (Lupfer Entertainment) on Luma for March 14. Unclear if this replaces EVT-001 or is separate. Awaiting Zed direction.
-- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Mechanical Bull (Astro Jump $1,299) — waiting on date.
+### EVT-001: SF Spring Stampede - Bringing Country To The City
+- **✅ DATE CONFIRMED**: March 15, 2026, 2:00-6:00 PM PDT (Zed renamed on Luma Feb 19 ~10pm)
+- **🎯 PRESIDIO GOLF QUOTE AVAILABLE**: April 19 discounted $10K, March Sundays $14K — Kat back Monday if Zed wants to switch from Log Cabin
+- **⏳ VENUE**: Assumed Log Cabin (Wedgewood), but Zed hasn't confirmed — check Monday
+- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Mechanical Bull (Astro Jump $1,299) — ready to book once venue confirmed
+- **🆕 SHAMROCK & HOUSE (March 14)**: Separate Venn x Lupfer Entertainment event — not EVT-001
 
 ### EVT-002: Intimate Dinner at The Barrel Room (Feb 28)
 - **🔥 17/20 SPOTS SOLD** — 3 left. Zed's Luma push working. Capacity expansion decision pending.
@@ -81,15 +80,16 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **🚫 ARCHIVED** — Zero contact. Paula LeDuc (catering) replied — no response sent per rule. Logged as future lead.
 
 ### EVT-004: Murder Mystery Yacht
-- **🚨 NO DATE SET** — Blocking all vendors.
-- **📞 PALACE THEATER CALL TOMORROW**: Fri Feb 20, 11am PST, Google Meet meet.google.com/mvt-txus-ezj. Laura Drake Chambers confirmed. Zed declined invite — handling solo. Call brief prepped at events/EVT-004-yacht/call-brief-palace-theater-feb20.md
-- **⚠️ DO NOT commit April 19** on this call — date unconfirmed, possible conflict with EVT-001.
-- **✅ VENDORS WARM**: Jack Simpson (photo), AVT Productions (AV), Slava Blazer — all waiting on date.
+- **✅ APRIL 19 NOW CLEAR** — EVT-001 confirmed for March 15, April 19 is free for yacht
+- **📞 PALACE THEATER CALL TOMORROW**: Fri Feb 20, 11am PST, Google Meet meet.google.com/mvt-txus-ezj. Laura Drake Chambers confirmed. Zed declined invite — handling solo. Call brief prepped.
+- **✅ CAN DISCUSS APRIL 19** on tomorrow's call as target date
+- **✅ VENDORS WARM**: Jack Simpson (photo), AVT Productions (AV), Slava Blazer — all waiting on date confirmation
 
 ### Pending from Zed (no response yet)
-- April 19: line dancing or yacht? (critical conflict resolution)
-- Shamrock & House: new event or EVT-001 rebrand?
-- Palace Theater call: solo or does he want to reschedule to join?
+- ~~April 19 conflict~~ **RESOLVED**: EVT-001 = March 15, yacht = April 19
+- ~~Shamrock & House~~ **RESOLVED**: Separate March 14 event (Venn x LE)
+- EVT-001 venue: Log Cabin confirmed or switch to Presidio Golf?
+- Palace Theater call: solo (current) or reschedule with Zed?
 - Fraiche Catering call (Feb 25): cancel (Gatsby archived) or reviving?
 
 ### CRM Updates (Feb 19)
