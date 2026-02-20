@@ -1,32 +1,33 @@
 {
   "lastChecks": {
-    "email": 1738749420,
-    "calendar": null,
-    "weather": null,
-    "vendor_database": 1738749420
+    "email": 1739925225,
+    "calendar": 1739925225,
+    "vendor_database": 1739925225
   },
-  "criticalFindings": {
-    "reventals_response": {
-      "timestamp": 1738749420,
-      "status": "positive_call_requested",
-      "priority": "HIGH",
-      "action_taken": "notified_team_updated_database"
-    },
-    "delivery_failure": {
-      "timestamp": 1738749420,
-      "email": "info@raresparrow.com",
-      "status": "email_does_not_exist"
-    }
+  "date": "2026-02-18",
+  "lastActivity": "16:53 PST",
+  "pendingWatchItems": {
+    "evt001_log_cabin_contract": "expires EOD Feb 19 — Zed must sign or release",
+    "evt001_presidio_golf": "Kat Crapps replied — asked for March Sunday availability, awaiting",
+    "evt001_swedish_american_hall": "24h follow-up sent this morning — awaiting response",
+    "evt001_stable_cafe": "24h follow-up sent this morning — awaiting response",
+    "evt001_bay_area_beats": "Sent sound/lighting specs, awaiting quote from Adrian",
+    "evt001_justintertainment": "Emailed for pricing in body text, awaiting reply from Justin",
+    "evt002_merrill_collier": "Zed deciding on magician for Feb 28 — 10 days out",
+    "feb23_postponement_cron": "Cron ID 494b1424 fires 9am Feb 23 — sends Gatsby postponements + cancels Fraiche invite",
+    "astro_jump_contract": "Greg said will send updated contract (March 15 date) — watching"
   },
-  "upcomingCritical": {
-    "presidio_events_call": {
-      "date": "2026-02-05",
-      "time": "12:00 PM PST",
-      "purpose": "venue_pricing_negotiation_march_7"
-    },
-    "reventals_call": {
-      "date": "2026-02-05", 
-      "status": "requested_pending_confirmation"
-    }
-  }
+  "pendingZedDecisions": [
+    "Sign or release Log Cabin contract (expires EOD Feb 19)",
+    "Merrill Collier magician for EVT-002 Feb 28",
+    "EVT-004 yacht date (Red & White Fleet $10,800 quote pending date)"
+  ],
+  "briefsReady": [
+    "/workspace/briefs/vep-call-brief-feb20.md (VEP call Fri 11am)",
+    "/workspace/briefs/mccalls-call-brief-feb23.md (McCall's call Mon 12pm)",
+    "/workspace/briefs/evt001-marketing-copy.md",
+    "/workspace/briefs/evt001-line-dance-instructors.md",
+    "/workspace/briefs/evt001-permits-insurance.md",
+    "/workspace/briefs/venn-partnership-one-pager.md"
+  ]
 }

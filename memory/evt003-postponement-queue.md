@@ -15,6 +15,8 @@
 | Drew Bird Photo | studio@drewbirdphoto.com | 19c6fe53ae44d727 | Photography |
 | Michaela Joy Photography | mjoy@mjoyphoto.com | 19c6fe50f37854a3 | Photography |
 | SF Event Photo | bookings@sfeventphoto.com | 19c6fe4d02a7aa74 | Photography |
+| Slava Blazer | hello@slavablazer.com | 19c6fe4f2cd5abe1 | Photography | (responded 2026-02-18, added to queue)
+| Royal Society Jazz Orchestra (Carla Normand) | rsjo@sonic.net | 19c31a6cfee2c43d | Entertainment | (followed up 2026-02-18, warm hold sent)
 
 ## Postponement language (believable excuse):
 "Our venue situation for this event shifted — we were counting on a specific space and the timing didn't work out, so we're pushing the date and reworking the format. We'll be back in touch once we have a clearer picture on logistics. Really appreciated how quickly you responded and we'd love to work together when the timing is right."

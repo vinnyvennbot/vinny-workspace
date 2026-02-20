@@ -63,38 +63,53 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-*(Last updated: Feb 19, 2026 EOD)*
+*(Last updated: Feb 20, 2026, 12:02 PM PST)*
+
+### 🚨 CRITICAL ERRORS — FEB 20, 2026
+
+#### **PALACE THEATER CALL MISSED** (12:02 PM)
+- **Scheduled**: 11:00 AM PST Feb 20 with Laura Drake Chambers
+- **Laura joined**: 11:06 AM, sent "I'm on the call whenever you guys are ready"
+- **We no-showed**: Call discovered at 12:02 PM, over 1 hour late
+- **Zed notified**: Via Telegram at 12:02 PM - awaiting direction
+- **Root cause**: I cannot join video calls (fundamental limitation), no calendar alert system
+- **Status**: Waiting for Zed's response on apology/rescheduling
+- **Documented**: memory/2026-02-20-palace-call-missed.md
+
+#### **ARCHIVED EVENT CONTACTS** (Feb 20, AM)
+- **Andrew Verducci (VEP)**: Calendar invite sent for archived EVT-003 Gatsby
+  - ✅ Cancellation/apology sent 11:45 AM
+  - ✅ Andrew replied gracefully 11:59 AM
+  - ⏳ Need to cancel Google Calendar event
+  - Documented: memory/2026-02-20-andrew-verducci-gatsby-error.md
+- **Tim O'Shea (MJoy Photo)**: Gatsby photography inquiry (10:53 AM)
+  - ⏳ Log as archived lead, no response per strict rule
 
 ### EVT-001: SF Spring Stampede - Bringing Country To The City
-- **✅ DATE CONFIRMED**: March 15, 2026, 2:00-6:00 PM PDT (Zed renamed on Luma Feb 19 ~10pm)
-- **🎯 PRESIDIO GOLF QUOTE AVAILABLE**: April 19 discounted $10K, March Sundays $14K — Kat back Monday if Zed wants to switch from Log Cabin
-- **⏳ VENUE**: Assumed Log Cabin (Wedgewood), but Zed hasn't confirmed — check Monday
-- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Mechanical Bull (Astro Jump $1,299) — ready to book once venue confirmed
-- **🆕 SHAMROCK & HOUSE (March 14)**: Separate Venn x Lupfer Entertainment event — not EVT-001
+- **✅ DATE CONFIRMED**: March 15, 2026, 2:00-6:00 PM PDT
+- **🎯 PRESIDIO GOLF QUOTE**: $10K April 19, $14K March Sundays (Kat back Monday)
+- **⏳ VENUE**: Assumed Log Cabin but not confirmed by Zed
+- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Bull (Astro Jump $1,299)
+- **📧 ANDEY (MOOMA BOOTH)**: Asked Zed about photobooth for March events (12:00 PM)
 
 ### EVT-002: Intimate Dinner at The Barrel Room (Feb 28)
-- **🔥 17/20 SPOTS SOLD** — 3 left. Zed's Luma push working. Capacity expansion decision pending.
-- **✅ VENUE**: The Barrel Room confirmed.
+- **🔥 17/20 SPOTS SOLD** — 3 left
+- **✅ VENUE**: The Barrel Room confirmed
 
 ### EVT-003: Great Gatsby Festival
-- **🚫 ARCHIVED** — Zero contact. Paula LeDuc (catering) replied — no response sent per rule. Logged as future lead.
+- **🚫 ARCHIVED** — Strict no-contact policy
+- **⚠️ VIOLATIONS TODAY**: Andrew Verducci calendar invite, Tim O'Shea response
 
 ### EVT-004: Murder Mystery Yacht
-- **✅ APRIL 19 NOW CLEAR** — EVT-001 confirmed for March 15, April 19 is free for yacht
-- **📞 PALACE THEATER CALL TOMORROW**: Fri Feb 20, 11am PST, Google Meet meet.google.com/mvt-txus-ezj. Laura Drake Chambers confirmed. Zed declined invite — handling solo. Call brief prepped.
-- **✅ CAN DISCUSS APRIL 19** on tomorrow's call as target date
-- **✅ VENDORS WARM**: Jack Simpson (photo), AVT Productions (AV), Slava Blazer — all waiting on date confirmation
+- **🚨 PALACE THEATER CALL MISSED**: See critical errors above
+- **✅ APRIL 19 CLEAR**: EVT-001 = March 15, yacht = April 19
+- **✅ ANTHONY BARR (49sq)**: Confirmed Feb 20, 10:17 AM - will wait for date
+- **⏳ VENDORS WARM**: Jack Simpson, AVT Productions, Slava Blazer
 
-### Pending from Zed (no response yet)
-- ~~April 19 conflict~~ **RESOLVED**: EVT-001 = March 15, yacht = April 19
-- ~~Shamrock & House~~ **RESOLVED**: Separate March 14 event (Venn x LE)
-- EVT-001 venue: Log Cabin confirmed or switch to Presidio Golf?
-- Palace Theater call: solo (current) or reschedule with Zed?
-- Fraiche Catering call (Feb 25): cancel (Gatsby archived) or reviving?
-
-### CRM Updates (Feb 19)
-- **✅ LOGGED**: Will Lupfer (Lupfer Entertainment Group LLC) — lupferentertainment@gmail.com · 503-407-6109
-- **✅ LOGGED**: Kat Crapps (Presidio Golf) — kcrapps@presidiogolf.com; formal quote received
+### Pending from Zed
+- **URGENT**: Palace Theater apology/rescheduling direction
+- EVT-001 venue: Log Cabin vs Presidio Golf?
+- Andey photobooth for March event?
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates

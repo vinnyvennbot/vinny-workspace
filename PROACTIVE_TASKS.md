@@ -27,13 +27,15 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 
 ## 🔴 High Priority (Revenue / Event Impact)
 
-- [ ] Follow up with Bimbo's 365 and Swedish American Hall naturally when they respond (correct date to March 28 in context, don't send standalone correction — unprofessional)
-- [ ] Follow up with Tracey Lyons (Presidio Golf Clubhouse) — no response yet on western event inquiry
+- ✅ 2026-02-18 2:17PM: Bimbo's 365 responded with estimate PDF for March 15 — acknowledged, forwarded alert to Zed. ZEDS ACTION: Review estimate in Gmail thread, connect with Hayden if interested.
+- [ ] Swedish American Hall — no response yet, monitor
+- ✅ 2026-02-18 2:30PM: Presidio Golf Clubhouse — Found Katherine Crapps email: Kcrapps@presidiogolf.com, ext 207. Emailed directly re: March 15 western event. Monitoring for response.
 - ✅ 2026-02-18: Riggers Loft CLOSED (Richmond City Council issues) — removed from venue list
 - [ ] Follow up with Stable Cafe (Karen Ortiz) — no response yet
-- [ ] Get JustINtertainment actual quote amount (pricing received Feb 12 but amount not confirmed)
+- ✅ 2026-02-18 2:37PM: Emailed Justin to resend pricing in email (Dubsado link broken). Also corrected venue typo (Fort Mason → Log Cabin). Awaiting response.
 - [ ] Follow up on 8 overdue partner relationships (SF Social Club, Silver Cloud, Best Day Brewing, etc.)
-- [ ] Remind Zed: Log Cabin contract hold expires ~Thu Feb 19 — decision needed
+- 🚨 2026-02-18: Log Cabin contract expires EOD FEB 19 (TOMORROW) — Zed must decide: sign or release. Bimbo's estimate now in hand as backup.
+- [ ] Remind Zed: Log Cabin contract hold expires ~Thu Feb 19 — ESCALATE
 
 ## 🟡 Medium Priority (Operations / Databases)
 
@@ -49,7 +51,7 @@ draft content, study the market, improve existing workflows. Idle = not thinking
   ❌ **Long Branch Saloon & Farms (Half Moon Bay)** — $17K-$20K minimum. Too expensive.
 - ✅ 2026-02-18: EVT-003 Gatsby — 9 vendors contacted (3 catering, 4 photo, 3 AV/lighting). 5 more need email verification before outreach (call first: KC Catering, Above & Beyond, Drew Altizer, Impact SF, AVT Productions)
 - [ ] Confirm EVT-004 yacht date — Red & White Fleet ($10,800) still waiting on date to finalize
-- [ ] Draft EVT-001 marketing copy for when venue is confirmed
+- ✅ 2026-02-18 2:42PM: EVT-001 marketing copy drafted — `/workspace/briefs/evt001-marketing-copy.md`. Ready to publish once venue + ticket price confirmed.
 - [ ] Research SF community orgs for EVT-003 Gatsby partnership opportunities
 - [ ] Find correct emails for Volo, No Days Wasted, Persona, Foundess (no contact info yet)
 
@@ -57,10 +59,10 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 
 - [ ] Build "Email Sync" button for Mission Control Financials tab
 - [ ] Add outreach pipeline view to Mission Control (track % contacted → responded → quoted → booked)
-- [ ] Research SF event permit requirements (SFRPD vs private venue differences)
-- [ ] Compile western line dancing instructor leads for EVT-001 (lesson = engagement + entertainment)
+- ✅ 2026-02-18 4:23PM: Permit/insurance research done — `/workspace/briefs/evt001-permits-insurance.md`. Bottom line: Wedgewood handles NPS/ABC. Venn needs event liability insurance (~$75-200, 24-48hr turnaround) + Astro Jump COI. No city permits needed.
+- ✅ 2026-02-18 3:44PM: Line dance instructor leads compiled — `/workspace/briefs/evt001-line-dance-instructors.md`. Top lead: Dancing Cowboy (Adam, 408-890-7940) — DJ + instructor combo. Also: Line Dancing Lisa, Sundance Saloon instructors.
 - [ ] Analyze ticket pricing benchmarks for SF social events ($40-70/person range)
-- [ ] Draft Venn partnership one-pager template for sponsor outreach
+- ✅ 2026-02-18 4:08PM: Partnership one-pager template drafted — `/workspace/briefs/venn-partnership-one-pager.md`. Covers 4 tiers (Title/Presenting/Community/After-Party), past results, customization notes.
 
 ## ✅ Completed
 - ✅ 2026-02-17: CRM People tab populated with 35 contacts from email scan
@@ -68,3 +70,12 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 - ✅ 2026-02-17: Financials tab redesigned (3-tab system)
 - ✅ 2026-02-17: All fabricated financial data removed and corrected
 - ✅ 2026-02-17: CRM Venues/Vendors/Partners populated from email scan (in progress)
+
+## 🚨 PENDING ZED DECISION — EVT-001 DATE SHIFT (Added 2026-02-18 6:35 PM)
+- Zed is considering pushing EVT-001 Western Line Dancing from March → April (rain concern)
+- He's calling Katie (Wedgewood/Log Cabin) tomorrow Feb 19 to discuss April availability
+- **HOLD ALL EVT-001 VENDOR DATE COMMUNICATIONS** until Zed confirms new date
+- Once April date confirmed: notify all EVT-001 vendors with updated date:
+  - Astro Jump, Bay Area Beats, JustINtertainment, Alberto Rodriguez, line dance instructors
+  - Kat Crapps (Presidio Golf may be relevant for April too)
+  - Bimbo's 365 (if Bimbo's is still backup)

@@ -112,6 +112,18 @@
     "tg-voice-whisper": {
       "version": "1.0.0",
       "installedAt": 1771393142366
+    },
+    "pitch-deck-visuals": {
+      "version": "0.1.5",
+      "installedAt": 1771458724109
+    },
+    "afrexai-pitch-deck-reviewer": {
+      "version": "1.0.0",
+      "installedAt": 1771458736256
+    },
+    "mckinsey-research": {
+      "version": "1.0.2",
+      "installedAt": 1771458740812
     }
   }
 }
