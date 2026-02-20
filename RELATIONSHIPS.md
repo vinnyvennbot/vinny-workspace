@@ -7,7 +7,7 @@
 | Vendor | Category | Contact | Notes |
 |--------|----------|---------|-------|
 | FPV Studio (Jaziel) | FPV/Drone video & editing | fpvarchitecture@gmail.com · +1 619-289-1389 | Invoice #E5QUGIDL-0003 $350 (Feb 2026 reel editing); Zed's go-to for promo content |
-| Andey | Photo booth | **CONTACT NEEDED — ask Zed** | Confirmed preferred vendor by Zed; no email on file yet |
+| Andey (Mooma Booth) | Photo booth | andey@moomabooth.com · (415) 286-5510 | Partnership pricing $150-200/hr; past Venn events (Gatsby, Yacht); Feb 20 2026 asked Zed about photobooth for March events; confirmed preferred vendor |
 | Will Lupfer (Lupfer Entertainment Group LLC) | Entertainment | lupferentertainment@gmail.com · 503-407-6109 | Zed intro'd Feb 18, 2026 — Will signed up for Venn membership to see service from user POV; warm contact, looking forward to working together |
 
 ### Sponsors & Brand Partners (Provided product/cash/co-branding)
