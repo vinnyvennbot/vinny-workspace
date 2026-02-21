@@ -24,7 +24,7 @@
 - ✅ Daily logs (memory/YYYY-MM-DD.md)
 - ✅ Research briefs (briefs/*.md)
 - ✅ Long-term memory (MEMORY.md)
-- ❌ **NEVER task lists or operational tracking**
+- ❌ **NEVER task lists or CRM data (vendors/partners/venues)**
 
 ## Quick Start
 

@@ -42,11 +42,17 @@ sqlite3 venn-mission-control/dev.db "SELECT name, archived FROM Event WHERE id =
 # Recent contacts
 sqlite3 venn-mission-control/dev.db "SELECT name, email, role FROM Person ORDER BY createdAt DESC LIMIT 20;"
 
-# Vendors by category
-sqlite3 venn-mission-control/dev.db "SELECT name, category, status FROM Vendor WHERE status = 'active';"
+# Top vendors by reliability
+sqlite3 venn-mission-control/dev.db "SELECT name, category, reliability FROM Vendor ORDER BY reliability DESC LIMIT 20;"
 
-# Partners
+# Vendors by category
+sqlite3 venn-mission-control/dev.db "SELECT name, reliability, notes FROM Vendor WHERE category = 'dj' ORDER BY reliability DESC;"
+
+# All partners
 sqlite3 venn-mission-control/dev.db "SELECT name, partnerType, category FROM Partner;"
+
+# Search vendors
+sqlite3 venn-mission-control/dev.db "SELECT name, category, cost, reliability FROM Vendor WHERE name LIKE '%search%' OR notes LIKE '%search%';"
 ```
 
 ## Tables
