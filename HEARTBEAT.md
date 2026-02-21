@@ -85,7 +85,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-*(Last updated: Feb 20, 2026, 12:02 PM PST)*
+*(Last updated: Feb 20, 2026, 11:50 PM PST)*
 
 ### 🚨 CRITICAL ERRORS — FEB 20, 2026
 
@@ -129,9 +129,14 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **⏳ VENDORS WARM**: Jack Simpson, AVT Productions, Slava Blazer
 
 ### Pending from Zed
-- **URGENT**: Palace Theater apology/rescheduling direction
+- **URGENT**: Palace Theater apology/rescheduling direction (alerted 12:02 PM + 12:32 PM, no response yet)
 - EVT-001 venue: Log Cabin vs Presidio Golf?
 - Andey photobooth for March event?
+
+### New Vendor Activity (Evening Feb 20)
+- **The SF Commons**: Zed submitted event interest form (11:49 PM), awaiting response (1-2 business days)
+- **Jungle Room/Tiki Bar (Max Y)**: Zed actively messaging via Peerspace (10:17-10:31 PM) - site visit planned, ask for Mario (GM)
+- **Email Bounce**: grooveventsla@gmail.com doesn't exist (Zed's CRM greeting bounced with 550 error)
 
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates
