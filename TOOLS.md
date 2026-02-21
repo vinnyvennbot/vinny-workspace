@@ -54,10 +54,11 @@ gog gmail show MESSAGE_ID      # ❌ No such command
 
 **✅ CORRECT SYNTAX:**
 ```bash
-# Read/view a message (just pass the ID directly):
-gog gmail MESSAGE_ID
+# 🚨 CRITICAL LIMITATION (v0.9.0): gog gmail CANNOT read message bodies!
+# Can only search/list with metadata (ID, date, from, subject, labels)
 
-# Search messages:
+# Search/list messages (metadata only - no body content):
+gog gmail search "query" --max 20
 gog gmail messages search "query" --max 20
 gog gmail messages search "in:inbox newer_than:4h" --max 20
 
@@ -72,6 +73,11 @@ gog gmail --help
 gog gmail send --help
 gog gmail messages --help
 ```
+
+**CRITICAL LIMITATION:**
+- ⚠️ **NO BODY READING**: Current gog version cannot read email content - only metadata
+- ⚠️ **BLOCKS AUTONOMOUS EMAIL MONITORING**: Cannot determine vendor responses without manual review
+- ⚠️ Documented: `/workspace/memory/2026-02-21-email-tool-limitation.md`
 
 **CRITICAL RULES:**
 - ✅ Always use `--reply-to-message-id` for vendor responses (maintains threading)
