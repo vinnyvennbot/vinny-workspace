@@ -1,5 +1,38 @@
 # Long-Term Memory
 
+## 🚨 DATABASE-ONLY TASK MANAGEMENT — NON-NEGOTIABLE (Feb 21, 2026)
+
+**ALL task management happens in Mission Control database. NO markdown files.**
+
+**Aidan's words:** "Instead of using files for memory and storage of tasks, you must ONLY use the DB for this. That's just stupid."
+
+**THE RULE:**
+- Task tracking = Mission Control SQLite database ONLY
+- `sqlite3 venn-mission-control/dev.db "SELECT * FROM Task WHERE status != 'done' ORDER BY priority DESC;"`
+- Markdown files (PROACTIVE_TASKS.md) were stupid and unreliable
+- Database is queryable, structured, survives restarts, powers the UI
+
+**WHAT CHANGED:**
+- ✅ PROACTIVE_TASKS.md archived (never use again)
+- ✅ All tasks migrated to Task table in database
+- ✅ AGENTS.md updated: Database is source of truth
+- ✅ HEARTBEAT.md updated: Check DB for tasks
+- ✅ Created TASK_MANAGEMENT.md with commands reference
+
+**EVERY HEARTBEAT:**
+1. Query database for highest priority tasks
+2. Execute top task
+3. Update status in database as work progresses
+
+**NEVER:**
+- Track tasks in markdown files
+- Use checkboxes in documentation
+- Store commitments outside the database
+
+**Status:** All task management migrated to database. PROACTIVE_TASKS.md.archived for reference only.
+
+---
+
 ## 🚨 MISSION CONTROL UPTIME — NON-NEGOTIABLE (Feb 21, 2026)
 
 **Mission Control must NEVER go down undetected. Ever.**
