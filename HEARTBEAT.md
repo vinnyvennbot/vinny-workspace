@@ -102,10 +102,11 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Andrew Verducci (VEP)**: Calendar invite sent for archived EVT-003 Gatsby
   - ✅ Cancellation/apology sent 11:45 AM
   - ✅ Andrew replied gracefully 11:59 AM
-  - ⏳ Need to cancel Google Calendar event
+  - ✅ Calendar event cancelled 4:10 AM Feb 21
   - Documented: memory/2026-02-20-andrew-verducci-gatsby-error.md
 - **Tim O'Shea (MJoy Photo)**: Gatsby photography inquiry (10:53 AM)
-  - ⏳ Log as archived lead, no response per strict rule
+  - ✅ Logged as archived lead, no response per strict rule
+- **McCalls SF & Fraiche Catering**: Calendar events cancelled 4:10 AM Feb 21 (archived Gatsby)
 
 ### EVT-001: SF Spring Stampede - Bringing Country To The City
 - **✅ DATE CONFIRMED**: March 15, 2026, 2:00-6:00 PM PDT

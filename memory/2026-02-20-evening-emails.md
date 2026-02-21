@@ -34,3 +34,9 @@
 ---
 
 **LOGGED**: 11:50 PM PST
+## EMAIL BOUNCE: sfavproductions.com (1:09 AM Feb 21)
+- **Email**: info@sfavproductions.com
+- **Error**: DNS SERVFAIL (domain email not configured)
+- **Time**: 1:09 AM PST Feb 21, 2026
+- **Notes**: Domain has DNS issues - not a viable contact
+- **Action**: No action needed - vendor email infrastructure broken

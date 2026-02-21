@@ -52,8 +52,10 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 - ✅ 2026-02-18: EVT-003 Gatsby — 9 vendors contacted (3 catering, 4 photo, 3 AV/lighting). 5 more need email verification before outreach (call first: KC Catering, Above & Beyond, Drew Altizer, Impact SF, AVT Productions)
 - [ ] Confirm EVT-004 yacht date — Red & White Fleet ($10,800) still waiting on date to finalize
 - ✅ 2026-02-18 2:42PM: EVT-001 marketing copy drafted — `/workspace/briefs/evt001-marketing-copy.md`. Ready to publish once venue + ticket price confirmed.
-- [ ] Research SF community orgs for EVT-003 Gatsby partnership opportunities
+- ✅ 2026-02-21 4:10AM: EVT-003 Gatsby archived — removed Gatsby partnership research from queue
+- ✅ 2026-02-21 4:15AM: SF community partner pipeline research completed — `/workspace/briefs/sf-community-partner-pipeline.md`. Priority: SF Social Club, Social Rising SF, Urban Diversion.
 - [ ] Find correct emails for Volo, No Days Wasted, Persona, Foundess (no contact info yet)
+- [ ] Analyze SF event ticket pricing benchmarks ($40-70/person range) for future pricing strategy
 
 ## 🔵 Improvements / Strategic
 
