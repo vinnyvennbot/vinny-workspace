@@ -95,3 +95,61 @@
 5. **Consider code review** - recent changes may have introduced instability
 
 **Updated**: 10:34 AM PST, Feb 21, 2026
+
+---
+
+## 🚨 MISSION CONTROL SIGKILL - 10:49 AM PST
+
+**Time**: 10:49:36 AM PST (detected 10:52 AM)  
+**Issue**: Mission Control process killed with **SIGKILL**  
+**Signal**: SIGKILL = forceful termination by OS (usually memory pressure)  
+**Process**: sharp-valley (PID 19825) - the 10:19 AM restart  
+**Status**: Server DOWN, unresponsive
+
+### ✅ RESOLUTION
+
+**Action Taken**: Auto-restart via manual detection  
+**Command**: `cd /Users/vinnyvenn/.openclaw/workspace/venn-mission-control && npm run dev`  
+**Background Process**: PID 20259, session "crisp-river"  
+**Recovery Time**: ~3 minutes (killed at 10:49, restarted 10:52)  
+**Verification**: HTTP 200 confirmed after restart  
+
+### 📊 STATUS
+
+- **Mission Control (3000)**: ✅ RESTORED (HTTP 200)  
+- **Consumer Frontend (3001)**: ✅ HEALTHY (running since 10:34 AM)
+
+### 🚨 CRITICAL ESCALATION - 4 CRASHES IN 11 HOURS
+
+**Crash Timeline**:
+1. **00:20 AM** - Mission Control (9.5h undetected downtime)
+2. **10:19 AM** - Mission Control (auto-recovered 5min)
+3. **10:34 AM** - Consumer Frontend (auto-recovered 5min)
+4. **10:49 AM** - Mission Control **SIGKILL** (recovered 3min)
+
+**SIGKILL Significance**:
+- OS forcefully terminated process (not graceful shutdown)
+- Usually indicates: memory exhaustion, OOM killer, or resource limits
+- Process could NOT save state or cleanup
+
+### 🔴 ROOT CAUSE INVESTIGATION URGENT
+
+**Immediate Actions Needed**:
+1. **Check system memory**: `top` or Activity Monitor - is system running out of RAM?
+2. **Review Node.js memory**: Check for memory leaks in both apps
+3. **Check logs**: Look for out-of-memory errors before SIGKILL
+4. **Monitor heap usage**: Add memory profiling to applications
+5. **PM2 REQUIRED**: Implement production process manager NOW
+
+**System Resource Check**:
+```bash
+# Check available memory
+vm_stat | grep "Pages free"
+# Check Node processes memory
+ps aux | grep node | awk '{print $2, $4, $11}'
+```
+
+**Pattern**: Both applications crashing repeatedly within minutes suggests **host system resource exhaustion**, not application bugs alone.
+
+**Updated**: 10:52 AM PST, Feb 21, 2026  
+**Severity**: CRITICAL - Production stability compromised
