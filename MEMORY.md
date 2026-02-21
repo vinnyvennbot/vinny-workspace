@@ -1,5 +1,32 @@
 # Long-Term Memory
 
+## 🚨 MISSION CONTROL UPTIME — NON-NEGOTIABLE (Feb 21, 2026)
+
+**Mission Control must NEVER go down undetected. Ever.**
+
+**THE FAILURE:** Server crashed at 00:20 PST, stayed down for 9.5 hours until Zed reported it at 09:47 PST.
+
+**THE RULE:**
+- Mission Control is the SOURCE OF TRUTH for all event data
+- Downtime = Venn cannot operate
+- Health monitoring is MANDATORY, not optional
+- Auto-restart on failure is MANDATORY, not optional
+
+**IMPLEMENTED:**
+- ✅ Cron health check every 5 minutes (job f7cc51a2)
+- ✅ Auto-restart protocol if server unresponsive
+- ✅ Alert Vinny immediately on any downtime
+
+**INVESTIGATION NEEDED:**
+- Why SIGKILL? (memory leak? crash? system resources?)
+- Should use PM2 or systemd for production stability
+
+**Zed's words:** "dont let this ever happen again"
+
+**Status:** Server running on http://localhost:3000 with active monitoring.
+
+---
+
 ## 🚨 EMAIL AUTHORITY — NON-NEGOTIABLE (Feb 18, 2026 — hardest lesson)
 
 **ONLY MAIN SESSION sends external emails. No exceptions.**
