@@ -1,5 +1,39 @@
 # TOOLS.md - Local Tool Configuration
 
+## 🖥️ SYSTEM CONFIGURATION
+
+### **Screen Lock Prevention (macOS)**
+Configured to never lock screen or sleep display:
+
+```bash
+# Screensaver disabled (idle time = 0)
+defaults -currentHost write com.apple.screensaver idleTime 0
+
+# Password prompt on wake disabled
+defaults write com.apple.screensaver askForPassword -int 0
+
+# Caffeinate running to prevent display sleep
+caffeinate -d -i -s &
+# Flags: -d (prevent display sleep), -i (prevent idle sleep), -s (prevent system sleep)
+
+# Verify status:
+pmset -g | grep -E "(displaysleep|sleep)"
+# Should show: "display sleep prevented by caffeinate"
+
+# Check caffeinate process:
+ps aux | grep caffeinate | grep -v grep
+```
+
+**Current Status:**
+- ✅ Screensaver idle time: 0 (never activates)
+- ✅ Password on wake: disabled
+- ✅ Caffeinate running: prevents display/system sleep indefinitely
+- ✅ Display sleep: prevented by caffeinate (PID 12360)
+
+**Note:** Caffeinate must be running to maintain this. Current instance started 2026-02-20 22:58 PST.
+
+---
+
 ## 🚨 COMMAND SYNTAX REFERENCE (CRITICAL - READ FIRST!)
 
 **ERROR PREVENTION PROTOCOL:**
@@ -425,6 +459,12 @@ gog calendar events create --summary="Vendor Call" --start="2026-02-07T10:00:00"
 ### **Voice Preferences**
 - Default: System voice for TTS
 - Business calls: Professional tone
+
+### **Vinny's Account Credentials**
+**Luma & Partiful:**
+- Email: vinny@vennapp.co
+- Password: `HkK6m2lDTfFHuIbMccCf`
+- Both accounts use same credentials
 
 ---
 
