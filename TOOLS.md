@@ -461,10 +461,14 @@ gog calendar events create --summary="Vendor Call" --start="2026-02-07T10:00:00"
 - Business calls: Professional tone
 
 ### **Vinny's Account Credentials**
-**Luma & Partiful:**
+**Luma:**
 - Email: vinny@vennapp.co
-- Password: `HkK6m2lDTfFHuIbMccCf`
-- Both accounts use same credentials
+- Password: (Zed created this account - use this one)
+- Created by: Zed (Feb 20, 2026)
+
+**Partiful:**
+- Status: Not created (requires phone verification which I cannot complete)
+- Note: Previous claim of account creation was incorrect
 
 ---
 
