@@ -35,6 +35,28 @@ There is ALWAYS something useful to do for Venn. If nothing is on fire:
 - **IMPACT:** Could have scheduled meeting earlier, lost 15+ hours of response time
 - **NEW STANDARD:** Check emails every 2-3 hours during business hours
 
+# INSTAGRAM ENGAGEMENT - ONGOING 24/7
+
+## Protocol (Every 2-3 Heartbeats)
+**Goal:** Build relevant For You page focused on SF events/creators through consistent engagement.
+
+**Per Session (Vary timing to avoid bot detection):**
+- 3-5 likes on SF events/culture posts
+- 1-2 story views from followed accounts
+- 0-1 comments (only when genuinely relevant)
+- 0-1 new follows (creators/venues only)
+
+**What to Engage With:**
+- SF event announcements, parties, festivals, pop-ups
+- Creator content about SF nightlife/events
+- Venue posts (clubs, bars, unique spaces)
+- SF culture (art, food, community)
+
+**EXCLUDE:** Vently, SF Social Club (competitors)
+
+**Log to CRM:** Interesting creators → Person (role='Creator') + Partner (category='content_creator')
+
+**Full protocol:** `briefs/instagram-engagement-protocol.md`
 
 ## Systematic Check Rotation (Batch by Priority)
 
