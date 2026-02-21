@@ -208,3 +208,15 @@ ps aux | grep node | awk '{print $2, $4, $11}'
 
 **Updated**: 11:04 AM PST, Feb 21, 2026
 2026-02-21 14:11:09 PST - Consumer Frontend DOWN (port 3001) - Process 22901 running but server unresponsive. Killed and restarted. Now healthy (200).
+
+## Crash #11 - Feb 21, 2026 2:07 PM PST
+
+**Time:** 14:07:43 PST (SIGKILL)  
+**Auto-restart:** 14:10:54 PST (Ready in 353ms)  
+**Manual restart:** 14:12:47 PST (detected down again during health check)  
+**Uptime before crash:** ~13 minutes (from 1:56 PM restart)  
+**Signal:** SIGKILL (OS-level termination)  
+**Pattern:** 11th crash in 14 hours, continuing every 20-30 minutes
+
+**Status:** Both servers now healthy (200 OK at 2:12 PM)
+
