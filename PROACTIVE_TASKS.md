@@ -55,7 +55,7 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 - ✅ 2026-02-21 4:10AM: EVT-003 Gatsby archived — removed Gatsby partnership research from queue
 - ✅ 2026-02-21 4:15AM: SF community partner pipeline research completed — `/workspace/briefs/sf-community-partner-pipeline.md`. Priority: SF Social Club, Social Rising SF, Urban Diversion.
 - ✅ 2026-02-21 4:55AM: SF event pricing benchmarks completed — `/workspace/briefs/sf-event-pricing-benchmarks.md`. Optimal range: $45-55 (early bird $40-45, standard $50-60, VIP $75-90). Competitive analysis across Eventbrite, Luma, Partiful platforms.
-- [ ] Find correct emails for Volo, No Days Wasted, Persona, Foundess (no contact info yet)
+- ✅ 2026-02-21 8:30AM: Partner contact research completed — `/workspace/briefs/partner-contact-research-feb21.md`. Found: Volo Sports (415-723-6110), No Days Wasted (info@nodayswasted.co), Persona SF (415-400-4598). Foundess not located (needs name clarification). Priority: Persona SF (event space/social club, HIGH partnership potential).
 
 ## 🔵 Improvements / Strategic
 
