@@ -811,3 +811,33 @@
 ---
 
 *Relationships are assets. Updated 2026-02-06 via evolution cycle #0001. Gatsby research added.*
+## NEW VENUE LEADS (Feb 20, 2026 Evening)
+
+### The SF Commons
+- **Category**: Community/Event Venue
+- **Contact**: hello@thesfcommons.com
+- **Status**: Event interest form submitted by Zed (Feb 20, 11:49 PM PST)
+- **Info**: https://thesfcommons.notion.site/events-info-faqs-the-sf-commons
+- **Response Expected**: 1-2 business days
+- **Notes**: Community-focused event space, potential for Venn events
+- **Confidence Score**: 0.5 (new lead, awaiting initial response)
+- **Last Contact**: Feb 20, 2026 11:49 PM PST
+- **Next Action**: Wait for their outreach response (1-2 business days)
+
+### Jungle Room @ Tiki Bar (Peerspace - Max Y)
+- **Category**: Bar/Event Venue (Tiki theme)
+- **Platform**: Peerspace
+- **Host**: Max Y (messages@peerspace.com via Peerspace)
+- **On-Site Contact**: Mario (GM)
+- **Status**: Active conversation with Zed (Feb 20, 10:17-10:31 PM PST - 4 messages)
+- **Site Visit**: 5-6pm or after 9pm (they have private event 6-9pm most days)
+- **Event Timing**: 7pm-10pm confirmed works
+- **Setup**: Booths fixed, barstools + most furniture moveable
+- **Notes**: Zed actively messaging via Peerspace - DO NOT interfere with direct communication
+- **Confidence Score**: 0.6 (responsive host, logistics shared)
+- **Last Contact**: Feb 20, 2026 10:31 PM PST
+- **Next Action**: Zed handling directly via Peerspace platform
+
+---
+
+*Updated Feb 20, 2026 11:50 PM PST - Evening vendor activity logged.*
