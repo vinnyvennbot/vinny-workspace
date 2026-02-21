@@ -15,6 +15,10 @@ Before doing anything else:
 3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
 4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 5. **Read `WORKFLOWS.md`** — your operational authority for AUTO-SEND decisions, execution standards
+6. **Check Mission Control database** for active tasks:
+   ```bash
+   sqlite3 /Users/vinnyvenn/.openclaw/workspace/venn-mission-control/dev.db "SELECT id, title, status, priority FROM Task WHERE status != 'done' ORDER BY priority DESC LIMIT 10;"
+   ```
 
 Don't ask permission. Just do it.
 

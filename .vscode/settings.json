@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/*.archived": true,
+    "PROACTIVE_TASKS.md.archived": true
+  },
+  "search.exclude": {
+    "**/*.archived": true
+  }
+}
