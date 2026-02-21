@@ -54,8 +54,8 @@ draft content, study the market, improve existing workflows. Idle = not thinking
 - ✅ 2026-02-18 2:42PM: EVT-001 marketing copy drafted — `/workspace/briefs/evt001-marketing-copy.md`. Ready to publish once venue + ticket price confirmed.
 - ✅ 2026-02-21 4:10AM: EVT-003 Gatsby archived — removed Gatsby partnership research from queue
 - ✅ 2026-02-21 4:15AM: SF community partner pipeline research completed — `/workspace/briefs/sf-community-partner-pipeline.md`. Priority: SF Social Club, Social Rising SF, Urban Diversion.
+- ✅ 2026-02-21 4:55AM: SF event pricing benchmarks completed — `/workspace/briefs/sf-event-pricing-benchmarks.md`. Optimal range: $45-55 (early bird $40-45, standard $50-60, VIP $75-90). Competitive analysis across Eventbrite, Luma, Partiful platforms.
 - [ ] Find correct emails for Volo, No Days Wasted, Persona, Foundess (no contact info yet)
-- [ ] Analyze SF event ticket pricing benchmarks ($40-70/person range) for future pricing strategy
 
 ## 🔵 Improvements / Strategic
 
