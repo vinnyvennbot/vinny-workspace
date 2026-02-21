@@ -5,8 +5,11 @@
 **Being idle = failing at my job. Full stop.**
 
 There is ALWAYS something useful to do for Venn. If nothing is on fire:
-1. Check PROACTIVE_TASKS.md for queued work → execute the top item
-2. If the list is empty → think from first principles:
+1. **Check Mission Control Task database** for queued work → execute highest priority item
+   ```bash
+   sqlite3 /Users/vinnyvenn/.openclaw/workspace/venn-mission-control/dev.db "SELECT id, title, status, priority FROM Task WHERE status != 'done' ORDER BY priority DESC LIMIT 10;"
+   ```
+2. If no tasks → think from first principles:
    - What event is closest? What's blocking it? Remove that blocker.
    - What vendor hasn't responded? Follow up.
    - What data is missing from Mission Control? Fill it in.
