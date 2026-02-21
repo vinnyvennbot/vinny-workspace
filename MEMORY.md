@@ -9,11 +9,10 @@
 **THE RULE:**
 - Task tracking = Mission Control SQLite database ONLY
 - `sqlite3 venn-mission-control/dev.db "SELECT * FROM Task WHERE status != 'done' ORDER BY priority DESC;"`
-- Markdown files (PROACTIVE_TASKS.md) were stupid and unreliable
+- Markdown files for tasks were stupid and unreliable
 - Database is queryable, structured, survives restarts, powers the UI
 
 **WHAT CHANGED:**
-- ✅ PROACTIVE_TASKS.md archived (never use again)
 - ✅ All tasks migrated to Task table in database
 - ✅ AGENTS.md updated: Database is source of truth
 - ✅ HEARTBEAT.md updated: Check DB for tasks
@@ -29,7 +28,7 @@
 - Use checkboxes in documentation
 - Store commitments outside the database
 
-**Status:** All task management migrated to database. PROACTIVE_TASKS.md.archived for reference only.
+**Status:** All task management migrated to database.
 
 ---
 

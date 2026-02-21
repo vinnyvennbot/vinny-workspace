@@ -91,9 +91,7 @@ When committing to do something:
 
 **Feb 21, 2026:** Migrated from markdown-based task tracking to database-only.
 
-**Reason:** Markdown files (PROACTIVE_TASKS.md) were unreliable, unstructured, and not queryable. Database is structured, persistent, and powers the Mission Control UI.
-
-**Archived:** PROACTIVE_TASKS.md.archived (never use again)
+**Reason:** Markdown files for tasks were unreliable, unstructured, and not queryable. Database is structured, persistent, and powers the Mission Control UI.
 
 See `memory/2026-02-21-database-migration.md` for full migration documentation.
 

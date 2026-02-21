@@ -93,20 +93,18 @@ Every heartbeat:
 - Vendors/Partners (who we work with)
 - Financial tracking (expenses, quotes)
 
-## Migration from PROACTIVE_TASKS.md
+## Why Database Instead of Markdown
 
-**Old way (WRONG):**
-```markdown
-- [ ] Do the thing
-- [x] Thing completed
-```
+**Wrong way:**
+- Markdown files with checkbox lists
+- No structure, no querying, unreliable
+- Doesn't survive restarts cleanly
 
-**New way (CORRECT):**
-```bash
-sqlite3 venn-mission-control/dev.db "INSERT INTO Task (...) VALUES (...);"
-```
-
-All tasks from PROACTIVE_TASKS.md have been migrated to the database. The markdown file is archived.
+**Right way:**
+- Structured SQLite database
+- Queryable by any field
+- Powers Mission Control UI
+- Persistent and transactional
 
 ---
 
