@@ -1,14 +1,19 @@
 # EVT-001: Western Line Dancing Night
 
 ## Event Details
-- **Date:** Saturday, March 29, 2026
+- **Date:** Saturday, March 29, 2026 ⚠️ **DATE CRITICAL - VERIFY IMMEDIATELY**
 - **Time:** 7:00 PM - 11:00 PM
 - **Capacity:** 150
 - **Budget:** $60/person ($9,000 total)
 - **Theme:** Wild West / Line Dancing (SF Spring Stampede)
 - **Status:** Planning - Venue decision pending
 
-## ⚠️ Active Issues
+## 🚨 CRITICAL ISSUES
+- **DATE CONFUSION:** Multiple dates in vendor communications:
+  - Party Jump email (2/23): March 7, 2026
+  - Presidio Golf email (2/23): March 15, 2026
+  - Mission Control DB: March 29, 2026
+  - **ACTION REQUIRED:** Verify correct date before ANY vendor confirmations
 - **Venue Decision:** Presidio Events sent proposal 2/23 (Log Cabin vs Golf Clubhouse)
 - **Insurance:** Let's Party mechanical bull requires event insurance (overdue since Feb 5)
 
