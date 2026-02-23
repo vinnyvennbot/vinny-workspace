@@ -1,11 +1,11 @@
 {
   "lastChecks": {
-    "email": 1771882173,
+    "email": 1771882773,
     "calendar": 1771848305,
     "vendor_database": 1771867773,
-    "mission_control_health": 1771882173,
-    "consumer_frontend_health": 1771882173,
-    "instagram_engagement": 1771868973
+    "mission_control_health": 1771882773,
+    "consumer_frontend_health": 1771882773,
+    "instagram_engagement": 1771882773
   },
   "date": "2026-02-23",
   "lastActivity": "2:49 PM PST",
@@ -129,9 +129,13 @@
     ]
   },
   "instagram": {
-    "lastEngagement": "11:14 AM",
+    "lastEngagement": "2:59 PM",
     "following": 27,
-    "recentFollow": "sanfrancisco.explores"
+    "recentFollow": "sanfrancisco.explores",
+    "todaySessions": 2,
+    "todayLikes": 5,
+    "todayStories": 3,
+    "todayFollows": 1
   },
   "workSession": {
     "start": "4:04 AM PST",
