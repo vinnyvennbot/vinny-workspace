@@ -31,6 +31,29 @@ Actions:
 
 ---
 
+## 2026-02-23 (11:14 AM PST)
+**Session 3: Sunday Morning Engagement**
+Actions:
+- Likes: 2 posts
+  1. @sfchronicle - SF traffic tickets / speed cameras (4h old)
+  2. @sanfrancisco.explores - Bay Bridge lights returning after 3 years (3d old)
+- Stories viewed: 1 (@bimbos365club - reshare from muddthetwospirit)
+- Comments: 0
+- New follows: 1 (@sanfrancisco.explores - SF discovery/culture content)
+
+**Creators discovered:**
+- sanfrancisco.explores (@sanfrancisco.explores) - Posts SF landmarks, events, culture. Bay Bridge lights post had 10.7K likes. Good engagement. Quality photography. Strong partnership potential for SF event promotion.
+
+**For You page observations:**
+- Good SF content surfacing: SF Chronicle, local SF accounts
+- Suggestions showing SF-connected accounts (following sfstandard, onlyinsf, etc.)
+- Mix of culture (sfmoma, sfballet), news (sfchronicle), and discovery accounts
+- Algorithm picking up on SF focus
+
+**Next session:** Continue with 3-5 likes on SF events/culture, consider following more venue/creator accounts
+
+---
+
 ## Engagement Stats Template
 ```
 Date: YYYY-MM-DD
