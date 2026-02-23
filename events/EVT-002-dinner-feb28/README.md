@@ -1,39 +1,46 @@
 # EVT-002: Intimate 30-Person Dinner
 
 ## Event Details
-- **Date:** February 28, 2026 (Saturday)
-- **Venue:** The Barrel Room ⚠️ CRITICAL - DO NOT confuse with Fort Mason
-- **Time:** Evening
-- **Capacity:** 30
-- **Budget:** $70/person ($2,100 total) - HARD CAP
-- **Theme:** Upscale private dining experience
-- **Status:** Planning
+- **Date:** Saturday, March 1, 2026, 8:00 PM
+- **Venue:** The Barrel Room ✅ CONFIRMED ⚠️ CRITICAL - DO NOT confuse with Fort Mason
+- **Time:** 8:00 PM - Late
+- **Capacity:** 20 guests
+- **Tickets Sold:** 17/20 (3 spots remaining) 🚨 URGENT
+- **Theme:** Intimate wine cellar dining experience
+- **Status:** 🔥 ACTIVE - 6 days out, final ticket push needed
 
-## ⚠️ Budget Constraint
-Current financial model shows $72/person - EXCEEDS budget by $2. Must optimize costs.
+## 🚨 URGENT: Final Ticket Push (6 Days Out)
+- **Marketing materials ready:** Comprehensive copy package created 2/23
+- **Action needed:** Launch Instagram/email/SMS campaign for final 3 tickets
+- **Deadline:** Event is March 1 (6 days away)
 
 ## Vendors
 
 ### Confirmed
-- None yet
+- **The Barrel Room** (Manuel Hewitt) - Venue confirmed, response received 2/23 at 9:09 AM
+- **Merrill Collier** - Magician (quote received 2/12)
 
-### Contacted (Awaiting Response)
-- Venue research in progress
-- Catering quotes needed
+### Pending
+- Final venue details confirmation
 
 ## Files in This Folder
 - `metadata.json` - Event configuration
 - `private-dinner-proposal.md` - Original proposal
-- `intimate_dinner_financial_model.xlsx` - Financial projections (needs cost reduction)
+- `intimate_dinner_financial_model.xlsx` - Financial projections
+- `marketing-copy.md` - **NEW 2/23** - Complete marketing package (Instagram, email, SMS, influencer outreach)
 
-## Next Steps
-1. **URGENT:** Reduce costs by $60 total ($2/person x 30) to meet $70 budget
-2. Select historic mansion or exclusive venue
-3. Get catering quotes (prioritize existing vendor relationships)
-4. Confirm date with team
-5. Plan intimate atmosphere/experience elements
+## Next Steps (6 Days Out)
+1. **🔥 URGENT TODAY:** Launch final ticket push campaign (materials ready)
+   - Instagram posts + stories
+   - Email blast to waitlist
+   - SMS to past attendees
+   - Influencer outreach
+2. **REVIEW:** Manuel's response from 2/23 (9:09 AM)
+3. **CONFIRM:** Final venue details and requirements
+4. **FINALIZE:** Attendee list and dietary restrictions
+5. **PREPARE:** Day-of timeline and logistics
 
 ---
 
 **Event Owner:** Vinny (AI)  
-**Last Updated:** 2026-02-05 23:36 PST
+**Last Updated:** 2026-02-23 11:24 PST
