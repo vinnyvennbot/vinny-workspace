@@ -54,11 +54,12 @@
   },
   "urgentIssues": [
     {
-      "priority": "CRITICAL",
-      "issue": "EVT-001 date discrepancy: Presidio Golf says March 15, database shows March 29",
-      "action": "Verify date immediately before venue confirmation",
-      "timestamp": "1:00 PM",
-      "blocked": "Venue decision cannot proceed without date clarification"
+      "priority": "CRITICAL+++",
+      "issue": "EVT-001 date CHAOS: 3 different dates (Party Jump: March 7, Presidio Golf: March 15, Database: March 29)",
+      "action": "URGENT: Verify correct date, review all vendor communications for date errors",
+      "timestamps": ["1:00 PM Presidio Golf", "2:53 PM Party Jump"],
+      "blocked": "ALL EVT-001 vendor decisions blocked until date confirmed",
+      "impact": "May have sent incorrect dates to multiple vendors"
     },
     {
       "priority": "HIGH",

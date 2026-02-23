@@ -333,3 +333,27 @@
 **Total Vendor/Platform Responses Today:** 17 emails (8:01 AM - 2:46 PM)
 
 ---
+
+---
+
+## 🚨 UPDATE (2:54 PM PST) - 18th Response (DATE CORRECTION)
+
+**Michelle Shira (Party Jump) - Mechanical Bull Vendor**
+- **Received:** 2:53 PM PST
+- **Subject:** "Re: Mechanical Bull Rental Quote - March 7 SF Event - DATE CORRECTION"
+- **Event:** EVT-001 (Western Line Dancing)
+- **Significance:** DATE CORRECTION in subject line
+- **Context:** This directly relates to the CRITICAL date discrepancy issue:
+  - Presidio Golf email (1:00 PM) mentioned: March 15, 2026
+  - Mission Control database shows: March 29, 2026
+  - Party Jump now mentions: March 7 in subject line
+- **Questions:**
+  1. What is the correct date for EVT-001?
+  2. Did we send incorrect dates to vendors?
+  3. Is Michelle correcting OUR mistake or her own?
+
+**URGENT:** This is the second vendor email today with date confusion. Need immediate clarification on EVT-001 actual date.
+
+**Total Vendor/Platform Responses Today:** 18 emails (8:01 AM - 2:53 PM)
+
+---
