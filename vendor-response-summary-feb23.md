@@ -256,3 +256,22 @@
 **Total Vendor Responses Today:** 11 emails (12:15 PM is most recent)
 
 ---
+
+
+---
+
+## 🚨 URGENT UPDATE (1:04 PM PST) - 12th Vendor Response + DATE DISCREPANCY
+
+**Presidio Golf Clubhouse (Kat Crapps)**
+- **Received:** 1:00 PM PST
+- **Subject:** RE: Private Event Inquiry - Western Line Dancing Night, March 15, 2026
+- **Event:** EVT-001 (venue decision pending)
+- **⚠️ CRITICAL DATE DISCREPANCY:**
+  - Email subject mentions: **March 15, 2026**
+  - Database shows: **March 29, 2026**
+  - Need immediate clarification with Zed on correct date
+- **Action Required:** Review quote AND resolve date confusion before confirming venue
+
+**Total Vendor Responses Today:** 12 emails (1:00 PM is most recent)
+
+---
