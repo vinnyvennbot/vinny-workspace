@@ -292,3 +292,24 @@
 **Total Vendor Responses Today:** 13 emails (1:35 PM is most recent)
 
 ---
+
+## 🔔 UPDATE (2:39 PM PST) - 14th-16th Vendor Responses
+
+**Nandini Novarr (Breakthrough Beverage) - Emails #14-15**
+- **Received:** 1:16 PM & 1:43 PM PST (2 emails)
+- **Subject:** Re: Mondavi Dinner / Re: [EXTERNAL] Re: Mondavi Dinner - BCC
+- **Event:** Unknown (not a current Venn event - may be partnership/sponsorship inquiry)
+- **Context:** Meeting with Nandini occurred 12:30-1:00 PM today (per Zed's calendar)
+- **Pattern:** Two emails post-meeting suggests follow-up items or action requests
+- **Action Required:** Review both emails - likely partnership/sponsorship discussion continuation
+
+**Decentered Studio (Peerspace) - Email #16**
+- **Received:** 1:54 PM PST
+- **Subject:** Decentered Studio . sent you a new message
+- **Event:** Unknown (venue inquiry via Peerspace platform)
+- **Context:** Peerspace message notification - need to check Peerspace dashboard
+- **Action Required:** Log into Peerspace to read venue inquiry message
+
+**Total Vendor Responses Today:** 16 emails (1:54 PM is most recent)
+
+---
