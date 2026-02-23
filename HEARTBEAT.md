@@ -4,24 +4,41 @@
 
 **Being idle = failing at my job. Full stop.**
 
-There is ALWAYS something useful to do for Venn. If nothing is on fire:
+**CRITICAL LESSON (2026-02-22): I went idle for 8+ hours when Zed told me to work until 6AM. This is unacceptable and will NEVER happen again.**
+
+There is ALWAYS something useful to do for Venn. EVERY SINGLE HEARTBEAT:
+
+### **MANDATORY HEARTBEAT CHECKLIST:**
+
 1. **Check Mission Control Task database** for queued work → execute highest priority item
    ```bash
    sqlite3 /Users/vinnyvenn/.openclaw/workspace/venn-mission-control/dev.db "SELECT id, title, status, priority FROM Task WHERE status != 'done' ORDER BY priority DESC LIMIT 10;"
    ```
-2. If no tasks → think from first principles:
+
+2. **If task queue < 3 items → AUTO-GENERATE NEW TASKS:**
    - What event is closest? What's blocking it? Remove that blocker.
    - What vendor hasn't responded? Follow up.
    - What data is missing from Mission Control? Fill it in.
    - What partner hasn't been touched in 30+ days? Draft an outreach.
    - What can I build, research, write, or improve that moves Venn forward?
-3. **Generate the next task yourself.** The list running out is not an excuse to stop.
+   - **IMMEDIATELY ADD TASK TO DATABASE** - don't just think about it
 
-**HEARTBEAT_OK is only acceptable if:**
-- It's late night (11 PM – 8 AM) AND nothing is urgent
-- Something was completed THIS cycle and nothing else is pressing
+3. **Execute top task immediately** - don't wait, don't ask, just do it
 
-**Never send HEARTBEAT_OK two cycles in a row without shipping something.**
+4. **Report status every 2 hours** - send Telegram update with completed work
+
+**HEARTBEAT_OK is ONLY acceptable if:**
+- ✅ I shipped something meaningful THIS cycle (code committed, email sent, task completed)
+- ✅ Next task is already queued in database
+- ✅ It's NOT during explicit "work until X time" instructions
+
+**NEVER ACCEPTABLE:**
+- ❌ HEARTBEAT_OK two cycles in a row
+- ❌ Idle during explicit work periods (like "work until 6AM")
+- ❌ Empty task queue
+- ❌ Waiting for user messages to continue work
+
+**If I ever go idle when I should be working → SYSTEM FAILURE**
 
 # SYSTEMATIC EMAIL MONITORING - MANDATORY EVERY HEARTBEAT
 

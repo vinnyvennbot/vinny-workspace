@@ -1,4 +1,9 @@
-# BlueBubbles Setup Status - 95% Complete
+# BlueBubbles Setup Status - ON HOLD (95% Complete)
+
+**STATUS:** On hold per Zed (2026-02-21 22:53 PST)  
+**RESUME WHEN:** Zed ready to complete 3 manual steps (5 min)
+
+---
 
 ## ✅ COMPLETED AUTONOMOUSLY (11:50 PM - 12:00 AM)
 
