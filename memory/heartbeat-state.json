@@ -1,33 +1,50 @@
 {
   "lastChecks": {
-    "email": 1739925225,
-    "calendar": 1739925225,
-    "vendor_database": 1739925225
+    "email": 1771868373,
+    "calendar": 1771848305,
+    "vendor_database": 1771867773,
+    "mission_control_health": 1771868373,
+    "consumer_frontend_health": 1771868373
   },
-  "date": "2026-02-18",
-  "lastActivity": "16:53 PST",
-  "pendingWatchItems": {
-    "evt001_log_cabin_contract": "expires EOD Feb 19 — Zed must sign or release",
-    "evt001_presidio_golf": "Kat Crapps replied — asked for March Sunday availability, awaiting",
-    "evt001_swedish_american_hall": "24h follow-up sent this morning — awaiting response",
-    "evt001_stable_cafe": "24h follow-up sent this morning — awaiting response",
-    "evt001_bay_area_beats": "Sent sound/lighting specs, awaiting quote from Adrian",
-    "evt001_justintertainment": "Emailed for pricing in body text, awaiting reply from Justin",
-    "evt002_merrill_collier": "Zed deciding on magician for Feb 28 — 10 days out",
-    "feb23_postponement_cron": "Cron ID 494b1424 fires 9am Feb 23 — sends Gatsby postponements + cancels Fraiche invite",
-    "astro_jump_contract": "Greg said will send updated contract (March 15 date) — watching"
+  "date": "2026-02-23",
+  "lastActivity": "10:59 PST",
+  "serverStatus": {
+    "mission_control": "healthy (200)",
+    "consumer_frontend": "healthy (200)"
   },
-  "pendingZedDecisions": [
-    "Sign or release Log Cabin contract (expires EOD Feb 19)",
-    "Merrill Collier magician for EVT-002 Feb 28",
-    "EVT-004 yacht date (Red & White Fleet $10,800 quote pending date)"
+  "activeEvents": {
+    "evt-002": "Intimate Dinner - March 1, 2026 (17/20 sold, 3 spots left - MARKETING READY)",
+    "evt-001": "Western Line Dancing - March 29, 2026 (MARKETING READY - pending venue decision from Presidio proposal)",
+    "evt-004": "Murder Mystery Yacht - TBD (Palace Theater responded today)",
+    "evt-nostalgia": "80s/90s Nostalgia - Awaiting approval (The Chapel venue interest)",
+    "evt-silent-disco": "Silent Disco Rooftop - Awaiting approval",
+    "evt-masquerade": "Masquerade Ball - Awaiting approval",
+    "evt-speakeasy": "Prohibition Speakeasy - Awaiting approval"
+  },
+  "topPriorityTasks": [
+    "Review 8 vendor responses from this morning (Zed action required)",
+    "Presidio Events proposal decision (P70 - EVT-001 venue)",
+    "Nostalgia Night concept approval (P95)",
+    "Email monitoring & contact sync (P90)",
+    "Speakeasy Night concept approval (P85)"
   ],
-  "briefsReady": [
-    "/workspace/briefs/vep-call-brief-feb20.md (VEP call Fri 11am)",
-    "/workspace/briefs/mccalls-call-brief-feb23.md (McCall's call Mon 12pm)",
-    "/workspace/briefs/evt001-marketing-copy.md",
-    "/workspace/briefs/evt001-line-dance-instructors.md",
-    "/workspace/briefs/evt001-permits-insurance.md",
-    "/workspace/briefs/venn-partnership-one-pager.md"
-  ]
+  "recentWork": {
+    "10:24 AM": "Email check (8 vendor responses), database sync (3 vendors added), RELATIONSHIPS.md created",
+    "10:34 AM": "Database cleanup cycle 2 (9 vendors updated)",
+    "10:39 AM": "Database cleanup cycle 3 (4 vendors updated)",
+    "10:49 AM": "Marketing copy creation for EVT-002 (comprehensive materials for final 3 ticket push)",
+    "10:54 AM": "Marketing copy creation for EVT-001 (11k+ word package - launch-ready pending venue decision)",
+    "10:59 AM": "Vendor response summary report (consolidates 8 morning responses + action items for Zed)"
+  },
+  "databaseHealth": {
+    "vendorContactInfo": "21 vendors updated today (31 → 11 missing)",
+    "personContactInfo": "2 people updated (Summer, Total DJ)"
+  },
+  "marketingAssets": {
+    "evt-002": "Complete - Instagram, email, SMS, influencer, urgency framework",
+    "evt-001": "Complete - Instagram, email, partnerships, 6-week content calendar, press release, FAQ"
+  },
+  "upcomingCalendar": {
+    "12:00 PM PST": "Zed meeting with Nandini (30 min)"
+  }
 }
