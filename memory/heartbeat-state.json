@@ -1,17 +1,18 @@
 {
   "lastChecks": {
-    "email": 1771868373,
+    "email": 1771870773,
     "calendar": 1771848305,
     "vendor_database": 1771867773,
-    "mission_control_health": 1771868973,
-    "consumer_frontend_health": 1771868973,
+    "mission_control_health": 1771870773,
+    "consumer_frontend_health": 1771870773,
     "instagram_engagement": 1771868973
   },
   "date": "2026-02-23",
-  "lastActivity": "11:14 PST",
+  "lastActivity": "11:59 PST",
   "serverStatus": {
     "mission_control": "healthy (200)",
-    "consumer_frontend": "healthy (200)"
+    "consumer_frontend": "healthy (200)",
+    "uptime": "7h 55m (4:04 AM - 11:59 AM)"
   },
   "activeEvents": {
     "evt-002": "Intimate Dinner - March 1, 2026 (17/20 sold, 3 spots left - MARKETING READY)",
@@ -22,33 +23,25 @@
     "evt-masquerade": "Masquerade Ball - Awaiting approval",
     "evt-speakeasy": "Prohibition Speakeasy - Awaiting approval"
   },
-  "topPriorityTasks": [
-    "Review 8 vendor responses from this morning (Zed action required)",
-    "Presidio Events proposal decision (P70 - EVT-001 venue)",
-    "Nostalgia Night concept approval (P95)",
-    "Email monitoring & contact sync (P90)",
-    "Speakeasy Night concept approval (P85)"
-  ],
-  "recentWork": {
-    "10:24 AM": "Email check (8 vendor responses), database sync (3 vendors added), RELATIONSHIPS.md created",
-    "10:34 AM": "Database cleanup cycle 2 (9 vendors updated)",
-    "10:39 AM": "Database cleanup cycle 3 (4 vendors updated)",
-    "10:49 AM": "Marketing copy creation for EVT-002 (comprehensive materials for final 3 ticket push)",
-    "10:54 AM": "Marketing copy creation for EVT-001 (11k+ word package - launch-ready pending venue decision)",
-    "10:59 AM": "Vendor response summary report (consolidates 8 morning responses + action items for Zed)",
-    "11:04 AM": "Morning summary report + Git commit (2,441 lines)",
-    "11:14 AM": "Instagram engagement (2 likes, 1 story view, 1 new follow: sanfrancisco.explores)"
+  "todaysSummary": {
+    "workHours": "7h 55m (4:04 AM - 11:59 AM PST)",
+    "vendorResponses": 9,
+    "vendorsUpdated": 21,
+    "filesCreated": 13,
+    "linesWritten": 2441,
+    "gitCommits": 12,
+    "marketingPackages": 2,
+    "documentationUpdates": 4,
+    "instagramEngagement": 1
   },
-  "databaseHealth": {
-    "vendorContactInfo": "21 vendors updated today (31 → 11 missing)",
-    "personContactInfo": "2 people updated (Summer, Total DJ)"
+  "blockedTasks": {
+    "count": 10,
+    "reason": "Awaiting Zed's decisions: venue selection (EVT-001), event approvals (4 ideating events), vendor response reviews (9 emails)"
   },
-  "marketingAssets": {
-    "evt-002": "Complete - Instagram, email, SMS, influencer, urgency framework",
-    "evt-001": "Complete - Instagram, email, partnerships, 6-week content calendar, press release, FAQ"
-  },
-  "upcomingCalendar": {
-    "12:00 PM PST": "Zed meeting with Nandini (30 min)"
+  "nextSteps": {
+    "urgent": "Review 9 vendor responses (Presidio proposal, Palace Theater, Justintertainment, etc.)",
+    "high": "Launch EVT-002 final ticket push (6 days out, marketing ready)",
+    "medium": "Approve ideating events, decide EVT-004 date, launch EVT-001 marketing after venue decision"
   },
   "instagram": {
     "lastEngagement": "2026-02-23 11:14 AM PST",
