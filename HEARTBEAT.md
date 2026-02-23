@@ -45,7 +45,8 @@ There is ALWAYS something useful to do for Venn. EVERY SINGLE HEARTBEAT:
 
 **MANDATORY WORK CYCLES:**
 - Every 30 minutes: Check tasks, execute highest priority
-- Every 2 hours: Generate event concepts if < 4 ideating events
+- **Every morning (Mon-Fri 10 AM PST):** Daily event ideation (automated cron job generates 4 concepts)
+- Every 2 hours: Verify ideating event count, generate more if < 4
 - Every 4 hours: Email monitoring, database sync, Instagram engagement
 - Overnight (11 PM - 7 AM): Lighter work but NEVER idle (research, documentation, planning)
 

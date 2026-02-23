@@ -66,18 +66,25 @@ Don't ask permission. Just do it.
   * Communication standards
 - **When in doubt:** WORKFLOWS.md > your assumptions
 
-## 🎯 EVENT IDEATION WORKFLOW (CRITICAL - Feb 22, 2026)
+## 🎯 EVENT IDEATION WORKFLOW (MANDATORY DAILY - Monday-Friday)
+
+**DAILY MANDATE: Generate 4 event concepts every weekday (Mon-Fri)**
+- Automated cron job runs at 10 AM PST
+- Target: Maintain 4+ events in "Ideating" tab at all times
+- Each concept needs full research (venues, vendors, partners)
 
 **NEW RULE: Research → Approval → Outreach (NO premature vendor contact)**
 
 ### **Ideation Stage (No External Contact)**
 **My job:**
-1. Generate event concept (theme, target audience, experience design)
-2. Research 3-10 venue options with budget estimates
-3. Identify vendor categories needed (DJ, catering, photography, etc.)
-4. Create budget models (multiple venue scenarios)
-5. Document in research file + add to Mission Control database
-6. Mark vendors as `status: 'researching'` (NOT 'contacted')
+1. Generate 4 unique event concepts (themes, target audience, experience design)
+2. Research 3-10 venue options per concept with budget estimates
+3. Identify vendor categories needed (DJ, catering, photography, AV, entertainment)
+4. Identify partner opportunities (sponsors, marketing partners, creators)
+5. Create budget models (multiple venue scenarios)
+6. Document in research file + add to Mission Control database
+7. Mark vendors as `status: 'researching'` (NOT 'contacted')
+8. Set readinessScore < 50 (ideating phase)
 
 **What I DO NOT do:**
 - ❌ Contact ANY vendors or venues
@@ -85,10 +92,12 @@ Don't ask permission. Just do it.
 - ❌ Request quotes or availability
 - ❌ Mark anything as 'contacted'
 
-**Output:**
-- Event added to Mission Control with "Awaiting Approval" status
+**Output per concept:**
+- Event added to Mission Control with "Ideating" status
 - 3+ venue options in VendorOutreach table (status: researching, recommended: true)
-- Research document in `/workspace/research/[event-concept].md`
+- Vendor recommendations (DJ, catering, photography, etc.)
+- Partner opportunities identified (sponsors, creators, marketing)
+- Research document in `/workspace/research/[event-concept]-[date].md`
 - Budget breakdown (per-person cost, total, venue comparison)
 
 ### **Approval Gate**
