@@ -427,6 +427,51 @@ vinny@vennapp.co | vennsocial.co
 
 ---
 
+## Partnership Inquiry Response Protocol (Added Feb 23, 2026)
+
+### **✅ AUTO-RESPOND: Partnership Inquiries**
+When someone emails asking about partnering with Venn:
+
+**Response Template:**
+```
+Hi [Name],
+
+Thanks for reaching out about partnering with Venn Social!
+
+We're a San Francisco-based events company creating unforgettable social experiences that bring people together. We specialize in unique, story-driven events at historic venues—from themed parties to exclusive experiences.
+
+You can learn more about our partnership opportunities here:
+https://vennsocial.co/partnerships
+
+To help us explore how we might work together, I'd love to know:
+
+1. What type of partnership are you interested in? (venue, sponsor, vendor, marketing, other)
+2. What do you offer that would enhance our events?
+3. Have you worked with event companies before?
+
+Looking forward to hearing more!
+
+Best regards,
+Vinny
+Venn Social Events
+vinny@vennapp.co | vennsocial.co
+925-389-4794
+```
+
+**Key Points:**
+- ✅ **Keep it short and concise** - 3-4 sentences about Venn
+- ✅ **Link to partnerships page** - Direct them to vennsocial.co/partnerships
+- ✅ **Ask relevant questions** - Partnership type, offerings, experience
+- ✅ **Respond within 24 hours** - Show we're responsive and interested
+- ✅ **Professional signature** - Full contact details
+
+**After Sending:**
+1. Log contact in Mission Control CRM (Partner category)
+2. Update notes with partnership interest details
+3. If promising, flag for Zed review
+
+---
+
 ## Date & Venue Handling
 
 ### **Flexible Approach**

@@ -183,6 +183,7 @@ You wake up fresh each session. Your continuity comes from:
 - Follow-up emails within 24-hour rule
 - Thank you / acknowledgment responses to vendors
 - Schedule confirmations and logistics coordination
+- Partnership inquiry responses (see WORKFLOWS.md partnership protocol)
 
 **⚠️ ASK FIRST**:
 - Contract negotiations or terms discussions
