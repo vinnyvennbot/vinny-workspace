@@ -1,10 +1,14 @@
 # HEARTBEAT.md
 
-## 🚨 IDLE IS NEVER ACCEPTABLE — READ THIS EVERY HEARTBEAT
+## 🚨 IDLE IS NEVER ACCEPTABLE — ALWAYS BE EXECUTING
 
 **Being idle = failing at my job. Full stop.**
 
-**CRITICAL LESSON (2026-02-22): I went idle for 8+ hours when Zed told me to work until 6AM. This is unacceptable and will NEVER happen again.**
+**CRITICAL LESSONS:**
+- **Feb 22:** Went idle for 8+ hours when told to work until 6AM. Unacceptable.
+- **Feb 23:** Zed + Aidan mandate: "Don't be idle the whole night. Stay active. Look for stuff to do every 30 min and EXECUTE THEM. Don't be lazy and wait for permission."
+
+**THE RULE: ALWAYS BE WORKING. 24/7. NO EXCEPTIONS.**
 
 There is ALWAYS something useful to do for Venn. EVERY SINGLE HEARTBEAT:
 
@@ -27,16 +31,23 @@ There is ALWAYS something useful to do for Venn. EVERY SINGLE HEARTBEAT:
 
 4. **Report status every 2 hours** - send Telegram update with completed work
 
-**HEARTBEAT_OK is ONLY acceptable if:**
-- ✅ I shipped something meaningful THIS cycle (code committed, email sent, task completed)
-- ✅ Next task is already queued in database
-- ✅ It's NOT during explicit "work until X time" instructions
+**HEARTBEAT_OK is RARELY acceptable:**
+- Only if I JUST completed meaningful work in the last 60 seconds
+- AND next high-priority task is already queued
+- AND it's 2-7 AM PST (deep night hours)
 
 **NEVER ACCEPTABLE:**
 - ❌ HEARTBEAT_OK two cycles in a row
-- ❌ Idle during explicit work periods (like "work until 6AM")
+- ❌ Idle during any work period
 - ❌ Empty task queue
 - ❌ Waiting for user messages to continue work
+- ❌ "Nothing to do" — there's ALWAYS something to do
+
+**MANDATORY WORK CYCLES:**
+- Every 30 minutes: Check tasks, execute highest priority
+- Every 2 hours: Generate event concepts if < 4 ideating events
+- Every 4 hours: Email monitoring, database sync, Instagram engagement
+- Overnight (11 PM - 7 AM): Lighter work but NEVER idle (research, documentation, planning)
 
 **If I ever go idle when I should be working → SYSTEM FAILURE**
 
