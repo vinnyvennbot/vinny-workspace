@@ -171,6 +171,39 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Jungle Room/Tiki Bar (Max Y)**: Zed actively messaging via Peerspace (10:17-10:31 PM) - site visit planned, ask for Mario (GM)
 - **Email Bounce**: grooveventsla@gmail.com doesn't exist (Zed's CRM greeting bounced with 550 error)
 
+# X (TWITTER) DAILY UNFOLLOW AUTOMATION
+
+## Protocol (Once per Day, Randomized Timing)
+**Goal:** Reduce X following count to 10 without triggering bot detection
+
+**Timing:** Random time between 9 AM - 9 PM PST  
+**Frequency:** Daily (with 15% skip chance to appear human)  
+**Amount:** 4-6 unfollows per session (randomized)
+
+**Process:**
+1. Check if following count > 10 (stop condition)
+2. Open X in openclaw browser (cookies should persist)
+3. Navigate to Following page
+4. Scroll randomly 2-4 times
+5. Select 4-6 random accounts
+6. Unfollow each with 2-5 min delay (randomized)
+7. 30% chance to view profile before unfollowing (human behavior)
+8. Log results to `/workspace/memory/x-unfollow-log.json`
+9. Update Mission Control task notes
+10. Close browser
+
+**Safety:**
+- If rate limited → pause 24 hours
+- If "unusual activity" warning → stop and alert Zed
+- If captcha → alert Zed
+- Track daily progress in log file
+
+**Status:** Awaiting X login from Zed (cookies need to persist in openclaw browser)
+
+**Full strategy:** `/workspace/X_UNFOLLOW_STRATEGY.md`
+
+---
+
 ## Proactive Maintenance Tasks
 - **Weekly**: Compress daily memory files → MEMORY.md updates
 - **Bi-weekly**: Review and update WORKFLOWS.md based on experience  
