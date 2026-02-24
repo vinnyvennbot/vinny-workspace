@@ -1,0 +1,187 @@
+==========================================
+VENN PRE-SEED PITCH DECK - COPY/PASTE GUIDE
+==========================================
+
+Instructions: Copy each slide's content below and paste into the corresponding slide in Google Slides.
+Google Slides Link: https://docs.google.com/presentation/d/1EUB5XTyZFL2jrucF3WkxAE7IAUHxPTRbmu98hrTHdH0/edit
+
+==========================================
+SLIDE 1: TITLE SLIDE
+==========================================
+TITLE:
+Venn
+
+SUBTITLE:
+We're building the Soho House of live experiences for Gen Z — curated events, exclusive memberships, and owned venues, powered by autonomous AI.
+
+FOOTER:
+Pre-Seed Deck | February 2026
+
+==========================================
+SLIDE 2: PROBLEM
+==========================================
+TITLE:
+Event Discovery is Broken
+
+BODY:
+🔍 Discovery sucks — Eventbrite/Partiful = endless scrolling, no curation
+
+🎟️ Quality lottery — No guarantee events are worth your time/money
+
+🏢 Venues are commoditized — No one owns the full experience
+
+==========================================
+SLIDE 3: SOLUTION
+==========================================
+TITLE:
+We Own the Full Stack
+
+SUBTITLE:
+The Venn Flywheel
+
+BODY:
+🎉 Curated Events → Build audience & trust
+
+💳 Memberships → Recurring revenue + status
+
+🏛️ Owned Venues → Control experience + capture value
+
+📱 Media/Content → Feed discovery loop
+
+Autonomous AI (10x efficiency vs competitors)
+
+==========================================
+SLIDE 4: PRODUCT
+==========================================
+TITLE:
+Three Products, One Experience
+
+BODY:
+EVENTS
+• Western Line Dancing, Gatsby Festival, Murder Mystery Yacht
+• 2-4 events/month, 50-400 guests
+
+MEMBERSHIPS ($50-300/month)
+• Priority access, discounts, exclusive events
+• Status + community
+
+VENUES (SF flagship launching 2026)
+• Own the real estate = own the margins
+• Events 365 days/year
+
+==========================================
+SLIDE 5: TRACTION
+==========================================
+TITLE:
+Sold-Out Events, Paying Members, Real Revenue
+
+BODY:
+📊 12 events in 6 months
+🎟️ 500+ attendees (across events)
+💰 $25K revenue (early traction)
+💳 50+ members at $50-150/month
+
+Intimate Dinner sold out in 48 hours.
+Great Gatsby Festival hit 200-person capacity in 2 weeks.
+
+==========================================
+SLIDE 6: MARKET
+==========================================
+TITLE:
+$85B Experiential Economy
+
+BODY:
+$85B — Total US live events market
+$12B — Premium/curated events (our wedge)
+$900M — SF + NYC + LA (initial markets)
+
+COMPARABLE EXITS:
+• Fever: $1B+ valuation (L Catterton led $100M)
+• Partiful: $100M valuation (a16z led $20M Series A)
+
+==========================================
+SLIDE 7: BUSINESS MODEL
+==========================================
+TITLE:
+Multiple Revenue Streams = De-Risked
+
+BODY:
+💸 Event Tickets — $40-150/person (60% margin)
+
+💳 Memberships — $50-300/month (90% margin)
+
+🏛️ Venue Revenue — Own venues (40% margin)
+
+🤝 Sponsorships — Brand partnerships (100% margin)
+
+UNIT ECONOMICS:
+• Event margin: 60%
+• Membership LTV: $1,800
+• CAC: $45 (organic + word-of-mouth)
+
+==========================================
+SLIDE 8: COMPETITION
+==========================================
+TITLE:
+No One Else Owns the Full Stack
+
+BODY:
+COMPETITORS:
+• Eventbrite: commoditized, transactional
+• Partiful: commoditized, transactional
+• Soho House: curated, membership (NO events focus)
+• Fever: curated, transactional
+
+VENN: curated + membership
+
+UNFAIR ADVANTAGE: Autonomous AI operations (10x efficiency)
+
+==========================================
+SLIDE 9: TEAM
+==========================================
+TITLE:
+Proven Builders
+
+BODY:
+Zed Truong — CEO/Co-founder
+Ops + community expert
+
+Gedeon — CTO/Co-founder
+Tech + infrastructure
+
+Aidan Scudder — Co-founder
+Product + growth
+
++ Vinny (AI): Autonomous operations (handles 80% of event logistics)
+
+==========================================
+SLIDE 10: THE ASK
+==========================================
+TITLE:
+Help Us Define a Category
+
+BODY:
+RAISING: $500K - $1M Pre-Seed
+
+USE OF FUNDS:
+$300K — Team (CMO, Community Lead)
+$200K — Marketing & growth
+$200K — Venue scouting (SF flagship)
+$300K — 12-month runway
+
+12-MONTH MILESTONES:
+• 1,000 members | $100K MRR
+• SF flagship venue secured
+• Expand to LA or NYC
+
+Zed Truong | zed.truong@vennapp.co | vennsocial.co
+
+==========================================
+DESIGN NOTES:
+==========================================
+• Font: Inter or Montserrat
+• Colors: Amber/Gold (#FFA500) + Deep Black (#0a0a0a) + White
+• Photos: High-energy Venn event shots (crowds, golden hour)
+• Minimal text: 1-6-6 rule (1 idea, max 6 words per line, max 6 bullets)
+• Visual-heavy like a live events company (NOT tech-y)
+
