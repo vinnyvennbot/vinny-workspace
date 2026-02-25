@@ -1,0 +1,98 @@
+// Event Photo Portal Database Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String     @id @default(cuid())
+  email         String     @unique
+  password      String     // hashed
+  name          String?
+  role          Role       @default(CLIENT)
+  events        Event[]    // photographer's events
+  purchases     Purchase[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+}
+
+model Event {
+  id             String      @id @default(cuid())
+  name           String
+  date           DateTime
+  location       String?
+  description    String?
+  accessCode     String      @unique
+  photographer   User        @relation(fields: [photographerId], references: [id])
+  photographerId String
+  photos         Photo[]
+  defaultPrice   Float       @default(10.0)
+  status         EventStatus @default(DRAFT)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Photo {
+  id              String          @id @default(cuid())
+  event           Event           @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId         String
+  filename        String
+  originalPath    String          // local storage path
+  thumbnailPath   String?
+  watermarkedPath String?
+  price           Float           @default(10.0)
+  width           Int?
+  height          Int?
+  fileSize        Int?
+  mimeType        String?
+  tags            String?         // JSON array of tags
+  purchases       PhotoPurchase[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+}
+
+model Purchase {
+  id            String          @id @default(cuid())
+  user          User            @relation(fields: [userId], references: [id])
+  userId        String
+  photos        PhotoPurchase[]
+  total         Float
+  stripeId      String?
+  status        PurchaseStatus  @default(PENDING)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+}
+
+model PhotoPurchase {
+  id         String   @id @default(cuid())
+  purchase   Purchase @relation(fields: [purchaseId], references: [id], onDelete: Cascade)
+  purchaseId String
+  photo      Photo    @relation(fields: [photoId], references: [id])
+  photoId    String
+  price      Float
+  createdAt  DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  PHOTOGRAPHER
+  CLIENT
+}
+
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum PurchaseStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
+}
