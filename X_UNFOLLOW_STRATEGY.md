@@ -8,8 +8,8 @@
 
 ## 🤖 ANTI-BOT-DETECTION STRATEGY
 
-### **Daily Limits (Conservative)**
-- **Max unfollows per day:** 5-10 (start with 5)
+### **Daily Limits (Updated Feb 24, 2026)**
+- **Max unfollows per day:** 10-12 (randomized)
 - **Timing:** Randomized between 9 AM - 9 PM PST
 - **Delay between unfollows:** 2-5 minutes (random)
 - **Days off:** Skip 1-2 days per week randomly
@@ -33,8 +33,8 @@
 ### **Phase 1: Setup (Day 1)**
 1. Log in to X via openclaw browser
 2. Check current following count
-3. Calculate days needed: `(current_following - 10) / 5 = days`
-4. Example: 100 following → 90 to unfollow → 18 days at 5/day
+3. Calculate days needed: `(current_following - 10) / 11 = days`
+4. Example: 487 following → 477 to unfollow → ~43 days at 11/day avg
 
 ### **Phase 2: Daily Execution**
 **Script location:** `/workspace/scripts/x-unfollow-daily.py`
@@ -43,7 +43,7 @@
 1. Open X in openclaw browser
 2. Navigate to Following page
 3. Scroll randomly (2-4 times)
-4. Select 5 random accounts from visible list
+4. Select 10-12 random accounts from visible list
 5. Unfollow each with 2-5 min delay
 6. Occasionally view profile before unfollowing (30% chance)
 7. Log results to `/workspace/memory/x-unfollow-log.json`
@@ -51,7 +51,7 @@
 
 **Randomization:**
 - Time: Pick random hour between 9 AM - 9 PM
-- Count: Vary between 4-6 unfollows per session
+- Count: Vary between 10-12 unfollows per session
 - Order: Shuffle following list before selection
 - Skip days: 15% chance to skip any given day
 

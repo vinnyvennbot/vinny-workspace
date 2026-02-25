@@ -3,6 +3,7 @@
   "initial_following": 487,
   "target_following": 10,
   "total_to_unfollow": 477,
-  "estimated_days": 95,
+  "unfollows_per_day": "10-12 (randomized)",
+  "estimated_days": 43,
   "sessions": []
 }

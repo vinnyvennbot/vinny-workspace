@@ -178,14 +178,14 @@ Track vendor reliability in RELATIONSHIPS.md:
 
 **Timing:** Random time between 9 AM - 9 PM PST  
 **Frequency:** Daily (with 15% skip chance to appear human)  
-**Amount:** 4-6 unfollows per session (randomized)
+**Amount:** 10-12 unfollows per session (randomized)
 
 **Process:**
 1. Check if following count > 10 (stop condition)
 2. Open X in openclaw browser (cookies should persist)
 3. Navigate to Following page
 4. Scroll randomly 2-4 times
-5. Select 4-6 random accounts
+5. Select 10-12 random accounts
 6. Unfollow each with 2-5 min delay (randomized)
 7. 30% chance to view profile before unfollowing (human behavior)
 8. Log results to `/workspace/memory/x-unfollow-log.json`
