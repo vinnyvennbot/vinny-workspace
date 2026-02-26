@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build Venn Pre-Seed pitch deck using Google Slides API"""
 
+import os
 import subprocess
 import json
 import os
@@ -11,8 +12,8 @@ PRESENTATION_ID = "1EUB5XTyZFL2jrucF3WkxAE7IAUHxPTRbmu98hrTHdH0"
 SCOPES = ['https://www.googleapis.com/auth/presentations']
 
 # gog OAuth client credentials
-CLIENT_ID = "REDACTED_GOOGLE_CLIENT_ID"
-CLIENT_SECRET = "REDACTED_GOOGLE_CLIENT_SECRET"
+CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 
 def get_access_token_from_gog():
     """Get access token by calling gog (which handles auth)"""
