@@ -191,6 +191,30 @@
     - Backed: IRL-focused startups
     - Why relevant: Explicitly focused on consumer/IRL social
 
+28. **Alexis Ohanian** ⭐⭐⭐⭐
+    - Company: Reddit (Co-founder), Seven Seven Six (fund), Initialized Capital (co-founder with Garry Tan)
+    - Stage: Pre-seed, Seed
+    - Fund: Seven Seven Six (776)
+    - Backed: Airbuds (social music app for Gen Z), consumer + SaaS broadly
+    - Network: #1 in Network Centrality among angels (NEA, GV, First Round follow his deals)
+    - Location: San Francisco Bay Area
+    - Why relevant: Consumer social expert, backed Partiful via Initialized Capital
+
+29. **Garry Tan** ⭐⭐⭐⭐
+    - Role: Y Combinator CEO, Initialized Capital co-founder
+    - Stage: Pre-seed, Seed
+    - Backed: Coinbase (early), developer tools, consumer
+    - Fund: Initialized Capital (backs Partiful!)
+    - Location: San Francisco
+    - Why relevant: Runs YC + Initialized (Partiful investor), consumer/social expertise
+
+30. **Nikita Bier** ⭐⭐⭐
+    - Role: Angel investor, X (Twitter) Head of Product
+    - Stage: Pre-seed, Seed
+    - Backed: Airbuds (social music app)
+    - Background: Built viral social apps (tbh, Gas)
+    - Why relevant: Consumer social app builder turned investor, Gen Z expertise
+
 ---
 
 ## 📊 INVESTOR PATTERN ANALYSIS
@@ -222,17 +246,20 @@
 
 **Tier 1 - Immediate Outreach:**
 1. Best Nights VC (BNVC) - perfect thesis match
-2. Initialized Capital - Partiful investor
+2. Initialized Capital - Partiful investor (Garry Tan, Alexis Ohanian)
 3. ACME Capital - Partiful investor
 4. FirstMark Capital (Derek Chu) - Posh + Discord + Pinterest
 5. Drew Houston (angel) - backed 222
+6. Alexis Ohanian / 776 - consumer social expert, Initialized LP
+7. Garry Tan - YC CEO + Initialized co-founder
 
 **Tier 2 - Secondary Wave:**
-6. Goodwater Capital - led Posh Series A
-7. Abstract Ventures - early Partiful
-8. 1517 Fund - pre-seed specialist, backed 222
-9. Hustle Fund - pre-seed specialist ($25K-$150K)
-10. Pear VC - pre-seed accelerator
+8. Goodwater Capital - led Posh Series A
+9. Abstract Ventures - early Partiful
+10. 1517 Fund - pre-seed specialist, backed 222
+11. Hustle Fund - pre-seed specialist ($25K-$150K)
+12. Pear VC - pre-seed accelerator
+13. Nikita Bier (angel) - viral social app builder
 
 ---
 
@@ -253,7 +280,8 @@
 
 ---
 
-**Total Investors Identified:** 27  
+**Total Investors Identified:** 30  
 **VC Funds:** 21  
-**Angel Investors:** 2 (with many more identifiable via Signal, AngelList)  
-**Perfect Thesis Match:** Best Nights VC, FirstMark Capital, Initialized Capital
+**Angel Investors:** 5 key angels (Drew Houston, Zehra Naqvi, Alexis Ohanian, Garry Tan, Nikita Bier)  
+**Perfect Thesis Match:** Best Nights VC, FirstMark Capital, Initialized Capital  
+**Network Leverage:** Initialized Capital = Garry Tan + Alexis Ohanian (both angels + VC partners)
