@@ -117,59 +117,41 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-*(Last updated: Feb 20, 2026, 11:50 PM PST)*
+*(Last updated: Feb 26, 2026, 4:00 AM PST)*
 
-### 🚨 CRITICAL ERRORS — FEB 20, 2026
+### Active Events Status
 
-#### **PALACE THEATER CALL MISSED** (12:02 PM)
-- **Scheduled**: 11:00 AM PST Feb 20 with Laura Drake Chambers
-- **Laura joined**: 11:06 AM, sent "I'm on the call whenever you guys are ready"
-- **We no-showed**: Call discovered at 12:02 PM, over 1 hour late
-- **Zed notified**: Via Telegram at 12:02 PM - awaiting direction
-- **Root cause**: I cannot join video calls (fundamental limitation), no calendar alert system
-- **Status**: Waiting for Zed's response on apology/rescheduling
-- **Documented**: memory/2026-02-20-palace-call-missed.md
+#### EVT-001: Western Line Dancing Night
+- **📅 DATE**: March 29, 2026
+- **⏳ STATUS**: Awaiting venue lock (Log Cabin recommended, priority task)
+- **🚧 BLOCKERS**: Permits/insurance, catering review, line dancing instructors
 
-#### **ARCHIVED EVENT CONTACTS** (Feb 20, AM)
-- **Andrew Verducci (VEP)**: Calendar invite sent for archived EVT-003 Gatsby
-  - ✅ Cancellation/apology sent 11:45 AM
-  - ✅ Andrew replied gracefully 11:59 AM
-  - ✅ Calendar event cancelled 4:10 AM Feb 21
-  - Documented: memory/2026-02-20-andrew-verducci-gatsby-error.md
-- **Tim O'Shea (MJoy Photo)**: Gatsby photography inquiry (10:53 AM)
-  - ✅ Logged as archived lead, no response per strict rule
-- **McCalls SF & Fraiche Catering**: Calendar events cancelled 4:10 AM Feb 21 (archived Gatsby)
+#### EVT-002: Intimate Dinner at The Barrel Room
+- **📅 DATE**: March 1, 2026 (2 days out!)
+- **✅ VENUE**: The Barrel Room confirmed  
+- **🚨 CRITICAL**: Magician decision pending ($1,400 Merrill Collier) - past deadline, event in 48h!
+- **⚠️ URGENT**: Morning task created (priority 95) for 9 AM Zed decision
 
-### EVT-001: SF Spring Stampede - Bringing Country To The City
-- **✅ DATE CONFIRMED**: March 15, 2026, 2:00-6:00 PM PDT
-- **🎯 PRESIDIO GOLF QUOTE**: $10K April 19, $14K March Sundays (Kat back Monday)
-- **⏳ VENUE**: Assumed Log Cabin but not confirmed by Zed
-- **⏳ VENDORS ON HOLD**: DJ (Bay Area Beats), Bull (Astro Jump $1,299)
-- **📧 ANDEY (MOOMA BOOTH)**: Asked Zed about photobooth for March events (12:00 PM)
+#### EVT-004: Murder Mystery Yacht
+- **📅 DATE**: TBD
+- **⏳ STATUS**: Awaiting date confirmation to activate vendors
+- **📋 TASKS**: Yacht alternatives review blocked
 
-### EVT-002: Intimate Dinner at The Barrel Room (Feb 28)
-- **🔥 17/20 SPOTS SOLD** — 3 left
-- **✅ VENUE**: The Barrel Room confirmed
+### Ideating Events (4+ required)
+- 80s/90s Nostalgia Night (blocked - awaiting approval)
+- Prohibition Speakeasy Night (blocked - awaiting approval)
+- Silent Disco Rooftop Party
+- Masquerade Ball - Venetian Mystery Night
+- Plus 8 more generated concepts
 
-### EVT-003: Great Gatsby Festival
-- **🚫 ARCHIVED** — Strict no-contact policy
-- **⚠️ VIOLATIONS TODAY**: Andrew Verducci calendar invite, Tim O'Shea response
+### Archived Events
+- **EVT-003: Great Gatsby Festival** — STRICT NO-CONTACT POLICY
 
-### EVT-004: Murder Mystery Yacht
-- **🚨 PALACE THEATER CALL MISSED**: See critical errors above
-- **✅ APRIL 19 CLEAR**: EVT-001 = March 15, yacht = April 19
-- **✅ ANTHONY BARR (49sq)**: Confirmed Feb 20, 10:17 AM - will wait for date
-- **⏳ VENDORS WARM**: Jack Simpson, AVT Productions, Slava Blazer
-
-### Pending from Zed
-- **URGENT**: Palace Theater apology/rescheduling direction (alerted 12:02 PM + 12:32 PM, no response yet)
-- EVT-001 venue: Log Cabin vs Presidio Golf?
-- Andey photobooth for March event?
-
-### New Vendor Activity (Evening Feb 20)
-- **The SF Commons**: Zed submitted event interest form (11:49 PM), awaiting response (1-2 business days)
-- **Jungle Room/Tiki Bar (Max Y)**: Zed actively messaging via Peerspace (10:17-10:31 PM) - site visit planned, ask for Mario (GM)
-- **Email Bounce**: grooveventsla@gmail.com doesn't exist (Zed's CRM greeting bounced with 550 error)
+### High Priority Tasks (Unblocked)
+1. Email monitoring (in progress, priority 90)
+2. Lock venue for EVT-001 (todo, priority 70)
+3. Set date for EVT-004 (todo, priority 66)
+4. Launch marketing for EVT-001 (todo, priority 55)
 
 # X (TWITTER) DAILY UNFOLLOW AUTOMATION
 
