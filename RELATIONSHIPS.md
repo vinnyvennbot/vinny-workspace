@@ -46,6 +46,27 @@
 
 ## MEDIUM CONFIDENCE VENDORS (0.5-0.7)
 
+### Heart of Gold DJs
+- **Contact**: Info@heartofgolddjs.com
+- **Category**: DJ / Entertainment (Country/Western)
+- **Confidence**: 0.65
+- **History**:
+  - Initial contact: Feb 9 (Western Line Dancing inquiry - WRONG DATE sent: March 7 instead of March 29)
+  - Response: Feb 26, 4:25 PM (17 days later)
+  - Status: REQUIRES DATE CORRECTION EMAIL (task created)
+- **Notes**: Slow to respond but eventually replied. Need to correct event date to March 29. Medium confidence due to response delay.
+
+### Jakob Drzazga - Frontier Tower
+- **Contact**: jakob@frontiertower.io
+- **Category**: Venue
+- **Confidence**: 0.6 (provisional - awaiting details)
+- **History**:
+  - Initial contact: Date TBD (event inquiry sent)
+  - Response: Feb 25, 10:33 PM (marked IMPORTANT by Gmail)
+  - Status: Cannot read email body via gog CLI - requires manual review
+  - Thread: 19c972611fbc4b4e
+- **Notes**: Responsive (replied evening hours). Need to review email content to assess venue fit and pricing. Provisional confidence until details confirmed.
+
 ### Manuel Hewitt - The Barrel Room
 - **Contact**: manuel@barrelroomsf.com
 - **Category**: Venue (wine cellar, intimate dinners)
@@ -65,14 +86,16 @@
   - Tripleseat platform (standard event venue)
 - **Notes**: Capacity TBD. Good for themed parties.
 
-### SF Event Photo
+### Scott Anderson - SF Event Photo
 - **Contact**: bookings@sfeventphoto.com
 - **Category**: Photography
-- **Confidence**: 0.6
+- **Confidence**: 0.75
 - **History**:
   - Follow-up from Zed (Feb 23, 8:01 AM)
-  - Requires quote review
-- **Notes**: Standard event photography service.
+  - Multiple responses (Feb 24, 7:53 AM; Feb 24, 8:25 PM)
+  - Scheduled call with Zed (Feb 25, 3-3:30 PM)
+  - Quote received for Nostalgia Night (status: quote_received)
+- **Notes**: Responsive, professional. Good for event photography. Upgraded confidence based on consistent communication.
 
 ### Fraiche Catering (Chi Luong)
 - **Contact**: chi@fraichecater.com
@@ -149,4 +172,4 @@
 3. Adjust confidence score if warranted
 4. Document any problems or exceptional service
 
-**Last Updated**: 2026-02-23 10:24 AM PST
+**Last Updated**: 2026-02-27 04:15 AM PST
