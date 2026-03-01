@@ -158,3 +158,36 @@ Vinny should investigate:
 - Crash #24: 91-minute gap
 - Crash #25: 1-minute gap
 - Status: COMPLETELY UNSTABLE - no predictable pattern
+
+### Crash #26: 6:15 PM PST
+- **Time**: 2026-02-28 18:15:12 PST
+- **Service**: Mission Control
+- **Detection**: curl exit code 7
+- **Gap from #25**: ~28 minutes (from 5:46 PM)
+- **Recovery**: Auto-restart successful, HTTP 200 confirmed
+- **Pattern Notes**: 28-minute interval - THIRD DIFFERENT INTERVAL in last 3 crashes
+
+**Pattern Evolution:**
+- Crashes #1-22: Stable 30-minute pattern
+- Crash #23: 2-minute gap
+- Crash #24: 91-minute gap
+- Crash #25: 1-minute gap
+- Crash #26: 28-minute gap
+- Status: CHAOTIC - no predictable pattern remains
+
+### Crash #27: 6:19 PM PST
+- **Time**: 2026-02-28 18:19:21 PST
+- **Service**: Consumer Frontend
+- **Detection**: curl exit code 7
+- **Gap from #26**: ~4 minutes (from 6:15 PM)
+- **Recovery**: Auto-restart successful, HTTP 200 confirmed
+- **Pattern Notes**: RAPID CRASH - only 4 minutes after Crash #26
+
+**Pattern Evolution:**
+- Crashes #1-22: Stable 30-minute pattern
+- Crash #23: 2-minute gap
+- Crash #24: 91-minute gap
+- Crash #25: 1-minute gap
+- Crash #26: 28-minute gap
+- Crash #27: 4-minute gap
+- Status: EXTREME VOLATILITY - pattern completely chaotic
