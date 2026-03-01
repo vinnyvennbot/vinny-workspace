@@ -79,3 +79,11 @@ Vinny should investigate:
 - Recovery: 5 minutes (port config fix required)
 - Status: Both services UP (200 responses)
 - Note: Fixed consumer frontend port conflict - updated package.json to port 3001
+
+**Crash #22 - 4:12 PM PST**
+- Time since last: ~30m (3:42 PM → 4:12 PM) - EXACTLY ON PREDICTION
+- Kill method: Mission Control down, Consumer Frontend survived
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- Pattern: 30-minute crash cycle CONTINUES (22/22 crashes on schedule)
+- Note: First crash where only one service went down (MC), CF stayed up
