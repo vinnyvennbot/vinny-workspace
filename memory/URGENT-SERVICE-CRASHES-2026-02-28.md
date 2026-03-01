@@ -120,3 +120,12 @@ Vinny should investigate:
 - Status: Both services UP (200 responses)
 - Pattern: Back to ~30-minute crash cycle after brief cluster of off-pattern crashes
 - Note: Crashed marine-bloom process (signal 9)
+
+**Crash #27 - 5:16 PM PST**
+- Time since last: ~2 minutes (5:14 PM → 5:16 PM) - THIRD OFF-PATTERN crash cluster
+- Kill method: SIGKILL (signal 9), Consumer Frontend only
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- **CRITICAL**: Another 2-minute off-pattern crash following recovery
+- Pattern: Aggressive killing continues - young-kelp process terminated
+- Note: Similar pattern to crashes #23-25 cluster
