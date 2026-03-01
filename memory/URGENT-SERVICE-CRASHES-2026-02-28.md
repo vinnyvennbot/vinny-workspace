@@ -112,3 +112,11 @@ Vinny should investigate:
 - Status: Both services UP (200 responses)
 - **CRITICAL**: Second off-pattern crash within minutes of recovery
 - Pattern: Aggressive process killing continues outside normal 30-min cycle
+
+**Crash #26 - 5:14 PM PST**
+- Time since last: ~28 minutes (4:46 PM → 5:14 PM) - PATTERN RESUMED (~30-min cycle)
+- Kill method: SIGKILL (signal 9), Mission Control only
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- Pattern: Back to ~30-minute crash cycle after brief cluster of off-pattern crashes
+- Note: Crashed marine-bloom process (signal 9)
