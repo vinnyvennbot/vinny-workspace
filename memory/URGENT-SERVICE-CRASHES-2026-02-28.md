@@ -87,3 +87,12 @@ Vinny should investigate:
 - Status: Both services UP (200 responses)
 - Pattern: 30-minute crash cycle CONTINUES (22/22 crashes on schedule)
 - Note: First crash where only one service went down (MC), CF stayed up
+
+**Crash #23 - 4:14-4:16 PM PST (OFF-PATTERN)**
+- Time since last: ~2 minutes (4:12 PM → 4:14 PM) - NOT the usual 30-minute cycle
+- Kill method: Consumer Frontend down (signal 9, SIGKILL), Mission Control survived
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- **CRITICAL PATTERN BREAK**: First crash NOT on 30-minute schedule since tracking began
+- Note: Multiple process kills detected (salty-ha, clear-cl, oceanic- all signal 9/SIGKILL)
+- Pattern: Something is aggressively killing processes outside the established 30-min cycle
