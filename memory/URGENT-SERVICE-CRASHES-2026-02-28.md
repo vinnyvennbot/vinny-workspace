@@ -96,3 +96,11 @@ Vinny should investigate:
 - **CRITICAL PATTERN BREAK**: First crash NOT on 30-minute schedule since tracking began
 - Note: Multiple process kills detected (salty-ha, clear-cl, oceanic- all signal 9/SIGKILL)
 - Pattern: Something is aggressively killing processes outside the established 30-min cycle
+
+**Crash #24 - 4:44 PM PST**
+- Time since last: ~30 minutes (4:14 PM → 4:44 PM) - PATTERN RESUMED after brief anomaly
+- Kill method: SIGKILL (signal 9), Mission Control only
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- Note: Back to ~30-minute pattern after crash #23's brief anomaly
+- Pattern observation: 30-min cycle appears to be the dominant pattern
