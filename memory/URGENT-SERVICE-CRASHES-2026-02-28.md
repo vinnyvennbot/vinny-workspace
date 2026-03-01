@@ -129,3 +129,32 @@ Vinny should investigate:
 - **CRITICAL**: Another 2-minute off-pattern crash following recovery
 - Pattern: Aggressive killing continues - young-kelp process terminated
 - Note: Similar pattern to crashes #23-25 cluster
+
+### Crash #24: 5:45 PM PST
+- **Time**: 2026-02-28 17:45:00 PST
+- **Service**: Mission Control
+- **Detection**: curl exit code 7
+- **Gap from #23**: 1h 31m (91 minutes)
+- **Recovery**: Auto-restart successful, HTTP 200 confirmed
+- **Pattern Notes**: THIRD DIFFERENT PATTERN - was 30min (Crash #1-22), then 2min (Crash #23), now 91min (Crash #24). Extreme volatility.
+
+**Pattern Evolution:**
+- Crashes #1-22: Stable 30-minute pattern
+- Crash #23: 2-minute gap (BREAK)
+- Crash #24: 91-minute gap (NEW PATTERN)
+- Status: Pattern completely destabilized
+
+### Crash #25: 5:46 PM PST
+- **Time**: 2026-02-28 17:46:32 PST
+- **Service**: Consumer Frontend
+- **Detection**: curl exit code 7
+- **Gap from #24**: 1 minute (61 seconds)
+- **Recovery**: Auto-restart successful, HTTP 200 confirmed
+- **Pattern Notes**: BACK TO RAPID CRASHES - only 1 minute after Crash #24. Extreme volatility continues.
+
+**Pattern Evolution:**
+- Crashes #1-22: Stable 30-minute pattern
+- Crash #23: 2-minute gap
+- Crash #24: 91-minute gap
+- Crash #25: 1-minute gap
+- Status: COMPLETELY UNSTABLE - no predictable pattern
