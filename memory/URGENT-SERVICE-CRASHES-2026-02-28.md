@@ -104,3 +104,11 @@ Vinny should investigate:
 - Status: Both services UP (200 responses)
 - Note: Back to ~30-minute pattern after crash #23's brief anomaly
 - Pattern observation: 30-min cycle appears to be the dominant pattern
+
+**Crash #25 - 4:46 PM PST**
+- Time since last: ~2 minutes (4:44 PM → 4:46 PM) - ANOTHER OFF-PATTERN crash
+- Kill method: SIGKILL (signal 9), Consumer Frontend only
+- Recovery: 2 minutes
+- Status: Both services UP (200 responses)
+- **CRITICAL**: Second off-pattern crash within minutes of recovery
+- Pattern: Aggressive process killing continues outside normal 30-min cycle
