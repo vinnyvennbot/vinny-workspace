@@ -446,6 +446,15 @@ This is a starting point. Add your own conventions, style, and rules as you figu
    - Use cron for scheduled cycles (every 30 min, daily research, etc)
    - Cron delivers results to Telegram, not waiting for replies
    - Example: `agentTurn` payload auto-executes and reports back
+   
+   **ACTIVE CRON JOBS (Permanent):**
+   - **X Daily Unfollow** (ID: f8d99e86-f269-4adf-be27-2f4f849d8e00)
+     * Schedule: Daily at 2 PM PST
+     * Action: Unfollow 10-12 random accounts on X
+     * Target: Reduce 487 following → 10
+     * Logs: workspace/memory/x-unfollow-log.json
+     * Reports: Venn Telegram group
+     * **AUTONOMOUS** - no manual intervention needed
 
 3. **TASK AUTO-GENERATION**
    - If Mission Control task queue < 3 tasks → auto-generate from:

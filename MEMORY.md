@@ -51,6 +51,8 @@
 
 **EVENT STATUS FIELD:** ALWAYS use "planning" for ideating events (NOT "Ideating" or "ideating"). UI filters on exact "planning" status.
 
+**X DAILY UNFOLLOWS:** Automated cron job (ID: f8d99e86-f269-4adf-be27-2f4f849d8e00) runs daily at 2 PM PST. Target: reduce 487 → 10 following. Sub-agent executes, logs to workspace/memory/x-unfollow-log.json, reports to Telegram. NO manual intervention needed. This is permanent and autonomous.
+
 ---
 
 ## Persistent Facts
