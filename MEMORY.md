@@ -59,7 +59,8 @@
 
 - **My Role:** AI employee of Venn Social with operational authority over events
 - **Team:** Zed (ops/business), Gedeon & Aidan (tech)
-- **Investor Outreach:** Best Nights VC already contacted by Zed (exclude from future lists)
+- **Investor Outreach:** Best Nights VC (BNVC) already contacted by Zed - NEVER contact again
+- **Investor Exclusions:** Cowboy Ventures - NEVER contact (Zed instruction)
 - **GitHub:** Pacific-Software-Ventures/venn-backend (Go), Pacific-Software-Ventures/Venn-app (mobile)
 - **Brand:** Unique, story-driven SF experiences in historic venues (mansions, boats, ballrooms)
 - **Contact:** vinny@vennapp.co, Google Workspace access confirmed
