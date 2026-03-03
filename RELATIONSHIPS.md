@@ -115,6 +115,45 @@
   - $10K for April 19, $14K for March Sundays (per Katie)
 - **Notes**: Country club vibe, good for Western events. Higher cost.
 
+### Anthony Barr - 49 Square Catering
+- **Contact**: anthony@49square.com
+- **Category**: Catering
+- **Confidence**: 0.7 (provisional - awaiting quote review)
+- **History**:
+  - Contacted: Feb (Murder Mystery Yacht inquiry)
+  - Response: March 3, 9:10 AM
+  - Status: Email unread (awaiting review due to gog CLI limitation)
+- **Notes**: Responsive (replied within reasonable timeframe). Awaiting quote details to assess pricing and fit.
+
+### Drew Bird - Drew Bird Photo
+- **Contact**: info@drewbirdphoto.com
+- **Category**: Photography
+- **Confidence**: 0.4 (LOW - contacted for archived event)
+- **History**:
+  - Contacted: Unknown date (Great Gatsby Festival - EVT-003)
+  - Response: March 3, 11:15 AM
+  - Status: CRITICAL ISSUE - responded to archived event with strict no-contact policy
+- **Notes**: RED FLAG - vendor was contacted for archived event, violating no-contact protocol. Need to investigate how contact occurred and ensure proper response. Do not engage further for EVT-003.
+
+### Bay Area Beats DJ
+- **Contact**: info@bayareabeats.com
+- **Category**: DJ / Entertainment
+- **Confidence**: 0.65 (provisional)
+- **History**:
+  - Contacted: Feb 9 (Western Line Dancing - sent WRONG date: March 15 instead of March 29)
+  - Response: March 3, 2:08 AM (message ID: 19ca8df1462b8cbb)
+  - Status: URGENT date correction needed before proceeding
+- **Notes**: Responsive (replied overnight). Must send correction email clarifying actual event date is March 29, not March 15. Cannot assess confidence until date issue resolved.
+
+### Anna (Last Name TBD) - G.I.L.C Private Club
+- **Contact**: info@gilcprivateclub.com (TBD - verify)
+- **Category**: Venue / Private Club
+- **Confidence**: 0.6 (provisional)
+- **History**:
+  - Response: March 1, 5:52 AM (funding inquiry)
+  - Status: Email unread (awaiting review)
+- **Notes**: Initiated contact (inbound inquiry). Need to review email content to understand funding opportunity and club details.
+
 ---
 
 ## LOW CONFIDENCE / UNRESPONSIVE (0.2-0.4)
@@ -138,10 +177,13 @@
 - **Notes**: Avoid unless critical need.
 
 ### Karen Ortiz - Stable Cafe
-- **Category**: Venue
-- **Confidence**: 0.25
-- **History**: Contacted Feb 6, no response after 17 days
-- **Notes**: Likely not suitable or not interested.
+- **Category**: Venue / Food
+- **Confidence**: 0.6 (UPGRADED - responsive)
+- **History**: 
+  - Contacted: Feb 6 (EVT-001 Western Line Dancing inquiry)
+  - Responses: Feb 26-27 (2 emails received)
+  - Status: Emails unread (awaiting Zed review due to gog CLI limitation)
+- **Notes**: UPGRADE from low to medium confidence - proved responsive after initial delay. Requires follow-up after email content reviewed.
 
 ---
 
@@ -172,4 +214,4 @@
 3. Adjust confidence score if warranted
 4. Document any problems or exceptional service
 
-**Last Updated**: 2026-02-27 04:15 AM PST
+**Last Updated**: 2026-03-03 01:34 PM PST (Added 5 new vendors from recent responses, upgraded Stable Cafe confidence)
