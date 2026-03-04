@@ -125,6 +125,37 @@
   - Status: Email unread (awaiting review due to gog CLI limitation)
 - **Notes**: Responsive (replied within reasonable timeframe). Awaiting quote details to assess pricing and fit.
 
+### Red & White Fleet (Enhydra Charter)
+- **Contact**: events@redandwhite.com, charters@redandwhite.com
+- **Category**: Charter Boats / Venue (yacht events)
+- **Confidence**: 0.75
+- **History**:
+  - Initial contact: Date TBD (EVT-004 Murder Mystery Yacht inquiry for 400 guests)
+  - First quote: Received (database status: quote_received)
+  - Follow-up response: March 4, 1:41 PM (thread 19c31f7758cc7144, Gmail marked IMPORTANT)
+  - Status: Charter pricing/terms discussion ongoing, requires Zed review
+- **Notes**: Responsive, professional charter company. Gmail flagged follow-up as important suggesting time-sensitive pricing discussion. Good for large yacht events (400+ capacity). Multiple contact emails (events@ and charters@).
+
+### Plant Connection SF
+- **Contact**: connect@plantconnectionsf.com
+- **Category**: Bartending / Event Services
+- **Confidence**: 0.65 (provisional - awaiting quote review)
+- **History**:
+  - Initial contact: March 4, 6:20 AM (database shows as EVT-928 Jazz Age Garden Party venue research)
+  - Response: March 4, 11:23 AM ("Bartending Pricing" quote)
+  - Status: Quote unread (gog CLI limitation)
+- **Notes**: Quick response time (5 hours). Database shows as venue category but email is bartending pricing - may offer both venue space and bar services. Requires quote review to assess pricing and full service offerings.
+
+### Lower Haight Line Dancing (Sean & Joel)
+- **Contact**: howdy@linedancesf.com
+- **Category**: Entertainment / Line Dancing Instruction
+- **Confidence**: 0.7 (provisional - awaiting response)
+- **History**:
+  - Initial contact: March 4, 9:04 AM (EVT-001 Western Line Dancing inquiry)
+  - Error correction: March 4, 9:05 AM (corrected day-of-week mistake: Saturday → Sunday March 29)
+  - Status: Awaiting response to inquiry
+- **Notes**: San Francisco-based line dancing instructors. Experience: California Academy of Sciences (2,000 guests). Pricing: $299-499 for 2-hour instruction. CRITICAL ERROR: Initial email said "Saturday, March 29" but actual date is Sunday - sent immediate correction within 1 minute. Confidence provisional pending response to corrected inquiry.
+
 ### Drew Bird - Drew Bird Photo
 - **Contact**: info@drewbirdphoto.com
 - **Category**: Photography
@@ -214,4 +245,4 @@
 3. Adjust confidence score if warranted
 4. Document any problems or exceptional service
 
-**Last Updated**: 2026-03-03 01:34 PM PST (Added 5 new vendors from recent responses, upgraded Stable Cafe confidence)
+**Last Updated**: 2026-03-04 02:06 PM PST (Added Red & White Fleet charter, Plant Connection bartending, Lower Haight Line Dancing instruction - total 3 new vendors from March 4 activity)
