@@ -94,6 +94,10 @@
 - **2026-02-21:** Mission Control was down 9.5h undetected before Zed reported it. Health monitoring made mandatory.
 - **2026-02-23:** Created comprehensive morning summary system (MORNING-SUMMARY format) — proactive docs >> reactive status requests.
 - **2026-02-27:** Used "Ideating"/"ideating" status instead of "planning" — UI couldn't find events. ALWAYS use "planning" for ideating events (UI filters on exact match).
+- **2026-03-04:** TWO severe HEARTBEAT violations in one day: (1) 35-minute idle gap (7 consecutive HEARTBEAT_OK), (2) 30-minute idle pattern (6 consecutive HEARTBEAT_OK). Root cause: waiting for approvals instead of seeking autonomous work. Fix: Process documentation, database analysis, memory maintenance, strategic planning ALWAYS available. No excuse for idle patterns.
+- **2026-03-04:** Created 6 major process deliverables (vendor protocol, budget template, activation playbook, health reports, quick ref) - demonstrates productive work always available during "blocked" periods.
+- **2026-03-04:** Detected Nostalgia Night critical blocker: event LIVE on Luma with 10+ registrations but NO DATE in database. Blocks all vendor activation. Brief created for Zed decision.
+- **2026-03-04:** Established baseline metrics: 46.2% task completion rate, 100% DJ vendor response rate, 58.3% venue response rate. First comprehensive database health report.
 
 ## Morning Work Summary System
 
