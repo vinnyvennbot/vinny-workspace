@@ -128,5 +128,72 @@ All three are Bay Area-local, craft spirits, and immediately contactable.
 
 ---
 
-**Status:** Fernet-Branca research complete, Anchor on hold, Wave 1 pivot recommended  
-**Next Step:** Draft Fernet-Branca partnership email OR research St. George/Hangar 1 contacts
+## ✅ ST. GEORGE SPIRITS (Wave 1 Replacement)
+
+### Contact Information
+**Primary Contact:** info@stgeorgespirits.com  
+**Phone:** (510) 769-1601  
+**Address:** 2601 Monarch St., Alameda, CA 94501  
+**Website:** https://stgeorgespirits.com
+
+### Business Details
+**Founded:** 1982 (America's original craft distillery)  
+**Location:** Alameda (East Bay, 15 min from SF)  
+**Products:** Single malt whiskey, absinthe, gins, vodkas, brandies, liqueurs  
+**Legacy:** Nearly 4 decades at vanguard of American craft spirits movement  
+**Tasting Room:** Friday-Sunday, reservations recommended  
+**Hours:** Administrative office Mon-Fri 8:30am-5pm
+
+### Partnership Potential
+**Brand Alignment:** ⭐⭐⭐⭐⭐ (Craft spirits pioneer, Bay Area institution)  
+**Locality Score:** 4/5 (Alameda = East Bay, close to SF)  
+**Event Fit:**
+- Art Deco Jazz Soirée (craft cocktail culture)
+- Prohibition Speakeasy Night (craft distilling heritage)
+- Botanical Cocktail Lab (their botanical gins)
+- ANY cocktail education event (they do distillery tours)
+
+**Package Target:** $8-15K (premium craft brand, experiential focus)  
+**Unique Angle:** "Craft spirits education partner" - they already do tours/tastings, natural fit for cocktail workshops
+
+### Marketing Intelligence
+- Strong Bay Area presence (40+ years local)
+- Distillery tours and tasting experiences (experiential marketing DNA)
+- Multiple product lines (gin, whiskey, absinthe) = versatile partnerships
+- "America's original craft distillery" = heritage story
+
+### Outreach Strategy
+**Approach:** Education partnership angle (not just sampling)  
+**Key Message:** "Partner with Bay Area's most experience-focused event company to bring craft spirits education to SF cocktail enthusiasts"  
+**Differentiation:** Co-create cocktail curriculum, behind-the-scenes distillery stories, master distiller Q&A potential
+
+**CRM Status:** ✅ READY TO CONTACT  
+**Next Step:** Draft partnership email emphasizing craft education + Bay Area pride
+
+---
+
+## 📊 WAVE 1 REVISED SUMMARY (COMPLETE)
+
+### Completed Research:
+- **Fernet-Branca:** ✅ Ready (contactus@brancausa.com) - SF bartender legend
+- **St. George Spirits:** ✅ Ready (info@stgeorgespirits.com) - Bay Area craft pioneer
+- **Anchor Brewing:** ⏸️ On hold (dormant, monitor for reopening)
+
+### Viable Targets:
+- **2 of 2** immediately contactable (100% of active targets)
+
+### Wave 1 Final Lineup:
+1. **Fernet-Branca** (SF bartender culture, $8-12K package)
+2. **St. George Spirits** (Bay Area craft heritage, $8-15K package)
+3. **Williams Sonoma** (add to complete trio - SF HQ, culinary brand)
+
+### Next Actions:
+1. ✅ Wave 1 contact research COMPLETE (2 spirits brands ready)
+2. ⏳ Draft Fernet-Branca partnership email
+3. ⏳ Draft St. George Spirits partnership email
+4. ⏳ Research Williams Sonoma contact (SF HQ, culinary/lifestyle pivot)
+
+---
+
+**Status:** Wave 1 contact research complete (2 spirits + 1 pivot needed)  
+**Next Step:** Draft partnership emails for Fernet + St. George OR research Williams Sonoma
