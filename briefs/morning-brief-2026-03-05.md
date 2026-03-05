@@ -1,172 +1,130 @@
-# Morning Brief - March 5, 2026
+# Morning Brief - Wednesday, March 5, 2026
 
-**Prepared:** March 4, 2026, 5:36 PM PST  
-**For:** Zed Truong  
-**By:** Vinny (AI Operations)
-
----
-
-## 🚨 CRITICAL ITEMS REQUIRING IMMEDIATE DECISION
-
-### 1. Nostalgia Night - Event Live Without Infrastructure
-**Status:** CRITICAL BLOCKER - Event has been LIVE on Luma for 7+ days  
-**Problem:** 10+ confirmed registrations + growing waitlist, but NO EVENT DATE in database  
-**Impact:** Cannot activate ANY vendors (DJ, catering, photography, venue) without date confirmation  
-
-**Brief Ready:** `briefs/nostalgia-night-urgent-activation-mar04.md`
-
-**Top 3 Venue Recommendations:**
-1. **Retro Junkie (Walnut Creek)** - $3K-5K, perfect theme fit, 8,000 sq ft
-2. **Thriller Social Club (SoMa)** - $6K-10K, brand new, 200+ capacity
-3. **Emporium SF (Divisadero)** - $5K-8K, historic venue, iconic SF location
-
-**What I Need:**
-- Confirmed event date
-- Venue selection (or direction to pursue alternatives)
-
-**Timeline:** Once decided, 5-7 days to full vendor activation per event-activation-playbook.md
+**Generated:** 4:02 AM PST  
+**For:** Zed / Venn Team  
+**Status:** 7 critical tasks blocked, 4 unread vendor emails
 
 ---
 
-## 📧 VENDOR RESPONSES AWAITING YOUR REVIEW (5 Total)
+## 🚨 URGENT: Email Action Required
 
-### 1. Red & White Fleet - Murder Mystery Yacht Charter
-**From:** charters@redandwhite.com  
-**Received:** March 4, 1:41 PM  
-**Thread:** 19c31f7758cc7144  
-**Gmail:** Marked IMPORTANT  
-**Event:** EVT-004 (Murder Mystery Yacht, 400 guests)  
-**Context:** Charter pricing/terms follow-up  
-**Confidence:** 0.75 (high - responsive, professional)
+**Problem:** gog CLI cannot read email bodies (v0.9.0 limitation). 4 unread emails need manual review:
 
-### 2. Palace Theater - Murder Mystery Production Support
-**From:** laura.drake@thepalacetheatersf.com  
-**Received:** March 4, 2:24 PM  
-**Thread:** 19c320c4540f68e4  
-**Gmail:** Marked IMPORTANT  
-**Event:** EVT-004 (Murder Mystery Yacht, April 19, 2026)  
-**Context:** Production support inquiry for 400-guest event  
-**Confidence:** 0.8 (high - proven for large-scale productions)
+### Priority 1: Vendor Response (EVT-001)
+- **From:** Matt Ryan (Line Dance SF) - howdy@linedancesf.com
+- **Time:** March 5, 12:09 AM PST (~4 hours ago)
+- **Subject:** Re: Line Dancing Instruction Inquiry - Correction
+- **Thread:** Zed replied at 12:22 AM (thread active)
+- **Context:** I sent correction email yesterday fixing date error (Saturday→Sunday March 29)
+- **Database:** Updated status to 'response_received'
+- **Action Needed:** Review Matt's response, determine if we can book
 
-### 3. Plant Connection SF - Bartending Services
-**From:** connect@plantconnectionsf.com  
-**Received:** March 4, 11:23 AM  
-**Thread:** 19cba4e6ee932f76  
-**Event:** EVT-928 (Jazz Age Garden Party)  
-**Context:** Bartending pricing quote  
-**Confidence:** 0.65 (provisional - quick response, 5 hours)
+### Priority 2: Team Email
+- **From:** Zed Truong
+- **Time:** March 5, 12:22 AM
+- **Subject:** Re: Line Dancing Instruction Inquiry - Correction
+- **Action Needed:** Check if Zed provided guidance/decision
 
-### 4. Amador Club - Joint Event with SF Social Club
-**From:** nicole@amadorclub.com (Nicole Herold)  
-**Received:** March 4, 4:07 PM  
-**Thread:** 19cac9b0d9278030  
-**Context:** "Re: SF Social Club and Venn Social Event at Amador"  
-**Notes:** Not in vendor database - likely inbound partnership inquiry or Zed-initiated discussion
+### Priority 3: Calendar Acceptance
+- **From:** Jason Diamond (DIG Holdings)
+- **Time:** March 5, 1:03 AM
+- **Subject:** Accepted: Zed 1:1 - AI Analyst For CRE
+- **Action Needed:** Confirm calendar is synced
 
-### 5. Apple Business - VENN CORPORATION
-**From:** chestnutstreetbusiness@apple.com  
-**Received:** March 4, 5:04 PM  
-**Thread:** 19cbb86e54ae5e77  
-**Subject:** "Apple Business || VENN CORPORATION"  
-**Context:** Official Apple Business communication (+ 2 marketing follow-ups at 5:10 PM)  
-**Notes:** May involve App Store, Business Manager, or corporate account setup
-
-**Limitation:** gog CLI cannot read email bodies - all require manual review in Gmail
+### Priority 4: PSV Email  
+- **From:** paul@pacificsoftwareventures.com
+- **Time:** March 5, 12:04 AM
+- **Subject:** Re: OM & Model
+- **Action Needed:** Review context
 
 ---
 
-## 📅 UPCOMING MEETINGS (Your Calendar)
+## 📊 Mission Control Health
 
-**Tomorrow (March 5):**
-- 3:00 PM: Zed <> Mark C. (updated invitation received 3:15 PM yesterday)
+**Services:**
+- ✅ Mission Control: UP (localhost:3000)
+- ✅ Consumer Frontend: UP (localhost:3001)
 
-**Friday (March 6):**
-- 10:00-10:30 AM: Zed 1:1 - AI Analyst For CRE (Kojak Chiu)
-- 12:30-1:00 PM: Zed 1:1 - AI Analyst For CRE (Reuben Teague)
-
-**Pattern:** Back-to-back AI analyst meetings suggest active evaluation of AI/CRE solutions
-
----
-
-## 📊 YESTERDAY'S DELIVERABLES (March 4)
-
-### Process Documentation Created (6 Major)
-1. **EVT-001 Marketing Content** - Instagram + Eventbrite drafts (95% complete, awaiting venue lock)
-2. **Vendor Outreach Protocol Checklist** - 10-point mandatory pre-send verification
-3. **Event Budget Template** - 9-category financial model with analysis tools
-4. **Event Activation Playbook** - 4-phase framework, 6-8 week timeline
-5. **Database Health Report** - First baseline (46.2% task completion, 100% DJ response rate)
-6. **Daily Operations Quick Reference** - Copy/paste command guide
-
-### Event Research Generated
-- 4 new concepts from daily cron (Pirates, Studio 54, Enchanted Forest, Ancient Rome)
-- All with venue research, vendor recommendations, budget models
-- Status: Awaiting approval before activation
-
-### Vendor Relationship Tracking
-- Added 3 new vendors to RELATIONSHIPS.md (Red & White Fleet, Plant Connection, Lower Haight Line Dancing)
-- Response rate analysis: 100% DJ, 58.3% venue (both above industry average)
+**Database:**
+- 28 active tasks (7 critical priority >= 90)
+- 6 blocked, 4 in progress, 10 pending, 8 todo
+- 540 total vendors contacted across all events
+- 16 quotes received, 384 recommended vendors
 
 ---
 
-## 📈 DATABASE HEALTH SNAPSHOT
+## 🎯 Top Blocked Tasks (Require Email Body Reading or Approval)
 
-**Tasks (52 total):**
-- Done: 24 (46.2%) ✅
-- Blocked: 6 (11.5%) - mostly awaiting approvals/email reads
-- Active: 22 (42.3%) - in progress/todo/pending
+### Critical (Priority >= 90)
 
-**Events (36 total):**
-- Active planning: 32 (healthy ideation pipeline)
-- Confirmed: 1 (Nostalgia Night - CRITICAL blocker)
-- Completed: 1 (Intimate Dinner, Feb 28)
+1. **DJ Date Correction** (Priority 98)
+   - Bay Area Beats responded at 2:08 AM (message 19ca8df1462b8cbb)  
+   - I told them March 15th, actual date is March 29th (14-day discrepancy)
+   - **Blocker:** Cannot read email body to see their response
+   - **Next:** Read email manually, send date confirmation
 
-**Vendor Response Rates:**
-- DJ: 100% (4/4 contacted responded)
-- Venue: 58.3% (7/12 contacted responded)
+2. **Nostalgia Night Activation** (Priority 90)
+   - Event is LIVE on Luma with 10+ registrations
+   - **Blocker:** No date set in database (blocks all vendor outreach)
+   - **Next:** Set event date, then activate vendor outreach
 
----
+3. **Email Monitoring** (Priority 90)
+   - ✅ Completed this heartbeat (4:02 AM)
+   - 4 unread emails detected and logged above
 
-## ⚠️ OPERATIONAL ISSUES DOCUMENTED
-
-**HEARTBEAT Violations (2 severe patterns yesterday):**
-1. 35-minute idle gap (7 consecutive HEARTBEAT_OK cycles)
-2. 30-minute idle gap (6 consecutive HEARTBEAT_OK cycles)
-
-**Root Cause:** Waiting for approvals instead of seeking autonomous work  
-**Fix:** Process documentation, database analysis, memory maintenance always available  
-**Status:** Documented in MEMORY.md, protocols created to prevent recurrence
+4. **Frontier Tower Reply** (Priority 95)
+   - Jakob Drzazga responded Feb 25 (8 days ago)
+   - **Blocker:** Cannot read email body
+   - **Next:** Read and respond to high-quality venue prospect
 
 ---
 
-## ✅ ACTION ITEMS FOR TODAY
+## 📅 Event Pipeline Status
 
-**High Priority:**
-1. **Nostalgia Night decision** - Date + venue selection (unblocks $XX,XXX+ in vendor activation)
-2. **Review 5 vendor responses** - Decisions on Murder Mystery yacht, Jazz Age event, partnerships
-3. **Approve/reject 4 new event concepts** - Pirates, Studio 54, Enchanted Forest, Ancient Rome
+**Active Planning (35 total events):**
+- 1 confirmed (EVT-002 completed Feb 28)
+- 1 with date set (EVT-001: March 29)
+- 33 in ideation/planning phase (no dates)
 
-**Medium Priority:**
-1. Review Apple Business VENN CORPORATION emails (may require timely response)
-2. Review Amador Club partnership inquiry (SF Social Club collaboration)
+**EVT-001: Western Line Dancing** (March 29 - 24 days out)
+- Status: Planning
+- Venue: Log Cabin (recommended, quote received)
+- Vendors: 30 reached, 11 quotes
+- **Blocker:** DJ date correction needed (see above)
+- **Blocker:** Venue contract not signed
+- **Blocker:** Line dancing instructor response needs review
 
-**Automated:**
-- Daily event ideation cron runs 10:00 AM PST (4 new concepts generated automatically)
-- Email monitoring continues every 5 minutes
-- Server health checks every 5 minutes
-
----
-
-## 📝 NOTES
-
-**Event Registration Activity:** Steady signups throughout yesterday (Bobby Singh, Morgana Jarvis, Kat W, Daniel Lopez, Soyon Kwon)
-
-**System Performance:** 100% server uptime (Mission Control + Consumer Frontend), 13+ hours continuous monitoring
-
-**Documentation:** 830+ lines logged yesterday, 70+ git commits, 6 major deliverables created
+**Top Ideating Events (Awaiting Approval):**
+- 80s/90s Nostalgia Night (readiness: 30%, 14 vendors researched)
+- Botanical Cocktail Lab (readiness: 50%, 25 vendors researched)
+- Art Deco Jazz Soirée (readiness: 55%, 25 vendors researched)
+- Cosmic Dreams Planetarium (readiness: 46%, 26 vendors researched)
 
 ---
 
-**All systems operational. Monitoring continues. Ready for your decisions.**
+## 🎬 Recommended Morning Actions
 
-— Vinny
+**Priority Order:**
+
+1. **Read Matt Ryan (Line Dance SF) email** - Active vendor conversation for EVT-001
+2. **Review Bay Area Beats DJ email** - Date correction critical path
+3. **Review Frontier Tower email** - 8 days overdue, high-quality venue
+4. **Set Nostalgia Night date** - Unblocks vendor activation for LIVE event
+5. **Approve waiting event concepts** - 4 events ready for vendor outreach phase
+
+---
+
+## 🔧 Overnight Work Completed
+
+**4:00-4:02 AM PST:**
+- ✅ Health check: Both services running
+- ✅ Email monitoring: 4 unread emails detected
+- ✅ Database sync: Matt Ryan response logged
+- ✅ Task analysis: 28 active tasks audited
+- ✅ Morning brief created (this document)
+
+**Next Heartbeat:** Will continue autonomous overnight work (documentation, planning, research)
+
+---
+
+**Note:** All vendor outreach requiring email responses is paused until email bodies can be reviewed manually. Database remains current with automated status updates where possible.
