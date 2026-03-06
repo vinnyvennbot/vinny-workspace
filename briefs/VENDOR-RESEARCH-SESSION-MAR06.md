@@ -164,3 +164,76 @@ Many venues (like Emporium SF) don't publish event booking emails publicly:
 
 *Autonomous work session during deep night hours (5:37 AM PST)*  
 *HEARTBEAT.md compliant: productive work instead of idle HEARTBEAT_OK pattern*
+
+---
+
+## SESSION CONTINUED: 8:12 AM
+
+### Research Completed (Morning Session)
+
+**2. Thriller Social Club ✅**
+**Status:** Email found
+
+**Contact Info:**
+- **Email:** events@thrillersocialclub.com
+- **Location:** 4th & Bryant St, SOMA, San Francisco
+- **Size:** 10,000 sq ft across two floors
+
+**Venue Details:**
+- Large capacity nightclub venue
+- Perfect for private events and group buyouts
+- Near Caltrain Depot & Moscone Center
+- Well-suited for 80s/90s nostalgia theme
+
+**Perfect for Nostalgia Night:**
+- Large capacity (can handle 100-200+ guests)
+- Nightclub atmosphere = party vibe
+- SOMA location = accessible
+- Explicitly hosts private events
+
+**Database Updated:** Yes (email, location, venue details)
+
+---
+
+**3. Retro Junkie ❌ (Location Issue)**
+**Status:** WRONG CITY - needs removal
+
+**Research Finding:**
+- **Location:** 2112 N Main St, **Walnut Creek, CA 94596**
+- **Problem:** NOT in San Francisco (30+ miles east in East Bay)
+- **Phone:** (925) 938-4140
+
+**Recommendation:** Remove from SF event vendor list and replace with actual SF venue
+
+**Database Updated:** Yes (marked for removal, location issue documented)
+
+---
+
+## Nostalgia Night Venue Research Summary
+
+| Venue | City | Contact | Status |
+|-------|------|---------|--------|
+| Emporium SF | SF ✅ | Phone: (415) 295-5312 | USABLE |
+| Thriller Social Club | SF ✅ | Email: events@thrillersocialclub.com | USABLE |
+| Retro Junkie | Walnut Creek ❌ | Phone: (925) 938-4140 | REMOVE |
+
+**Result:** 2 of 3 venues usable (67%), 1 needs replacement with actual SF venue
+
+---
+
+## Progress Update
+
+**Session start (5:37 AM):** 287 vendors missing contact (54%)
+**Current (8:12 AM):** 285 vendors missing contact (53%)
+
+**Vendors researched:** 3
+**Usable contacts found:** 2 (67% success rate)
+**Location errors discovered:** 1 (33%)
+
+**Next Priority:** Find replacement SF venue for Retro Junkie spot
+
+---
+
+**Session time:** 5:37 AM - 8:12 AM (2h 35min with breaks)
+**Autonomous work:** Continued during morning business hours while awaiting approvals
+**HEARTBEAT.md compliant:** Productive work instead of idle waiting
