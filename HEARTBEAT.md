@@ -122,11 +122,13 @@ Track vendor reliability in RELATIONSHIPS.md:
 ### Active Events Status
 
 #### EVT-001: Western Line Dancing Night
-- **📅 DATE**: Sunday, March 29, 2026 (4 weeks out)
-- **🚨 CRITICAL**: DATE CONFLICT - I told Bay Area Beats DJ "March 15th" in Feb emails, but actual date is March 29th. DJ responded at 2:08 AM with message 19ca8df1462b8cbb (unread, gog cannot read body). URGENT correction needed.
-- **⏳ STATUS**: Awaiting venue lock (Log Cabin recommended)
-- **📧 VENDOR RESPONSES**: Stable Cafe (Karen Ortiz) sent 2 responses Feb 26-27, still UNREAD (2-3 days overdue)
-- **🚧 BLOCKERS**: Permits/insurance, catering review, line dancing instructors
+- **📅 DATE**: Sunday, March 29, 2026 (3+ weeks out)
+- **✅ RESOLVED**: Bay Area Beats DJ date correction sent 4:02 AM Mar 6 (March 15→29 corrected with apology)
+- **✅ RESOLVED**: Frontier Tower 9-day overdue reply sent 4:02 AM Mar 6
+- **🆕 VENDOR RESPONSE**: Frontier Tower (Katia) replied 4:14 AM Mar 6 (12 min after my follow-up) - READ ASAP
+- **⏳ STATUS**: Awaiting venue lock, monitoring Frontier Tower response
+- **📧 PENDING**: Stable Cafe (Karen Ortiz) 2 unread responses Feb 26-27 (still overdue)
+- **🚧 BLOCKERS**: Venue selection, permits/insurance, catering review, line dancing instructors
 
 #### EVT-002: Intimate Dinner at The Barrel Room
 - **✅ COMPLETED**: Event successfully held Feb 28, 2026 at 7:00 PM PST
@@ -149,13 +151,13 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **EVT-003: Great Gatsby Festival** — STRICT NO-CONTACT POLICY
 
 ### High Priority Tasks (Morning Business Hours)
-1. **🚨 Bay Area Beats DJ date correction** (priority 98) - URGENT: Correct March 15→29 discrepancy
-2. **Nostalgia Night venues** (priority 95) - Awaiting approval  
-3. **Email monitoring** (priority 90) - ✅ Completed this heartbeat
-4. **Nostalgia activation** (priority 90) - Blocked: event LIVE on Luma but no date set
-5. **Stable Cafe response** (priority 85) - 2 unread emails, 2-3 days overdue
-6. **Frontier Tower response** (priority 75) - 3 days overdue
-7. **Lock venue for EVT-001** (priority 70) - Blocked: awaiting decision
+1. **🚨 Nostalgia Night date/venue decision** (priority 97) - URGENT: Event LIVE but no date/venue in DB
+2. **📧 Frontier Tower response** (priority 96) - NEW: Katia replied 4:14 AM Mar 6, read & respond ASAP
+3. **Nostalgia Night venues** (priority 95) - Awaiting approval  
+4. **Email monitoring** (priority 90) - ✅ Completed this heartbeat
+5. **Nostalgia activation** (priority 90) - Blocked: event LIVE on Luma but no date set
+6. **Stable Cafe response** (priority 85) - 2 unread emails, 2-3 days overdue
+7. **Vendor data quality** (priority 85) - 287 records missing email (54%), research needed
 
 # X (TWITTER) DAILY UNFOLLOW AUTOMATION
 
