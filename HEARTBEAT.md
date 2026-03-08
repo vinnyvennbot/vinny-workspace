@@ -117,7 +117,7 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **Low (0.2-0.4)**: Failed email contacts, unresponsive vendors → Alternative research needed
 
 ## Current Active Issues (Auto-Update)
-*(Last updated: Mar 1, 2026, 4:06 AM PST)*
+*(Last updated: Mar 8, 2026, 4:15 AM PST)*
 
 ### Active Events Status
 
@@ -151,13 +151,23 @@ Track vendor reliability in RELATIONSHIPS.md:
 - **EVT-003: Great Gatsby Festival** — STRICT NO-CONTACT POLICY
 
 ### High Priority Tasks (Morning Business Hours)
-1. **🚨 Nostalgia Night date/venue decision** (priority 97) - URGENT: Event LIVE but no date/venue in DB
-2. **📧 Frontier Tower response** (priority 96) - NEW: Katia replied 4:14 AM Mar 6, read & respond ASAP
-3. **Nostalgia Night venues** (priority 95) - Awaiting approval  
-4. **Email monitoring** (priority 90) - ✅ Completed this heartbeat
-5. **Nostalgia activation** (priority 90) - Blocked: event LIVE on Luma but no date set
-6. **Stable Cafe response** (priority 85) - 2 unread emails, 2-3 days overdue
-7. **Vendor data quality** (priority 85) - 287 records missing email (54%), research needed
+1. **🚨 Gmail Manual Review Required** (priority 99) - BLOCKER: Cannot read email bodies via CLI
+   - Stable Cafe (2 unread responses per notes)
+   - Frontier Tower (Katia response from Mar 6)
+   - Hustle Fund Batter Up updates (Mar 3)
+   - Verify sent folder for actual vendor outreach history
+2. **🚨 Nostalgia Night status confusion** (priority 97) - DB says "confirmed" but HEARTBEAT says "blocked"
+   - Event LIVE on Luma with registrations (2 new in last 4h)
+   - Unclear if vendors should be activated
+3. **📧 Vendor follow-ups needed** (priority 95) - 14 vendors overdue (see VENDOR-FOLLOWUP-ANALYSIS-MAR08-4AM.md)
+   - evt-001: 5 venues 19-31 days overdue
+   - evt-nostalgia: 1 partner 11 days overdue
+4. **Database data quality** (priority 90) - Conflicts between DB and reality detected
+   - Recent actions not logged (Bay Area Beats Mar 6 email)
+   - Duplicate vendor entries (Bay Area Beats vs Bay Area Beats DJs)
+   - evt-003 vendors need "DO NOT CONTACT" flags
+5. **Email monitoring** (priority 90) - ✅ Completed this heartbeat (4:01 AM)
+6. **evt-004 date decision** (priority 85) - 4 vendors on hold until date confirmed
 
 # X (TWITTER) DAILY UNFOLLOW AUTOMATION
 
