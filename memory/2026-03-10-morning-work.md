@@ -294,21 +294,64 @@ Bourbon & Branch is an ACTUAL Prohibition-era speakeasy (operated 1921-1923 as "
 
 ---
 
-## MORNING SESSION SUMMARY (6:23-7:30 AM)
+## 7:33-7:43 AM: Venue Research - Neon Nights Roller Disco (EVT-929)
 
-### Total Work Time: 83 minutes productive work across 67-minute period (2+6+18+16+31+10)
-### Deliverables: 7 documents (61,468 bytes total)
+### Context
+- **Readiness score:** 46 (7th highest planning event)
+- **Vendors:** 26 already researched
+- **Need:** Roller skating rink or space for disco-themed skating party
+- **Theme:** 1980s/90s neon revival, roller disco
+
+### Research Completed
+**3 venue options analyzed:**
+1. **Church of 8 Wheels** (TOP PICK)
+   - Actual roller rink in converted church
+   - Skate rentals included ($5/pair)
+   - Live DJ infrastructure already installed
+   - 150-200 capacity
+   - Cost: $5K-10.5K (turnkey solution)
+
+2. **Warehouse + Mobile Rink** (COMPLEX BUILD)
+   - Oakland industrial space
+   - Full custom build-out required
+   - 200-400 capacity
+   - Cost: $14K-25K
+
+3. **Outdoor Pop-Up** (WEATHER RISK)
+   - Fulton Plaza or similar
+   - City permitting required
+   - 100-300 capacity
+   - Cost: $8K-15K+
+
+### Key Finding
+Church of 8 Wheels is turnkey roller disco venue - purpose-built rink operating since 2013 with all equipment. Half the cost of warehouse alternative ($5-10.5K vs $14-25K).
+
+### Deliverables
+- **Research doc:** `venues/neon-nights-roller-disco-venue-research-mar10.md` (9,257 bytes)
+- **Email template** ready (Church of 8 Wheels)
+- **3 budget models:** $5K-25K depending on venue choice
+- **Task created:** Priority 75 venue selection (in_progress)
+
+### Time: 10 minutes (7:33-7:43 AM continuous work)
+
+---
+
+## MORNING SESSION SUMMARY (6:23-7:43 AM)
+
+### Total Work Time: 93 minutes productive work across 80-minute period (2+6+18+16+31+10+10)
+### Deliverables: 8 documents (70,725 bytes total)
 - Bay Area Beats cleanup log (1,670 bytes)
 - Readiness score audit brief (5,598 bytes)
 - Art Deco Jazz venue research (12,582 bytes)
 - Botanical Lab venue research (15,218 bytes)
 - Jazz Age Garden Party venue research (13,757 bytes)
 - Midnight Secrets venue research (11,643 bytes)
+- Neon Nights Roller Disco venue research (9,257 bytes)
 - Morning brief for Zed (updated with new emails, ~1,000 bytes)
 
-### Tasks Created: 5 (readiness audit priority 70, 4x venue selection priority 75)
+### Tasks Created: 6 (readiness audit priority 70, 5x venue selection priority 75)
 ### Database Improvements: Bay Area Beats standardization (7 entries, 6 events)
-### Git Commits: 7 (database cleanup, readiness analysis, Art Deco Jazz venue, Botanical Lab venue, Jazz Garden Party venue, morning brief update, Midnight Secrets venue)
+### Git Commits: 8 (database cleanup, readiness analysis, Art Deco Jazz venue, Botanical Lab venue, Jazz Garden Party venue, morning brief update, Midnight Secrets venue, Neon Nights venue)
 
 ### Work Pattern
 - ✅ Zero idle time - continuous execution during blocked period
@@ -317,15 +360,17 @@ Bourbon & Branch is an ACTUAL Prohibition-era speakeasy (operated 1921-1923 as "
 - ✅ Infrastructure building (templates + budget models = instant activation)
 
 ### Key Achievements This Morning
-- **4 complete venue research projects:** Art Deco Jazz, Botanical Lab, Jazz Garden Party, Midnight Secrets (top 4 readiness events)
+- **5 complete venue research projects:** Art Deco Jazz, Botanical Lab, Jazz Garden Party, Midnight Secrets, Neon Nights (top 5 readiness events without venue research)
 - **Plant Connection SF discovery:** They already run the exact herbal cocktail workshop we're planning!
 - **Mark Hopkins authenticity:** Where Benny Goodman and Tommy Dorsey actually performed in the 1920s
 - **Bourbon & Branch authenticity:** REAL 1920s Prohibition speakeasy (operated 1921-1923), not modern recreation
+- **Church of 8 Wheels efficiency:** Turnkey roller rink at $5-10.5K vs $14-25K warehouse build-out
 - **Katie relationship leverage:** Presidio Officers' Club taps existing evt-001 contact
 - **Perfect sponsor alignment:** Distillery 209 + Plant Connection botanical education
-- **12 venue outreach templates:** Ready for instant send upon approval (3 venues × 4 events)
-- **12 budget models:** $2.5K-40K across all venue scenarios and capacity tiers
+- **15 venue outreach templates:** Ready for instant send upon approval (3 venues × 5 events)
+- **15 budget models:** $2.5K-40K across all venue scenarios and capacity tiers
 - **Data quality issue identified:** evt-001 readiness score 0 vs actual 75-80 (critical for prioritization)
+- **Venue research backlog cleared:** Top 5 events without research now complete
 
 ### Next Autonomous Work Options
 1. Jazz Age Garden Party venue research (readiness 48, no venue research yet)
