@@ -2,12 +2,23 @@
 
 ## 🚨 URGENT - Needs Immediate Attention
 
-### New Email This Morning
-**Zaara James** (zaarajames1@gmail.com)
-- **Received:** 6:23 AM (3 minutes ago)
-- **Subject:** "Venn"
-- **Status:** UNREAD, cannot read body via CLI
-- **Context:** Unknown sender, could be customer/partner inquiry
+### New Emails This Morning
+1. **Kojak Chiu** (kojakchiu@gmail.com)
+   - **Received:** 7:16 AM
+   - **Subject:** "Re: Great chatting - Zed"
+   - **Status:** UNREAD, cannot read body via CLI
+   - **Context:** Response to Zed's outreach/conversation
+
+2. **Zaara James** (zaarajames1@gmail.com)
+   - **Received:** 6:23 AM
+   - **Subject:** "Venn"
+   - **Status:** UNREAD, cannot read body via CLI
+   - **Context:** Unknown sender, could be customer/partner inquiry
+
+3. **Fabiola Dominguez** (via gedeon.baende@vennapp.co)
+   - **Received:** 6:52 AM
+   - **Subject:** "[Event Notifications] Fabiola Dominguez signed up (New)"
+   - **Context:** New event registration (event unknown)
 
 ### Critical Aging Emails (Manual Review Required)
 1. **Kate Shepherd (Hustle Fund)** - "Congratulations you've made the short list!" (20+ hours old, investor opportunity)
