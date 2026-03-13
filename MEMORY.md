@@ -77,6 +77,7 @@
 - **ClawGuard:** active (security check on all tool calls)
 - **Subagents:** up to 12 concurrent
 - **Google Sheets access:** use `gog` CLI (NOT Maton API)
+- **Database health monitoring:** `scripts/database-health-dashboard.sh` (run regularly for status checks)
 
 ## Key Lessons (condensed)
 
