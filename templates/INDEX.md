@@ -7,14 +7,22 @@
 
 ## 📧 VENDOR OUTREACH TEMPLATES
 
+### Initial Outreach
+- **vendor-outreach.txt** - Generic vendor initial contact template
+
 ### Follow-Up Communications
 - **follow-up-24h.txt** - Standard 24-hour vendor follow-up template
 - **evt001-vendor-followup-24h.txt** - Western Line Dancing event-specific follow-up
+- **vendor-followup-evt001-venues.md** - EVT-001 venue follow-up compilation
 
 ### Event-Specific Outreach
 - **evt001-bbq-outreach-template.txt** - BBQ catering vendor outreach for Western Line Dancing
 - **evt001-line-instructor-outreach-template.txt** - Line dancing instructor inquiry template
 - **nostalgia-night-vendor-outreach.md** - Nostalgia Night vendor outreach template
+
+### Response & Booking
+- **vendor-quote-acknowledgment.txt** - Quick acknowledgment for received quotes
+- **vendor-booking-confirmation.txt** - Booking confirmation template
 
 ---
 
@@ -37,7 +45,19 @@
 
 ## 💰 SPONSOR & PARTNERSHIP
 
+### Pitch Decks
 - **sponsor-pitch-deck-master-template.md** - Master sponsor pitch deck framework
+- **sponsor-pitch-deck-template.md** - Standard sponsor pitch deck
+- **sponsor-pitch-library.md** - Library of sponsor pitch variations
+- **tech-cohost-pitch-deck.md** - Tech company co-hosting/buyout pitch
+
+---
+
+## 📖 VENDOR MANAGEMENT PLAYBOOKS
+
+- **vendor-activation-playbook.md** - Vendor activation process (research → contact → book)
+- **vendor-negotiation-playbook.md** - Negotiation strategies and pricing tactics
+- **vendor-response-playbook.md** - How to handle different vendor response types
 
 ---
 
