@@ -5,6 +5,7 @@ import SwiftUI
 struct EventCardView: View {
     let event: DiscoverEvent
     @State private var isPressed = false
+    @State private var showingDetail = false
     
     var body: some View {
         ZStack {
@@ -96,13 +97,16 @@ struct EventCardView: View {
         .scaleEffect(isPressed ? 0.98 : 1.0)
         .animation(.spring(response: 0.3, dampingFraction: 0.7), value: isPressed)
         .onTapGesture {
-            // Handle tap
+            showingDetail = true
         }
         .simultaneousGesture(
             DragGesture(minimumDistance: 0)
                 .onChanged { _ in isPressed = true }
                 .onEnded { _ in isPressed = false }
         )
+        .sheet(isPresented: $showingDetail) {
+            EventDetailView(event: event)
+        }
     }
     
     // MARK: - Components
