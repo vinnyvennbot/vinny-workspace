@@ -1,69 +1,55 @@
-import OpenAI from 'openai';
+import Anthropic from '@anthropic-ai/sdk';
 
 /**
  * Vivi AI Service
- * Powers conversational onboarding and recommendations using OpenAI GPT-4
+ * Powers conversational onboarding and recommendations using Claude Sonnet 4
  */
 export class ViviService {
-  private client: OpenAI;
-  private model = 'gpt-4-turbo-preview';
+  private client: Anthropic;
+  private model = 'claude-sonnet-4-20250514';
 
   constructor(apiKey: string) {
-    this.client = new OpenAI({ apiKey });
+    this.client = new Anthropic({ apiKey });
   }
 
   /**
    * Generate Vivi response to user message
-   * @param userMessage - The user's message
-   * @param conversationHistory - Previous messages in the conversation
-   * @returns Vivi's response
    */
   async chat(
     userMessage: string,
     conversationHistory: Array<{ role: 'user' | 'assistant'; content: string }> = []
   ): Promise<string> {
     try {
-      // Build messages array
-      const messages: OpenAI.ChatCompletionMessageParam[] = [
-        {
-          role: 'system',
-          content: this.getViviSystemPrompt()
-        },
+      const messages: Anthropic.MessageParam[] = [
         ...conversationHistory.map(msg => ({
           role: msg.role,
           content: msg.content
         })),
         {
-          role: 'user',
+          role: 'user' as const,
           content: userMessage
         }
       ];
 
-      // Call OpenAI GPT-4
-      const response = await this.client.chat.completions.create({
+      const response = await this.client.messages.create({
         model: this.model,
-        messages,
         max_tokens: 1024,
-        temperature: 0.8, // More creative/conversational
+        system: this.getViviSystemPrompt(),
+        messages
       });
 
-      // Extract response text
-      const reply = response.choices[0]?.message?.content;
-      if (!reply) {
-        throw new Error('No response from OpenAI');
+      const textBlock = response.content.find(block => block.type === 'text');
+      if (!textBlock || textBlock.type !== 'text') {
+        throw new Error('No text response from Claude');
       }
 
-      return reply;
+      return textBlock.text;
     } catch (error: any) {
       console.error('Vivi chat error:', error);
       throw new Error(`Failed to get Vivi response: ${error.message}`);
     }
   }
 
-  /**
-   * Get Vivi's system prompt
-   * Defines personality, knowledge, and behavior
-   */
   private getViviSystemPrompt(): string {
     return `You are Vivi, an AI social concierge for Venn - a social events app in San Francisco.
 

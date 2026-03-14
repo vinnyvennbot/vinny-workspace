@@ -34,14 +34,14 @@ async function initDatabase() {
     }
 }
 async function initVivi() {
-    const openaiKey = process.env.OPENAI_API_KEY;
-    if (!openaiKey) {
-        console.warn('⚠️  OPENAI_API_KEY not set - Vivi chat disabled');
+    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+    if (!anthropicKey) {
+        console.warn('⚠️  ANTHROPIC_API_KEY not set - Vivi chat disabled');
         return;
     }
     try {
-        viviService = new vivi_1.ViviService(openaiKey);
-        console.log('✅ Vivi AI service initialized (GPT-4)');
+        viviService = new vivi_1.ViviService(anthropicKey);
+        console.log('✅ Vivi AI service initialized (Claude Sonnet 4)');
     }
     catch (error) {
         console.error('❌ Vivi initialization failed:', error);

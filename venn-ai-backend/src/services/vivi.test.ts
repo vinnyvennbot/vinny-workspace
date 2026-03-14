@@ -4,15 +4,15 @@ describe('ViviService', () => {
   let vivi: ViviService;
 
   beforeAll(() => {
-    const apiKey = process.env.OPENAI_API_KEY;
+    const apiKey = process.env.ANTHROPIC_API_KEY;
     if (!apiKey) {
-      console.warn('OPENAI_API_KEY not set - skipping Vivi tests');
+      console.warn('ANTHROPIC_API_KEY not set - skipping Vivi tests');
       return;
     }
     vivi = new ViviService(apiKey);
   });
 
-  const skipIfNoKey = process.env.OPENAI_API_KEY ? it : it.skip;
+  const skipIfNoKey = process.env.ANTHROPIC_API_KEY ? it : it.skip;
 
   describe('chat', () => {
     skipIfNoKey('should generate response to simple question', async () => {
