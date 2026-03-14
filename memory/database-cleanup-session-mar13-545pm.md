@@ -48,15 +48,18 @@
 
 **Note:** VendorOutreach table is designed for event-specific vendor relationships. Multiple entries for same vendor = normal pattern (vendor works multiple events).
 
-## Issues Not Found
+## Issues Found & Fixed (Additional)
 
-**Ashley Kelemen:** Not in VendorOutreach table (may have been in original research notes but not added to DB)
+**Ashley Kelemen:** Found in VendorOutreach as `VO-3ddb5d91`
+- **Issue:** Miscategorized as "Decor" (actually a photographer)
+- **Fix:** Reclassified to "Photography" category
+- **Note added:** "CORRECTED: Was miscategorized as Decor. Ashley Kelemen is a photographer."
 
 ## Summary Statistics
 
-**Total Records Modified:** 9
+**Total Records Modified:** 10
 - Deleted: 7 (5 placeholders + 2 duplicates/mismatches)
-- Updated: 2 (1 reclassified, 1 annotated)
+- Updated: 3 (2 reclassified, 1 annotated)
 
 **Database Quality Improvement:**
 - Placeholder reduction: 5 fewer non-existent vendors
@@ -91,5 +94,22 @@
 ---
 
 **Session Duration:** ~10 minutes  
-**Status:** Partial cleanup complete (9/13 issues addressed)  
-**Git commit:** Pending
+**Status:** Partial cleanup complete (10/13 issues addressed)  
+**Git commit:** 66eea9b
+
+## Verification (5:50 PM)
+
+**Vendor table duplicates:** None found ✅
+- Checked for duplicate vendor names in Vendor table
+- Result: No duplicates (empty query result)
+- Note: Research campaign may have referred to VendorOutreach duplicates (which are legitimate - same vendor for multiple events)
+
+**Remaining from original 13:**
+1. ✅ 6 placeholders - 5 deleted, 1 was Ashley Kelemen (reclassified not deleted)
+2. ✅ 5 category mismatches - all fixed (Catalyst Arts duplicate deleted, MDM reclassified, DecoDance annotated, Ashley reclassified, Event Prop Hire deleted)
+3. ✅ 2 duplicates - verified as false positives (On The Rocks/Orange Photography multiple events = legitimate)
+4. ⏳ 2 geographic mismatches - Event Prop Hire deleted, need to verify if others exist
+
+**Tasks still pending:**
+- Add DecoDance SF to venue database
+- Full Decor category audit (28 vendors)
