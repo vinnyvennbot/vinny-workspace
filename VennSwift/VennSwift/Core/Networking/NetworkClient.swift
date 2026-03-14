@@ -207,6 +207,13 @@ enum APIEndpoint {
     /// AI-personalized discovery feed — returns friend invites + recommended stranger plans
     case getForYouFeed
 
+    // MARK: AI Onboarding Agent
+    case startAIOnboarding(city: String?)
+    case sendOnboardingMessage(conversationId: String, content: String, city: String?)
+    case skipOnboarding(conversationId: String)
+    case getOnboardingStatus
+    case completeOnboarding(intent: String)
+
     var path: String {
         switch self {
         case .requestOTP: return "/auth/request_otp"
@@ -218,16 +225,22 @@ enum APIEndpoint {
         case .getEvents: return "/events"
         case .createPlan: return "/plans"
         case .getForYouFeed: return "/plans/for-you"
+        case .startAIOnboarding: return "/ai/onboarding/start"
+        case .sendOnboardingMessage(let id, _, _): return "/ai/onboarding/\(id)/message"
+        case .skipOnboarding(let id): return "/ai/onboarding/\(id)/skip"
+        case .getOnboardingStatus: return "/ai/onboarding/status"
+        case .completeOnboarding: return "/user/onboarding/complete"
         }
     }
 
     var method: HTTPMethod {
         switch self {
-        case .requestOTP, .verifyOTP, .refreshToken, .logout, .createPlan:
+        case .requestOTP, .verifyOTP, .refreshToken, .logout, .createPlan,
+             .startAIOnboarding, .sendOnboardingMessage, .skipOnboarding:
             return .post
-        case .updateProfile:
+        case .updateProfile, .completeOnboarding:
             return .put
-        case .getCurrentUser, .getEvents, .getForYouFeed:
+        case .getCurrentUser, .getEvents, .getForYouFeed, .getOnboardingStatus:
             return .get
         }
     }
@@ -246,8 +259,17 @@ enum APIEndpoint {
             return request
         case .createPlan(let request):
             return request
-        case .getCurrentUser, .getEvents, .getForYouFeed:
+        case .getCurrentUser, .getEvents, .getForYouFeed,
+             .skipOnboarding, .getOnboardingStatus:
             return nil
+        case .startAIOnboarding(let city):
+            if let city { return ["city": city] }
+            return nil
+        case .sendOnboardingMessage(_, let content, let city):
+            if let city { return ["content": content, "city": city] }
+            return ["content": content]
+        case .completeOnboarding(let intent):
+            return ["intent": intent]
         }
     }
 }

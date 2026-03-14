@@ -21,8 +21,9 @@ struct VennApp: App {
             await AnalyticsService.shared.configure()
         }
 
-        Task {
-            await authManager.checkAuthStatus()
-        }
+        // TEMP: Skipped to preview onboarding — uncomment when done
+        // Task {
+        //     await authManager.checkAuthStatus()
+        // }
     }
 }

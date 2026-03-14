@@ -59,12 +59,12 @@ class APIClient: ObservableObject {
     
     // MARK: - User Preferences API
     
-    func savePreferences(_ preferences: UserPreferences) async throws {
+    func savePreferences(_ preferences: AIPreferences) async throws {
         let endpoint = "/api/preferences"
         let _: EmptyResponse = try await request(endpoint: endpoint, method: "POST", body: preferences)
     }
     
-    func getPreferences() async throws -> UserPreferences {
+    func getPreferences() async throws -> AIPreferences {
         let endpoint = "/api/preferences"
         return try await request(endpoint: endpoint, method: "GET")
     }
@@ -251,7 +251,7 @@ struct ViviResponse: Codable {
     let eventRecommendations: [String]?
 }
 
-struct UserPreferences: Codable {
+struct AIPreferences: Codable {
     let interests: [String]
     let vibes: [String]
     let joyTriggers: [String]

@@ -2,14 +2,14 @@ name: VennSwift
 options:
   bundleIdPrefix: co.vennapp
   deploymentTarget:
-    iOS: "17.0"
+    iOS: "18.0"
   createIntermediateGroups: true
 
 targets:
   VennSwift:
     type: application
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "18.0"
     sources:
       - path: App
       - path: Core
@@ -24,7 +24,10 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: "YES"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "Venn uses your location to show events and people near you."
         SWIFT_VERSION: "5.9"
+        SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE: "YES"
+        SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES: "YES"
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "-"
         DEVELOPMENT_TEAM: ""

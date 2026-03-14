@@ -1,339 +1,261 @@
 import SwiftUI
+import MapKit
+import CoreLocation
 
-// MARK: - Confetti Particle
-
-private struct ConfettiParticle: Identifiable {
-    let id: Int
-    let color: Color
-    let width: CGFloat
-    let height: CGFloat
-    let angle: Double
-    let distance: CGFloat
-    let rotation: Double
-    let delay: Double
+extension CLLocationCoordinate2D: @retroactive Equatable {
+    public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+        lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
+    }
 }
 
-// MARK: - OnboardingFlowView
+// MARK: - Main Onboarding Flow
 
 struct OnboardingFlowView: View {
     @StateObject private var viewModel = OnboardingViewModel()
     @EnvironmentObject var authManager: AuthenticationManager
 
-    @State private var currentStep = 0
-    @State private var dragOffset: CGFloat = 0
-    @State private var isDragging = false
-    @State private var appeared = false
-
-    // Background orbs
-    @State private var orbDrift = false
-    @State private var glowPulse = false
-
-    // Confetti
-    @State private var showConfetti = false
-
-    // Next button press state
-    @State private var nextPressed = false
-
-    private let totalSteps = 5
-
     var body: some View {
         ZStack {
-            VennColors.darkBg.ignoresSafeArea()
-
-            backgroundLayer
-
-            if showConfetti {
-                OnboardingConfettiView()
+            // Persistent animated background — hidden behind map on location phase
+            if viewModel.phase != .location {
+                OnboardingBackground(phase: viewModel.phase)
                     .ignoresSafeArea()
-                    .allowsHitTesting(false)
-                    .transition(.opacity)
             }
 
-            VStack(spacing: 0) {
-                progressBar
-                    .padding(.top, VennSpacing.massive + VennSpacing.sm)
-                    .padding(.horizontal, VennSpacing.xxl)
-
-                swipeableContent
-
-                navigationButtons
-                    .padding(.horizontal, VennSpacing.xxl)
-                    .padding(.bottom, VennSpacing.massive)
+            switch viewModel.phase {
+            case .hook:
+                HookPhaseView(viewModel: viewModel)
+                    .transition(.opacity.combined(with: .scale(scale: 0.96)))
+            case .location:
+                LocationPhaseView(viewModel: viewModel)
+                    .transition(.asymmetric(
+                        insertion: .opacity.combined(with: .move(edge: .bottom)),
+                        removal: .opacity.combined(with: .scale(scale: 0.95))
+                    ))
+            case .conversation:
+                ConversationPhaseView(viewModel: viewModel)
+                    .transition(.asymmetric(
+                        insertion: .opacity.combined(with: .move(edge: .trailing)),
+                        removal: .opacity.combined(with: .scale(scale: 0.95))
+                    ))
+            case .reveal:
+                RevealPhaseView(viewModel: viewModel)
+                    .transition(.opacity.combined(with: .scale(scale: 1.04)))
             }
         }
-        .preferredColorScheme(.dark)
-        .onAppear {
-            withAnimation(VennAnimation.gentle.delay(0.2)) { appeared = true }
-            startBackgroundAnimations()
-        }
-        .onChange(of: currentStep) { _ in
-            if currentStep == totalSteps - 1 {
-                withAnimation(VennAnimation.bouncy) { showConfetti = true }
-                Task { @MainActor in HapticManager.shared.success() }
-            } else {
-                showConfetti = false
-            }
+        .animation(VennAnimation.gentle, value: viewModel.phase)
+    }
+}
+
+// MARK: - Animated Background
+
+private struct OnboardingBackground: View {
+    let phase: OnboardingViewModel.Phase
+
+    // Dark base color — fully opaque, no transparency anywhere
+    private static let dark = Color(red: 0.035, green: 0.035, blue: 0.043)
+
+    @State private var meshPoints: [SIMD2<Float>] = OnboardingBackground.basePoints
+
+    static let basePoints: [SIMD2<Float>] = [
+        // Extend corners beyond 0...1 to prevent any edge gaps
+        SIMD2(-0.1, -0.1), SIMD2(0.5, -0.1), SIMD2(1.1, -0.1),
+        SIMD2(-0.1,  0.5), SIMD2(0.5,  0.5), SIMD2(1.1,  0.5),
+        SIMD2(-0.1,  1.1), SIMD2(0.5,  1.1), SIMD2(1.1,  1.1),
+    ]
+
+    // All colors fully opaque — very dark with subtle tints mixed into the dark base
+    private var gradientColors: [Color] {
+        switch phase {
+        case .hook:
+            return [
+                Self.dark,
+                Self.dark,
+                Self.dark,
+                Color(red: 0.07, green: 0.04, blue: 0.03),   // warm hint left
+                Color(red: 0.10, green: 0.05, blue: 0.03),   // subtle coral center
+                Color(red: 0.06, green: 0.04, blue: 0.03),   // warm hint right
+                Self.dark,
+                Color(red: 0.07, green: 0.05, blue: 0.02),   // gold hint bottom
+                Self.dark,
+            ]
+        case .location:
+            return [
+                Self.dark, Self.dark, Self.dark,
+                Self.dark,
+                Color(red: 0.06, green: 0.04, blue: 0.03),
+                Self.dark,
+                Self.dark, Self.dark, Self.dark,
+            ]
+        case .conversation:
+            return [
+                Self.dark,
+                Self.dark,
+                Self.dark,
+                Color(red: 0.04, green: 0.04, blue: 0.08),   // indigo hint left
+                Color(red: 0.05, green: 0.04, blue: 0.10),   // indigo center
+                Color(red: 0.04, green: 0.03, blue: 0.07),   // indigo hint right
+                Self.dark,
+                Color(red: 0.05, green: 0.03, blue: 0.04),   // coral whisper bottom
+                Self.dark,
+            ]
+        case .reveal:
+            return [
+                Self.dark,
+                Self.dark,
+                Self.dark,
+                Color(red: 0.08, green: 0.04, blue: 0.03),   // warm left
+                Color(red: 0.14, green: 0.06, blue: 0.03),   // coral center — brightest moment
+                Color(red: 0.08, green: 0.05, blue: 0.02),   // gold right
+                Self.dark,
+                Color(red: 0.09, green: 0.06, blue: 0.02),   // gold bottom
+                Self.dark,
+            ]
         }
     }
 
-    // MARK: - Background Layer
-
-    private var backgroundLayer: some View {
-        ZStack {
-            Circle()
-                .fill(stepAccentColor.opacity(0.07))
-                .frame(width: 220, height: 220)
-                .blur(radius: 70)
-                .offset(x: orbDrift ? -90 : 90, y: orbDrift ? -140 : -50)
-
-            Circle()
-                .fill(VennColors.gold.opacity(0.05))
-                .frame(width: 170, height: 170)
-                .blur(radius: 55)
-                .offset(x: orbDrift ? 110 : -60, y: orbDrift ? 90 : 210)
-
-            Circle()
-                .fill(VennColors.indigo.opacity(0.04))
-                .frame(width: 130, height: 130)
-                .blur(radius: 45)
-                .offset(x: orbDrift ? -70 : 50, y: orbDrift ? 310 : 110)
-
-            Circle()
-                .fill(stepAccentColor.opacity(glowPulse ? 0.10 : 0.04))
-                .frame(width: 360, height: 360)
-                .blur(radius: 90)
-                .offset(y: -80)
-        }
-        .ignoresSafeArea()
-        .animation(.easeInOut(duration: 1.0), value: currentStep)
-    }
-
-    private var stepAccentColor: Color {
-        switch currentStep {
-        case 0: return VennColors.coral
-        case 1: return VennColors.gold
-        case 2: return VennColors.indigo
-        case 3: return VennColors.coral
-        default: return VennColors.gold
-        }
-    }
-
-    // MARK: - Progress Bar
-
-    private var progressBar: some View {
-        HStack(spacing: VennSpacing.xs) {
-            ForEach(0..<totalSteps, id: \.self) { i in
-                Capsule()
-                    .fill(i <= currentStep
-                          ? AnyShapeStyle(LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                                         startPoint: .leading, endPoint: .trailing))
-                          : AnyShapeStyle(VennColors.borderMedium))
-                    .frame(height: 3)
-                    .animation(VennAnimation.standard, value: currentStep)
-            }
-        }
-        .opacity(appeared ? 1 : 0)
-    }
-
-    // MARK: - Swipeable Content
-
-    private var swipeableContent: some View {
-        GeometryReader { geo in
-            HStack(spacing: 0) {
-                Step1SocialEnergyView(viewModel: viewModel)
-                    .frame(width: geo.size.width)
-                Step2PerfectNightView(viewModel: viewModel)
-                    .frame(width: geo.size.width)
-                Step3InterestsView(viewModel: viewModel)
-                    .frame(width: geo.size.width)
-                Step4SocialStyleView(viewModel: viewModel)
-                    .frame(width: geo.size.width)
-                Step5CompleteView(viewModel: viewModel, authManager: authManager)
-                    .frame(width: geo.size.width)
-            }
-            .offset(x: -CGFloat(currentStep) * geo.size.width + dragOffset)
-            .animation(isDragging ? nil : VennAnimation.standard, value: currentStep)
-            .gesture(
-                DragGesture(minimumDistance: 20, coordinateSpace: .local)
-                    .onChanged { value in
-                        guard abs(value.translation.width) > abs(value.translation.height) else { return }
-                        isDragging = true
-                        let raw = value.translation.width
-                        let atEdge = (currentStep == 0 && raw > 0) ||
-                                     (currentStep == totalSteps - 1 && raw < 0)
-                        dragOffset = atEdge ? raw * 0.15 : raw
-                    }
-                    .onEnded { value in
-                        isDragging = false
-                        let threshold = geo.size.width * 0.25
-                        let velocity = value.predictedEndTranslation.width - value.translation.width
-                        let net = value.translation.width + velocity * 0.5
-                        withAnimation(VennAnimation.standard) {
-                            if net < -threshold && currentStep < totalSteps - 1 && viewModel.isStepValid(currentStep) {
-                                currentStep += 1
-                                Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                            } else if net > threshold && currentStep > 0 {
-                                currentStep -= 1
-                                Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                            }
-                            dragOffset = 0
-                        }
-                    }
+    // Only jitter the center point — edges and corners stay locked
+    private static func jitteredPoints() -> [SIMD2<Float>] {
+        basePoints.enumerated().map { index, base in
+            guard index == 4 else { return base } // only center moves
+            return SIMD2(
+                base.x + Float.random(in: -0.08...0.08),
+                base.y + Float.random(in: -0.08...0.08)
             )
         }
     }
 
-    // MARK: - Navigation Buttons
-
-    private var navigationButtons: some View {
-        HStack(spacing: VennSpacing.lg) {
-            if currentStep > 0 && currentStep < totalSteps - 1 {
-                Button {
-                    withAnimation(VennAnimation.standard) { currentStep -= 1 }
-                    Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                } label: {
-                    HStack(spacing: VennSpacing.xs) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 14, weight: .semibold))
-                        Text("Back")
-                            .font(VennTypography.buttonLabel)
-                    }
-                    .foregroundColor(VennColors.textSecondary)
-                    .frame(height: 56)
-                    .padding(.horizontal, VennSpacing.xl)
-                    .background(
-                        Capsule()
-                            .fill(VennColors.glassLight)
-                            .overlay(Capsule().stroke(VennColors.borderMedium, lineWidth: 1))
-                    )
-                }
-                .transition(.scale(scale: 0.8).combined(with: .opacity))
-            }
-
-            if currentStep < totalSteps - 1 {
-                let valid = viewModel.isStepValid(currentStep)
-                Button {
-                    guard valid else {
-                        Task { @MainActor in HapticManager.shared.impact(.light) }
-                        return
-                    }
-                    withAnimation(VennAnimation.standard) { currentStep += 1 }
-                    Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                } label: {
-                    HStack(spacing: VennSpacing.sm) {
-                        Text("Continue")
-                            .font(VennTypography.buttonLabel)
-                        Image(systemName: "arrow.right")
-                            .font(.system(size: 14, weight: .bold))
-                    }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(
-                        Capsule()
-                            .fill(valid
-                                  ? AnyShapeStyle(LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                                                 startPoint: .topLeading, endPoint: .bottomTrailing))
-                                  : AnyShapeStyle(VennColors.surfaceSecondary))
-                            .shadow(color: valid ? VennColors.coral.opacity(0.35) : .clear,
-                                    radius: 16, y: 6)
-                    )
-                    .animation(VennAnimation.micro, value: valid)
-                }
-            }
-        }
-        .animation(VennAnimation.standard, value: currentStep)
-    }
-
-    // MARK: - Animation Helpers
-
-    private func startBackgroundAnimations() {
-        withAnimation(.easeInOut(duration: 6).repeatForever(autoreverses: true)) { orbDrift = true }
-        withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) { glowPulse = true }
-    }
-}
-
-// MARK: - Step Header
-
-private struct StepHeader: View {
-    let title: String
-    let subtitle: String
-    @State private var titleVisible = false
-    @State private var subtitleVisible = false
-
     var body: some View {
-        VStack(spacing: VennSpacing.sm) {
-            Text(title)
-                .font(VennTypography.heading)
-                .foregroundColor(VennColors.textPrimary)
-                .multilineTextAlignment(.center)
-                .opacity(titleVisible ? 1 : 0)
-                .offset(y: titleVisible ? 0 : 12)
+        ZStack {
+            // Solid dark base to prevent any white bleed-through
+            Self.dark.ignoresSafeArea()
 
-            Text(subtitle)
-                .font(VennTypography.bodyLarge)
-                .foregroundColor(VennColors.textSecondary)
-                .multilineTextAlignment(.center)
-                .lineSpacing(3)
-                .padding(.horizontal, VennSpacing.md)
-                .opacity(subtitleVisible ? 1 : 0)
-                .offset(y: subtitleVisible ? 0 : 8)
+            SwiftUI.MeshGradient(
+                width: 3,
+                height: 3,
+                points: meshPoints,
+                colors: gradientColors
+            )
+            .ignoresSafeArea()
         }
+        .animation(VennAnimation.gentle, value: phase)
         .onAppear {
-            withAnimation(VennAnimation.gentle.delay(0.1)) { titleVisible = true }
-            withAnimation(VennAnimation.gentle.delay(0.3)) { subtitleVisible = true }
+            withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
+                meshPoints = OnboardingBackground.jitteredPoints()
+            }
         }
     }
 }
 
-// MARK: - Step 1: Social Energy
+// MARK: - Phase 1: The Hook
 
-private struct Step1SocialEnergyView: View {
+private struct HookPhaseView: View {
     @ObservedObject var viewModel: OnboardingViewModel
-    @State private var sliderAppeared = false
-    @State private var batteryAppeared = false
+    @State private var titleVisible = false
+    @State private var statsVisible = false
+    @State private var ctaVisible = false
+    @State private var glowScale: CGFloat = 0.4
+    @State private var glowOpacity: Double = 0
+    @State private var ctaTapped = false
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: VennSpacing.xxxl) {
-                StepHeader(
-                    title: "Your Social Energy",
-                    subtitle: "How do you recharge and what's your crowd comfort zone?"
-                )
-                .padding(.top, VennSpacing.xl)
+        VStack(spacing: 0) {
+            Spacer()
 
-                energySlider
-                    .opacity(sliderAppeared ? 1 : 0)
-                    .offset(y: sliderAppeared ? 0 : 20)
+            // Central glow seed + title
+            VStack(spacing: VennSpacing.lg) {
+                Text("Your city\nnever sleeps")
+                    .font(.system(size: 40, weight: .bold, design: .rounded))
+                    .foregroundColor(.clear)
+                    .overlay(
+                        LinearGradient(
+                            colors: [VennColors.coral, VennColors.gold],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                        .mask(
+                            Text("Your city\nnever sleeps")
+                                .font(.system(size: 40, weight: .bold, design: .rounded))
+                                .multilineTextAlignment(.center)
+                        )
+                    )
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.vertical, 4)
+                    .opacity(titleVisible ? 1 : 0)
+                    .offset(y: titleVisible ? 0 : 20)
+                    .visualEffect { content, proxy in
+                        content
+                            .offset(y: -proxy.frame(in: .global).minY * 0.1)
+                    }
 
-                batterySection
-                    .opacity(batteryAppeared ? 1 : 0)
-                    .offset(y: batteryAppeared ? 0 : 20)
+                Text("and neither should you")
+                    .font(VennTypography.bodyLarge)
+                    .foregroundColor(VennColors.textSecondary)
+                    .opacity(titleVisible ? 1 : 0)
+                    .offset(y: titleVisible ? 0 : 12)
             }
-            .padding(.horizontal, VennSpacing.xxl)
-            .padding(.bottom, VennSpacing.xxxl)
-        }
-        .onAppear {
-            withAnimation(VennAnimation.standard.delay(0.4)) { sliderAppeared = true }
-            withAnimation(VennAnimation.standard.delay(0.6)) { batteryAppeared = true }
-        }
-    }
+            .background(
+                Circle()
+                    .fill(
+                        RadialGradient(
+                            colors: [
+                                VennColors.coral.opacity(0.25),
+                                VennColors.gold.opacity(0.10),
+                                .clear,
+                            ],
+                            center: .center,
+                            startRadius: 0,
+                            endRadius: 200
+                        )
+                    )
+                    .frame(width: 400, height: 400)
+                    .scaleEffect(glowScale)
+                    .opacity(glowOpacity)
+                    .blur(radius: 40)
+            )
 
-    // Custom pill slider
-    private var energySlider: some View {
-        VStack(spacing: VennSpacing.lg) {
-            Text("Social Spectrum")
-                .font(VennTypography.bodyMedium)
-                .foregroundColor(VennColors.textSecondary)
+            // Live stats
+            HStack(spacing: 0) {
+                hookStat(
+                    value: viewModel.connectionsStat,
+                    label: "connections\ntonight",
+                    icon: "person.2.fill"
+                )
+                hookStat(
+                    value: viewModel.eventsStat,
+                    label: "events\nlive now",
+                    icon: "sparkles"
+                )
+                hookStat(
+                    value: viewModel.matchesStat,
+                    label: "matches\nwaiting",
+                    icon: "heart.fill"
+                )
+            }
+            .padding(.horizontal, VennSpacing.xl)
+            .padding(.top, 48)
+            .opacity(statsVisible ? 1 : 0)
+            .offset(y: statsVisible ? 0 : 24)
 
-            ZStack(alignment: .leading) {
-                // Track background
-                Capsule()
-                    .fill(VennColors.surfaceSecondary)
-                    .frame(height: 28)
+            Spacer()
 
-                // Filled track — coral to gold gradient
-                GeometryReader { geo in
+            // CTA
+            Button {
+                ctaTapped.toggle()
+                viewModel.advanceToLocation()
+            } label: {
+                HStack(spacing: 10) {
+                    Text("Find your people")
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                    Image(systemName: "arrow.right")
+                        .font(.system(size: 16, weight: .bold))
+                        .symbolEffect(.wiggle.forward, value: ctaTapped)
+                }
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 18)
+                .background(
                     Capsule()
                         .fill(
                             LinearGradient(
@@ -342,909 +264,1510 @@ private struct Step1SocialEnergyView: View {
                                 endPoint: .trailing
                             )
                         )
-                        .frame(width: max(28, geo.size.width * viewModel.introExtrovert), height: 28)
-                        .animation(VennAnimation.micro, value: viewModel.introExtrovert)
-
-                    // Draggable thumb
-                    Circle()
-                        .fill(.white)
-                        .frame(width: 34, height: 34)
-                        .shadow(color: VennColors.coral.opacity(0.5), radius: 8, y: 2)
-                        .overlay(
-                            Circle()
-                                .stroke(
-                                    LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                                   startPoint: .topLeading, endPoint: .bottomTrailing),
-                                    lineWidth: 2
-                                )
-                        )
-                        .glow(color: VennColors.coral, radius: 10, intensity: 0.4)
-                        .offset(
-                            x: max(0, min(
-                                geo.size.width - 34,
-                                geo.size.width * viewModel.introExtrovert - 17
-                            )),
-                            y: -3
-                        )
-                        .gesture(
-                            DragGesture(minimumDistance: 0)
-                                .onChanged { value in
-                                    let newVal = value.location.x / geo.size.width
-                                    viewModel.introExtrovert = max(0, min(1, newVal))
-                                    Task { @MainActor in HapticManager.shared.impact(.soft) }
-                                }
-                        )
-                        .animation(nil, value: viewModel.introExtrovert)
-                }
-                .frame(height: 28)
-            }
-            .frame(height: 34)
-
-            // Emoji endpoints
-            HStack {
-                VStack(spacing: 2) {
-                    Text("🌙")
-                        .font(.system(size: 22))
-                    Text("Quiet night")
-                        .font(VennTypography.caption)
-                        .foregroundColor(VennColors.textTertiary)
-                }
-                Spacer()
-                VStack(spacing: 2) {
-                    Text("🎉")
-                        .font(.system(size: 22))
-                    Text("Party mode")
-                        .font(VennTypography.caption)
-                        .foregroundColor(VennColors.textTertiary)
-                }
-            }
-        }
-        .padding(VennSpacing.xl)
-        .background(
-            RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                .fill(VennColors.surfacePrimary)
-                .overlay(
-                    RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                        .stroke(VennColors.borderSubtle, lineWidth: 1)
+                        .shadow(color: VennColors.coral.opacity(0.45), radius: 20, y: 8)
                 )
-        )
-    }
-
-    // Social battery cards
-    private var batterySection: some View {
-        VStack(alignment: .leading, spacing: VennSpacing.lg) {
-            Text("Social Battery")
-                .font(VennTypography.bodyMedium)
-                .foregroundColor(VennColors.textSecondary)
-
-            HStack(spacing: VennSpacing.md) {
-                ForEach(SocialBattery.allCases) { battery in
-                    BatteryCard(
-                        battery: battery,
-                        isSelected: viewModel.socialBattery == battery
-                    ) {
-                        withAnimation(VennAnimation.snappy) {
-                            viewModel.socialBattery = battery
-                        }
-                        Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                    }
-                }
             }
-        }
-    }
-}
-
-private struct BatteryCard: View {
-    let battery: SocialBattery
-    let isSelected: Bool
-    let action: () -> Void
-
-    private var fillCount: Int {
-        switch battery {
-        case .low: return 1
-        case .medium: return 2
-        case .high: return 3
-        }
-    }
-    private var glowColor: Color {
-        switch battery {
-        case .low: return VennColors.textTertiary
-        case .medium: return VennColors.gold
-        case .high: return VennColors.coral
-        }
-    }
-    private var pulseSpeed: Double {
-        switch battery {
-        case .low: return 3.0
-        case .medium: return 2.0
-        case .high: return 1.2
-        }
-    }
-
-    var body: some View {
-        Button(action: action) {
-            VStack(spacing: VennSpacing.sm) {
-                // Battery icon with fill bars
-                ZStack {
-                    RoundedRectangle(cornerRadius: 5, style: .continuous)
-                        .stroke(isSelected ? glowColor : VennColors.borderMedium, lineWidth: 2)
-                        .frame(width: 28, height: 48)
-
-                    // Battery cap
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(isSelected ? glowColor : VennColors.borderMedium)
-                        .frame(width: 10, height: 4)
-                        .offset(y: -26)
-
-                    VStack(spacing: 2) {
-                        ForEach(0..<3) { i in
-                            RoundedRectangle(cornerRadius: 2)
-                                .fill(i < fillCount ? glowColor : VennColors.surfaceSecondary)
-                                .frame(width: 18, height: 10)
-                        }
-                    }
-                }
-                .shadow(color: isSelected ? glowColor.opacity(0.6) : .clear, radius: 8)
-                .pulse(from: 1.0, to: isSelected ? 1.05 : 1.0, duration: pulseSpeed)
-
-                Text(battery.rawValue)
-                    .font(VennTypography.captionBold)
-                    .foregroundColor(isSelected ? VennColors.textPrimary : VennColors.textSecondary)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, VennSpacing.lg)
-            .background(
-                RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
-                    .fill(isSelected
-                          ? glowColor.opacity(0.12)
-                          : VennColors.surfacePrimary)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
-                            .stroke(isSelected ? glowColor.opacity(0.5) : VennColors.borderSubtle, lineWidth: 1)
-                    )
-            )
-        }
-        .buttonStyle(.plain)
-        .scaleEffect(isSelected ? 1.03 : 1.0)
-        .animation(VennAnimation.snappy, value: isSelected)
-    }
-}
-
-// MARK: - Step 2: Perfect Night
-
-private struct Step2PerfectNightView: View {
-    @ObservedObject var viewModel: OnboardingViewModel
-    @State private var cardsAppeared = false
-
-    private let vibes: [NightVibe] = [
-        .intimateDinner, .danceFloor, .adventure, .networking
-    ]
-
-    var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: VennSpacing.xxxl) {
-                StepHeader(
-                    title: "Your Perfect Night",
-                    subtitle: "What kind of experience are you chasing?"
-                )
-                .padding(.top, VennSpacing.xl)
-
-                LazyVGrid(
-                    columns: [GridItem(.flexible(), spacing: VennSpacing.md),
-                              GridItem(.flexible(), spacing: VennSpacing.md)],
-                    spacing: VennSpacing.md
-                ) {
-                    ForEach(Array(vibes.enumerated()), id: \.element.id) { index, vibe in
-                        VibeCard(
-                            vibe: vibe,
-                            isSelected: viewModel.perfectNight == vibe,
-                            delay: Double(index) * 0.08
-                        ) {
-                            withAnimation(VennAnimation.bouncy) {
-                                viewModel.perfectNight = vibe
-                            }
-                            Task { @MainActor in HapticManager.shared.impact(.medium) }
-                        }
-                        .opacity(cardsAppeared ? 1 : 0)
-                        .offset(y: cardsAppeared ? 0 : 30)
-                        .animation(VennAnimation.standard.delay(Double(index) * 0.08 + 0.2), value: cardsAppeared)
-                    }
-                }
-                .padding(.horizontal, VennSpacing.xxl)
-            }
-            .padding(.bottom, VennSpacing.xxxl)
+            .padding(.horizontal, VennSpacing.xl)
+            .padding(.bottom, 60)
+            .opacity(ctaVisible ? 1 : 0)
+            .offset(y: ctaVisible ? 0 : 16)
         }
         .onAppear {
-            cardsAppeared = true
-        }
-    }
-}
-
-private struct VibeCard: View {
-    let vibe: NightVibe
-    let isSelected: Bool
-    let delay: Double
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                // Rich gradient background
-                RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [vibe.primaryColor.opacity(0.22), vibe.secondaryColor.opacity(0.10)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-
-                // Subtle animated pattern overlay
-                RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                    .fill(VennColors.glassLight)
-
-                // Selection glow border
-                RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                    .stroke(
-                        isSelected
-                        ? LinearGradient(colors: [vibe.primaryColor, vibe.secondaryColor],
-                                         startPoint: .topLeading, endPoint: .bottomTrailing)
-                        : LinearGradient(colors: [VennColors.borderSubtle, VennColors.borderSubtle],
-                                         startPoint: .topLeading, endPoint: .bottomTrailing),
-                        lineWidth: isSelected ? 1.5 : 1
-                    )
-
-                VStack(spacing: VennSpacing.md) {
-                    ZStack {
-                        Circle()
-                            .fill(vibe.primaryColor.opacity(0.18))
-                            .frame(width: 60, height: 60)
-
-                        Image(systemName: vibe.icon)
-                            .font(.system(size: 26, weight: .semibold))
-                            .foregroundStyle(
-                                LinearGradient(
-                                    colors: [vibe.primaryColor, vibe.secondaryColor],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
-                    }
-                    .shadow(color: isSelected ? vibe.primaryColor.opacity(0.5) : .clear, radius: 12)
-
-                    VStack(spacing: 4) {
-                        Text(vibe.rawValue)
-                            .font(VennTypography.bodyMedium)
-                            .foregroundColor(VennColors.textPrimary)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-
-                        Text(vibe.tagline)
-                            .font(VennTypography.caption)
-                            .foregroundColor(VennColors.textTertiary)
-                            .multilineTextAlignment(.center)
-                            .lineLimit(2)
-                    }
-                }
-                .padding(VennSpacing.lg)
-
-                // Checkmark overlay
-                if isSelected {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            ZStack {
-                                Circle()
-                                    .fill(vibe.primaryColor)
-                                    .frame(width: 22, height: 22)
-                                Image(systemName: "checkmark")
-                                    .font(.system(size: 11, weight: .bold))
-                                    .foregroundColor(.white)
-                            }
-                        }
-                        Spacer()
-                    }
-                    .padding(VennSpacing.md)
-                }
+            withAnimation(.easeOut(duration: 1.8)) {
+                glowScale = 1.0
+                glowOpacity = 1.0
             }
-            .frame(height: 160)
-            .scaleEffect(isSelected ? 1.03 : 1.0)
-            .shadow(
-                color: isSelected ? vibe.primaryColor.opacity(0.25) : .black.opacity(0.25),
-                radius: isSelected ? 20 : 8,
-                y: 4
-            )
-        }
-        .buttonStyle(.plain)
-        .animation(VennAnimation.snappy, value: isSelected)
-    }
-}
-
-// MARK: - Step 3: Interests
-
-private struct Step3InterestsView: View {
-    @ObservedObject var viewModel: OnboardingViewModel
-    @State private var tagsAppeared = false
-
-    var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: VennSpacing.xxl) {
-                StepHeader(
-                    title: "What Excites You",
-                    subtitle: "Pick at least 3 things that light you up."
-                )
-                .padding(.top, VennSpacing.xl)
-
-                // Count indicator
-                HStack {
-                    Spacer()
-                    Text("\(viewModel.selectedInterests.count)/\(OnboardingViewModel.allInterests.count) selected")
-                        .font(VennTypography.captionBold)
-                        .foregroundColor(viewModel.selectedInterests.count >= 3
-                                         ? VennColors.coral : VennColors.textTertiary)
-                        .animation(VennAnimation.micro, value: viewModel.selectedInterests.count)
-                }
-                .padding(.horizontal, VennSpacing.xxl)
-
-                // Wrap layout via flow
-                InterestTagCloud(
-                    tags: OnboardingViewModel.allInterests,
-                    selectedTags: $viewModel.selectedInterests,
-                    appeared: tagsAppeared
-                )
-                .padding(.horizontal, VennSpacing.xxl)
-
-                Spacer(minLength: VennSpacing.xxxl)
+            withAnimation(VennAnimation.gentle.delay(0.4)) {
+                titleVisible = true
             }
-            .padding(.bottom, VennSpacing.xxxl)
-        }
-        .onAppear {
-            withAnimation(VennAnimation.standard.delay(0.3)) { tagsAppeared = true }
-        }
-    }
-}
-
-private struct InterestTagCloud: View {
-    let tags: [String]
-    @Binding var selectedTags: Set<String>
-    let appeared: Bool
-
-    var body: some View {
-        // Manual flow layout using wrapped rows
-        let rows = buildRows(tags: tags, containerWidth: UIScreen.main.bounds.width - 48)
-
-        VStack(alignment: .leading, spacing: VennSpacing.sm) {
-            ForEach(Array(rows.enumerated()), id: \.offset) { rowIndex, row in
-                HStack(spacing: VennSpacing.sm) {
-                    ForEach(Array(row.enumerated()), id: \.element) { colIndex, tag in
-                        InterestTag(
-                            label: tag,
-                            isSelected: selectedTags.contains(tag)
-                        ) {
-                            withAnimation(VennAnimation.snappy) {
-                                if selectedTags.contains(tag) {
-                                    selectedTags.remove(tag)
-                                } else {
-                                    selectedTags.insert(tag)
-                                }
-                            }
-                            Task { @MainActor in HapticManager.shared.impact(.light) }
-                        }
-                        .opacity(appeared ? 1 : 0)
-                        .scaleEffect(appeared ? 1 : 0.85)
-                        .animation(
-                            VennAnimation.bouncy.delay(Double(rowIndex * 3 + colIndex) * 0.03 + 0.1),
-                            value: appeared
-                        )
-                    }
-                }
+            withAnimation(VennAnimation.gentle.delay(0.8)) {
+                statsVisible = true
+            }
+            Task { await viewModel.animateHookCounters() }
+            withAnimation(VennAnimation.gentle.delay(1.6)) {
+                ctaVisible = true
+            }
+            withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true).delay(2)) {
+                glowScale = 1.15
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private func buildRows(tags: [String], containerWidth: CGFloat) -> [[String]] {
-        var rows: [[String]] = [[]]
-        var currentWidth: CGFloat = 0
-        let spacing: CGFloat = VennSpacing.sm
-        let padding: CGFloat = VennSpacing.xl * 2 + VennSpacing.md * 2  // inner + text
+    private func hookStat(value: Int, label: String, icon: String) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundColor(VennColors.coral.opacity(0.7))
+                .symbolEffect(.pulse.byLayer)
 
-        for tag in tags {
-            let tagWidth = CGFloat(tag.count) * 8.5 + padding
-            if currentWidth + tagWidth + spacing > containerWidth && !rows[rows.count - 1].isEmpty {
-                rows.append([])
-                currentWidth = 0
-            }
-            rows[rows.count - 1].append(tag)
-            currentWidth += tagWidth + spacing
-        }
-        return rows
-    }
-}
+            Text("\(value)")
+                .font(.system(size: 32, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+                .monospacedDigit()
+                .contentTransition(.numericText(countsDown: false))
+                .animation(.spring(.bouncy), value: value)
 
-private struct InterestTag: View {
-    let label: String
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
             Text(label)
-                .font(VennTypography.captionBold)
-                .foregroundColor(isSelected ? .white : VennColors.textSecondary)
-                .padding(.horizontal, VennSpacing.md)
-                .padding(.vertical, VennSpacing.sm)
-                .background(
-                    Capsule()
-                        .fill(isSelected
-                              ? AnyShapeStyle(LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                                             startPoint: .leading, endPoint: .trailing))
-                              : AnyShapeStyle(VennColors.glassLight))
-                        .overlay(
-                            Capsule()
-                                .stroke(isSelected ? VennColors.coral.opacity(0.0) : VennColors.borderMedium, lineWidth: 1)
-                        )
-                        .shadow(color: isSelected ? VennColors.coral.opacity(0.3) : .clear, radius: 6)
-                )
-                .scaleEffect(isSelected ? 1.04 : 1.0)
+                .font(.system(size: 11, weight: .medium))
+                .foregroundColor(VennColors.textTertiary)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
         }
-        .buttonStyle(.plain)
-        .animation(VennAnimation.snappy, value: isSelected)
+        .frame(maxWidth: .infinity)
     }
 }
 
-// MARK: - Step 4: Social Style
+// MARK: - Phase 2: Location (Waymo-style coverage map)
 
-private struct Step4SocialStyleView: View {
+private struct LocationPhaseView: View {
     @ObservedObject var viewModel: OnboardingViewModel
-    @State private var goalsAppeared = false
-    @State private var rolesAppeared = false
+    @StateObject private var locationManager = LocationManager()
+
+    // Map camera state — starts on Bay Area, animates to user location
+    @State private var cameraPosition: MapCameraPosition = .region(
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 37.55, longitude: -122.1),
+            span: MKCoordinateSpan(latitudeDelta: 1.0, longitudeDelta: 1.0)
+        )
+    )
+    @State private var hasAnimatedToUser = false
+    @State private var cardVisible = false
+    @State private var headerVisible = false
+    @State private var pulseScale: CGFloat = 1.0
+    @State private var pulseOpacity: Double = 0.6
+    @State private var continueTapped = false
+
+    // Service area polygon — Bay Area coverage
+    private var serviceAreaPolygon: [CLLocationCoordinate2D] {
+        OnboardingViewModel.serviceAreaPolygon
+    }
 
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: VennSpacing.xxxl) {
-                StepHeader(
-                    title: "Your Social Style",
-                    subtitle: "Help us understand what you're looking for and who you are in the group."
-                )
-                .padding(.top, VennSpacing.xl)
+        ZStack(alignment: .bottom) {
+            // Full-screen dark map
+            mapLayer
 
-                // Goals section
-                VStack(alignment: .leading, spacing: VennSpacing.lg) {
-                    Text("What are you looking for?")
-                        .font(VennTypography.bodyMedium)
-                        .foregroundColor(VennColors.textSecondary)
-                        .padding(.horizontal, VennSpacing.xxl)
-
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: VennSpacing.md) {
-                            ForEach(Array(ConnectionGoal.allCases.enumerated()),
-                                    id: \.element.id) { index, goal in
-                                GoalCard(
-                                    goal: goal,
-                                    isSelected: viewModel.selectedConnectionGoals.contains(goal)
-                                ) {
-                                    withAnimation(VennAnimation.snappy) {
-                                        if viewModel.selectedConnectionGoals.contains(goal) {
-                                            viewModel.selectedConnectionGoals.remove(goal)
-                                        } else {
-                                            viewModel.selectedConnectionGoals.insert(goal)
-                                        }
-                                    }
-                                    Task { @MainActor in HapticManager.shared.impact(.light) }
-                                }
-                                .opacity(goalsAppeared ? 1 : 0)
-                                .offset(x: goalsAppeared ? 0 : 20)
-                                .animation(VennAnimation.standard.delay(Double(index) * 0.07 + 0.2),
-                                           value: goalsAppeared)
-                            }
-                        }
-                        .padding(.horizontal, VennSpacing.xxl)
-                    }
+            // Floating glassmorphism header
+            if headerVisible {
+                VStack(spacing: 0) {
+                    locationHeader
+                    Spacer()
                 }
-
-                // Role section
-                VStack(alignment: .leading, spacing: VennSpacing.lg) {
-                    Text("In a group, you're...")
-                        .font(VennTypography.bodyMedium)
-                        .foregroundColor(VennColors.textSecondary)
-                        .padding(.horizontal, VennSpacing.xxl)
-
-                    VStack(spacing: VennSpacing.sm) {
-                        ForEach(Array(SocialRole.allCases.enumerated()),
-                                id: \.element.id) { index, role in
-                            RoleCard(
-                                role: role,
-                                isSelected: viewModel.groupRole == role
-                            ) {
-                                withAnimation(VennAnimation.snappy) {
-                                    viewModel.groupRole = role
-                                }
-                                Task { @MainActor in HapticManager.shared.selectionFeedback() }
-                            }
-                            .opacity(rolesAppeared ? 1 : 0)
-                            .offset(y: rolesAppeared ? 0 : 16)
-                            .animation(VennAnimation.standard.delay(Double(index) * 0.07 + 0.3),
-                                       value: rolesAppeared)
-                        }
-                    }
-                    .padding(.horizontal, VennSpacing.xxl)
-                }
-
-                Spacer(minLength: VennSpacing.xxxl)
+                .transition(.opacity.combined(with: .offset(y: -10)))
             }
-            .padding(.bottom, VennSpacing.xxxl)
+
+            // Bottom sheet card
+            if cardVisible {
+                locationBottomCard
+                    .transition(.asymmetric(
+                        insertion: .opacity.combined(with: .move(edge: .bottom)),
+                        removal: .opacity.combined(with: .move(edge: .bottom))
+                    ))
+            }
         }
+        .ignoresSafeArea()
+        .colorScheme(.dark)
         .onAppear {
-            withAnimation(VennAnimation.standard.delay(0.2)) { goalsAppeared = true }
-            withAnimation(VennAnimation.standard.delay(0.4)) { rolesAppeared = true }
-        }
-    }
-}
-
-private struct GoalCard: View {
-    let goal: ConnectionGoal
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: VennSpacing.sm) {
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundColor(VennColors.coral)
-                        .transition(.scale.combined(with: .opacity))
-                }
-                Text(goal.rawValue)
-                    .font(VennTypography.captionBold)
-                    .foregroundColor(isSelected ? VennColors.textPrimary : VennColors.textSecondary)
+            withAnimation(VennAnimation.gentle.delay(0.3)) {
+                headerVisible = true
             }
-            .padding(.horizontal, VennSpacing.lg)
-            .padding(.vertical, VennSpacing.md)
-            .background(
-                Capsule()
-                    .fill(isSelected ? VennColors.coralSubtle : VennColors.surfacePrimary)
-                    .overlay(
-                        Capsule()
-                            .stroke(isSelected ? VennColors.coral.opacity(0.5) : VennColors.borderMedium, lineWidth: 1)
-                    )
-            )
+            withAnimation(VennAnimation.gentle.delay(0.6)) {
+                cardVisible = true
+            }
+            startPulseAnimation()
         }
-        .buttonStyle(.plain)
-        .scaleEffect(isSelected ? 1.04 : 1.0)
-        .animation(VennAnimation.snappy, value: isSelected)
-    }
-}
-
-private struct RoleCard: View {
-    let role: SocialRole
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack(spacing: VennSpacing.md) {
-                // Left accent bar
-                RoundedRectangle(cornerRadius: 2)
-                    .fill(
-                        isSelected
-                        ? LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                         startPoint: .top, endPoint: .bottom)
-                        : LinearGradient(colors: [VennColors.borderSubtle, VennColors.borderSubtle],
-                                         startPoint: .top, endPoint: .bottom)
-                    )
-                    .frame(width: 3, height: 50)
-                    .animation(VennAnimation.snappy, value: isSelected)
-
-                Text(role.emoji)
-                    .font(.system(size: 24))
-
-                VStack(alignment: .leading, spacing: 3) {
-                    Text(role.rawValue)
-                        .font(VennTypography.bodyMedium)
-                        .foregroundColor(isSelected ? VennColors.textPrimary : VennColors.textSecondary)
-
-                    Text(role.description)
-                        .font(VennTypography.caption)
-                        .foregroundColor(VennColors.textTertiary)
-                        .lineLimit(2)
+        .onChange(of: locationManager.coordinate) { _, newCoordinate in
+            guard let newCoordinate else { return }
+            viewModel.checkLocation(coordinate: newCoordinate)
+            if !hasAnimatedToUser {
+                hasAnimatedToUser = true
+                withAnimation(.easeInOut(duration: 1.4)) {
+                    cameraPosition = .region(MKCoordinateRegion(
+                        center: newCoordinate,
+                        span: MKCoordinateSpan(latitudeDelta: 0.35, longitudeDelta: 0.35)
+                    ))
                 }
+                HapticManager.shared.impact(.light)
+            }
+        }
+        .onChange(of: locationManager.authorizationStatus) { _, newStatus in
+            if newStatus == .authorizedWhenInUse || newStatus == .authorizedAlways {
+                locationManager.startLocating()
+            }
+        }
+    }
 
-                Spacer()
+    // MARK: Map Layer
 
-                if isSelected {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 18))
-                        .foregroundStyle(
-                            LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                           startPoint: .topLeading, endPoint: .bottomTrailing)
-                        )
-                        .transition(.scale.combined(with: .opacity))
+    private var mapLayer: some View {
+        Map(position: $cameraPosition) {
+            // Service area polygon fill — coral glow overlay
+            MapPolygon(coordinates: serviceAreaPolygon)
+                .foregroundStyle(VennColors.coral.opacity(0.15))
+                .stroke(VennColors.coral.opacity(0.5), lineWidth: 2)
+
+            // Waitlist heatmap dots — glowing annotations at cities
+            ForEach(OnboardingViewModel.waitlistHotspots) { hotspot in
+                Annotation("", coordinate: hotspot.coordinate) {
+                    WaitlistHeatDot(hotspot: hotspot)
                 }
             }
-            .padding(VennSpacing.lg)
-            .background(
-                RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
-                    .fill(isSelected ? VennColors.coralSubtle : VennColors.surfacePrimary)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
-                            .stroke(isSelected ? VennColors.coral.opacity(0.3) : VennColors.borderSubtle,
-                                    lineWidth: 1)
-                    )
-            )
-        }
-        .buttonStyle(.plain)
-        .animation(VennAnimation.snappy, value: isSelected)
-    }
-}
 
-// MARK: - Step 5: Complete
+            // User's newly added heatmap dot (after joining waitlist)
+            if let userDot = viewModel.userHotspot {
+                Annotation("", coordinate: userDot.coordinate) {
+                    WaitlistHeatDot(hotspot: userDot, isUserDot: true)
+                }
+            }
 
-private struct Step5CompleteView: View {
-    @ObservedObject var viewModel: OnboardingViewModel
-    let authManager: AuthenticationManager
-
-    @State private var heroAppeared = false
-    @State private var cardAppeared = false
-    @State private var ctaAppeared = false
-    @State private var ctaPressed = false
-    @State private var orbitAngle: Double = 0
-    @State private var glowPulse = false
-
-    var body: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: VennSpacing.xxxl) {
-                Spacer(minLength: VennSpacing.xl)
-
-                // Hero orbit animation
-                ZStack {
-                    Circle()
-                        .stroke(VennColors.coral.opacity(0.08), lineWidth: 1)
-                        .frame(width: 180, height: 180)
-
-                    ForEach(0..<3, id: \.self) { i in
+            // User location annotation — pulsing dot
+            if let coordinate = locationManager.coordinate {
+                Annotation("", coordinate: coordinate) {
+                    ZStack {
+                        // Outer pulse ring
                         Circle()
                             .fill(
-                                LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                               startPoint: .topLeading, endPoint: .bottomTrailing)
+                                viewModel.locationChecked
+                                ? (viewModel.isInServiceArea
+                                   ? VennColors.coral.opacity(0.25)
+                                   : Color.white.opacity(0.12))
+                                : VennColors.coral.opacity(0.20)
                             )
-                            .frame(width: 8, height: 8)
-                            .offset(y: -90)
-                            .rotationEffect(.degrees(orbitAngle + Double(i) * 120))
+                            .frame(width: 44, height: 44)
+                            .scaleEffect(pulseScale)
+                            .opacity(pulseOpacity)
+
+                        // Inner dot
+                        Circle()
+                            .fill(
+                                viewModel.locationChecked && !viewModel.isInServiceArea
+                                ? Color.white.opacity(0.55)
+                                : VennColors.coral
+                            )
+                            .frame(width: 14, height: 14)
+                            .overlay(
+                                Circle()
+                                    .stroke(Color.white, lineWidth: 2)
+                            )
+                            .shadow(
+                                color: viewModel.isInServiceArea
+                                    ? VennColors.coral.opacity(0.6)
+                                    : Color.black.opacity(0.3),
+                                radius: 6
+                            )
                     }
-
-                    Circle()
-                        .stroke(VennColors.gold.opacity(0.12), lineWidth: 1)
-                        .frame(width: 130, height: 130)
-
-                    Circle()
-                        .fill(VennColors.coral.opacity(glowPulse ? 0.15 : 0.06))
-                        .frame(width: 100, height: 100)
-                        .blur(radius: 15)
-
-                    Circle()
-                        .fill(VennColors.surfacePrimary)
-                        .frame(width: 90, height: 90)
-
-                    Image(systemName: "sparkles")
-                        .font(.system(size: 36, weight: .semibold))
-                        .foregroundStyle(VennGradients.primary)
                 }
-                .scaleEffect(heroAppeared ? 1 : 0.5)
-                .opacity(heroAppeared ? 1 : 0)
+            }
+        }
+        .mapStyle(.standard(elevation: .realistic, emphasis: .muted, pointsOfInterest: .excludingAll))
+        .ignoresSafeArea()
+    }
 
-                // Headline
+    // MARK: Floating Header
+
+    private var locationHeader: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 2) {
+                Text("Where are you?")
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                Text("Finding events near you")
+                    .font(VennTypography.caption)
+                    .foregroundColor(VennColors.textSecondary)
+            }
+
+            Spacer()
+
+            // Live demand counter
+            HStack(spacing: 6) {
+                Circle()
+                    .fill(VennColors.coral)
+                    .frame(width: 6, height: 6)
+                    .modifier(PulseGlow())
+                Text("\(OnboardingViewModel.totalWaitlistCount.formatted()) waiting")
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .foregroundColor(VennColors.coral)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
+            .background(
+                Capsule()
+                    .fill(VennColors.coral.opacity(0.12))
+                    .overlay(
+                        Capsule()
+                            .stroke(VennColors.coral.opacity(0.2), lineWidth: 1)
+                    )
+            )
+
+            // Vivi orb
+            ViviOrb(size: 32)
+        }
+        .padding(.horizontal, VennSpacing.xl)
+        .padding(.vertical, VennSpacing.md)
+        .background(.ultraThinMaterial)
+        .overlay(
+            Rectangle()
+                .fill(VennColors.borderSubtle)
+                .frame(height: 1),
+            alignment: .bottom
+        )
+        .padding(.top, 56) // safe area top
+    }
+
+    // MARK: Bottom Card — switches based on state
+
+    @ViewBuilder
+    private var locationBottomCard: some View {
+        if locationManager.authorizationStatus == .notDetermined ||
+           locationManager.authorizationStatus == .denied ||
+           locationManager.authorizationStatus == .restricted {
+            // No permission yet
+            locationPermissionCard
+        } else if let coordinate = locationManager.coordinate, viewModel.locationChecked {
+            if viewModel.isInServiceArea {
+                inServiceAreaCard(coordinate: coordinate)
+            } else {
+                outOfServiceAreaCard
+            }
+        } else {
+            // Permission granted but still locating
+            locatingCard
+        }
+    }
+
+    // Permission request card
+    private var locationPermissionCard: some View {
+        GlassBottomCard {
+            VStack(spacing: VennSpacing.xl) {
                 VStack(spacing: VennSpacing.sm) {
-                    Text("You're All Set")
-                        .font(VennTypography.displayMedium)
-                        .foregroundColor(VennColors.textPrimary)
-                        .multilineTextAlignment(.center)
-                        .opacity(heroAppeared ? 1 : 0)
-                        .offset(y: heroAppeared ? 0 : 16)
+                    Image(systemName: "location.circle.fill")
+                        .font(.system(size: 40, weight: .semibold))
+                        .foregroundStyle(
+                            LinearGradient(
+                                colors: [VennColors.coral, VennColors.gold],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
 
-                    Text("Venn now knows your vibe.")
-                        .font(VennTypography.bodyLarge)
+                    Text("Enable location to find events near you")
+                        .font(VennTypography.heading)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+
+                    Text("Venn shows you what's happening in your neighborhood tonight.")
+                        .font(VennTypography.body)
                         .foregroundColor(VennColors.textSecondary)
                         .multilineTextAlignment(.center)
-                        .opacity(heroAppeared ? 1 : 0)
-                        .offset(y: heroAppeared ? 0 : 10)
                 }
 
-                // Profile summary card
-                profileSummaryCard
-                    .opacity(cardAppeared ? 1 : 0)
-                    .offset(y: cardAppeared ? 0 : 20)
-
-                // CTA button
                 Button {
-                    Task { @MainActor in HapticManager.shared.success() }
-                    viewModel.completeOnboarding()
-                    authManager.completeOnboarding()
+                    HapticManager.shared.impact(.medium)
+                    locationManager.requestPermission()
                 } label: {
-                    HStack(spacing: VennSpacing.sm) {
-                        Text("Let's Go")
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
-                        Image(systemName: "arrow.right.circle.fill")
-                            .font(.system(size: 20))
+                    HStack(spacing: 8) {
+                        Image(systemName: "location.fill")
+                            .font(.system(size: 16, weight: .bold))
+                        Text("Allow Location")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
                     }
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .frame(height: 62)
+                    .padding(.vertical, 18)
                     .background(
                         Capsule()
                             .fill(
-                                LinearGradient(colors: [VennColors.coral, VennColors.gold],
-                                               startPoint: .topLeading, endPoint: .bottomTrailing)
+                                LinearGradient(
+                                    colors: [VennColors.coral, VennColors.gold],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
                             )
                             .shadow(color: VennColors.coral.opacity(0.45), radius: 20, y: 8)
                     )
                 }
-                .buttonStyle(.plain)
-                .scaleEffect(ctaPressed ? 0.96 : 1.0)
-                .animation(VennAnimation.micro, value: ctaPressed)
-                .simultaneousGesture(
-                    DragGesture(minimumDistance: 0)
-                        .onChanged { _ in ctaPressed = true }
-                        .onEnded { _ in ctaPressed = false }
-                )
-                .opacity(ctaAppeared ? 1 : 0)
-                .offset(y: ctaAppeared ? 0 : 16)
-                .padding(.horizontal, VennSpacing.xxl)
 
-                Spacer(minLength: VennSpacing.xxxl)
-            }
-            .padding(.horizontal, VennSpacing.xxl)
-        }
-        .onAppear {
-            withAnimation(VennAnimation.bouncy.delay(0.1)) { heroAppeared = true }
-            withAnimation(VennAnimation.standard.delay(0.5)) { cardAppeared = true }
-            withAnimation(VennAnimation.standard.delay(0.8)) { ctaAppeared = true }
-            withAnimation(.linear(duration: 14).repeatForever(autoreverses: false)) { orbitAngle = 360 }
-            withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) { glowPulse = true }
-        }
-    }
-
-    private var profileSummaryCard: some View {
-        VStack(spacing: VennSpacing.lg) {
-            HStack {
-                Text("Your Profile")
-                    .font(VennTypography.bodyMedium)
-                    .foregroundColor(VennColors.textSecondary)
-                Spacer()
-                Image(systemName: "person.crop.circle.fill")
-                    .foregroundStyle(VennGradients.primary)
-                    .font(.system(size: 18))
-            }
-
-            Divider()
-                .background(VennColors.borderSubtle)
-
-            VStack(spacing: VennSpacing.md) {
-                SummaryRow(
-                    icon: "slider.horizontal.3",
-                    label: "Energy",
-                    value: energyLabel
-                )
-                SummaryRow(
-                    icon: "battery.100",
-                    label: "Battery",
-                    value: viewModel.socialBattery.rawValue
-                )
-                if let vibe = viewModel.perfectNight {
-                    SummaryRow(
-                        icon: vibe.icon,
-                        label: "Night",
-                        value: vibe.rawValue
-                    )
-                }
-                SummaryRow(
-                    icon: "tag.fill",
-                    label: "Interests",
-                    value: "\(viewModel.selectedInterests.count) picked"
-                )
-                if let role = viewModel.groupRole {
-                    SummaryRow(
-                        icon: "person.fill",
-                        label: "You're",
-                        value: role.rawValue
-                    )
+                Button {
+                    HapticManager.shared.impact(.light)
+                    viewModel.advanceToConversation()
+                } label: {
+                    Text("Enter manually")
+                        .font(VennTypography.captionBold)
+                        .foregroundColor(VennColors.textTertiary)
                 }
             }
         }
-        .padding(VennSpacing.xl)
-        .background(
-            RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                .fill(VennColors.surfacePrimary)
-                .overlay(
-                    RoundedRectangle(cornerRadius: VennRadius.xl, style: .continuous)
-                        .stroke(VennColors.borderSubtle, lineWidth: 1)
-                )
-                .shadow(color: .black.opacity(0.3), radius: 20, y: 8)
-        )
     }
 
-    private var energyLabel: String {
-        switch viewModel.introExtrovert {
-        case 0..<0.33: return "Introverted"
-        case 0.33..<0.66: return "Ambivert"
-        default: return "Extroverted"
+    // Locating spinner card — with timeout fallback
+    private var locatingCard: some View {
+        GlassBottomCard {
+            VStack(spacing: VennSpacing.lg) {
+                HStack(spacing: VennSpacing.md) {
+                    if locationManager.locationFailed {
+                        Image(systemName: "location.slash.fill")
+                            .font(.system(size: 20, weight: .semibold))
+                            .foregroundColor(VennColors.textTertiary)
+                    } else {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .tint(VennColors.coral)
+                    }
+                    Text(locationManager.locationFailed ? "Couldn't get your location" : "Finding your location...")
+                        .font(VennTypography.bodyLarge)
+                        .foregroundColor(VennColors.textSecondary)
+                }
+
+                if locationManager.locationFailed {
+                    Button {
+                        HapticManager.shared.impact(.light)
+                        viewModel.advanceToConversation()
+                    } label: {
+                        Text("Continue without location")
+                            .font(.system(size: 16, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 16)
+                            .background(
+                                Capsule()
+                                    .fill(Color.white.opacity(0.10))
+                                    .overlay(
+                                        Capsule()
+                                            .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                                    )
+                            )
+                    }
+
+                    Button {
+                        HapticManager.shared.impact(.light)
+                        locationManager.startLocating()
+                    } label: {
+                        Text("Try again")
+                            .font(VennTypography.captionBold)
+                            .foregroundColor(VennColors.coral)
+                    }
+                }
+            }
+            .padding(.vertical, locationManager.locationFailed ? 0 : VennSpacing.md)
+        }
+    }
+
+    // In-service-area success card
+    private func inServiceAreaCard(coordinate: CLLocationCoordinate2D) -> some View {
+        GlassBottomCard {
+            VStack(spacing: VennSpacing.xl) {
+                VStack(spacing: VennSpacing.sm) {
+                    HStack(spacing: VennSpacing.sm) {
+                        ZStack {
+                            Circle()
+                                .fill(VennColors.coral.opacity(0.15))
+                                .frame(width: 40, height: 40)
+                            Image(systemName: "checkmark.circle.fill")
+                                .font(.system(size: 22, weight: .bold))
+                                .foregroundColor(VennColors.coral)
+                                .symbolEffect(.bounce, value: viewModel.locationChecked)
+                        }
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("You're in")
+                                .font(VennTypography.captionBold)
+                                .foregroundColor(VennColors.coral)
+                                .textCase(.uppercase)
+                                .tracking(1)
+                            Text(viewModel.detectedCity.isEmpty ? "the Bay Area" : viewModel.detectedCity)
+                                .font(.system(size: 22, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
+                        }
+
+                        Spacer()
+                    }
+
+                    Text("Join \(viewModel.similarPeopleCount > 0 ? viewModel.similarPeopleCount : 340) people already exploring events near you.")
+                        .font(VennTypography.body)
+                        .foregroundColor(VennColors.textSecondary)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+
+                Button {
+                    HapticManager.shared.impact(.medium)
+                    continueTapped.toggle()
+                    viewModel.advanceToConversation()
+                } label: {
+                    HStack(spacing: 10) {
+                        Text("Continue")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 15, weight: .bold))
+                            .symbolEffect(.wiggle.forward, value: continueTapped)
+                    }
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 18)
+                    .background(
+                        Capsule()
+                            .fill(
+                                LinearGradient(
+                                    colors: [VennColors.coral, VennColors.gold],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .shadow(color: VennColors.coral.opacity(0.45), radius: 20, y: 8)
+                    )
+                }
+            }
+        }
+    }
+
+    // Out-of-service-area waitlist card
+    private var outOfServiceAreaCard: some View {
+        GlassBottomCard {
+            VStack(spacing: VennSpacing.xl) {
+                VStack(spacing: VennSpacing.sm) {
+                    HStack(spacing: VennSpacing.sm) {
+                        ZStack {
+                            Circle()
+                                .fill(Color.white.opacity(0.08))
+                                .frame(width: 40, height: 40)
+                            Image(systemName: "map.fill")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(VennColors.textSecondary)
+                        }
+
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text("We're not in \(viewModel.detectedCity.isEmpty ? "your city" : viewModel.detectedCity) yet")
+                                .font(.system(size: 18, weight: .bold, design: .rounded))
+                                .foregroundColor(.white)
+                            Text("But we're expanding fast")
+                                .font(VennTypography.caption)
+                                .foregroundColor(VennColors.textTertiary)
+                        }
+
+                        Spacer()
+                    }
+
+                    HStack(spacing: VennSpacing.xs) {
+                        Image(systemName: "person.2.fill")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundColor(VennColors.coral.opacity(0.7))
+                        Text("\(viewModel.waitlistCount) people are waiting in \(viewModel.detectedCity.isEmpty ? "your area" : viewModel.detectedCity)")
+                            .font(VennTypography.captionBold)
+                            .foregroundColor(VennColors.textSecondary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                }
+
+                // Email field
+                TextField("your@email.com", text: $viewModel.waitlistEmail)
+                    .font(.system(size: 16, weight: .regular, design: .rounded))
+                    .foregroundColor(.white)
+                    .keyboardType(.emailAddress)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .padding(.horizontal, VennSpacing.lg)
+                    .padding(.vertical, 14)
+                    .background(
+                        RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
+                            .fill(Color.white.opacity(0.06))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: VennRadius.large, style: .continuous)
+                                    .stroke(Color.white.opacity(0.10), lineWidth: 1)
+                            )
+                    )
+
+                if viewModel.joinedWaitlist {
+                    HStack(spacing: VennSpacing.sm) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(VennColors.coral)
+                        Text("You're on the list! We'll notify you.")
+                            .font(VennTypography.body)
+                            .foregroundColor(VennColors.textSecondary)
+                    }
+                    .transition(.opacity.combined(with: .scale(scale: 0.95)))
+                } else {
+                    Button {
+                        HapticManager.shared.impact(.medium)
+                        viewModel.joinWaitlist(userCoordinate: locationManager.coordinate)
+                    } label: {
+                        Text("Notify Me")
+                            .font(.system(size: 17, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 18)
+                            .background(
+                                Capsule()
+                                    .fill(
+                                        LinearGradient(
+                                            colors: [VennColors.coral, VennColors.gold],
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        )
+                                    )
+                                    .shadow(color: VennColors.coral.opacity(0.45), radius: 20, y: 8)
+                            )
+                    }
+                    .disabled(viewModel.waitlistEmail.trimmingCharacters(in: .whitespaces).isEmpty)
+                    .opacity(viewModel.waitlistEmail.trimmingCharacters(in: .whitespaces).isEmpty ? 0.5 : 1.0)
+                }
+
+                Button {
+                    HapticManager.shared.impact(.light)
+                    viewModel.advanceToConversation()
+                } label: {
+                    Text("Skip for now")
+                        .font(VennTypography.captionBold)
+                        .foregroundColor(VennColors.textTertiary)
+                }
+            }
+        }
+    }
+
+    // MARK: Pulse Animation
+
+    private func startPulseAnimation() {
+        withAnimation(
+            .easeInOut(duration: 1.6)
+            .repeatForever(autoreverses: true)
+        ) {
+            pulseScale = 2.0
+            pulseOpacity = 0.0
         }
     }
 }
 
-private struct SummaryRow: View {
-    let icon: String
-    let label: String
-    let value: String
+// MARK: - Glass Bottom Card Container
+
+private struct GlassBottomCard<Content: View>: View {
+    @ViewBuilder let content: Content
 
     var body: some View {
-        HStack {
-            Image(systemName: icon)
-                .font(.system(size: 13, weight: .medium))
-                .foregroundColor(VennColors.coral)
-                .frame(width: 20)
+        VStack(spacing: 0) {
+            content
+                .padding(.horizontal, VennSpacing.xl)
+                .padding(.top, VennSpacing.xxl)
+                .padding(.bottom, 40) // extra for home indicator
+        }
+        .frame(maxWidth: .infinity)
+        .background(
+            RoundedRectangle(cornerRadius: 28, style: .continuous)
+                .fill(.ultraThinMaterial)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 28, style: .continuous)
+                        .stroke(Color.white.opacity(0.10), lineWidth: 1)
+                )
+                .shadow(color: Color.black.opacity(0.4), radius: 32, y: -8)
+        )
+    }
+}
 
-            Text(label)
-                .font(VennTypography.caption)
-                .foregroundColor(VennColors.textTertiary)
+// MARK: - Pulse Glow Modifier
+
+private struct PulseGlow: ViewModifier {
+    @State private var active = false
+
+    func body(content: Content) -> some View {
+        content
+            .overlay(
+                Circle()
+                    .fill(VennColors.coral.opacity(0.6))
+                    .scaleEffect(active ? 2.5 : 1.0)
+                    .opacity(active ? 0 : 0.8)
+            )
+            .onAppear {
+                withAnimation(
+                    .easeOut(duration: 1.2)
+                    .repeatForever(autoreverses: false)
+                ) {
+                    active = true
+                }
+            }
+    }
+}
+
+// MARK: - Waitlist Heatmap Dot
+
+private struct WaitlistHeatDot: View {
+    let hotspot: OnboardingViewModel.WaitlistHotspot
+    var isUserDot: Bool = false
+    @State private var glowPhase: Bool = false
+    @State private var appeared: Bool = false
+
+    /// Dot diameter scales with intensity: 10pt (low) → 28pt (high)
+    private var dotSize: CGFloat {
+        isUserDot ? 16 : 10 + 18 * hotspot.intensity
+    }
+
+    /// Outer glow ring
+    private var glowSize: CGFloat {
+        dotSize * (isUserDot ? 3.5 : 2.5)
+    }
+
+    var body: some View {
+        ZStack {
+            // Radial glow — breathes slowly
+            Circle()
+                .fill(
+                    RadialGradient(
+                        colors: [
+                            VennColors.coral.opacity(isUserDot ? 0.5 : 0.35 * hotspot.intensity),
+                            VennColors.coral.opacity(isUserDot ? 0.15 : 0.08 * hotspot.intensity),
+                            Color.clear,
+                        ],
+                        center: .center,
+                        startRadius: 0,
+                        endRadius: glowSize / 2
+                    )
+                )
+                .frame(width: glowSize, height: glowSize)
+                .scaleEffect(glowPhase ? 1.15 : 0.9)
+                .opacity(glowPhase ? 1 : 0.7)
+
+            // Core dot
+            Circle()
+                .fill(
+                    LinearGradient(
+                        colors: isUserDot
+                            ? [Color.white, VennColors.coral]
+                            : [VennColors.coral, VennColors.gold],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .frame(width: dotSize, height: dotSize)
+                .shadow(color: VennColors.coral.opacity(0.6), radius: dotSize * 0.4)
+
+            // User dot gets a ring highlight
+            if isUserDot {
+                Circle()
+                    .stroke(Color.white, lineWidth: 2)
+                    .frame(width: dotSize + 4, height: dotSize + 4)
+            }
+
+            // Count label — only show for larger dots
+            if hotspot.count >= 200 && !isUserDot {
+                Text("\(hotspot.count)")
+                    .font(.system(size: 8, weight: .heavy, design: .rounded))
+                    .foregroundColor(.white)
+                    .shadow(color: .black.opacity(0.5), radius: 2)
+            }
+        }
+        .scaleEffect(appeared ? 1 : 0.01)
+        .opacity(appeared ? 1 : 0)
+        .onAppear {
+            withAnimation(isUserDot ? VennAnimation.bouncy : .easeOut(duration: 0.5).delay(Double.random(in: 0...0.8))) {
+                appeared = true
+            }
+            withAnimation(
+                .easeInOut(duration: Double.random(in: 2.0...3.5))
+                .repeatForever(autoreverses: true)
+                .delay(Double.random(in: 0...1.5))
+            ) {
+                glowPhase = true
+            }
+        }
+    }
+}
+
+// MARK: - Phase 3: AI Conversation
+
+private struct ConversationPhaseView: View {
+    @ObservedObject var viewModel: OnboardingViewModel
+    @State private var headerVisible = false
+    @FocusState private var inputFocused: Bool
+
+    var body: some View {
+        VStack(spacing: 0) {
+            conversationHeader
+                .opacity(headerVisible ? 1 : 0)
+
+            ScrollViewReader { proxy in
+                ScrollView(showsIndicators: false) {
+                    LazyVStack(spacing: 14) {
+                        ForEach(viewModel.insightCards) { card in
+                            InsightCardBubble(card: card)
+                                .transition(.asymmetric(
+                                    insertion: .scale(scale: 0.8).combined(with: .opacity).combined(with: .offset(y: 20)),
+                                    removal: .opacity
+                                ))
+                                .scrollTransition(.animated(.bouncy)) { content, phase in
+                                    content
+                                        .opacity(phase.isIdentity ? 1 : 0.5)
+                                        .scaleEffect(phase.isIdentity ? 1 : 0.92)
+                                        .offset(y: phase.isIdentity ? 0 : phase.value * 15)
+                                }
+                        }
+
+                        ForEach(viewModel.messages) { message in
+                            ChatBubble(message: message)
+                                .id(message.id)
+                                .transition(.asymmetric(
+                                    insertion: .opacity.combined(with: .offset(y: 12)),
+                                    removal: .opacity
+                                ))
+                                .scrollTransition(.animated(.bouncy)) { content, phase in
+                                    content
+                                        .opacity(phase.isIdentity ? 1 : 0.5)
+                                        .scaleEffect(phase.isIdentity ? 1 : 0.92)
+                                        .offset(y: phase.isIdentity ? 0 : phase.value * 15)
+                                }
+                        }
+
+                        if viewModel.isViviTyping {
+                            ViviTypingIndicator()
+                                .id("typing")
+                                .transition(.opacity.combined(with: .offset(y: 8)))
+                        }
+                    }
+                    .padding(.horizontal, VennSpacing.lg)
+                    .padding(.vertical, VennSpacing.md)
+                }
+                .onChange(of: viewModel.messages.count) { _, _ in
+                    withAnimation(VennAnimation.standard) {
+                        if let last = viewModel.messages.last {
+                            proxy.scrollTo(last.id, anchor: .bottom)
+                        }
+                    }
+                }
+                .onChange(of: viewModel.isViviTyping) { _, newTyping in
+                    if newTyping {
+                        withAnimation(VennAnimation.standard) {
+                            proxy.scrollTo("typing", anchor: .bottom)
+                        }
+                    }
+                }
+            }
+
+            if !viewModel.quickReplies.isEmpty {
+                quickReplySection
+                    .transition(.opacity.combined(with: .move(edge: .bottom)))
+            }
+
+            inputBar
+        }
+        .onAppear {
+            withAnimation(VennAnimation.gentle.delay(0.2)) {
+                headerVisible = true
+            }
+        }
+    }
+
+    // MARK: Header
+
+    private var conversationHeader: some View {
+        HStack {
+            Button {
+                Task { await viewModel.skipConversation() }
+            } label: {
+                Text("Skip")
+                    .font(.system(size: 15, weight: .medium))
+                    .foregroundColor(VennColors.textTertiary)
+            }
 
             Spacer()
 
+            HStack(spacing: 6) {
+                ViviOrb(size: 24)
+                Text("Vivi")
+                    .font(.system(size: 16, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                Image(systemName: "waveform")
+                    .font(.system(size: 12, weight: .semibold))
+                    .foregroundColor(VennColors.coral.opacity(0.7))
+                    .symbolEffect(.breathe)
+            }
+
+            Spacer()
+
+            UnderstandingRing(progress: viewModel.understandingProgress)
+        }
+        .padding(.horizontal, VennSpacing.xl)
+        .padding(.vertical, VennSpacing.md)
+    }
+
+    // MARK: Quick Replies
+
+    private var quickReplySection: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(viewModel.quickReplies, id: \.self) { reply in
+                    Button {
+                        Task { await viewModel.sendMessage(reply) }
+                    } label: {
+                        Text(reply)
+                            .font(.system(size: 14, weight: .semibold, design: .rounded))
+                            .foregroundColor(VennColors.coral)
+                            .padding(.horizontal, 14)
+                            .padding(.vertical, 10)
+                            .background(
+                                Capsule()
+                                    .fill(VennColors.coral.opacity(0.12))
+                                    .overlay(
+                                        Capsule()
+                                            .stroke(VennColors.coral.opacity(0.25), lineWidth: 1)
+                                    )
+                            )
+                    }
+                    .transition(.scale(scale: 0.85).combined(with: .opacity))
+                }
+            }
+            .padding(.horizontal, VennSpacing.lg)
+            .padding(.vertical, VennSpacing.sm)
+        }
+        .animation(VennAnimation.standard, value: viewModel.quickReplies)
+    }
+
+    // MARK: Input Bar
+
+    private var inputBar: some View {
+        HStack(spacing: 10) {
+            TextField("Type a message...", text: $viewModel.userInput)
+                .font(.system(size: 16, weight: .regular, design: .rounded))
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .background(
+                    Capsule()
+                        .fill(Color.white.opacity(0.06))
+                        .overlay(
+                            Capsule()
+                                .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                        )
+                )
+                .focused($inputFocused)
+                .onSubmit {
+                    let text = viewModel.userInput
+                    Task { await viewModel.sendMessage(text) }
+                }
+
+            Button {
+                let text = viewModel.userInput
+                Task { await viewModel.sendMessage(text) }
+            } label: {
+                Image(systemName: "arrow.up.circle.fill")
+                    .font(.system(size: 36))
+                    .foregroundStyle(
+                        viewModel.userInput.trimmingCharacters(in: .whitespaces).isEmpty
+                        ? Color.white.opacity(0.2)
+                        : VennColors.coral
+                    )
+            }
+            .disabled(viewModel.userInput.trimmingCharacters(in: .whitespaces).isEmpty)
+        }
+        .padding(.horizontal, VennSpacing.lg)
+        .padding(.vertical, VennSpacing.sm)
+        .padding(.bottom, VennSpacing.xs)
+    }
+}
+
+// MARK: - Reveal Keyframes
+
+private struct RevealKeyframes {
+    var scale: Double = 1.0
+    var rotation: Double = 0.0
+    var opacity: Double = 1.0
+}
+
+// MARK: - Phase 4: The Reveal
+
+private struct RevealPhaseView: View {
+    @ObservedObject var viewModel: OnboardingViewModel
+    @State private var confettiVisible = false
+    @State private var revealCtaTapped = false
+
+    var body: some View {
+        VStack(spacing: 0) {
+            Spacer()
+
+            if viewModel.revealVisible {
+                // SF Symbol icon circle — no emojis
+                KeyframeAnimator(
+                    initialValue: RevealKeyframes(),
+                    trigger: viewModel.revealVisible
+                ) { value in
+                    ZStack {
+                        Circle()
+                            .fill(
+                                LinearGradient(
+                                    colors: [VennColors.coral, VennColors.gold],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 80, height: 80)
+                            .shadow(color: VennColors.coral.opacity(0.4), radius: 24, y: 8)
+                        Image(systemName: viewModel.personalityIcon)
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(.white)
+                            .symbolEffect(.bounce.up.byLayer, value: viewModel.revealVisible)
+                    }
+                    .scaleEffect(value.scale)
+                    .rotationEffect(.degrees(value.rotation))
+                    .opacity(value.opacity)
+                } keyframes: { _ in
+                    KeyframeTrack(\.scale) {
+                        SpringKeyframe(0.5, duration: 0.2, spring: .snappy)
+                        SpringKeyframe(1.15, duration: 0.4, spring: .bouncy)
+                        SpringKeyframe(1.0, duration: 0.3, spring: .smooth)
+                    }
+                    KeyframeTrack(\.rotation) {
+                        LinearKeyframe(0, duration: 0.1)
+                        SpringKeyframe(-8, duration: 0.15, spring: .snappy)
+                        SpringKeyframe(5, duration: 0.15, spring: .snappy)
+                        SpringKeyframe(0, duration: 0.2, spring: .smooth)
+                    }
+                    KeyframeTrack(\.opacity) {
+                        LinearKeyframe(0, duration: 0.05)
+                        LinearKeyframe(1, duration: 0.3)
+                    }
+                }
+                .transition(.scale(scale: 0).combined(with: .opacity))
+                .padding(.bottom, VennSpacing.lg)
+
+                // Personality type
+                Text(viewModel.personalityType)
+                    .font(.system(size: 36, weight: .bold, design: .rounded))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [VennColors.coral, VennColors.gold],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                        )
+                    )
+                    .transition(.opacity.combined(with: .offset(y: 16)))
+                    .padding(.bottom, VennSpacing.sm)
+
+                // Summary
+                Text(viewModel.personalitySummary)
+                    .font(.system(size: 16, weight: .medium, design: .rounded))
+                    .foregroundColor(VennColors.textSecondary)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(4)
+                    .padding(.horizontal, 40)
+                    .transition(.opacity.combined(with: .offset(y: 12)))
+
+                // Stats
+                HStack(spacing: 32) {
+                    revealStat(
+                        value: "\(viewModel.recommendedEventsCount)",
+                        label: "events for you",
+                        icon: "calendar.badge.checkmark"
+                    )
+                    Rectangle()
+                        .fill(Color.white.opacity(0.1))
+                        .frame(width: 1, height: 48)
+                    revealStat(
+                        value: "\(viewModel.similarPeopleCount)",
+                        label: "similar people",
+                        icon: "person.2.fill"
+                    )
+                }
+                .padding(.top, 36)
+                .transition(.opacity.combined(with: .offset(y: 12)))
+
+                // Vivi message
+                HStack(spacing: 8) {
+                    ViviOrb(size: 20)
+                    Text("I know exactly what to look for.")
+                        .font(.system(size: 14, weight: .medium, design: .rounded))
+                        .foregroundColor(VennColors.textSecondary)
+                        .italic()
+                }
+                .padding(.top, 28)
+                .transition(.opacity)
+            }
+
+            Spacer()
+
+            // CTA
+            if viewModel.revealVisible {
+                Button {
+                    revealCtaTapped.toggle()
+                    Task { await viewModel.finishOnboarding() }
+                } label: {
+                    HStack(spacing: 10) {
+                        Text("Start Exploring")
+                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                        Image(systemName: "arrow.right")
+                            .font(.system(size: 16, weight: .bold))
+                            .symbolEffect(.wiggle.forward, value: revealCtaTapped)
+                    }
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 18)
+                    .background(
+                        Capsule()
+                            .fill(
+                                LinearGradient(
+                                    colors: [VennColors.coral, VennColors.gold],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                )
+                            )
+                            .shadow(color: VennColors.coral.opacity(0.5), radius: 24, y: 8)
+                    )
+                }
+                .padding(.horizontal, VennSpacing.xl)
+                .padding(.bottom, 60)
+                .transition(.opacity.combined(with: .offset(y: 20)))
+            }
+        }
+        .overlay {
+            if confettiVisible {
+                PremiumConfetti()
+                    .allowsHitTesting(false)
+            }
+        }
+        .onChange(of: viewModel.revealVisible) { _, newVisible in
+            if newVisible {
+                withAnimation(VennAnimation.bouncy.delay(0.4)) {
+                    confettiVisible = true
+                }
+            }
+        }
+    }
+
+    private func revealStat(value: String, label: String, icon: String) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.system(size: 18, weight: .semibold))
+                .foregroundColor(VennColors.coral.opacity(0.7))
             Text(value)
-                .font(VennTypography.captionBold)
-                .foregroundColor(VennColors.textPrimary)
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundColor(.white)
+            Text(label)
+                .font(.system(size: 12, weight: .medium))
+                .foregroundColor(VennColors.textTertiary)
         }
     }
 }
 
-// MARK: - Confetti Burst View
+// MARK: - Supporting Views
 
-private struct OnboardingConfettiView: View {
+// MARK: Vivi Orb
+
+private struct ViviOrb: View {
+    let size: CGFloat
+    @State private var animating = false
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(VennColors.coral.opacity(0.5))
+                .frame(width: size, height: size)
+                .offset(x: -size * 0.08)
+                .blur(radius: size * 0.1)
+            Circle()
+                .fill(VennColors.gold.opacity(0.4))
+                .frame(width: size * 0.85, height: size * 0.85)
+                .offset(x: size * 0.1)
+                .blur(radius: size * 0.08)
+            Circle()
+                .fill(VennColors.indigo.opacity(0.3))
+                .frame(width: size * 0.7, height: size * 0.7)
+                .offset(y: size * 0.06)
+                .blur(radius: size * 0.06)
+        }
+        .compositingGroup()
+        .frame(width: size, height: size)
+        .clipShape(Circle())
+        .overlay(
+            Circle()
+                .stroke(
+                    LinearGradient(
+                        colors: [VennColors.coral.opacity(0.4), VennColors.gold.opacity(0.2)],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    lineWidth: 1
+                )
+        )
+        .scaleEffect(animating ? 1.06 : 1.0)
+        .animation(.easeInOut(duration: 2.4).repeatForever(autoreverses: true), value: animating)
+        .onAppear { animating = true }
+    }
+}
+
+// MARK: Chat Bubble
+
+private struct ChatBubble: View {
+    let message: OnboardingViewModel.ChatMessage
+    @State private var appeared = false
+
+    var body: some View {
+        HStack {
+            if message.isUser { Spacer(minLength: 60) }
+
+            if !message.isUser {
+                ViviOrb(size: 28)
+                    .padding(.trailing, 4)
+            }
+
+            Text(message.content)
+                .font(.system(size: 15, weight: .regular, design: .rounded))
+                .foregroundColor(message.isUser ? .white : VennColors.textPrimary)
+                .padding(.horizontal, 14)
+                .padding(.vertical, 10)
+                .background(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(
+                            message.isUser
+                            ? LinearGradient(
+                                colors: [VennColors.coral, VennColors.coral.opacity(0.85)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                            : LinearGradient(
+                                colors: [Color.white.opacity(0.08), Color.white.opacity(0.04)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .stroke(
+                                    message.isUser
+                                    ? Color.clear
+                                    : Color.white.opacity(0.06),
+                                    lineWidth: 1
+                                )
+                        )
+                )
+
+            if !message.isUser { Spacer(minLength: 40) }
+        }
+        .opacity(appeared ? 1 : 0)
+        .offset(y: appeared ? 0 : 8)
+        .onAppear {
+            withAnimation(VennAnimation.standard.delay(0.05)) {
+                appeared = true
+            }
+        }
+    }
+}
+
+// MARK: Typing Indicator
+
+private struct ViviTypingIndicator: View {
+    var body: some View {
+        HStack {
+            ViviOrb(size: 28)
+                .padding(.trailing, 4)
+
+            PhaseAnimator([false, true]) { phase in
+                HStack(spacing: 5) {
+                    ForEach(0..<3, id: \.self) { i in
+                        Circle()
+                            .fill(VennColors.coral.opacity(phase ? 0.9 : 0.3))
+                            .frame(width: 8, height: 8)
+                            .offset(y: phase ? -6 : 0)
+                            .animation(
+                                .spring(response: 0.4, dampingFraction: 0.5)
+                                    .delay(Double(i) * 0.15),
+                                value: phase
+                            )
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 14)
+                .background(
+                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        .fill(Color.white.opacity(0.06))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                .stroke(Color.white.opacity(0.06), lineWidth: 1)
+                        )
+                )
+            } animation: { phase in
+                .easeInOut(duration: 0.45)
+            }
+
+            Spacer()
+        }
+    }
+}
+
+// MARK: Insight Card
+
+private struct InsightCardBubble: View {
+    let card: OnboardingViewModel.InsightCard
+    @State private var shimmerOffset: CGFloat = -200
+
+    var body: some View {
+        HStack(spacing: 12) {
+            ZStack {
+                Circle()
+                    .fill(card.accent.opacity(0.15))
+                    .frame(width: 40, height: 40)
+                Image(systemName: card.icon)
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundColor(card.accent)
+            }
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(card.title)
+                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                Text(card.subtitle)
+                    .font(.system(size: 12, weight: .medium))
+                    .foregroundColor(VennColors.textSecondary)
+                    .lineLimit(1)
+            }
+
+            Spacer()
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(.ultraThinMaterial)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .stroke(card.accent.opacity(0.2), lineWidth: 1)
+                )
+                .shadow(color: card.accent.opacity(0.15), radius: 12, y: 4)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(
+                    LinearGradient(
+                        colors: [.clear, .white.opacity(0.08), .clear],
+                        startPoint: .leading,
+                        endPoint: .trailing
+                    )
+                )
+                .offset(x: shimmerOffset)
+                .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        )
+        .onAppear {
+            withAnimation(.easeInOut(duration: 1.2).delay(0.2)) {
+                shimmerOffset = 400
+            }
+        }
+    }
+}
+
+// MARK: Understanding Ring
+
+private struct UnderstandingRing: View {
+    let progress: Double
+
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.white.opacity(0.08), lineWidth: 3)
+                .frame(width: 32, height: 32)
+
+            Circle()
+                .trim(from: 0, to: progress)
+                .stroke(
+                    AngularGradient(
+                        colors: [VennColors.coral, VennColors.gold, VennColors.coral],
+                        center: .center
+                    ),
+                    style: StrokeStyle(lineWidth: 3, lineCap: .round)
+                )
+                .frame(width: 32, height: 32)
+                .rotationEffect(.degrees(-90))
+                .animation(VennAnimation.standard, value: progress)
+
+            Text("\(Int(progress * 100))")
+                .font(.system(size: 9, weight: .bold, design: .rounded))
+                .foregroundColor(VennColors.textSecondary)
+        }
+    }
+}
+
+// MARK: - Premium Confetti Particle System
+
+private struct PremiumConfetti: View {
     @State private var particles: [ConfettiParticle] = []
-    @State private var exploded = false
-    @State private var faded = false
+    @State private var timer: Timer?
+
+    // Particle model
+    struct ConfettiParticle: Identifiable {
+        let id = UUID()
+
+        // Appearance
+        let color: Color
+        let shape: ParticleShape
+        let size: CGFloat
+        let depth: CGFloat       // 0 = far, 1 = near — affects size + opacity
+
+        // Physics state
+        var x: CGFloat
+        var y: CGFloat
+        var rotation: Double
+        var opacity: Double
+
+        // Physics constants
+        let velocityX: CGFloat
+        let velocityY: CGFloat   // initial upward burst (negative = up)
+        let gravity: CGFloat
+        let drag: CGFloat
+        let rotationSpeed: Double
+        let driftX: CGFloat      // subtle horizontal sinusoidal drift amplitude
+
+        // Phase tracking
+        var age: Double          // seconds since birth
+        let lifetime: Double
+    }
+
+    enum ParticleShape: CaseIterable {
+        case circle, rectangle, thinLine, diamond
+    }
+
+    // Design palette — premium metallic tones
+    private let palette: [Color] = [
+        VennColors.coral,
+        VennColors.gold,
+        VennColors.indigo,
+        Color.white,
+        Color(red: 1.0, green: 0.85, blue: 0.55),   // warm gold metallic
+        Color(red: 0.85, green: 0.75, blue: 1.0),   // soft lavender metallic
+        Color(red: 1.0, green: 0.45, blue: 0.38),   // bright coral pop
+        Color(red: 0.55, green: 0.90, blue: 0.85),  // teal shimmer
+    ]
 
     var body: some View {
         GeometryReader { geo in
-            let center = CGPoint(x: geo.size.width / 2, y: geo.size.height * 0.35)
-            ForEach(particles) { p in
-                RoundedRectangle(cornerRadius: 2)
-                    .fill(p.color)
-                    .frame(width: p.width, height: p.height)
-                    .rotationEffect(.degrees(exploded ? p.rotation : 0))
-                    .position(
-                        x: center.x + (exploded ? CGFloat(cos(p.angle)) * p.distance : 0),
-                        y: center.y + (exploded ? CGFloat(sin(p.angle)) * p.distance : 0)
-                    )
-                    .opacity(faded ? 0 : 1)
-                    .animation(
-                        .spring(response: 0.7, dampingFraction: 0.5).delay(p.delay),
-                        value: exploded
-                    )
-                    .animation(.easeOut(duration: 0.8).delay(1.2), value: faded)
+            TimelineView(.animation) { timeline in
+                Canvas { context, size in
+                    let cx = size.width / 2
+                    let cy = size.height * 0.38
+
+                    for particle in particles {
+                        let elapsed = particle.age
+                        guard elapsed < particle.lifetime else { continue }
+
+                        // Physics integration
+                        let t = elapsed
+                        let drag = pow(particle.drag, t)
+                        let px = cx + (particle.velocityX * t * drag)
+                            + sin(t * 1.8 + particle.driftX) * particle.driftX * t
+                        let py = cy
+                            + (particle.velocityY * t * drag)
+                            + 0.5 * particle.gravity * t * t
+
+                        let currentRotation = particle.rotation + particle.rotationSpeed * t
+
+                        // Fade: burst phase stays opaque, gravity phase fades
+                        let fadeStart = particle.lifetime * 0.55
+                        let fadeAlpha: Double
+                        if elapsed < fadeStart {
+                            fadeAlpha = 1.0
+                        } else {
+                            fadeAlpha = max(0, 1.0 - (elapsed - fadeStart) / (particle.lifetime - fadeStart))
+                        }
+                        let alpha = particle.opacity * fadeAlpha
+
+                        // Depth-of-field size modulation
+                        let depthScale = 0.6 + particle.depth * 0.7
+
+                        var contextCopy = context
+                        contextCopy.opacity = alpha
+                        contextCopy.translateBy(x: px, y: py)
+                        contextCopy.rotate(by: .degrees(currentRotation))
+
+                        let w = particle.size * depthScale
+                        let h: CGFloat
+
+                        switch particle.shape {
+                        case .circle:
+                            h = w
+                            let rect = CGRect(x: -w / 2, y: -h / 2, width: w, height: h)
+                            contextCopy.fill(Ellipse().path(in: rect), with: .color(particle.color))
+
+                        case .rectangle:
+                            h = w * CGFloat.random(in: 0.45...0.75)
+                            let rect = CGRect(x: -w / 2, y: -h / 2, width: w, height: h)
+                            contextCopy.fill(Rectangle().path(in: rect), with: .color(particle.color))
+
+                        case .thinLine:
+                            h = w * 0.18
+                            let rect = CGRect(x: -w / 2, y: -h / 2, width: w, height: h)
+                            contextCopy.fill(Rectangle().path(in: rect), with: .color(particle.color))
+
+                        case .diamond:
+                            h = w * 1.2
+                            var path = Path()
+                            path.move(to: CGPoint(x: 0, y: -h / 2))
+                            path.addLine(to: CGPoint(x: w / 2, y: 0))
+                            path.addLine(to: CGPoint(x: 0, y: h / 2))
+                            path.addLine(to: CGPoint(x: -w / 2, y: 0))
+                            path.closeSubpath()
+                            contextCopy.fill(path, with: .color(particle.color))
+                        }
+                    }
+                }
             }
-        }
-        .onAppear {
-            generateParticles()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) { exploded = true }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) { faded = true }
+            .onAppear {
+                spawnParticles(in: geo.size)
+                startTimer()
+            }
+            .onDisappear {
+                timer?.invalidate()
+                timer = nil
+            }
         }
     }
 
-    private func generateParticles() {
-        let colors: [Color] = [VennColors.coral, VennColors.gold, VennColors.indigo, VennColors.success, .white]
-        particles = (0..<55).map { i in
-            ConfettiParticle(
-                id: i,
-                color: colors[i % colors.count],
-                width: CGFloat.random(in: 4...9),
-                height: CGFloat.random(in: 6...16),
-                angle: Double.random(in: 0...(2 * .pi)),
-                distance: CGFloat.random(in: 80...270),
-                rotation: Double.random(in: -360...360),
-                delay: Double.random(in: 0...0.25)
-            )
+    private func spawnParticles(in size: CGSize) {
+        var newParticles: [ConfettiParticle] = []
+        let count = 90
+
+        for _ in 0..<count {
+            let angle = Double.random(in: 0...(2 * .pi))
+            let speed = CGFloat.random(in: 180...520)
+            let depth = CGFloat.random(in: 0...1)
+            let lifetime = Double.random(in: 2.2...3.4)
+            let shape = ParticleShape.allCases.randomElement()!
+
+            // Larger near particles, smaller far particles
+            let baseSize = CGFloat.random(in: 5...13) * (0.5 + depth * 0.8)
+
+            newParticles.append(ConfettiParticle(
+                color: palette.randomElement()!,
+                shape: shape,
+                size: baseSize,
+                depth: depth,
+                x: 0,
+                y: 0,
+                rotation: Double.random(in: 0...360),
+                opacity: 0.7 + depth * 0.3,
+                velocityX: cos(angle) * speed,
+                velocityY: sin(angle) * speed - CGFloat.random(in: 80...200), // upward bias
+                gravity: CGFloat.random(in: 220...340),
+                drag: CGFloat.random(in: 0.88...0.96),
+                rotationSpeed: Double.random(in: -400...400),
+                driftX: CGFloat.random(in: -20...20),
+                age: 0,
+                lifetime: lifetime
+            ))
+        }
+        particles = newParticles
+    }
+
+    private func startTimer() {
+        var lastTime = Date()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { _ in
+            let now = Date()
+            let dt = now.timeIntervalSince(lastTime)
+            lastTime = now
+
+            var allDead = true
+            for i in particles.indices {
+                particles[i].age += dt
+                if particles[i].age < particles[i].lifetime {
+                    allDead = false
+                }
+            }
+
+            if allDead {
+                timer?.invalidate()
+                timer = nil
+                particles.removeAll()
+            }
         }
     }
 }

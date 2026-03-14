@@ -5,7 +5,8 @@ import SwiftUI
 class AuthenticationManager: ObservableObject {
     static let shared = AuthenticationManager()
 
-    @Published private(set) var state: AuthState = .loading
+    // TEMP: Force onboarding for preview — revert to .loading when done
+    @Published private(set) var state: AuthState = .authenticated(needsOnboarding: true)
     @Published private(set) var currentUser: User?
 
     private let networkClient = NetworkClient.shared
@@ -123,4 +124,4 @@ struct AuthResponse: Decodable {
     }
 }
 
-struct EmptyResponse: Decodable {}
+// EmptyResponse is defined in APIClient.swift
