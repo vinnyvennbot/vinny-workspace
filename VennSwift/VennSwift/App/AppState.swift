@@ -24,10 +24,20 @@ class AppState: ObservableObject {
         var icon: String {
             switch self {
             case .events:  return "sparkles"
-            case .friends: return "person.2.fill"
-            case .vivi:    return "wand.and.stars"
+            case .friends: return "person.2"
+            case .vivi:    return "sparkle"
             case .plans:   return "calendar"
             case .profile: return "person.crop.circle"
+            }
+        }
+
+        var selectedIcon: String {
+            switch self {
+            case .events:  return "sparkles"
+            case .friends: return "person.2.fill"
+            case .vivi:    return "sparkle"
+            case .plans:   return "calendar.badge.checkmark"
+            case .profile: return "person.crop.circle.fill"
             }
         }
     }

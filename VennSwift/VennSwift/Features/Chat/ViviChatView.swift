@@ -8,10 +8,17 @@ struct ViviChatView: View {
     @StateObject private var viewModel = ViviChatViewModel()
     @State private var messageText = ""
     @FocusState private var isInputFocused: Bool
+    @State private var sendBounce = false
 
     var body: some View {
         ZStack {
-            VennColors.darkBg.ignoresSafeArea()
+            // Subtle gradient background — darkBg at top, slightly lighter at bottom
+            LinearGradient(
+                colors: [VennColors.darkBg, VennColors.surfacePrimary],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
 
             VStack(spacing: 0) {
                 // Header
@@ -21,9 +28,11 @@ struct ViviChatView: View {
                 ScrollViewReader { proxy in
                     ScrollView(showsIndicators: false) {
                         LazyVStack(spacing: 14) {
-                            ForEach(viewModel.messages) { message in
-                                MessageBubble(message: message)
-                                    .id(message.id)
+                            ForEach(Array(viewModel.messages.enumerated()), id: \.element.id) { index, message in
+                                MessageBubble(message: message, index: index, onQuickReply: { replyText in
+                                    viewModel.sendMessage(replyText)
+                                })
+                                .id(message.id)
                             }
 
                             if viewModel.isTyping {
@@ -56,9 +65,11 @@ struct ViviChatView: View {
                 ChatInput(
                     text: $messageText,
                     isFocused: $isInputFocused,
+                    sendBounce: $sendBounce,
                     onSend: {
                         let text = messageText
                         messageText = ""
+                        sendBounce.toggle()
                         viewModel.sendMessage(text)
                     }
                 )
@@ -74,44 +85,39 @@ struct ViviChatView: View {
 
 struct ChatHeader: View {
     var body: some View {
-        HStack(spacing: 12) {
-            // Vivi avatar — solid coral circle with "V"
-            ZStack {
-                Circle()
-                    .fill(VennColors.coral)
-                    .frame(width: 34, height: 34)
+        HStack(spacing: 8) {
+            Circle()
+                .fill(VennColors.coral)
+                .frame(width: 26, height: 26)
+                .overlay(
+                    Text("V")
+                        .font(.system(size: 11, weight: .heavy, design: .rounded))
+                        .foregroundColor(.white)
+                )
+                .pulse(from: 0.95, to: 1.05, duration: 2.0)
 
-                Text("V")
-                    .font(.system(size: 15, weight: .bold, design: .rounded))
-                    .foregroundColor(.white)
-            }
+            Text("Vivi")
+                .font(.system(size: 15, weight: .bold, design: .rounded))
+                .foregroundColor(VennColors.textPrimary)
 
-            VStack(alignment: .leading, spacing: 2) {
-                HStack(spacing: 5) {
-                    Text("Vivi")
-                        .font(.system(size: 17, weight: .bold, design: .rounded))
-                        .foregroundColor(VennColors.textPrimary)
-
-                    Circle()
-                        .fill(VennColors.success)
-                        .frame(width: 6, height: 6)
-                }
-
-                Text("AI concierge")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundColor(VennColors.textTertiary)
-            }
+            Circle()
+                .fill(VennColors.success)
+                .frame(width: 5, height: 5)
 
             Spacer()
+
+            Text("AI concierge")
+                .font(VennTypography.caption)
+                .foregroundColor(VennColors.textTertiary)
         }
         .padding(.horizontal, VennSpacing.xl)
-        .padding(.vertical, 14)
+        .padding(.vertical, 10)
         .background(
-            VennColors.surfacePrimary
+            VennColors.darkBg
                 .overlay(alignment: .bottom) {
                     Rectangle()
                         .fill(VennColors.borderSubtle)
-                        .frame(height: 1)
+                        .frame(height: 0.5)
                 }
         )
     }
@@ -121,38 +127,75 @@ struct ChatHeader: View {
 
 struct MessageBubble: View {
     let message: ChatMessage
+    let index: Int
+
+    @State private var appeared = false
+
+    private let quickReplies = ["Tell me more", "What's next?", "Show events"]
+    var onQuickReply: ((String) -> Void)?
 
     var body: some View {
-        HStack(alignment: .bottom, spacing: 0) {
-            if message.isFromUser { Spacer(minLength: 56) }
+        VStack(alignment: message.isFromUser ? .trailing : .leading, spacing: VennSpacing.sm) {
+            HStack(alignment: .bottom, spacing: 0) {
+                if message.isFromUser { Spacer(minLength: 56) }
 
-            VStack(alignment: message.isFromUser ? .trailing : .leading, spacing: 6) {
-                if message.isFromUser {
-                    userBubble
-                } else {
-                    viviBubble
+                VStack(alignment: message.isFromUser ? .trailing : .leading, spacing: 6) {
+                    if message.isFromUser {
+                        userBubble
+                    } else {
+                        viviBubble
+                    }
+
+                    HStack(spacing: VennSpacing.xs) {
+                        Text(message.timestamp, style: .time)
+                            .font(.system(size: 10, weight: .medium))
+                            .foregroundColor(VennColors.textTertiary)
+
+                        if message.isFromUser {
+                            Text("Delivered")
+                                .font(.system(size: 10, weight: .medium))
+                                .foregroundColor(VennColors.textTertiary)
+                        }
+                    }
                 }
 
-                Text(message.timestamp, style: .time)
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundColor(VennColors.textTertiary)
+                if !message.isFromUser { Spacer(minLength: 56) }
             }
 
-            if !message.isFromUser { Spacer(minLength: 56) }
+            // Quick reply chips — only shown below Vivi messages
+            if !message.isFromUser {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: VennSpacing.sm) {
+                        ForEach(quickReplies, id: \.self) { reply in
+                            QuickReplyChip(text: reply, onTap: {
+                                onQuickReply?(reply)
+                            })
+                        }
+                    }
+                    .padding(.horizontal, VennSpacing.xs)
+                }
+                .opacity(appeared ? 1.0 : 0.0)
+                .offset(y: appeared ? 0 : 6)
+            }
         }
-        .transition(
-            .asymmetric(
-                insertion: .scale(scale: 0.85, anchor: message.isFromUser ? .bottomTrailing : .bottomLeading)
-                    .combined(with: .opacity),
-                removal: .opacity
-            )
+        .opacity(appeared ? 1.0 : 0.0)
+        .offset(
+            x: appeared ? 0 : (message.isFromUser ? 24 : -24),
+            y: appeared ? 0 : 12
         )
-        .animation(.spring(response: 0.35, dampingFraction: 0.75), value: message.id)
+        .animation(
+            .spring(response: 0.42, dampingFraction: 0.78)
+                .delay(Double(index % 5) * 0.06),
+            value: appeared
+        )
+        .onAppear {
+            appeared = true
+        }
     }
 
     private var userBubble: some View {
         Text(message.text)
-            .font(.system(size: 16))
+            .font(VennTypography.bodyLarge)
             .foregroundColor(.white)
             .padding(.horizontal, VennSpacing.lg)
             .padding(.vertical, VennSpacing.md)
@@ -165,7 +208,7 @@ struct MessageBubble: View {
 
     private var viviBubble: some View {
         Text(message.text)
-            .font(.system(size: 16))
+            .font(VennTypography.bodyLarge)
             .foregroundColor(VennColors.textPrimary)
             .padding(.horizontal, VennSpacing.lg)
             .padding(.vertical, VennSpacing.md)
@@ -173,6 +216,41 @@ struct MessageBubble: View {
                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .fill(VennColors.surfaceSecondary)
             )
+    }
+}
+
+// MARK: - Quick Reply Chip
+
+struct QuickReplyChip: View {
+    let text: String
+    var onTap: (() -> Void)? = nil
+    @State private var isPressed = false
+
+    var body: some View {
+        Text(text)
+            .font(VennTypography.captionBold)
+            .foregroundColor(VennColors.textSecondary)
+            .padding(.horizontal, VennSpacing.md)
+            .padding(.vertical, VennSpacing.xs + 2)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(VennColors.surfaceTertiary)
+                    .overlay(
+                        Capsule(style: .continuous)
+                            .stroke(VennColors.borderMedium, lineWidth: 1)
+                    )
+            )
+            .scaleEffect(isPressed ? 0.95 : 1.0)
+            .animation(VennAnimation.micro, value: isPressed)
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in isPressed = true }
+                    .onEnded { _ in isPressed = false }
+            )
+            .onTapGesture {
+                HapticManager.shared.selectionFeedback()
+                onTap?()
+            }
     }
 }
 
@@ -186,10 +264,10 @@ struct TypingIndicator: View {
             HStack(spacing: 5) {
                 ForEach(0..<3, id: \.self) { index in
                     Circle()
-                        .fill(VennColors.textSecondary)
+                        .fill(VennColors.coral)
                         .frame(width: 7, height: 7)
                         .scaleEffect(phase == index ? 1.3 : 0.85)
-                        .opacity(phase == index ? 1.0 : 0.45)
+                        .opacity(phase == index ? 1.0 : 0.35)
                         .animation(
                             .easeInOut(duration: 0.5)
                                 .repeatForever(autoreverses: true)
@@ -216,6 +294,7 @@ struct TypingIndicator: View {
 struct ChatInput: View {
     @Binding var text: String
     var isFocused: FocusState<Bool>.Binding
+    @Binding var sendBounce: Bool
     let onSend: () -> Void
 
     private var hasContent: Bool {
@@ -228,7 +307,7 @@ struct ChatInput: View {
             TextField("", text: $text, prompt:
                 Text("Message Vivi...").foregroundColor(VennColors.textTertiary)
             )
-            .font(.system(size: 16))
+            .font(VennTypography.bodyLarge)
             .foregroundColor(VennColors.textPrimary)
             .padding(.horizontal, VennSpacing.lg)
             .padding(.vertical, 13)
@@ -267,6 +346,7 @@ struct ChatInput: View {
                 }
             }
             .disabled(!hasContent)
+            .bounce(trigger: sendBounce)
             .animation(VennAnimation.snappy, value: hasContent)
         }
         .padding(.horizontal, VennSpacing.lg)

@@ -15,6 +15,10 @@ struct MainTabView: View {
     @State private var tabFrames: [Int: CGRect] = [:]
     @State private var barWidth: CGFloat = 0
 
+    // Inner padding constants for the tab bar container
+    private let barPadH: CGFloat = 5
+    private let barPadV: CGFloat = 4
+
     var body: some View {
         ZStack(alignment: .top) {
             VennColors.darkBg.ignoresSafeArea()
@@ -33,34 +37,26 @@ struct MainTabView: View {
 
     private var pillTabBar: some View {
         ZStack(alignment: .leading) {
-            // Solid surface container — clean, no glass blur
+            // Container
             Capsule()
-                .fill(VennColors.surfacePrimary)
+                .fill(VennColors.surfacePrimary.opacity(0.95))
                 .overlay(
                     Capsule()
-                        .stroke(VennColors.borderSubtle, lineWidth: 1)
+                        .stroke(VennColors.borderMedium, lineWidth: 0.5)
                 )
 
             // Sliding indicator capsule
             slidingCapsuleIndicator
 
-            // Tab buttons row
-            HStack(spacing: 6) {
+            // Tab buttons row — each tab gets equal flexible space
+            HStack(spacing: 0) {
                 ForEach(AppState.Tab.allCases, id: \.rawValue) { tab in
                     tabPill(tab: tab)
-                        .background(
-                            GeometryReader { geo in
-                                Color.clear
-                                    .preference(
-                                        key: TabFramePreferenceKey.self,
-                                        value: [tab.rawValue: geo.frame(in: .named("pillBar"))]
-                                    )
-                            }
-                        )
+                        .frame(maxWidth: .infinity)
                 }
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
+            .padding(.horizontal, barPadH)
+            .padding(.vertical, barPadV)
         }
         .fixedSize(horizontal: false, vertical: true)
         .background(
@@ -72,8 +68,8 @@ struct MainTabView: View {
         .onPreferenceChange(TabFramePreferenceKey.self) { frames in
             tabFrames = frames
         }
-        .padding(.horizontal, VennSpacing.lg)
-        .shadow(color: Color.black.opacity(0.3), radius: 12, x: 0, y: 4)
+        .padding(.horizontal, VennSpacing.xl)
+        .shadow(color: Color.black.opacity(0.35), radius: 14, x: 0, y: 5)
     }
 
     // MARK: Sliding capsule indicator
@@ -92,14 +88,15 @@ struct MainTabView: View {
                 .shadow(
                     color: isVivi
                         ? VennColors.coral.opacity(0.40)
-                        : Color.white.opacity(0.10),
-                    radius: 8,
+                        : Color.white.opacity(0.06),
+                    radius: isVivi ? 10 : 4,
                     x: 0,
                     y: 2
                 )
                 .frame(width: indicatorFrame.width, height: indicatorFrame.height)
                 .offset(x: indicatorFrame.minX)
                 .animation(isDragging ? .interactiveSpring(response: 0.25) : VennAnimation.snappy, value: indicatorFrame.minX)
+                .animation(isDragging ? .interactiveSpring(response: 0.25) : VennAnimation.snappy, value: indicatorFrame.width)
                 .animation(VennAnimation.micro, value: isVivi)
         }
     }
@@ -116,8 +113,6 @@ struct MainTabView: View {
         let count = tabs.count
         guard count > 0 else { return nil }
 
-        // Fractional page position (0 = first tab, count-1 = last tab)
-        // dragOffset is negative when swiping left (advancing)
         let pageWidth = UIScreen.main.bounds.width
         let rawProgress = CGFloat(appState.selectedTab.rawValue) - dragOffset / pageWidth
         let progress = rawProgress.clamped(to: 0...(CGFloat(count) - 1))
@@ -137,8 +132,7 @@ struct MainTabView: View {
         let width  = lower.width + (upper.width - lower.width) * fraction
         let height = lower.height
 
-        // Offset by the container horizontal padding
-        return CGRect(x: x + 10, y: 6, width: width, height: height)
+        return CGRect(x: x + barPadH, y: barPadV, width: width, height: height)
     }
 
     // MARK: Individual tab pill
@@ -158,31 +152,40 @@ struct MainTabView: View {
             }
         } label: {
             HStack(spacing: 5) {
-                Image(systemName: tab.icon)
-                    .font(.system(size: 14, weight: .semibold, design: .rounded))
+                Image(systemName: isSelected ? tab.selectedIcon : tab.icon)
+                    .font(.system(size: 15, weight: .semibold))
                     .scaleEffect(isSelected ? 1.05 : 1.0)
                     .animation(VennAnimation.micro, value: isSelected)
 
                 if isSelected {
                     Text(tab.title)
-                        .font(VennTypography.pill)
+                        .font(.system(size: 12, weight: .bold, design: .rounded))
                         .lineLimit(1)
                         .fixedSize()
                         .transition(
                             .asymmetric(
-                                insertion: .scale(scale: 0.6, anchor: .leading).combined(with: .opacity),
-                                removal:   .scale(scale: 0.6, anchor: .leading).combined(with: .opacity)
+                                insertion: .scale(scale: 0.5, anchor: .leading).combined(with: .opacity),
+                                removal:   .scale(scale: 0.5, anchor: .leading).combined(with: .opacity)
                             )
                         )
                 }
             }
             .foregroundColor(
                 isSelected
-                    ? VennColors.darkBg
-                    : VennColors.textTertiary
+                    ? (isVivi ? .white : VennColors.darkBg)
+                    : VennColors.textSecondary
             )
-            .padding(.horizontal, isSelected ? VennSpacing.md : VennSpacing.sm + 2)
+            .padding(.horizontal, isSelected ? 12 : 0)
             .padding(.vertical, 8)
+            .background(
+                GeometryReader { geo in
+                    Color.clear
+                        .preference(
+                            key: TabFramePreferenceKey.self,
+                            value: [tab.rawValue: geo.frame(in: .named("pillBar"))]
+                        )
+                }
+            )
             .contentShape(Capsule())
         }
         .buttonStyle(.plain)
@@ -210,7 +213,6 @@ struct MainTabView: View {
                         guard isHorizontal else { return }
                         isDragging = true
 
-                        // Rubber-band at edges
                         let raw = value.translation.width
                         let atStart = appState.selectedTab.rawValue == 0 && raw > 0
                         let atEnd   = appState.selectedTab.rawValue == AppState.Tab.allCases.count - 1 && raw < 0

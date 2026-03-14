@@ -63,14 +63,27 @@ class ViviChatViewModel: ObservableObject {
     private func getViviResponse(userMessage: String) async {
         isTyping = true
         
-        // Simulate network delay for now (will replace with real API call)
-        try? await Task.sleep(nanoseconds: 1_500_000_000) // 1.5 seconds
-        
-        isTyping = false
-        
-        // Mock response based on user input
-        let response = generateMockResponse(for: userMessage)
-        addMessage(text: response, isFromUser: false)
+        do {
+            // Try real API first
+            let response = try await APIClient.shared.sendViviMessage(userMessage)
+            isTyping = false
+            addMessage(text: response.response, isFromUser: false)
+            
+            // Track event recommendations if any
+            if let recommendations = response.eventRecommendations {
+                print("Vivi recommended events: \(recommendations)")
+            }
+            
+        } catch {
+            // Fallback to mock response
+            print("Failed to get Vivi response from API: \(error)")
+            
+            try? await Task.sleep(nanoseconds: 1_000_000_000) // 1s delay for mock
+            isTyping = false
+            
+            let response = generateMockResponse(for: userMessage)
+            addMessage(text: response, isFromUser: false)
+        }
     }
     
     /// Generate mock response until Claude API is integrated

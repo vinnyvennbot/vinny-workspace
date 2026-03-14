@@ -204,7 +204,9 @@ enum APIEndpoint {
     case updateProfile(UpdateProfileRequest)
     case getEvents
     case createPlan(CreatePlanRequest)
-    
+    /// AI-personalized discovery feed — returns friend invites + recommended stranger plans
+    case getForYouFeed
+
     var path: String {
         switch self {
         case .requestOTP: return "/auth/request_otp"
@@ -215,20 +217,21 @@ enum APIEndpoint {
         case .updateProfile: return "/user/profile"
         case .getEvents: return "/events"
         case .createPlan: return "/plans"
+        case .getForYouFeed: return "/plans/for-you"
         }
     }
-    
+
     var method: HTTPMethod {
         switch self {
         case .requestOTP, .verifyOTP, .refreshToken, .logout, .createPlan:
             return .post
         case .updateProfile:
             return .put
-        case .getCurrentUser, .getEvents:
+        case .getCurrentUser, .getEvents, .getForYouFeed:
             return .get
         }
     }
-    
+
     var body: Encodable? {
         switch self {
         case .requestOTP(let phone):
@@ -243,7 +246,7 @@ enum APIEndpoint {
             return request
         case .createPlan(let request):
             return request
-        case .getCurrentUser, .getEvents:
+        case .getCurrentUser, .getEvents, .getForYouFeed:
             return nil
         }
     }

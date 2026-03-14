@@ -343,75 +343,11 @@ extension Color {
     }
 }
 
-// MARK: - Shimmer Effect
+// NOTE: Shimmer and Pulse effects are in MicroInteractions.swift
 
-struct ShimmerModifier: ViewModifier {
-    @State private var phase: CGFloat = -1.0
-
-    func body(content: Content) -> some View {
-        content
-            .overlay(
-                GeometryReader { geo in
-                    LinearGradient(
-                        colors: [
-                            Color.white.opacity(0.0),
-                            Color.white.opacity(0.12),
-                            Color.white.opacity(0.0)
-                        ],
-                        startPoint: .leading,
-                        endPoint: .trailing
-                    )
-                    .rotationEffect(.degrees(15))
-                    .offset(x: phase * (geo.size.width + 200) - 100)
-                }
-                .mask(content)
-            )
-            .onAppear {
-                withAnimation(
-                    Animation.linear(duration: 2.0)
-                        .repeatForever(autoreverses: false)
-                ) {
-                    phase = 1.0
-                }
-            }
-    }
-}
-
-extension View {
-    func shimmer() -> some View {
-        modifier(ShimmerModifier())
-    }
-}
-
-// MARK: - Pulse Effect
-
-struct PulseModifier: ViewModifier {
-    @State private var scale: CGFloat = 1.0
-    @State private var opacity: Double = 0.7
-    let duration: Double
-
-    init(duration: Double = 1.8) {
-        self.duration = duration
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .scaleEffect(scale)
-            .opacity(opacity)
-            .onAppear {
-                withAnimation(
-                    Animation.easeInOut(duration: duration)
-                        .repeatForever(autoreverses: true)
-                ) {
-                    scale = 1.04
-                    opacity = 1.0
-                }
-            }
-    }
-}
-
+// Alias for backward compat — delegates to MicroInteractions.pulse()
 extension View {
     func vennPulse(duration: Double = 1.8) -> some View {
-        modifier(PulseModifier(duration: duration))
+        self.pulse(from: 1.0, to: 1.04, duration: duration)
     }
 }
