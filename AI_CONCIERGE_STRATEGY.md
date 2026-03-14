@@ -60,7 +60,7 @@
 - Diversity logic (don't recommend same type 3x)
 
 **Vivi AI Chat Service**
-- LLM: Claude Sonnet 4.6 (latest, most capable, conversational, empathetic)
+- LLM: OpenAI GPT-4 (conversational, empathetic, widely available)
 - Context: User preferences + past behavior + friend activity
 - Proactive: Push notifications for perfect-fit events
 - Personality: Warm, curious, encouraging (friend, not search engine)

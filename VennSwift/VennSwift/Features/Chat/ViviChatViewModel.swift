@@ -10,7 +10,7 @@ struct ChatMessage: Identifiable, Equatable {
 }
 
 /// Vivi Chat ViewModel
-/// Handles conversation logic and Claude Sonnet 4.6 API integration
+/// Handles conversation logic and OpenAI GPT-4 API integration
 @MainActor
 class ViviChatViewModel: ObservableObject {
     @Published var messages: [ChatMessage] = []

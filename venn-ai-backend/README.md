@@ -27,13 +27,33 @@ npm start
 
 ---
 
-## What's Built (March 13, 5:22 PM PST)
+## What's Built (March 13, 6:44 PM PST)
 
 ### ✅ Project Foundation
 - TypeScript + strict mode
 - Jest + TDD setup (80% coverage threshold)
 - Express server on port 4000
 - Project structure (scrapers, models, services, routes, utils, tests)
+
+### ✅ Vivi AI Service (Claude Sonnet 4.6)
+- **ViviService class** - Complete conversational AI
+- **System prompt** - Vivi's personality, knowledge, behavior
+- **Conversation history** - Context-aware responses
+- **API endpoint** - `POST /api/vivi/chat`
+- **Tests** - Full test suite (integration + personality)
+
+**Vivi's Personality:**
+- Warm, empathetic, genuinely curious
+- Friend-like companion (not transactional)
+- Proactive + encouraging (anti-loneliness)
+- Knows SF neighborhoods, vibes, culture
+
+### ✅ Database Layer (PostgreSQL)
+- **5 tables** - aggregated_events, user_event_interactions, user_preferences, vivi_chat_history, event_duplicates
+- **EventRepository** - CRUD operations with transactions
+- **Geospatial indexing** - PostGIS for location queries
+- **Auto-migrations** - Schema deploys on server startup
+- **Performance monitoring** - Slow query detection
 
 ### ✅ Event Model
 - Type-safe Event interface
@@ -51,10 +71,15 @@ npm start
 - Type-safe parsing
 
 ### ✅ API Endpoints
-- `GET /health` - Server health check
+- `GET /health` - Server health check + database status
+- `POST /api/vivi/chat` - **Vivi AI conversational chat**
+  - Request: `{ message, conversationHistory }`
+  - Response: `{ response, timestamp }`
 - `GET /api/events/eventbrite` - Test Eventbrite scraper
   - Query params: `location`, `limit`
-- `GET /api/events` - Placeholder for aggregated events
+- `GET /api/events` - Query aggregated events
+  - Query params: `location`, `source`, `limit`
+- `POST /api/events/scrape` - Scrape Eventbrite + store in DB
 
 ---
 

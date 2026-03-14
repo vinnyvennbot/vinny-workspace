@@ -1,15 +1,15 @@
-import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 
 /**
  * Vivi AI Service
- * Powers conversational onboarding and recommendations using Claude Sonnet 4.6
+ * Powers conversational onboarding and recommendations using OpenAI GPT-4
  */
 export class ViviService {
-  private client: Anthropic;
-  private model = 'claude-sonnet-4-20250514'; // Sonnet 4.6
+  private client: OpenAI;
+  private model = 'gpt-4-turbo-preview';
 
   constructor(apiKey: string) {
-    this.client = new Anthropic({ apiKey });
+    this.client = new OpenAI({ apiKey });
   }
 
   /**
@@ -24,32 +24,36 @@ export class ViviService {
   ): Promise<string> {
     try {
       // Build messages array
-      const messages: Anthropic.MessageParam[] = [
+      const messages: OpenAI.ChatCompletionMessageParam[] = [
+        {
+          role: 'system',
+          content: this.getViviSystemPrompt()
+        },
         ...conversationHistory.map(msg => ({
           role: msg.role,
           content: msg.content
         })),
         {
-          role: 'user' as const,
+          role: 'user',
           content: userMessage
         }
       ];
 
-      // Call Claude Sonnet 4.6
-      const response = await this.client.messages.create({
+      // Call OpenAI GPT-4
+      const response = await this.client.chat.completions.create({
         model: this.model,
+        messages,
         max_tokens: 1024,
-        system: this.getViviSystemPrompt(),
-        messages
+        temperature: 0.8, // More creative/conversational
       });
 
       // Extract response text
-      const textBlock = response.content.find(block => block.type === 'text');
-      if (!textBlock || textBlock.type !== 'text') {
-        throw new Error('No text response from Claude');
+      const reply = response.choices[0]?.message?.content;
+      if (!reply) {
+        throw new Error('No response from OpenAI');
       }
 
-      return textBlock.text;
+      return reply;
     } catch (error: any) {
       console.error('Vivi chat error:', error);
       throw new Error(`Failed to get Vivi response: ${error.message}`);

@@ -35,15 +35,15 @@ async function initDatabase() {
 }
 
 async function initVivi() {
-  const anthropicKey = process.env.ANTHROPIC_API_KEY;
-  if (!anthropicKey) {
-    console.warn('⚠️  ANTHROPIC_API_KEY not set - Vivi chat disabled');
+  const openaiKey = process.env.OPENAI_API_KEY;
+  if (!openaiKey) {
+    console.warn('⚠️  OPENAI_API_KEY not set - Vivi chat disabled');
     return;
   }
 
   try {
-    viviService = new ViviService(anthropicKey);
-    console.log('✅ Vivi AI service initialized (Claude Sonnet 4.6)');
+    viviService = new ViviService(openaiKey);
+    console.log('✅ Vivi AI service initialized (GPT-4)');
   } catch (error) {
     console.error('❌ Vivi initialization failed:', error);
   }

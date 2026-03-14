@@ -1,6 +1,6 @@
 /**
  * Vivi AI Service
- * Powers conversational onboarding and recommendations using Claude Sonnet 4.6
+ * Powers conversational onboarding and recommendations using OpenAI GPT-4
  */
 export declare class ViviService {
     private client;

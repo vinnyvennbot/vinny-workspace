@@ -4,16 +4,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ViviService = void 0;
-const sdk_1 = __importDefault(require("@anthropic-ai/sdk"));
+const openai_1 = __importDefault(require("openai"));
 /**
  * Vivi AI Service
- * Powers conversational onboarding and recommendations using Claude Sonnet 4.6
+ * Powers conversational onboarding and recommendations using OpenAI GPT-4
  */
 class ViviService {
     client;
-    model = 'claude-sonnet-4-20250514'; // Sonnet 4.6
+    model = 'gpt-4-turbo-preview';
     constructor(apiKey) {
-        this.client = new sdk_1.default({ apiKey });
+        this.client = new openai_1.default({ apiKey });
     }
     /**
      * Generate Vivi response to user message
@@ -25,6 +25,10 @@ class ViviService {
         try {
             // Build messages array
             const messages = [
+                {
+                    role: 'system',
+                    content: this.getViviSystemPrompt()
+                },
                 ...conversationHistory.map(msg => ({
                     role: msg.role,
                     content: msg.content
@@ -34,19 +38,19 @@ class ViviService {
                     content: userMessage
                 }
             ];
-            // Call Claude Sonnet 4.6
-            const response = await this.client.messages.create({
+            // Call OpenAI GPT-4
+            const response = await this.client.chat.completions.create({
                 model: this.model,
+                messages,
                 max_tokens: 1024,
-                system: this.getViviSystemPrompt(),
-                messages
+                temperature: 0.8, // More creative/conversational
             });
             // Extract response text
-            const textBlock = response.content.find(block => block.type === 'text');
-            if (!textBlock || textBlock.type !== 'text') {
-                throw new Error('No text response from Claude');
+            const reply = response.choices[0]?.message?.content;
+            if (!reply) {
+                throw new Error('No response from OpenAI');
             }
-            return textBlock.text;
+            return reply;
         }
         catch (error) {
             console.error('Vivi chat error:', error);
