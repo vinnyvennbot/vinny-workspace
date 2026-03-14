@@ -7,7 +7,7 @@ struct MainTabView: View {
         TabView(selection: $appState.selectedTab) {
             EventsView()
                 .tabItem {
-                    Label("Events", systemImage: "calendar")
+                    Label("Discover", systemImage: "sparkles")
                 }
                 .tag(AppState.Tab.events)
             
@@ -17,9 +17,16 @@ struct MainTabView: View {
                 }
                 .tag(AppState.Tab.friends)
             
+            // Vivi - Center tab (AI companion)
+            ViviChatView()
+                .tabItem {
+                    Label("Vivi", systemImage: "sparkle.magnifyingglass")
+                }
+                .tag(AppState.Tab.vivi)
+            
             PlansView()
                 .tabItem {
-                    Label("Plans", systemImage: "list.bullet.clipboard")
+                    Label("Plans", systemImage: "calendar.badge.clock")
                 }
                 .tag(AppState.Tab.plans)
             
@@ -29,7 +36,7 @@ struct MainTabView: View {
                 }
                 .tag(AppState.Tab.profile)
         }
-        .tint(.orange)
+        .tint(Color(red: 255/255, green: 127/255, blue: 110/255)) // Venn coral
     }
 }
 
