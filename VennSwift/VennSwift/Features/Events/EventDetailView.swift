@@ -1,376 +1,352 @@
 import SwiftUI
 
-/// Event Detail View - Full event page
-/// Rich media, RSVP actions, social proof
+// MARK: - Event Detail View
+
 struct EventDetailView: View {
     let event: DiscoverEvent
     @Environment(\.dismiss) private var dismiss
     @State private var isRSVPed = false
     @State private var showingRSVPSuccess = false
-    
+
     var body: some View {
         ZStack {
-            // Background
-            Color(red: 10/255, green: 8/255, blue: 6/255)
-                .ignoresSafeArea()
-            
-            ScrollView {
+            VennColors.darkBg.ignoresSafeArea()
+
+            ScrollView(showsIndicators: false) {
                 VStack(spacing: 0) {
-                    // Hero image
-                    heroImage
-                    
-                    // Content
-                    VStack(alignment: .leading, spacing: 24) {
-                        // Title + date
+                    heroSection
+
+                    VStack(alignment: .leading, spacing: VennSpacing.xxl) {
                         headerSection
-                        
-                        // Stats bar (attendees, location)
                         statsBar
-                        
-                        // RSVP button
                         rsvpButton
-                        
-                        // Description
+
                         if let description = event.description {
                             descriptionSection(description)
                         }
-                        
-                        // Attendees preview
+
                         if let attendees = event.attendees, attendees > 0 {
                             attendeesSection
                         }
-                        
-                        // Location map preview
+
                         if event.locationShort != nil {
                             locationSection
                         }
                     }
-                    .padding(20)
+                    .padding(.horizontal, VennSpacing.xl)
+                    .padding(.top, VennSpacing.xxl)
+                    .padding(.bottom, VennSpacing.massive)
                 }
             }
             .ignoresSafeArea(edges: .top)
-            
-            // Success overlay
+
             if showingRSVPSuccess {
                 rsvpSuccessOverlay
             }
         }
         .overlay(alignment: .topLeading) {
-            // Back button
-            Button {
-                dismiss()
-            } label: {
+            Button { dismiss() } label: {
                 Image(systemName: "xmark")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundColor(VennColors.textPrimary)
                     .frame(width: 36, height: 36)
-                    .background(
-                        Circle()
-                            .fill(Color.black.opacity(0.5))
-                            .backdrop(Material.ultraThinMaterial)
-                    )
+                    .background(Circle().fill(.ultraThinMaterial))
             }
-            .padding(.leading, 20)
+            .padding(.leading, VennSpacing.xl)
             .padding(.top, 54)
         }
     }
-    
-    // MARK: - Hero Image
-    
-    private var heroImage: some View {
+
+    // MARK: - Hero
+
+    private var heroSection: some View {
         ZStack(alignment: .bottom) {
-            // Image
-            if let imageUrl = event.imageUrl {
-                AsyncImage(url: URL(string: imageUrl)) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    case .failure, .empty:
-                        placeholderHero
-                    @unknown default:
-                        placeholderHero
+            Group {
+                if let urlString = event.imageUrl, let url = URL(string: urlString) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image.resizable().aspectRatio(contentMode: .fill)
+                        default:
+                            heroPlaceholder
+                        }
                     }
+                } else {
+                    heroPlaceholder
                 }
-            } else {
-                placeholderHero
             }
-            
-            // Gradient overlay
+
+            // Bottom gradient fade into dark background
             LinearGradient(
-                colors: [
-                    Color.clear,
-                    Color(red: 10/255, green: 8/255, blue: 6/255).opacity(0.8),
-                    Color(red: 10/255, green: 8/255, blue: 6/255)
-                ],
-                startPoint: .top,
+                colors: [.clear, VennColors.darkBg.opacity(0.5), VennColors.darkBg],
+                startPoint: .center,
                 endPoint: .bottom
             )
         }
-        .frame(height: 380)
+        .frame(height: 360)
         .clipped()
     }
-    
-    private var placeholderHero: some View {
+
+    private var heroPlaceholder: some View {
         LinearGradient(
-            colors: [
-                Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.3),
-                Color(red: 10/255, green: 8/255, blue: 6/255)
-            ],
+            colors: [VennColors.coral.opacity(0.3), VennColors.darkBg],
             startPoint: .topLeading,
             endPoint: .bottomTrailing
         )
     }
-    
+
     // MARK: - Header
-    
+
     private var headerSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            // Event title
+        VStack(alignment: .leading, spacing: VennSpacing.sm) {
+            if event.isFeatured {
+                Text("Featured")
+                    .font(.system(size: 11, weight: .bold, design: .rounded))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 5)
+                    .background(
+                        Capsule()
+                            .fill(VennColors.coral)
+                            .shadow(color: VennColors.coral.opacity(0.35), radius: 8, y: 2)
+                    )
+            }
+
             Text(event.name)
-                .font(.system(size: 32, weight: .bold))
-                .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
-            
-            // Date + time
-            HStack(spacing: 8) {
-                Image(systemName: "calendar")
-                    .font(.system(size: 14))
-                Text(event.dateFormatted)
-                    .font(.system(size: 16, weight: .medium))
-            }
-            .foregroundColor(Color(red: 255/255, green: 127/255, blue: 110/255))
-        }
-    }
-    
-    // MARK: - Stats Bar
-    
-    private var statsBar: some View {
-        HStack(spacing: 20) {
-            // Attendees
-            if let attendees = event.attendees {
-                statItem(
-                    icon: "person.2.fill",
-                    text: "\(attendees) going",
-                    color: Color(red: 255/255, green: 127/255, blue: 110/255)
-                )
-            }
-            
-            // Location
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundColor(VennColors.textPrimary)
+
+            Label(event.dateFormatted, systemImage: "calendar")
+                .font(.system(size: 15, weight: .semibold, design: .rounded))
+                .foregroundColor(VennColors.coral)
+
             if let location = event.locationShort {
-                statItem(
-                    icon: "mappin.circle.fill",
-                    text: location,
-                    color: Color(red: 200/255, green: 190/255, blue: 181/255)
-                )
+                Label(location, systemImage: "mappin")
+                    .font(VennTypography.body)
+                    .foregroundColor(VennColors.textSecondary)
             }
         }
-        .padding(.vertical, 16)
-        .padding(.horizontal, 20)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.05))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                )
-        )
     }
-    
-    private func statItem(icon: String, text: String, color: Color) -> some View {
-        HStack(spacing: 8) {
-            Image(systemName: icon)
-                .font(.system(size: 14))
-            Text(text)
-                .font(.system(size: 15, weight: .medium))
+
+    // MARK: - Stats Bar
+
+    private var statsBar: some View {
+        HStack(spacing: VennSpacing.xl) {
+            if let attendees = event.attendees {
+                statItem(icon: "person.2.fill", value: "\(attendees)", label: "Going", color: VennColors.coral)
+            }
+            if event.locationShort != nil {
+                statItem(icon: "mappin.circle.fill", value: "In-person", label: "Event", color: VennColors.textSecondary)
+            }
+            Spacer()
         }
-        .foregroundColor(color)
     }
-    
+
+    private func statItem(icon: String, value: String, label: String, color: Color) -> some View {
+        HStack(spacing: VennSpacing.sm) {
+            Image(systemName: icon)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(color)
+
+            VStack(alignment: .leading, spacing: 1) {
+                Text(value)
+                    .font(.system(size: 14, weight: .bold, design: .rounded))
+                    .foregroundColor(VennColors.textPrimary)
+                Text(label)
+                    .font(VennTypography.caption)
+                    .foregroundColor(VennColors.textTertiary)
+            }
+        }
+    }
+
     // MARK: - RSVP Button
-    
+
     private var rsvpButton: some View {
         Button {
-            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
+            withAnimation(VennAnimation.standard) {
                 isRSVPed.toggle()
                 if isRSVPed {
                     showingRSVPSuccess = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
+                        withAnimation(VennAnimation.gentle) {
                             showingRSVPSuccess = false
                         }
                     }
                 }
             }
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: VennSpacing.sm) {
                 Image(systemName: isRSVPed ? "checkmark.circle.fill" : "calendar.badge.plus")
-                    .font(.system(size: 18, weight: .semibold))
-                
-                Text(isRSVPed ? "You're going!" : "RSVP")
                     .font(.system(size: 17, weight: .bold))
+                Text(isRSVPed ? "You're going!" : "RSVP")
+                    .font(.system(size: 17, weight: .bold, design: .rounded))
             }
-            .foregroundColor(isRSVPed ? Color(red: 10/255, green: 8/255, blue: 6/255) : .white)
+            .foregroundColor(isRSVPed ? VennColors.darkBg : .white)
             .frame(maxWidth: .infinity)
             .frame(height: 56)
             .background(
-                RoundedRectangle(cornerRadius: 28)
+                Capsule()
                     .fill(
                         isRSVPed
-                            ? Color(red: 140/255, green: 200/255, blue: 120/255) // Green
-                            : LinearGradient(
-                                colors: [
-                                    Color(red: 255/255, green: 127/255, blue: 110/255),
-                                    Color(red: 255/255, green: 191/255, blue: 105/255)
-                                ],
+                            ? AnyShapeStyle(LinearGradient(
+                                colors: [VennColors.success, VennColors.success.opacity(0.8)],
                                 startPoint: .leading,
                                 endPoint: .trailing
-                            )
+                              ))
+                            : AnyShapeStyle(VennGradients.primary)
+                    )
+                    .shadow(
+                        color: isRSVPed ? VennColors.success.opacity(0.3) : VennColors.coral.opacity(0.35),
+                        radius: 14,
+                        y: 5
                     )
             )
-            .shadow(color: Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.3), radius: 12, y: 4)
         }
+        .animation(VennAnimation.snappy, value: isRSVPed)
     }
-    
+
     // MARK: - Description
-    
+
     private func descriptionSection(_ text: String) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("About")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
-            
+        VStack(alignment: .leading, spacing: VennSpacing.md) {
+            sectionHeading("About")
             Text(text)
-                .font(.system(size: 16))
-                .foregroundColor(Color(red: 200/255, green: 190/255, blue: 181/255))
-                .lineSpacing(6)
+                .font(VennTypography.body)
+                .foregroundColor(VennColors.textSecondary)
+                .lineSpacing(5)
         }
     }
-    
+
     // MARK: - Attendees
-    
+
     private var attendeesSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Who's going")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
-            
-            // Mock attendee avatars
-            HStack(spacing: -12) {
-                ForEach(0..<min(5, event.attendees ?? 0), id: \.self) { _ in
+        VStack(alignment: .leading, spacing: VennSpacing.md) {
+            sectionHeading("Who's going")
+
+            HStack(spacing: -10) {
+                ForEach(0..<min(5, event.attendees ?? 0), id: \.self) { index in
                     Circle()
                         .fill(
                             LinearGradient(
-                                colors: [
-                                    Color(red: 255/255, green: 127/255, blue: 110/255),
-                                    Color(red: 255/255, green: 191/255, blue: 105/255)
-                                ],
+                                colors: [VennColors.coral, VennColors.gold],
                                 startPoint: .topLeading,
                                 endPoint: .bottomTrailing
                             )
                         )
-                        .frame(width: 40, height: 40)
-                        .overlay(
-                            Circle()
-                                .stroke(Color(red: 10/255, green: 8/255, blue: 6/255), lineWidth: 2)
-                        )
+                        .frame(width: 38, height: 38)
+                        .overlay(Circle().stroke(VennColors.darkBg, lineWidth: 2))
+                        .shadow(color: VennColors.coral.opacity(0.2), radius: 4)
+                        .zIndex(Double(5 - index))
                 }
-                
-                if let attendees = event.attendees, attendees > 5 {
+
+                if let count = event.attendees, count > 5 {
                     Circle()
-                        .fill(Color.white.opacity(0.1))
-                        .frame(width: 40, height: 40)
+                        .fill(VennColors.surfaceSecondary)
+                        .frame(width: 38, height: 38)
                         .overlay(
-                            Text("+\(attendees - 5)")
-                                .font(.system(size: 12, weight: .semibold))
-                                .foregroundColor(Color(red: 200/255, green: 190/255, blue: 181/255))
+                            Text("+\(count - 5)")
+                                .font(.system(size: 11, weight: .bold, design: .rounded))
+                                .foregroundColor(VennColors.textSecondary)
                         )
-                        .overlay(
-                            Circle()
-                                .stroke(Color(red: 10/255, green: 8/255, blue: 6/255), lineWidth: 2)
-                        )
+                        .overlay(Circle().stroke(VennColors.darkBg, lineWidth: 2))
                 }
             }
         }
     }
-    
+
     // MARK: - Location
-    
+
     private var locationSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Location")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
-            
-            // Map placeholder
-            RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white.opacity(0.05))
-                .frame(height: 160)
-                .overlay(
-                    VStack(spacing: 8) {
-                        Image(systemName: "map.fill")
-                            .font(.system(size: 32))
-                            .foregroundColor(Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.5))
-                        
-                        if let location = event.locationShort {
-                            Text(location)
-                                .font(.system(size: 14, weight: .medium))
-                                .foregroundColor(Color(red: 200/255, green: 190/255, blue: 181/255))
-                        }
+        VStack(alignment: .leading, spacing: VennSpacing.md) {
+            sectionHeading("Location")
+
+            if let location = event.locationShort {
+                HStack(spacing: VennSpacing.md) {
+                    Image(systemName: "mappin.circle.fill")
+                        .font(.system(size: 20))
+                        .foregroundColor(VennColors.coral)
+
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(location)
+                            .font(.system(size: 15, weight: .semibold, design: .rounded))
+                            .foregroundColor(VennColors.textPrimary)
+                        Text("San Francisco, CA")
+                            .font(VennTypography.caption)
+                            .foregroundColor(VennColors.textTertiary)
                     }
+
+                    Spacer()
+                }
+                .padding(VennSpacing.lg)
+                .background(
+                    RoundedRectangle(cornerRadius: VennRadius.medium, style: .continuous)
+                        .fill(VennColors.surfacePrimary)
                 )
+            }
         }
     }
-    
+
+    // MARK: - Section Heading
+
+    private func sectionHeading(_ title: String) -> some View {
+        Text(title)
+            .font(.system(size: 19, weight: .bold, design: .rounded))
+            .foregroundColor(VennColors.textPrimary)
+    }
+
     // MARK: - RSVP Success Overlay
-    
+
     private var rsvpSuccessOverlay: some View {
         ZStack {
-            Color.black.opacity(0.4)
+            Color.black.opacity(0.5)
                 .ignoresSafeArea()
                 .onTapGesture {
-                    withAnimation {
-                        showingRSVPSuccess = false
-                    }
+                    withAnimation(VennAnimation.gentle) { showingRSVPSuccess = false }
                 }
-            
-            VStack(spacing: 16) {
-                // Check circle
+
+            VStack(spacing: VennSpacing.xl) {
                 ZStack {
                     Circle()
-                        .fill(Color(red: 140/255, green: 200/255, blue: 120/255))
+                        .fill(
+                            LinearGradient(
+                                colors: [VennColors.success, VennColors.success.opacity(0.7)],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
                         .frame(width: 80, height: 80)
-                    
+                        .shadow(color: VennColors.success.opacity(0.4), radius: 20)
+
                     Image(systemName: "checkmark")
-                        .font(.system(size: 40, weight: .bold))
+                        .font(.system(size: 36, weight: .bold))
                         .foregroundColor(.white)
                 }
-                
-                Text("You're going!")
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(Color(red: 250/255, green: 247/255, blue: 242/255))
-                
-                Text("We'll send you event details")
-                    .font(.system(size: 16))
-                    .foregroundColor(Color(red: 200/255, green: 190/255, blue: 181/255))
+
+                VStack(spacing: VennSpacing.sm) {
+                    Text("You're going!")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundColor(VennColors.textPrimary)
+                    Text("We'll send you event details soon")
+                        .font(VennTypography.body)
+                        .foregroundColor(VennColors.textSecondary)
+                }
             }
-            .padding(32)
+            .padding(VennSpacing.xxxl)
             .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(red: 26/255, green: 22/255, blue: 18/255))
+                RoundedRectangle(cornerRadius: VennRadius.xxl, style: .continuous)
+                    .fill(VennColors.surfacePrimary)
             )
-            .padding(40)
-            .transition(.scale.combined(with: .opacity))
+            .padding(.horizontal, 44)
+            .transition(.scale(scale: 0.88).combined(with: .opacity))
         }
     }
 }
 
-// MARK: - Extended DiscoverEvent
+// MARK: - DiscoverEvent Extension
 
 extension DiscoverEvent {
     var description: String? {
-        // Mock description for now
-        return "Join us for an unforgettable evening of connection, music, and genuine moments. This is where magic happens."
+        "Join us for an unforgettable evening of connection, music, and genuine moments. This is where magic happens."
     }
 }
 

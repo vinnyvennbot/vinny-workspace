@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 /// Haptic Feedback Manager
 /// Provides tactile feedback for premium feel
@@ -48,7 +49,7 @@ class HapticManager {
     
     // MARK: - Selection
     
-    func selection() {
+    func selectionFeedback() {
         selection.selectionChanged()
         selection.prepare()
     }
@@ -85,7 +86,7 @@ extension View {
     func hapticSelection() -> some View {
         self.onChange(of: UUID()) { _, _ in
             Task { @MainActor in
-                HapticManager.shared.selection()
+                HapticManager.shared.selectionFeedback()
             }
         }
     }

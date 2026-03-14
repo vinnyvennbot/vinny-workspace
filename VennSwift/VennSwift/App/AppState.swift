@@ -1,16 +1,34 @@
 import Foundation
 import SwiftUI
 
-/// Global app state
-/// Manages tab selection and app-wide state
 class AppState: ObservableObject {
-    @Published var selectedTab: Tab = .vivi // Default to Vivi (AI companion)
-    
-    enum Tab {
-        case events
+    @Published var selectedTab: Tab = .vivi
+
+    enum Tab: Int, CaseIterable {
+        case events = 0
         case friends
-        case vivi    // AI companion (center tab)
+        case vivi
         case plans
         case profile
+
+        var title: String {
+            switch self {
+            case .events:  return "Discover"
+            case .friends: return "Friends"
+            case .vivi:    return "Vivi"
+            case .plans:   return "Plans"
+            case .profile: return "Profile"
+            }
+        }
+
+        var icon: String {
+            switch self {
+            case .events:  return "sparkles"
+            case .friends: return "person.2.fill"
+            case .vivi:    return "wand.and.stars"
+            case .plans:   return "calendar"
+            case .profile: return "person.crop.circle"
+            }
+        }
     }
 }

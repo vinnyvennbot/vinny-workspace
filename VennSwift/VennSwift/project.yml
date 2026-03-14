@@ -1,0 +1,31 @@
+name: VennSwift
+options:
+  bundleIdPrefix: co.vennapp
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+
+targets:
+  VennSwift:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: App
+      - path: Core
+      - path: Features
+      - path: Models
+      - path: Services
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: co.vennapp.ios
+        PRODUCT_NAME: VennSwift
+        INFOPLIST_KEY_CFBundleDisplayName: Venn
+        INFOPLIST_KEY_UILaunchScreen_Generation: "YES"
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: "YES"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: "UIInterfaceOrientationPortrait"
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: ""
+        GENERATE_INFOPLIST_FILE: "YES"

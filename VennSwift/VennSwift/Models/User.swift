@@ -1,71 +1,102 @@
 import Foundation
 
+/// Matches the backend UserData response from GET /user/profile/me
 struct User: Codable, Identifiable {
     let id: String
     let phoneNumber: String
-    let firstName: String?
-    let lastName: String?
-    let birthday: Date?
-    let gender: Gender?
-    let city: String?
-    let profilePhotos: [String]
-    let bio: String?
-    let hasCompletedOnboarding: Bool
-    let createdAt: Date
-    let updatedAt: Date
-    
+    let email: String?
+    let isOnboarded: Bool
+    let points: Int?
+    let profile: UserProfile
+    let preferences: UserPreferences?
+
     // Computed properties
-    var fullName: String? {
-        guard let first = firstName, let last = lastName else {
-            return firstName ?? lastName
-        }
-        return "\(first) \(last)"
-    }
-    
     var displayName: String {
-        fullName ?? "User"
+        profile.Name ?? "User"
     }
-    
-    enum Gender: String, Codable {
-        case male
-        case female
-        case nonBinary = "non_binary"
-        case other
-        case preferNotToSay = "prefer_not_to_say"
+
+    var hasCompletedOnboarding: Bool {
+        isOnboarded
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case id
         case phoneNumber = "phone_number"
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case birthday
-        case gender
-        case city
-        case profilePhotos = "profile_photos"
-        case bio
-        case hasCompletedOnboarding = "has_completed_onboarding"
-        case createdAt = "created_at"
-        case updatedAt = "updated_at"
+        case email
+        case isOnboarded = "is_onboarded"
+        case points
+        case profile
+        case preferences
     }
 }
 
-// MARK: - Update Profile Request
+/// Backend Profile struct — fields without json tags serialize as PascalCase
+struct UserProfile: Codable {
+    let Name: String?
+    let DateOfBirth: String?
+    let Age: Int?
+    let Gender: String?
+    let GenderPreferences: [String]?
+    let City: String?
+    let Latitude: Double?
+    let Longitude: Double?
+    let Hometown: String?
+    let IsOnboarded: Bool?
+    let Interests: [String]?
+    let LookingFor: [String]?
+
+    let introExtrovert: String?
+    let socialBattery: String?
+    let politicalLeaning: String?
+    let meetingPreferences: [String]?
+    let groupRole: String?
+    let socialStyles: [String]?
+    let conversationPreferences: [String]?
+    let connectionGoals: [String]?
+    let preferredExperiences: [String]?
+    let onboardingIntent: String?
+    let instagramUsername: String?
+    let linkedinUrl: String?
+
+    enum CodingKeys: String, CodingKey {
+        case Name, DateOfBirth, Age, Gender, GenderPreferences
+        case City, Latitude, Longitude, Hometown, IsOnboarded
+        case Interests, LookingFor
+        case introExtrovert = "intro_extrovert"
+        case socialBattery = "social_battery"
+        case politicalLeaning = "political_leaning"
+        case meetingPreferences = "meeting_preferences"
+        case groupRole = "group_role"
+        case socialStyles = "social_styles"
+        case conversationPreferences = "conversation_preferences"
+        case connectionGoals = "connection_goals"
+        case preferredExperiences = "preferred_experiences"
+        case onboardingIntent = "onboarding_intent"
+        case instagramUsername = "instagram_username"
+        case linkedinUrl = "linkedin_url"
+    }
+}
+
+struct UserPreferences: Codable {
+    let EmailNotifications: Bool?
+    let PushNotifications: Bool?
+    let MatchWith: String?
+}
 
 struct UpdateProfileRequest: Codable {
-    let firstName: String?
-    let lastName: String?
-    let birthday: Date?
-    let gender: User.Gender?
-    let city: String?
-    let bio: String?
-    
+    var name: String?
+    var dateOfBirth: String?
+    var gender: String?
+    var city: String?
+    var interests: [String]?
+    var lookingFor: [String]?
+
     enum CodingKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case birthday
+        case name
+        case dateOfBirth = "date_of_birth"
         case gender
         case city
-        case bio
+        case interests
+        case lookingFor = "looking_for"
     }
 }

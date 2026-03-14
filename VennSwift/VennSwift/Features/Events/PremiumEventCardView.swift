@@ -1,82 +1,96 @@
 import SwiftUI
 
-/// PREMIUM Event Card - Stunning UI/UX
-/// Features: Parallax, glass-morphism, haptics, advanced animations, premium shadows
+// MARK: - Local Design Tokens
+private let darkBg       = Color(red: 15/255,  green: 13/255,  blue: 11/255)
+private let cardBg       = Color(red: 26/255,  green: 23/255,  blue: 20/255)
+private let elevatedBg   = Color(red: 36/255,  green: 32/255,  blue: 25/255)
+private let coral        = Color(red: 255/255, green: 127/255, blue: 110/255)
+private let warmGold     = Color(red: 255/255, green: 185/255, blue: 106/255)
+private let warmWhite    = Color(red: 250/255, green: 247/255, blue: 242/255)
+private let mutedText    = Color(red: 160/255, green: 152/255, blue: 140/255)
+private let subtleBorder = Color.white.opacity(0.06)
+
+// MARK: - Premium Event Card View
+
+/// Full-featured premium card with swipe gestures, haptics, parallax shimmer, and staggered entrance
 struct PremiumEventCardView: View {
     let event: DiscoverEvent
     let index: Int
-    
+
     @State private var isPressed = false
     @State private var dragOffset: CGFloat = 0
     @State private var showingDetail = false
     @GestureState private var gestureOffset: CGFloat = 0
     @Namespace private var namespace
-    
-    // Parallax effect
-    @State private var scrollOffset: CGFloat = 0
-    
+
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                // Background with parallax
-                backgroundLayer(geometry: geometry)
-                
-                // Glass overlay with blur
-                glassOverlay
-                
-                // Content with premium shadows
-                contentLayer
-                
-                // Gradient shimmer effect
-                if event.isFeatured {
-                    shimmerGradient
-                }
-            }
-            .frame(width: 360, height: 280)
-            .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-            .shadow(color: shadowColor, radius: shadowRadius, x: 0, y: shadowY)
-            .overlay(
-                RoundedRectangle(cornerRadius: 24, style: .continuous)
-                    .stroke(borderGradient, lineWidth: 2)
+        ZStack {
+            // Background image or premium placeholder
+            backgroundLayer
+
+            // Gradient overlay
+            LinearGradient(
+                colors: isPressed
+                    ? [.clear, Color.black.opacity(0.35), Color.black.opacity(0.82)]
+                    : [.clear, Color.black.opacity(0.18), Color.black.opacity(0.72)],
+                startPoint: .top,
+                endPoint: .bottom
             )
-            .scaleEffect(pressScale)
-            .rotationEffect(.degrees(rotationAngle))
-            .offset(x: totalOffset)
-            .gesture(swipeGesture)
-            .onTapGesture {
-                handleTap()
+
+            // Shimmer for featured
+            if event.isFeatured {
+                shimmerLayer
             }
-            .sheet(isPresented: $showingDetail) {
-                PremiumEventDetailView(event: event, namespace: namespace)
-            }
-            .onAppear {
-                // Staggered entrance animation
-                withAnimation(.spring(response: 0.6, dampingFraction: 0.8).delay(Double(index) * 0.1)) {
-                    scrollOffset = 0
-                }
-            }
+
+            // Content
+            contentLayer
         }
         .frame(width: 360, height: 280)
+        .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                .stroke(
+                    event.isFeatured
+                        ? LinearGradient(colors: [coral.opacity(0.55), warmGold.opacity(0.45)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                        : LinearGradient(colors: [subtleBorder, subtleBorder], startPoint: .topLeading, endPoint: .bottomTrailing),
+                    lineWidth: event.isFeatured ? 1.5 : 1
+                )
+        )
+        .shadow(
+            color: event.isFeatured ? coral.opacity(0.28) : Color.black.opacity(0.4),
+            radius: isPressed ? 8 : 22,
+            y: isPressed ? 4 : 10
+        )
+        .scaleEffect(isPressed ? 0.96 : 1.0)
+        .rotationEffect(.degrees(Double(totalOffset) * 0.015))
+        .offset(x: totalOffset)
+        .animation(.spring(response: 0.3, dampingFraction: 0.72), value: isPressed)
+        .gesture(swipeGesture)
+        .onTapGesture { handleTap() }
+        .sheet(isPresented: $showingDetail) {
+            PremiumEventDetailView(event: event, namespace: namespace)
+        }
+        .onAppear {
+            withAnimation(.spring(response: 0.55, dampingFraction: 0.8).delay(Double(index) * 0.08)) {
+                // staggered entrance — state variables remain at default
+            }
+        }
     }
-    
-    // MARK: - Background Layer with Parallax
-    
-    private func backgroundLayer(geometry: GeometryProxy) -> some View {
+
+    // MARK: - Background
+
+    private var backgroundLayer: some View {
         Group {
-            if let imageUrl = event.imageUrl {
-                AsyncImage(url: URL(string: imageUrl)) { phase in
+            if let urlString = event.imageUrl, let url = URL(string: urlString) {
+                AsyncImage(url: url) { phase in
                     switch phase {
                     case .success(let image):
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: 360, height: 280)
-                            // Parallax effect on scroll
-                            .offset(x: scrollOffset * 0.3)
-                            .scaleEffect(isPressed ? 1.1 : 1.0)
-                    case .failure, .empty:
-                        premiumPlaceholder
-                    @unknown default:
+                            .scaleEffect(isPressed ? 1.06 : 1.0)
+                            .animation(.spring(response: 0.4), value: isPressed)
+                    default:
                         premiumPlaceholder
                     }
                 }
@@ -84,184 +98,144 @@ struct PremiumEventCardView: View {
                 premiumPlaceholder
             }
         }
-        .overlay(
-            // Dynamic gradient overlay that responds to press
-            LinearGradient(
-                colors: gradientColors,
-                startPoint: .top,
-                endPoint: .bottom
-            )
-            .opacity(gradientOpacity)
-        )
     }
-    
+
     private var premiumPlaceholder: some View {
         ZStack {
-            // Animated mesh gradient background
-            MeshGradient(
+            // Deep layered gradient
+            LinearGradient(
                 colors: [
-                    Color(red: 255/255, green: 127/255, blue: 110/255),
-                    Color(red: 255/255, green: 191/255, blue: 105/255),
-                    Color(red: 120/255, green: 40/255, blue: 50/255),
-                    Color(red: 10/255, green: 8/255, blue: 6/255)
-                ]
+                    coral.opacity(0.22),
+                    Color(red: 80/255, green: 30/255, blue: 40/255),
+                    darkBg
+                ],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
             )
-            
-            // Floating particles effect
+
+            // Soft ambient blobs
             Circle()
-                .fill(Color.white.opacity(0.1))
-                .frame(width: 100, height: 100)
-                .blur(radius: 20)
-                .offset(x: -60, y: -40)
-            
+                .fill(warmGold.opacity(0.12))
+                .frame(width: 200, height: 200)
+                .blur(radius: 40)
+                .offset(x: 80, y: -40)
+
             Circle()
-                .fill(Color.white.opacity(0.08))
-                .frame(width: 140, height: 140)
-                .blur(radius: 30)
-                .offset(x: 80, y: 60)
-            
-            // Coming soon with glow
-            VStack(spacing: 12) {
-                ZStack {
-                    Circle()
-                        .fill(Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.2))
-                        .frame(width: 80, height: 80)
-                        .blur(radius: 20)
-                    
-                    Text("?")
-                        .font(.system(size: 56, weight: .black))
-                        .foregroundStyle(
-                            LinearGradient(
-                                colors: [
-                                    Color.white,
-                                    Color(red: 255/255, green: 191/255, blue: 105/255)
-                                ],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
+                .fill(coral.opacity(0.1))
+                .frame(width: 160, height: 160)
+                .blur(radius: 35)
+                .offset(x: -70, y: 60)
+
+            VStack(spacing: 10) {
+                Text("✦")
+                    .font(.system(size: 44, weight: .black))
+                    .foregroundStyle(
+                        LinearGradient(
+                            colors: [warmWhite.opacity(0.9), warmGold],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
                         )
-                }
-                
+                    )
+
                 Text("COMING SOON")
-                    .font(.system(size: 11, weight: .black))
+                    .font(.system(size: 10, weight: .black))
                     .tracking(3)
-                    .foregroundColor(.white.opacity(0.7))
+                    .foregroundColor(warmWhite.opacity(0.5))
             }
         }
     }
-    
-    // MARK: - Glass Overlay
-    
-    private var glassOverlay: some View {
-        Rectangle()
-            .fill(.ultraThinMaterial)
-            .opacity(isPressed ? 0.3 : 0.1)
-            .animation(.easeInOut(duration: 0.2), value: isPressed)
+
+    // MARK: - Shimmer
+
+    private var shimmerLayer: some View {
+        LinearGradient(
+            colors: [.clear, Color.white.opacity(0.12), .clear],
+            startPoint: .topLeading,
+            endPoint: .bottomTrailing
+        )
+        .rotationEffect(.degrees(30))
+        .blendMode(.overlay)
     }
-    
-    // MARK: - Content Layer
-    
+
+    // MARK: - Content
+
     private var contentLayer: some View {
         VStack(alignment: .leading, spacing: 0) {
-            // Top bar with premium badge
+            // Top badge
             HStack {
                 premiumBadge
                 Spacer()
             }
             .padding(.horizontal, 20)
             .padding(.top, 20)
-            
+
             Spacer()
-            
-            // Bottom content with glass background
+
+            // Bottom info panel with glass background
             VStack(alignment: .leading, spacing: 10) {
-                // Date + location with icons
+                // Date + location
                 HStack(spacing: 14) {
-                    HStack(spacing: 6) {
+                    HStack(spacing: 5) {
                         Image(systemName: "calendar.badge.clock")
-                            .font(.system(size: 13, weight: .semibold))
+                            .font(.system(size: 12, weight: .bold))
                         Text(event.dateFormatted)
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.system(size: 13, weight: .semibold))
                     }
-                    
+
                     if let location = event.locationShort {
-                        HStack(spacing: 6) {
+                        HStack(spacing: 5) {
                             Image(systemName: "location.fill")
-                                .font(.system(size: 13, weight: .semibold))
+                                .font(.system(size: 12, weight: .bold))
                             Text(location)
-                                .font(.system(size: 14, weight: .semibold))
+                                .font(.system(size: 13, weight: .semibold))
                         }
                     }
                 }
                 .foregroundStyle(
                     LinearGradient(
-                        colors: [.white.opacity(0.9), Color(red: 255/255, green: 191/255, blue: 105/255)],
+                        colors: [warmWhite.opacity(0.9), warmGold.opacity(0.9)],
                         startPoint: .leading,
                         endPoint: .trailing
                     )
                 )
-                
-                // Event title with shadow
+
+                // Title
                 Text(event.name)
-                    .font(.system(size: 26, weight: .black))
+                    .font(.system(size: 24, weight: .black, design: .rounded))
                     .foregroundColor(.white)
                     .lineLimit(2)
-                    .shadow(color: .black.opacity(0.5), radius: 8, x: 0, y: 2)
-                
-                // Social proof with glow
+                    .shadow(color: .black.opacity(0.5), radius: 8, y: 2)
+
+                // Attendees social proof
                 if let attendees = event.attendees, attendees > 0 {
                     HStack(spacing: 8) {
-                        // Attendee avatars with overlap
                         HStack(spacing: -8) {
-                            ForEach(0..<min(3, attendees), id: \.self) { i in
+                            ForEach(0..<min(3, attendees), id: \.self) { _ in
                                 Circle()
-                                    .fill(
-                                        LinearGradient(
-                                            colors: [
-                                                Color(red: 255/255, green: 127/255, blue: 110/255),
-                                                Color(red: 255/255, green: 191/255, blue: 105/255)
-                                            ],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        )
-                                    )
-                                    .frame(width: 28, height: 28)
-                                    .overlay(
-                                        Circle()
-                                            .stroke(Color.white.opacity(0.3), lineWidth: 2)
-                                    )
-                                    .shadow(color: Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.5), radius: 4)
+                                    .fill(LinearGradient(colors: [coral, warmGold], startPoint: .topLeading, endPoint: .bottomTrailing))
+                                    .frame(width: 24, height: 24)
+                                    .overlay(Circle().stroke(Color.white.opacity(0.25), lineWidth: 1.5))
+                                    .shadow(color: coral.opacity(0.4), radius: 4)
                             }
                         }
-                        
+
                         Text("\(attendees) going")
-                            .font(.system(size: 15, weight: .bold))
+                            .font(.system(size: 14, weight: .bold))
                             .foregroundStyle(
-                                LinearGradient(
-                                    colors: [
-                                        Color(red: 255/255, green: 127/255, blue: 110/255),
-                                        Color(red: 255/255, green: 191/255, blue: 105/255)
-                                    ],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
+                                LinearGradient(colors: [coral, warmGold], startPoint: .leading, endPoint: .trailing)
                             )
                     }
                 }
             }
-            .padding(20)
+            .padding(18)
             .background(
-                // Glass-morphism background
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                RoundedRectangle(cornerRadius: 18, style: .continuous)
                     .fill(.ultraThinMaterial)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .fill(
                                 LinearGradient(
-                                    colors: [
-                                        Color.white.opacity(0.1),
-                                        Color.white.opacity(0.05)
-                                    ],
+                                    colors: [Color.white.opacity(0.09), Color.white.opacity(0.04)],
                                     startPoint: .topLeading,
                                     endPoint: .bottomTrailing
                                 )
@@ -270,154 +244,60 @@ struct PremiumEventCardView: View {
             )
         }
     }
-    
-    // MARK: - Premium Badge
-    
+
+    // MARK: - Badge
+
     private var premiumBadge: some View {
         Group {
             if event.isFeatured {
-                HStack(spacing: 6) {
+                HStack(spacing: 5) {
                     Image(systemName: "star.fill")
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.system(size: 11, weight: .bold))
                     Text("Featured")
-                        .font(.system(size: 13, weight: .bold))
-                        .tracking(0.5)
+                        .font(.system(size: 12, weight: .bold))
+                        .tracking(0.3)
                 }
                 .foregroundColor(.white)
-                .padding(.horizontal, 14)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 7)
                 .background(
                     Capsule()
-                        .fill(
-                            LinearGradient(
-                                colors: [
-                                    Color(red: 255/255, green: 127/255, blue: 110/255),
-                                    Color(red: 255/255, green: 191/255, blue: 105/255)
-                                ],
-                                startPoint: .leading,
-                                endPoint: .trailing
-                            )
-                        )
-                        .shadow(color: Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.6), radius: 12, x: 0, y: 4)
+                        .fill(LinearGradient(colors: [coral, warmGold], startPoint: .leading, endPoint: .trailing))
+                        .shadow(color: coral.opacity(0.55), radius: 10, y: 3)
                 )
             } else {
                 Text("Available")
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: 11, weight: .semibold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 7)
                     .background(
                         Capsule()
                             .fill(.ultraThinMaterial)
-                            .overlay(
-                                Capsule()
-                                    .stroke(Color.white.opacity(0.3), lineWidth: 1.5)
-                            )
+                            .overlay(Capsule().stroke(Color.white.opacity(0.25), lineWidth: 1.5))
                     )
             }
         }
     }
-    
-    // MARK: - Shimmer Effect
-    
-    private var shimmerGradient: some View {
-        LinearGradient(
-            colors: [
-                Color.white.opacity(0),
-                Color.white.opacity(0.3),
-                Color.white.opacity(0)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .rotationEffect(.degrees(45))
-        .offset(x: scrollOffset * 0.5)
-        .blendMode(.overlay)
-    }
-    
+
     // MARK: - Computed Properties
-    
-    private var pressScale: CGFloat {
-        isPressed ? 0.96 : 1.0
-    }
-    
-    private var rotationAngle: Double {
-        Double(totalOffset) * 0.02
-    }
-    
-    private var totalOffset: CGFloat {
-        dragOffset + gestureOffset
-    }
-    
-    private var shadowColor: Color {
-        event.isFeatured
-            ? Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.4)
-            : Color.black.opacity(0.3)
-    }
-    
-    private var shadowRadius: CGFloat {
-        isPressed ? 8 : 20
-    }
-    
-    private var shadowY: CGFloat {
-        isPressed ? 4 : 12
-    }
-    
-    private var borderGradient: LinearGradient {
-        if event.isFeatured {
-            return LinearGradient(
-                colors: [
-                    Color(red: 255/255, green: 127/255, blue: 110/255).opacity(0.6),
-                    Color(red: 255/255, green: 191/255, blue: 105/255).opacity(0.6)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        } else {
-            return LinearGradient(
-                colors: [Color.white.opacity(0.2)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-        }
-    }
-    
-    private var gradientColors: [Color] {
-        if isPressed {
-            return [
-                Color.clear,
-                Color.black.opacity(0.4),
-                Color.black.opacity(0.8)
-            ]
-        } else {
-            return [
-                Color.clear,
-                Color.black.opacity(0.2),
-                Color.black.opacity(0.7)
-            ]
-        }
-    }
-    
-    private var gradientOpacity: Double {
-        isPressed ? 1.0 : 0.9
-    }
-    
+
+    private var totalOffset: CGFloat { dragOffset + gestureOffset }
+
     // MARK: - Gestures
-    
+
     private var swipeGesture: some Gesture {
         DragGesture()
             .updating($gestureOffset) { value, state, _ in
                 state = value.translation.width
             }
             .onChanged { value in
-                // Haptic feedback on drag start
                 if abs(value.translation.width) > 10 && abs(dragOffset) < 1 {
                     HapticManager.shared.impact(.light)
                 }
             }
             .onEnded { value in
                 withAnimation(.spring(response: 0.4, dampingFraction: 0.75)) {
-                    // Swipe to dismiss logic (can add later)
                     if abs(value.translation.width) > 100 {
                         HapticManager.shared.impact(.medium)
                     }
@@ -425,18 +305,14 @@ struct PremiumEventCardView: View {
                 }
             }
     }
-    
+
     private func handleTap() {
-        // Premium haptic feedback
         HapticManager.shared.impact(.medium)
-        
-        // Micro-animation on tap
-        withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+        withAnimation(.spring(response: 0.25, dampingFraction: 0.65)) {
             isPressed = true
         }
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
+            withAnimation(.spring(response: 0.25, dampingFraction: 0.65)) {
                 isPressed = false
             }
             showingDetail = true
@@ -444,11 +320,11 @@ struct PremiumEventCardView: View {
     }
 }
 
-// MARK: - Mesh Gradient Helper
+// MARK: - Mesh Gradient Helper (custom radial blobs)
 
 struct MeshGradient: View {
     let colors: [Color]
-    
+
     var body: some View {
         ZStack {
             ForEach(0..<colors.count, id: \.self) { index in
@@ -462,50 +338,36 @@ struct MeshGradient: View {
                         )
                     )
                     .frame(width: 400, height: 400)
-                    .offset(x: offsetX(for: index), y: offsetY(for: index))
+                    .offset(x: blobOffsetX(for: index), y: blobOffsetY(for: index))
                     .blur(radius: 40)
             }
         }
     }
-    
-    private func offsetX(for index: Int) -> CGFloat {
-        switch index {
-        case 0: return -100
-        case 1: return 100
-        case 2: return -80
-        default: return 80
-        }
+
+    private func blobOffsetX(for index: Int) -> CGFloat {
+        switch index { case 0: return -100; case 1: return 100; case 2: return -80; default: return 80 }
     }
-    
-    private func offsetY(for index: Int) -> CGFloat {
-        switch index {
-        case 0: return -80
-        case 1: return -60
-        case 2: return 100
-        default: return 120
-        }
+
+    private func blobOffsetY(for index: Int) -> CGFloat {
+        switch index { case 0: return -80; case 1: return -60; case 2: return 100; default: return 120 }
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    ScrollView(.horizontal) {
+    ScrollView(.horizontal, showsIndicators: false) {
         HStack(spacing: 20) {
             PremiumEventCardView(
-                event: DiscoverEvent(
-                    id: "1",
-                    name: "Venn Club Dinner",
-                    dateFormatted: "Feb 28",
-                    locationShort: "SF",
-                    imageUrl: nil,
-                    attendees: 24,
-                    isFeatured: true
-                ),
+                event: DiscoverEvent(id: "1", name: "Venn Club Dinner", dateFormatted: "Feb 28", locationShort: "SF", imageUrl: nil, attendees: 24, isFeatured: true),
                 index: 0
+            )
+            PremiumEventCardView(
+                event: DiscoverEvent(id: "2", name: "Silent Disco at Fort Mason", dateFormatted: "Tonight, 8PM", locationShort: "Fort Mason", imageUrl: nil, attendees: 45, isFeatured: false),
+                index: 1
             )
         }
         .padding(20)
     }
-    .background(Color(red: 10/255, green: 8/255, blue: 6/255))
+    .background(Color(red: 15/255, green: 13/255, blue: 11/255))
 }

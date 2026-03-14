@@ -54,38 +54,75 @@ actor NetworkClient {
         as type: T.Type
     ) async throws -> T {
         let request = try await buildRequest(for: endpoint)
-        
+
         do {
             return try await execute(request, as: type)
         } catch NetworkError.unauthorized {
-            // Token expired - attempt refresh
             try await refreshAccessToken()
-            
-            // Retry with new token
             let retryRequest = try await buildRequest(for: endpoint)
             return try await execute(retryRequest, as: type)
         }
     }
-    
+
+    func requestVoid(_ endpoint: APIEndpoint) async throws {
+        let request = try await buildRequest(for: endpoint)
+
+        do {
+            try await executeVoid(request)
+        } catch NetworkError.unauthorized {
+            try await refreshAccessToken()
+            let retryRequest = try await buildRequest(for: endpoint)
+            try await executeVoid(retryRequest)
+        }
+    }
+
     private func execute<T: Decodable>(
         _ request: URLRequest,
         as type: T.Type
     ) async throws -> T {
         let (data, response) = try await session.data(for: request)
-        
+
         guard let httpResponse = response as? HTTPURLResponse else {
             throw NetworkError.invalidResponse
         }
-        
-        // Log request in debug builds
+
+        #if DEBUG
+        print("[\(request.httpMethod ?? "GET")] \(request.url?.absoluteString ?? "")")
+        print("Status: \(httpResponse.statusCode)")
+        if let body = String(data: data, encoding: .utf8) {
+            print("Body: \(body.prefix(500))")
+        }
+        #endif
+
+        switch httpResponse.statusCode {
+        case 200...299:
+            return try JSONDecoder().decode(type, from: data)
+        case 401:
+            throw NetworkError.unauthorized
+        case 400...499:
+            throw NetworkError.clientError(httpResponse.statusCode)
+        case 500...599:
+            throw NetworkError.serverError(httpResponse.statusCode)
+        default:
+            throw NetworkError.unknown
+        }
+    }
+
+    private func executeVoid(_ request: URLRequest) async throws {
+        let (_, response) = try await session.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkError.invalidResponse
+        }
+
         #if DEBUG
         print("[\(request.httpMethod ?? "GET")] \(request.url?.absoluteString ?? "")")
         print("Status: \(httpResponse.statusCode)")
         #endif
-        
+
         switch httpResponse.statusCode {
         case 200...299:
-            return try JSONDecoder().decode(type, from: data)
+            return
         case 401:
             throw NetworkError.unauthorized
         case 400...499:
@@ -174,7 +211,7 @@ enum APIEndpoint {
         case .verifyOTP: return "/auth/verify_otp"
         case .refreshToken: return "/auth/refresh_token"
         case .logout: return "/auth/logout"
-        case .getCurrentUser: return "/user/me"
+        case .getCurrentUser: return "/user/profile/me"
         case .updateProfile: return "/user/profile"
         case .getEvents: return "/events"
         case .createPlan: return "/plans"
