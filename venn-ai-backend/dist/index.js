@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const eventbrite_1 = require("./scrapers/eventbrite");
 const db_1 = require("./database/db");
+const vivi_1 = require("./services/vivi");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 4000;
@@ -14,6 +15,7 @@ app.use(express_1.default.json());
 // Initialize database
 let db;
 let eventRepo;
+let viviService;
 async function initDatabase() {
     const dbUrl = process.env.DATABASE_URL;
     if (!dbUrl) {
@@ -29,6 +31,20 @@ async function initDatabase() {
     catch (error) {
         console.error('❌ Database initialization failed:', error);
         throw error;
+    }
+}
+async function initVivi() {
+    const anthropicKey = process.env.ANTHROPIC_API_KEY;
+    if (!anthropicKey) {
+        console.warn('⚠️  ANTHROPIC_API_KEY not set - Vivi chat disabled');
+        return;
+    }
+    try {
+        viviService = new vivi_1.ViviService(anthropicKey);
+        console.log('✅ Vivi AI service initialized (Claude Sonnet 4.6)');
+    }
+    catch (error) {
+        console.error('❌ Vivi initialization failed:', error);
     }
 }
 // Health check
@@ -113,13 +129,37 @@ app.post('/api/events/scrape', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+// Vivi chat endpoint
+app.post('/api/vivi/chat', async (req, res) => {
+    if (!viviService) {
+        return res.status(503).json({ error: 'Vivi AI service not initialized' });
+    }
+    try {
+        const { message, conversationHistory } = req.body;
+        if (!message || typeof message !== 'string') {
+            return res.status(400).json({ error: 'Message is required' });
+        }
+        console.log(`💬 Vivi chat: "${message.substring(0, 50)}..."`);
+        const response = await viviService.chat(message, conversationHistory || []);
+        res.json({
+            response,
+            timestamp: new Date().toISOString()
+        });
+    }
+    catch (error) {
+        console.error('Vivi chat error:', error);
+        res.status(500).json({ error: error.message });
+    }
+});
 // Start server
 async function start() {
     try {
         await initDatabase();
+        await initVivi();
         app.listen(PORT, () => {
             console.log(`🚀 Venn AI Backend running on http://localhost:${PORT}`);
             console.log(`📊 Health: http://localhost:${PORT}/health`);
+            console.log(`💬 Vivi Chat: POST http://localhost:${PORT}/api/vivi/chat`);
             console.log(`🎉 Eventbrite Scraper: http://localhost:${PORT}/api/events/eventbrite`);
             console.log(`📥 Scrape & Store: POST http://localhost:${PORT}/api/events/scrape`);
             console.log(`📚 All Events: http://localhost:${PORT}/api/events`);

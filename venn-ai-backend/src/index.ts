@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import { EventbriteScraper } from './scrapers/eventbrite';
 import { Database, EventRepository } from './database/db';
+import { ViviService } from './services/vivi';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 // Initialize database
 let db: Database;
 let eventRepo: EventRepository;
+let viviService: ViviService;
 
 async function initDatabase() {
   const dbUrl = process.env.DATABASE_URL;
@@ -29,6 +31,21 @@ async function initDatabase() {
   } catch (error) {
     console.error('❌ Database initialization failed:', error);
     throw error;
+  }
+}
+
+async function initVivi() {
+  const anthropicKey = process.env.ANTHROPIC_API_KEY;
+  if (!anthropicKey) {
+    console.warn('⚠️  ANTHROPIC_API_KEY not set - Vivi chat disabled');
+    return;
+  }
+
+  try {
+    viviService = new ViviService(anthropicKey);
+    console.log('✅ Vivi AI service initialized (Claude Sonnet 4.6)');
+  } catch (error) {
+    console.error('❌ Vivi initialization failed:', error);
   }
 }
 
@@ -126,14 +143,43 @@ app.post('/api/events/scrape', async (req, res) => {
   }
 });
 
+// Vivi chat endpoint
+app.post('/api/vivi/chat', async (req, res) => {
+  if (!viviService) {
+    return res.status(503).json({ error: 'Vivi AI service not initialized' });
+  }
+
+  try {
+    const { message, conversationHistory } = req.body;
+
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'Message is required' });
+    }
+
+    console.log(`💬 Vivi chat: "${message.substring(0, 50)}..."`);
+
+    const response = await viviService.chat(message, conversationHistory || []);
+
+    res.json({
+      response,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error: any) {
+    console.error('Vivi chat error:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 // Start server
 async function start() {
   try {
     await initDatabase();
+    await initVivi();
 
     app.listen(PORT, () => {
       console.log(`🚀 Venn AI Backend running on http://localhost:${PORT}`);
       console.log(`📊 Health: http://localhost:${PORT}/health`);
+      console.log(`💬 Vivi Chat: POST http://localhost:${PORT}/api/vivi/chat`);
       console.log(`🎉 Eventbrite Scraper: http://localhost:${PORT}/api/events/eventbrite`);
       console.log(`📥 Scrape & Store: POST http://localhost:${PORT}/api/events/scrape`);
       console.log(`📚 All Events: http://localhost:${PORT}/api/events`);
