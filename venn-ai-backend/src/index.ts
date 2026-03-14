@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { EventbriteScraper } from './scrapers/eventbrite';
+import { Database, EventRepository } from './database/db';
 
 dotenv.config();
 
@@ -9,9 +10,36 @@ const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 
+// Initialize database
+let db: Database;
+let eventRepo: EventRepository;
+
+async function initDatabase() {
+  const dbUrl = process.env.DATABASE_URL;
+  if (!dbUrl) {
+    console.warn('⚠️  DATABASE_URL not set - database features disabled');
+    return;
+  }
+
+  try {
+    db = Database.getInstance(dbUrl);
+    await db.runMigrations();
+    eventRepo = new EventRepository(db);
+    console.log('✅ Database connected and migrations complete');
+  } catch (error) {
+    console.error('❌ Database initialization failed:', error);
+    throw error;
+  }
+}
+
 // Health check
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+app.get('/health', async (req, res) => {
+  const dbHealth = db ? await db.healthCheck() : false;
+  res.json({ 
+    status: 'ok', 
+    timestamp: new Date().toISOString(),
+    database: dbHealth ? 'connected' : 'disconnected'
+  });
 });
 
 // Test Eventbrite scraper
@@ -38,18 +66,84 @@ app.get('/api/events/eventbrite', async (req, res) => {
   }
 });
 
-// Aggregated events endpoint (placeholder for now)
+// Aggregated events endpoint
 app.get('/api/events', async (req, res) => {
-  res.json({
-    message: 'Event aggregation coming soon',
-    sources: ['eventbrite', 'luma', 'instagram', 'tiktok', 'reddit']
-  });
+  if (!eventRepo) {
+    return res.status(503).json({ error: 'Database not initialized' });
+  }
+
+  try {
+    const location = req.query.location as string;
+    const source = req.query.source as string;
+    const limit = parseInt(req.query.limit as string || '50');
+
+    const events = await eventRepo.getEvents({ location, source, limit });
+    const total = await eventRepo.countEvents(source);
+
+    res.json({
+      location: location || 'all',
+      source: source || 'all',
+      total,
+      count: events.length,
+      events
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Venn AI Backend running on http://localhost:${PORT}`);
-  console.log(`📊 Health: http://localhost:${PORT}/health`);
-  console.log(`🎉 Events: http://localhost:${PORT}/api/events/eventbrite`);
+// Scrape and store events
+app.post('/api/events/scrape', async (req, res) => {
+  if (!eventRepo) {
+    return res.status(503).json({ error: 'Database not initialized' });
+  }
+
+  try {
+    const apiKey = process.env.EVENTBRITE_API_KEY;
+    if (!apiKey) {
+      return res.status(500).json({ error: 'EVENTBRITE_API_KEY not configured' });
+    }
+
+    const scraper = new EventbriteScraper(apiKey);
+    const location = req.body.location || 'San Francisco, CA';
+    const limit = parseInt(req.body.limit || '50');
+
+    console.log(`📥 Scraping Eventbrite for ${location}...`);
+    const events = await scraper.scrapeEvents(location, { limit });
+    
+    console.log(`💾 Storing ${events.length} events in database...`);
+    const stored = await eventRepo.upsertEvents(events);
+
+    res.json({
+      message: 'Scraping complete',
+      location,
+      scraped: events.length,
+      stored,
+      total: await eventRepo.countEvents()
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
 });
+
+// Start server
+async function start() {
+  try {
+    await initDatabase();
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Venn AI Backend running on http://localhost:${PORT}`);
+      console.log(`📊 Health: http://localhost:${PORT}/health`);
+      console.log(`🎉 Eventbrite Scraper: http://localhost:${PORT}/api/events/eventbrite`);
+      console.log(`📥 Scrape & Store: POST http://localhost:${PORT}/api/events/scrape`);
+      console.log(`📚 All Events: http://localhost:${PORT}/api/events`);
+    });
+  } catch (error) {
+    console.error('Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+start();
 
 export default app;
