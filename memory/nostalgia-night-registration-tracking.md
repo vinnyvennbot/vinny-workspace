@@ -13,7 +13,9 @@
 - **3:50 PM:** +1 registration (via Luma)
 - **4:04 PM:** +1 registration (via Luma)
 - **4:06 PM:** +1 registration (via Luma)
-- **5:35 PM:** **27+ total registrations**
+- **5:35 PM:** 27+ total registrations
+- **6:36 PM:** +1 registration (Fatima abdul-khabir via app)
+- **6:40 PM:** **28+ total registrations**
 
 ### App Signups (March 13)
 - Kamelia Chandran (3:54 PM)
@@ -21,8 +23,9 @@
 - Pranjli Khanna (3:19 PM)
 - Riva F (4:03 PM)
 - apoorva d (4:26 PM)
+- Fatima abdul-khabir (6:36 PM)
 
-**Total new registrations since 2:00 PM:** 5 Luma + 5 app = **10 new in 3.5 hours**
+**Total new registrations since 2:00 PM:** 5 Luma + 6 app = **11 new in 4.5 hours**
 
 ## Growth Pattern
 - **Afternoon session (2:00-5:35 PM):** 5 registrations (1.4/hour rate)
